@@ -382,7 +382,6 @@
     <string name="sports_next_month">下个月</string>
     <string name="sports_next">下一场：<xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">下一场</string>
-    <string name="sports_new_badge">新</string>
     <string name="sports_no_table_series">无积分榜 — 系列赛每周更换</string>
     <string name="sports_follow_league">关注联赛</string>
     <string name="sports_unfollow_league">取消关注联赛</string>

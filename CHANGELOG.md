@@ -15,6 +15,12 @@
 
 ### ✨ New features
 
+- **🏆 Sports: 54 more leagues, with Volleyball and Lacrosse**
+- **📅 Sports calendar: every followed league's month, saved on the device**
+- **🏁 Driver, constructor and tennis rankings**
+- **👕 Team pages: fixtures and results, cups included**
+- **🗂️ League cards: leader and next match**
+- **🔄 Calendar refresh setting**
 - **✨ Clean channel names, per playlist** (community PR #46 by @Kevsosmooth)
 - **🔢 M3U playlists without channel numbers are numbered in playlist order** (community PR #43 by @Kevsosmooth)
 - **🎬 M3U entries that point at a video file go to Movies** (community PR #45 by @Kevsosmooth)
@@ -32,6 +38,7 @@
 
 ### 🐛 Fixes
 
+- **Cups no longer fetch a table they never have**
 - **🗑️ Delete confirmation strings for downloads and recordings**
 - **↕️ A Move keeps only the moved items' positions; A–Z sorts everything else (TV #312)**
 - **🔁 Older saved list orders are dropped once, Favorites kept**
@@ -67,12 +74,6 @@
 
 ### ✨ New features
 
-- **🏆 Sports: 54 more leagues, with Volleyball and Lacrosse**
-- **📅 Sports calendar: every followed league's month, saved on the device**
-- **🏁 Driver, constructor and tennis rankings**
-- **👕 Team pages: fixtures and results, cups included**
-- **🗂️ League cards: leader and next match**
-- **🔄 Calendar refresh setting**
 - **🎚️ FFmpeg audio for ExoPlayer, as a switch (off by default)**
 - **💡 A hint to try MPV when a live channel keeps dropping frames**
 - **🌗 Prefer SDR when a stream offers both (replaces the HDR switch)**
@@ -81,7 +82,6 @@
 
 ### 🐛 Fixes
 
-- **Cups no longer fetch a table they never have**
 - **A saved channel plays again after the TV wakes from standby**
 - **A live channel ExoPlayer can only show as a slideshow moves to mpv by itself**
 - **Full frame rate on mpv after zapping from a 25 fps channel**

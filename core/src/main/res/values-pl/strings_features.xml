@@ -436,7 +436,6 @@
     <string name="sports_next_month">Następny miesiąc</string>
     <string name="sports_next">Następnie: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">Następny</string>
-    <string name="sports_new_badge">Nowe</string>
     <string name="sports_no_table_series">Brak tabeli — serie zmieniają się co tydzień</string>
     <string name="sports_follow_league">Obserwuj ligę</string>
     <string name="sports_unfollow_league">Przestań obserwować ligę</string>

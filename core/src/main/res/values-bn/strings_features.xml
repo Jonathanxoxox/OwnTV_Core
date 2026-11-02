@@ -400,7 +400,6 @@
     <string name="sports_next_month">পরের মাস</string>
     <string name="sports_next">পরবর্তী: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">পরবর্তী</string>
-    <string name="sports_new_badge">নতুন</string>
     <string name="sports_no_table_series">কোনো টেবিল নেই — সিরিজ প্রতি সপ্তাহে বদলায়</string>
     <string name="sports_follow_league">লিগ ফলো করুন</string>
     <string name="sports_unfollow_league">লিগ আনফলো করুন</string>

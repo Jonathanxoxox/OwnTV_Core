@@ -382,7 +382,6 @@
     <string name="sports_next_month">다음 달</string>
     <string name="sports_next">다음: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">다음</string>
-    <string name="sports_new_badge">신규</string>
     <string name="sports_no_table_series">순위표 없음 — 시리즈가 매주 바뀝니다</string>
     <string name="sports_follow_league">리그 팔로우</string>
     <string name="sports_unfollow_league">리그 팔로우 취소</string>
