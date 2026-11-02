@@ -65,6 +65,11 @@
     <string name="launcher_recent_live_description">हाल में देखे गए लाइव चैनल</string>
     <string name="launcher_movie_type">फ़िल्म</string>
     <string name="launcher_episode_number">एपिसोड <xliff:g id="episode">%1$d</xliff:g></string>
+    <plurals name="home_library_loading">
+        <item quantity="one">आपकी लाइब्रेरी लोड हो रही है · अब तक <xliff:g id="count">%1$s</xliff:g> शीर्षक</item>
+        <item quantity="other">आपकी लाइब्रेरी लोड हो रही है · अब तक <xliff:g id="count">%1$s</xliff:g> शीर्षक</item>
+    </plurals>
+    <string name="home_library_loading_trending">लाइब्रेरी भरने के साथ अभी लोकप्रिय सूची दिखाई देगी।</string>
     <string name="home_no_preview">अभी पूर्वावलोकन के लिए कुछ नहीं है।</string>
     <string name="home_no_rows">होम स्क्रीन की सभी पंक्तियाँ छिपी हुई हैं।</string>
     <string name="home_enable_rows">सेटिंग → होम स्क्रीन में पंक्तियाँ फिर से चालू करें।</string>

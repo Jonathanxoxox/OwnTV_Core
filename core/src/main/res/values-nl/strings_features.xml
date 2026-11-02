@@ -65,6 +65,11 @@
     <string name="launcher_recent_live_description">Onlangs bekeken livezenders</string>
     <string name="launcher_movie_type">Film</string>
     <string name="launcher_episode_number">Aflevering <xliff:g id="episode">%1$d</xliff:g></string>
+    <plurals name="home_library_loading">
+        <item quantity="one">Je bibliotheek wordt geladen · tot nu toe <xliff:g id="count">%1$s</xliff:g> titel</item>
+        <item quantity="other">Je bibliotheek wordt geladen · tot nu toe <xliff:g id="count">%1$s</xliff:g> titels</item>
+    </plurals>
+    <string name="home_library_loading_trending">Nu populair verschijnt naarmate je bibliotheek zich vult.</string>
     <string name="home_no_preview">Nog geen voorbeeld beschikbaar.</string>
     <string name="home_no_rows">Alle rijen op het startscherm zijn verborgen.</string>
     <string name="home_enable_rows">Schakel rijen weer in via Instellingen → Startscherm.</string>

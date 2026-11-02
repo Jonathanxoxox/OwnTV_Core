@@ -63,6 +63,10 @@
     <string name="launcher_recent_live_description">最近觀看的直播頻道</string>
     <string name="launcher_movie_type">電影</string>
     <string name="launcher_episode_number">第 <xliff:g id="episode">%1$d</xliff:g> 集</string>
+    <plurals name="home_library_loading">
+        <item quantity="other">正在載入你的媒體庫 · 目前已有 <xliff:g id="count">%1$s</xliff:g> 部作品</item>
+    </plurals>
+    <string name="home_library_loading_trending">「目前熱門」會隨著媒體庫載入逐步顯示。</string>
     <string name="home_no_preview">目前還沒有可預覽的內容。</string>
     <string name="home_no_rows">所有主畫面列都已隱藏。</string>
     <string name="home_enable_rows">前往「設定」→「主畫面」重新開啟各列。</string>

@@ -65,6 +65,11 @@
     <string name="launcher_recent_live_description">Senest sete livekanaler</string>
     <string name="launcher_movie_type">Film</string>
     <string name="launcher_episode_number">Afsnit <xliff:g id="episode">%1$d</xliff:g></string>
+    <plurals name="home_library_loading">
+        <item quantity="one">Indlæser dit bibliotek · <xliff:g id="count">%1$s</xliff:g> titel indtil videre</item>
+        <item quantity="other">Indlæser dit bibliotek · <xliff:g id="count">%1$s</xliff:g> titler indtil videre</item>
+    </plurals>
+    <string name="home_library_loading_trending">Populært lige nu vises, efterhånden som dit bibliotek fyldes op.</string>
     <string name="home_no_preview">Intet at forhåndsvise endnu.</string>
     <string name="home_no_rows">Alle rækker på startskærmen er skjult.</string>
     <string name="home_enable_rows">Slå rækkerne til igen under Indstillinger → Startskærm.</string>
