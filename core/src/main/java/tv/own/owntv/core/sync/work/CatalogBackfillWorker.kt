@@ -3,7 +3,6 @@ package tv.own.owntv.core.sync.work
 import android.content.Context
 import android.util.Log
 import androidx.work.CoroutineWorker
-import androidx.work.ExistingWorkPolicy
 import androidx.work.WorkerParameters
 import tv.own.owntv.core.live.OpenStreamRegistry
 import tv.own.owntv.core.live.WatchSession
@@ -67,11 +66,9 @@ class CatalogBackfillWorker(
         if (!outcome.complete) {
             // Paused for playback, or a category hit a page the portal would not serve. Either way
             // the plan still holds the position, so come back after a pause long enough that a
-            // yielding drain is not re-woken into the same stream it just stepped away from.
-            // Appended, not KEEP: this run is still in progress, and KEEP would see it and drop the request.
-            scheduler.enqueueCatalogBackfill(
-                sourceId, initialDelayMinutes = RETRY_DELAY_MINUTES, policy = ExistingWorkPolicy.APPEND_OR_REPLACE,
-            )
+            // yielding drain is not re-woken into the same stream it just stepped away from. When the
+            // pause was for playback, [tv.own.owntv.core.sync.BackfillResume] brings this pass forward once the player closes.
+            scheduler.enqueueNextBackfillPass(sourceId, RETRY_DELAY_MINUTES)
             return Result.success()
         }
         // `pagesFetched > 0` is what distinguishes "this pass finished the catalogue" from "there
