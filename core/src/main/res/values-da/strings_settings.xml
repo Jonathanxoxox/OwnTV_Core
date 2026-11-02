@@ -866,6 +866,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> kilder blev sprunget over, fordi deres typer afspilningslister ikke understøttes.</item>
     </plurals>
     <string name="settings_backup_export_error">Eksporten mislykkedes.</string>
+    <string name="settings_backup_no_file_app">Ingen app på denne telefon kan gemme filen. Brug Del i stedet.</string>
     <string name="settings_backup_read_error">Sikkerhedskopifilen kunne ikke læses.</string>
     <string name="settings_backup_import_error">Importen mislykkedes.</string>
     <string name="settings_backup_invalid_locale">Denne sikkerhedskopi indeholdt et appsprog, der ikke understøttes. Gendannelsen lykkedes, men dit nuværende sprog blev bevaret.</string>
