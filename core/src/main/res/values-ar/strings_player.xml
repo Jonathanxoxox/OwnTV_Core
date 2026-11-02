@@ -109,6 +109,7 @@
     <string name="player_error_account_in_use">هذا الحساب قيد التشغيل بالفعل على جهاز أو تطبيق آخر. أوقفه هناك، ثم اضغط على إعادة المحاولة.</string>
     <string name="player_error_mpv_open_decode">تعذّر على mpv فتح هذا الملف أو فك ترميزه.</string>
     <string name="player_error_mpv_stream_never_started">لم يبدأ البث في mpv بعد عدة محاولات.</string>
+    <string name="player_error_fairplay">هذا البث محمي بتقنية Apple FairPlay التي لا تستطيع أجهزة Android تشغيلها. قائمة التشغيل هذه مخصّصة لأجهزة Apple.</string>
     <string name="player_error_surround">لا يدعم مخرج الصوت هذا الصوت المحيطي — تم التبديل إلى صوت ستيريو.</string>
     <string name="player_error_hardware_fallback">تعذّر فك ترميز تنسيق هذا البث بالأجهزة على هذا التلفزيون، لذا تم الرجوع إلى فك الترميز بالبرامج — الذي لا يستطيع الحفاظ على تشغيل <xliff:g id="resolution">%1$s</xliff:g> دون تحميل التلفزيون فوق طاقته. قد يظل التلفزيون قادرًا على تشغيل محتوى 4K آخر دون مشكلة؛ تنسيق هذا البث تحديدًا هو السبب.</string>
     <string name="player_error_hardware_disabled">فك الترميز بالأجهزة متوقف — ولا يستطيع فك الترميز بالبرامج معالجة فيديو بدقة <xliff:g id="resolution">%1$s</xliff:g>. فعّله من الإعدادات ← مشغّل الفيديو.</string>

@@ -231,6 +231,7 @@
     <string name="recording_group_missed">فائت</string>
     <string name="recording_record">تسجيل</string>
     <string name="recording_stop">إيقاف التسجيل</string>
+    <string name="recording_delete_message">يزيل التسجيل وملفه من هذا الجهاز. لا يمكن التراجع عن ذلك.</string>
     <string name="recording_record_series">تسجيل كل عرض</string>
     <string name="recording_stop_series">إيقاف تسجيل كل عرض</string>
     <string name="recording_from_archive">التسجيل من الأرشيف</string>
@@ -344,6 +345,15 @@
     <string name="sports_starting_soon">تبدأ قريبًا</string>
     <string name="sports_hint_match_page">صفحة المباراة</string>
     <string name="sports_hint_follow_remind">متابعة · تذكير</string>
+    <string name="sports_hint_day_matches">مباريات اليوم</string>
+    <string name="sports_hint_day">يوم</string>
+    <string name="sports_hint_week">أسبوع</string>
+    <string name="sports_hint_show_score">إظهار النتيجة</string>
+    <string name="sports_hint_back_to_day">العودة إلى اليوم</string>
+    <string name="sports_hint_open_league">فتح الدوري</string>
+    <string name="sports_hint_sport_chips">أزرار الرياضات</string>
+    <string name="sports_hint_league_chips">أزرار الدوريات</string>
+    <string name="sports_hint_follow_unfollow">متابعة · إلغاء المتابعة</string>
     <string name="sports_reminder_set">تذكير</string>
     <string name="sports_until">حتى <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">المجموعة <xliff:g id="set">%1$d</xliff:g></string>
@@ -462,7 +472,6 @@
     <string name="sports_next_month">الشهر التالي</string>
     <string name="sports_next">التالي: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">التالي</string>
-    <string name="sports_new_badge">جديد</string>
     <string name="sports_no_table_series">لا يوجد ترتيب — السلاسل تتغير كل أسبوع</string>
     <string name="sports_follow_league">متابعة الدوري</string>
     <string name="sports_unfollow_league">إلغاء متابعة الدوري</string>

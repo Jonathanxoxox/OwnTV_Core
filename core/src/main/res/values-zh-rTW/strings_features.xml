@@ -186,6 +186,7 @@
     <string name="recording_group_missed">已錯過</string>
     <string name="recording_record">錄影</string>
     <string name="recording_stop">停止錄影</string>
+    <string name="recording_delete_message">從此裝置移除該錄影及其檔案。此動作無法復原。</string>
     <string name="recording_record_series">錄下每一次播出</string>
     <string name="recording_stop_series">不再錄下每一次播出</string>
     <string name="recording_from_archive">從回看錄影</string>
@@ -269,6 +270,15 @@
     <string name="sports_starting_soon">即將開始</string>
     <string name="sports_hint_match_page">比賽頁面</string>
     <string name="sports_hint_follow_remind">關注 · 提醒</string>
+    <string name="sports_hint_day_matches">當天比賽</string>
+    <string name="sports_hint_day">天</string>
+    <string name="sports_hint_week">週</string>
+    <string name="sports_hint_show_score">顯示比分</string>
+    <string name="sports_hint_back_to_day">返回日期</string>
+    <string name="sports_hint_open_league">開啟聯賽</string>
+    <string name="sports_hint_sport_chips">運動按鈕</string>
+    <string name="sports_hint_league_chips">聯賽按鈕</string>
+    <string name="sports_hint_follow_unfollow">關注 · 取消關注</string>
     <string name="sports_reminder_set">提醒</string>
     <string name="sports_until">至 <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">第 <xliff:g id="set">%1$d</xliff:g> 盤</string>
@@ -372,7 +382,6 @@
     <string name="sports_next_month">下個月</string>
     <string name="sports_next">下一場：<xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">下一場</string>
-    <string name="sports_new_badge">新</string>
     <string name="sports_no_table_series">無積分榜 — 系列賽每週更換</string>
     <string name="sports_follow_league">關注聯賽</string>
     <string name="sports_unfollow_league">取消關注聯賽</string>
