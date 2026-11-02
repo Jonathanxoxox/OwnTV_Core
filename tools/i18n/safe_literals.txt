@@ -1786,7 +1786,7 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/download/DownloadReasons.kt	No space left
 1	log	core/src/main/java/tv/own/owntv/core/download/DownloadReasons.kt	download failed: $reason${httpCode?.let { " (HTTP $it)" } ?: ""}
 1	log	core/src/main/java/tv/own/owntv/core/download/DownloadWorker.kt	owntv-downloads
-3	empty	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	\0
+6	empty	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	\0
 1	technical	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	%02x
 1	technical	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	-
 1	protocol	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	B
@@ -1796,6 +1796,8 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	b{SSM}
 1	json	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	clearKeys
 2	protocol	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	clearkey
+1	protocol	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	com.apple.fps
+2	protocol	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	fairplay
 1	json	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	headers
 1	protocol	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	http://
 1	protocol	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	https://
@@ -5444,6 +5446,7 @@
 1	log	core/src/main/java/tv/own/owntv/core/weather/WeatherRepository.kt	results
 1	log	core/src/main/java/tv/own/owntv/core/weather/WeatherRepository.kt	temperature_2m
 1	log	core/src/main/java/tv/own/owntv/core/weather/WeatherRepository.kt	weather_code
+1	assertion	player-core/src/main/java/tv/own/owntv/core/drm/DrmMediaItem.kt	FairPlay has no Android CDM
 1	uri	player-core/src/main/java/tv/own/owntv/core/drm/DrmMediaItem.kt	data:application/json;base64,
 1	json	player-core/src/main/java/tv/own/owntv/core/drm/DrmMediaItem.kt	k
 1	json	player-core/src/main/java/tv/own/owntv/core/drm/DrmMediaItem.kt	keys
@@ -5736,6 +5739,8 @@
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	ExoPlayer can't play this stream (${error.errorCodeName})
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	ExoPlayer error: ${error.errorCodeName}
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	FFmpeg
+1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	FairPlay DRM: no Android CDM
+1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	FairPlay-protected channel — not playable on Android
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	H.264
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	HEVC
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	HTTP $HTTP_TOO_MANY_REQUESTS with Retry-After ${secs}s — waiting it out and retrying automatically
@@ -5785,7 +5790,8 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	dataType=${mediaLoadData.dataType} canceled=$wasCanceled
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	decoder exhausted — no MediaCodec instance available
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	decoder exhausted: no MediaCodec instance available
-1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	decoder failure before first frame — rebuild + retry once
+1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	decoder failed before first frame ($why) — rebuild ${tune.decoderRebuilds} in ${delayMs}ms
+1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	decoder failure before first frame — rebuild ${tune.decoderRebuilds} in ${delayMs}ms
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	device
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	discontinuitySeq=${manifest.mediaPlaylist.discontinuitySequence}
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	distinct segments on this load
@@ -5877,6 +5883,7 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	re-buffer flap ($detail) with no pre-buffer — giving up on ExoPlayer for this stream
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	re-buffer flap ($detail) — this stream can't reach its pre-buffer, reopening without one
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	ready
+1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	rebuilt decoder never started, video=false
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	reconnect attempt ${tune.retryCount}/$MAX_RECONNECTS reason=$reason
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	reconnect exhausted ($reason) at ${tune.retryCount}/$MAX_RECONNECTS after ${failingSecs}s — giving up
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	reconnect fresh-url failed: ${it.message}
@@ -6076,6 +6083,7 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	Emulator
 1	log	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	Exo codec gate: audio codec='$codec' → $verdict
 1	log	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	FILE_LOADED with pendingStopEndFiles=$pendingStops generation=$loadGeneration
+1	log	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	FairPlay-protected item — not playable on Android
 1	technical	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	Genymotion
 1	technical	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	HTTP error (4\\d\\d)
 1	log	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	HUD engine toggle: ExoPlayer → mpv

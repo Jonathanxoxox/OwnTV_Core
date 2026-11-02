@@ -231,7 +231,6 @@
 1	core/src/main/java/tv/own/owntv/core/util/CrashRecorder.kt	${Build.MANUFACTURER} ${Build.MODEL} · Android ${Build.VERSION.RELEASE} (API ${Build.VERSION.SDK_INT})
 1	core/src/main/java/tv/own/owntv/core/util/CrashRecorder.kt	--- live diagnostics leading up to the crash ---
 1	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	body="$failureText"
-1	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	decoder failed before first frame (${error.errorCodeName}) — rebuilding the decoder and retrying once
 1	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	decoder rebuild failed: ${it.message}
 1	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	default User-Agent refused — retrying once as ${HttpClient.FALLBACK_USER_AGENT}
 1	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	insufficient resource

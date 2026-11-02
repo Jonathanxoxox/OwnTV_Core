@@ -2935,6 +2935,14 @@ class OwnTVPlayer(
         currentEpisodeNumber = meta.episodeNumber
         currentRewindStartMs = meta.rewindStartMs
         _currentMeta.value = meta // reactive — refreshes the HUD title / "now watching" card on every load
+        // Apple FairPlay: no Android device can decrypt it, and neither engine is worth a try. Stop the
+        // previous item and say why, as [abandonLive] does.
+        if (currentDrm?.scheme == tv.own.owntv.core.drm.DrmConfig.Scheme.FAIRPLAY) {
+            LiveDiagnosticsLog.event("FairPlay-protected item — not playable on Android")
+            stop()
+            _error.value = PlaybackFailure.FairPlay
+            return
+        }
         isLiveContent = isLive
         currentUrl = url
         currentContentKey = meta.contentKey
