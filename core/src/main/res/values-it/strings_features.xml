@@ -300,6 +300,15 @@
     <string name="sports_starting_soon">Tra poco</string>
     <string name="sports_hint_match_page">Pagina della partita</string>
     <string name="sports_hint_follow_remind">Segui · Promemoria</string>
+    <string name="sports_hint_day_matches">Partite del giorno</string>
+    <string name="sports_hint_day">Giorno</string>
+    <string name="sports_hint_week">Settimana</string>
+    <string name="sports_hint_show_score">Mostra risultato</string>
+    <string name="sports_hint_back_to_day">Torna al giorno</string>
+    <string name="sports_hint_open_league">Apri campionato</string>
+    <string name="sports_hint_sport_chips">Pulsanti sport</string>
+    <string name="sports_hint_league_chips">Pulsanti campionati</string>
+    <string name="sports_hint_follow_unfollow">Segui · Non seguire più</string>
     <string name="sports_reminder_set">Promemoria</string>
     <string name="sports_until">fino alle <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">Set <xliff:g id="set">%1$d</xliff:g></string>

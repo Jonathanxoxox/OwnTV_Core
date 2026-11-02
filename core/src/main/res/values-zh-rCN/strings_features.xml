@@ -270,6 +270,15 @@
     <string name="sports_starting_soon">即将开始</string>
     <string name="sports_hint_match_page">比赛页面</string>
     <string name="sports_hint_follow_remind">关注 · 提醒</string>
+    <string name="sports_hint_day_matches">当天比赛</string>
+    <string name="sports_hint_day">天</string>
+    <string name="sports_hint_week">周</string>
+    <string name="sports_hint_show_score">显示比分</string>
+    <string name="sports_hint_back_to_day">返回日期</string>
+    <string name="sports_hint_open_league">打开联赛</string>
+    <string name="sports_hint_sport_chips">运动按钮</string>
+    <string name="sports_hint_league_chips">联赛按钮</string>
+    <string name="sports_hint_follow_unfollow">关注 · 取消关注</string>
     <string name="sports_reminder_set">提醒</string>
     <string name="sports_until">至 <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">第 <xliff:g id="set">%1$d</xliff:g> 盘</string>

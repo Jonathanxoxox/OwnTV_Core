@@ -285,6 +285,15 @@
     <string name="sports_starting_soon">जल्द शुरू</string>
     <string name="sports_hint_match_page">मैच पेज</string>
     <string name="sports_hint_follow_remind">फ़ॉलो करें · याद दिलाएँ</string>
+    <string name="sports_hint_day_matches">दिन के मैच</string>
+    <string name="sports_hint_day">दिन</string>
+    <string name="sports_hint_week">सप्ताह</string>
+    <string name="sports_hint_show_score">स्कोर दिखाएँ</string>
+    <string name="sports_hint_back_to_day">दिन पर वापस</string>
+    <string name="sports_hint_open_league">लीग खोलें</string>
+    <string name="sports_hint_sport_chips">खेल बटन</string>
+    <string name="sports_hint_league_chips">लीग बटन</string>
+    <string name="sports_hint_follow_unfollow">फ़ॉलो करें · अनफ़ॉलो करें</string>
     <string name="sports_reminder_set">रिमाइंडर</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g> तक</string>
     <string name="sports_set">सेट <xliff:g id="set">%1$d</xliff:g></string>

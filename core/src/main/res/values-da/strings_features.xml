@@ -285,6 +285,15 @@
     <string name="sports_starting_soon">Starter snart</string>
     <string name="sports_hint_match_page">Kampside</string>
     <string name="sports_hint_follow_remind">Følg · Påmind</string>
+    <string name="sports_hint_day_matches">Dagens kampe</string>
+    <string name="sports_hint_day">Dag</string>
+    <string name="sports_hint_week">Uge</string>
+    <string name="sports_hint_show_score">Vis resultat</string>
+    <string name="sports_hint_back_to_day">Tilbage til dagen</string>
+    <string name="sports_hint_open_league">Åbn liga</string>
+    <string name="sports_hint_sport_chips">Sportsknapper</string>
+    <string name="sports_hint_league_chips">Ligaknapper</string>
+    <string name="sports_hint_follow_unfollow">Følg · Stop med at følge</string>
     <string name="sports_reminder_set">Påmindelse</string>
     <string name="sports_until">til <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. sæt</string>

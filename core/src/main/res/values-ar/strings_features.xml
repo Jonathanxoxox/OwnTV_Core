@@ -345,6 +345,15 @@
     <string name="sports_starting_soon">تبدأ قريبًا</string>
     <string name="sports_hint_match_page">صفحة المباراة</string>
     <string name="sports_hint_follow_remind">متابعة · تذكير</string>
+    <string name="sports_hint_day_matches">مباريات اليوم</string>
+    <string name="sports_hint_day">يوم</string>
+    <string name="sports_hint_week">أسبوع</string>
+    <string name="sports_hint_show_score">إظهار النتيجة</string>
+    <string name="sports_hint_back_to_day">العودة إلى اليوم</string>
+    <string name="sports_hint_open_league">فتح الدوري</string>
+    <string name="sports_hint_sport_chips">أزرار الرياضات</string>
+    <string name="sports_hint_league_chips">أزرار الدوريات</string>
+    <string name="sports_hint_follow_unfollow">متابعة · إلغاء المتابعة</string>
     <string name="sports_reminder_set">تذكير</string>
     <string name="sports_until">حتى <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">المجموعة <xliff:g id="set">%1$d</xliff:g></string>

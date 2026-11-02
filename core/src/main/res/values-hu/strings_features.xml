@@ -285,6 +285,15 @@
     <string name="sports_starting_soon">Hamarosan kezdődik</string>
     <string name="sports_hint_match_page">Meccsoldal</string>
     <string name="sports_hint_follow_remind">Követés · Emlékeztető</string>
+    <string name="sports_hint_day_matches">A nap meccsei</string>
+    <string name="sports_hint_day">Nap</string>
+    <string name="sports_hint_week">Hét</string>
+    <string name="sports_hint_show_score">Eredmény mutatása</string>
+    <string name="sports_hint_back_to_day">Vissza a naphoz</string>
+    <string name="sports_hint_open_league">Bajnokság megnyitása</string>
+    <string name="sports_hint_sport_chips">Sportág-gombok</string>
+    <string name="sports_hint_league_chips">Bajnokság-gombok</string>
+    <string name="sports_hint_follow_unfollow">Követés · Követés leállítása</string>
     <string name="sports_reminder_set">Emlékeztető</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g>-ig</string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. szett</string>

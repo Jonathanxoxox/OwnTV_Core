@@ -315,6 +315,15 @@
     <string name="sports_starting_soon">Wkrótce</string>
     <string name="sports_hint_match_page">Strona meczu</string>
     <string name="sports_hint_follow_remind">Obserwuj · Przypomnij</string>
+    <string name="sports_hint_day_matches">Mecze dnia</string>
+    <string name="sports_hint_day">Dzień</string>
+    <string name="sports_hint_week">Tydzień</string>
+    <string name="sports_hint_show_score">Pokaż wynik</string>
+    <string name="sports_hint_back_to_day">Wróć do dnia</string>
+    <string name="sports_hint_open_league">Otwórz ligę</string>
+    <string name="sports_hint_sport_chips">Przyciski sportów</string>
+    <string name="sports_hint_league_chips">Przyciski lig</string>
+    <string name="sports_hint_follow_unfollow">Obserwuj · Przestań obserwować</string>
     <string name="sports_reminder_set">Przypomnienie</string>
     <string name="sports_until">do <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">Set <xliff:g id="set">%1$d</xliff:g></string>

@@ -315,6 +315,15 @@
     <string name="sports_starting_soon">Brzy začíná</string>
     <string name="sports_hint_match_page">Stránka zápasu</string>
     <string name="sports_hint_follow_remind">Sledovat · Připomenout</string>
+    <string name="sports_hint_day_matches">Zápasy dne</string>
+    <string name="sports_hint_day">Den</string>
+    <string name="sports_hint_week">Týden</string>
+    <string name="sports_hint_show_score">Zobrazit skóre</string>
+    <string name="sports_hint_back_to_day">Zpět na den</string>
+    <string name="sports_hint_open_league">Otevřít soutěž</string>
+    <string name="sports_hint_sport_chips">Tlačítka sportů</string>
+    <string name="sports_hint_league_chips">Tlačítka soutěží</string>
+    <string name="sports_hint_follow_unfollow">Sledovat · Přestat sledovat</string>
     <string name="sports_reminder_set">Připomínka</string>
     <string name="sports_until">do <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. set</string>

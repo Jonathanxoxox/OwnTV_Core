@@ -285,6 +285,15 @@
     <string name="sports_starting_soon">Begint binnenkort</string>
     <string name="sports_hint_match_page">Wedstrijdpagina</string>
     <string name="sports_hint_follow_remind">Volgen · Herinneren</string>
+    <string name="sports_hint_day_matches">Wedstrijden van de dag</string>
+    <string name="sports_hint_day">Dag</string>
+    <string name="sports_hint_week">Week</string>
+    <string name="sports_hint_show_score">Uitslag tonen</string>
+    <string name="sports_hint_back_to_day">Terug naar de dag</string>
+    <string name="sports_hint_open_league">Competitie openen</string>
+    <string name="sports_hint_sport_chips">Sportknoppen</string>
+    <string name="sports_hint_league_chips">Competitieknoppen</string>
+    <string name="sports_hint_follow_unfollow">Volgen · Niet meer volgen</string>
     <string name="sports_reminder_set">Herinnering</string>
     <string name="sports_until">tot <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">Set <xliff:g id="set">%1$d</xliff:g></string>
