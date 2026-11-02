@@ -69,8 +69,9 @@ class CatalogBackfillWorker(
             if (outcome.inserted > 0) rematchTrending(sourceId)
             // Paused for playback, or a category hit a page the portal would not serve. Either way
             // the plan still holds the position, so come back after a pause long enough that a
-            // yielding drain is not re-woken into the same stream it just stepped away from.
-            scheduler.enqueueCatalogBackfill(sourceId, initialDelayMinutes = RETRY_DELAY_MINUTES)
+            // yielding drain is not re-woken into the same stream it just stepped away from. When the
+            // pause was for playback, [tv.own.owntv.core.sync.BackfillResume] brings this pass forward once the player closes.
+            scheduler.enqueueNextBackfillPass(sourceId, RETRY_DELAY_MINUTES)
             return Result.success()
         }
         // `pagesFetched > 0` is what distinguishes "this pass finished the catalogue" from "there
