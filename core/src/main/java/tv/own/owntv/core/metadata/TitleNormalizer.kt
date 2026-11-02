@@ -85,7 +85,7 @@ object TitleNormalizer {
         val beforeTails = s
         do {
             prev = s
-            s = s.trimEnd().replace(SEASON_EPISODE_TAIL, "").replace(TRAILING_LANG_TAG, "").replace(TRAILING_RELEASE_TAG, "")
+            s = stripReleaseTag(s.trimEnd().replace(SEASON_EPISODE_TAIL, "").replace(TRAILING_LANG_TAG, ""))
         } while (s != prev)
         if (s.isBlank()) s = beforeTails
 
@@ -97,6 +97,16 @@ object TitleNormalizer {
 
         return Normalized(s, year)
     }
+
+    /**
+     * The release-tag pattern needs a dash, and most titles have none. This runs for every
+     * title a sync writes (through the catalogue parser), and every regex call is a trip into ICU, so
+     * the cheap scan decides first.
+     */
+    private fun stripReleaseTag(s: String): String =
+        if (s.indexOfAny(DASHES) < 0) s else s.replace(TRAILING_RELEASE_TAG, "")
+
+    private val DASHES = charArrayOf('-', '–', '—')
 
     /**
      * Strip one leading "PROVIDER - " prefix when it looks provider-ish. Only strips if the matched prefix
