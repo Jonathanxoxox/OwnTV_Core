@@ -186,6 +186,7 @@
     <string name="recording_group_missed">録り逃し</string>
     <string name="recording_record">録画</string>
     <string name="recording_stop">録画を停止</string>
+    <string name="recording_delete_message">このデバイスから録画とそのファイルを削除します。元に戻すことはできません。</string>
     <string name="recording_record_series">毎回録画する</string>
     <string name="recording_stop_series">毎回録画するのをやめる</string>
     <string name="recording_from_archive">見逃し配信から録画</string>
@@ -269,6 +270,15 @@
     <string name="sports_starting_soon">まもなく開始</string>
     <string name="sports_hint_match_page">試合ページ</string>
     <string name="sports_hint_follow_remind">フォロー · リマインダー</string>
+    <string name="sports_hint_day_matches">その日の試合</string>
+    <string name="sports_hint_day">日</string>
+    <string name="sports_hint_week">週</string>
+    <string name="sports_hint_show_score">スコアを表示</string>
+    <string name="sports_hint_back_to_day">日に戻る</string>
+    <string name="sports_hint_open_league">リーグを開く</string>
+    <string name="sports_hint_sport_chips">競技ボタン</string>
+    <string name="sports_hint_league_chips">リーグボタン</string>
+    <string name="sports_hint_follow_unfollow">フォロー · フォロー解除</string>
     <string name="sports_reminder_set">リマインダー</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g> まで</string>
     <string name="sports_set">第<xliff:g id="set">%1$d</xliff:g>セット</string>
@@ -372,7 +382,6 @@
     <string name="sports_next_month">次の月</string>
     <string name="sports_next">次：<xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">次</string>
-    <string name="sports_new_badge">新着</string>
     <string name="sports_no_table_series">順位表なし — シリーズは毎週変わります</string>
     <string name="sports_follow_league">リーグをフォロー</string>
     <string name="sports_unfollow_league">リーグのフォローを解除</string>

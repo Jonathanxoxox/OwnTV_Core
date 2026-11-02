@@ -195,6 +195,7 @@
     <string name="recording_group_missed">Gikk glipp av</string>
     <string name="recording_record">Ta opp</string>
     <string name="recording_stop">Stopp opptaket</string>
+    <string name="recording_delete_message">Fjerner opptaket og filen fra denne enheten. Dette kan ikke angres.</string>
     <string name="recording_record_series">Ta opp alle visninger</string>
     <string name="recording_stop_series">Slutt å ta opp alle visninger</string>
     <string name="recording_from_archive">Ta opp fra arkivet</string>
@@ -284,6 +285,15 @@
     <string name="sports_starting_soon">Starter snart</string>
     <string name="sports_hint_match_page">Kampside</string>
     <string name="sports_hint_follow_remind">Følg · Påminn</string>
+    <string name="sports_hint_day_matches">Dagens kamper</string>
+    <string name="sports_hint_day">Dag</string>
+    <string name="sports_hint_week">Uke</string>
+    <string name="sports_hint_show_score">Vis resultat</string>
+    <string name="sports_hint_back_to_day">Tilbake til dagen</string>
+    <string name="sports_hint_open_league">Åpne liga</string>
+    <string name="sports_hint_sport_chips">Sportsknapper</string>
+    <string name="sports_hint_league_chips">Ligaknapper</string>
+    <string name="sports_hint_follow_unfollow">Følg · Slutt å følge</string>
     <string name="sports_reminder_set">Påminnelse</string>
     <string name="sports_until">til <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. sett</string>
@@ -390,7 +400,6 @@
     <string name="sports_next_month">Neste måned</string>
     <string name="sports_next">Neste: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">Neste</string>
-    <string name="sports_new_badge">Ny</string>
     <string name="sports_no_table_series">Ingen tabell — seriene skifter hver uke</string>
     <string name="sports_follow_league">Følg liga</string>
     <string name="sports_unfollow_league">Slutt å følge liga</string>

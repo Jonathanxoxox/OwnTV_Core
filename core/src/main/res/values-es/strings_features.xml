@@ -204,6 +204,7 @@
     <string name="recording_group_missed">Perdida</string>
     <string name="recording_record">Grabar</string>
     <string name="recording_stop">Detener la grabación</string>
+    <string name="recording_delete_message">Elimina la grabación y su archivo de este dispositivo. No se puede deshacer.</string>
     <string name="recording_record_series">Grabar todas las emisiones</string>
     <string name="recording_stop_series">Dejar de grabar todas las emisiones</string>
     <string name="recording_from_archive">Grabar desde el archivo</string>
@@ -299,6 +300,15 @@
     <string name="sports_starting_soon">Empieza pronto</string>
     <string name="sports_hint_match_page">Página del partido</string>
     <string name="sports_hint_follow_remind">Seguir · Recordar</string>
+    <string name="sports_hint_day_matches">Partidos del día</string>
+    <string name="sports_hint_day">Día</string>
+    <string name="sports_hint_week">Semana</string>
+    <string name="sports_hint_show_score">Mostrar resultado</string>
+    <string name="sports_hint_back_to_day">Volver al día</string>
+    <string name="sports_hint_open_league">Abrir liga</string>
+    <string name="sports_hint_sport_chips">Botones de deportes</string>
+    <string name="sports_hint_league_chips">Botones de ligas</string>
+    <string name="sports_hint_follow_unfollow">Seguir · Dejar de seguir</string>
     <string name="sports_reminder_set">Recordatorio</string>
     <string name="sports_until">hasta las <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">Set <xliff:g id="set">%1$d</xliff:g></string>
@@ -408,7 +418,6 @@
     <string name="sports_next_month">Mes siguiente</string>
     <string name="sports_next">Siguiente: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">Siguiente</string>
-    <string name="sports_new_badge">Nuevo</string>
     <string name="sports_no_table_series">Sin clasificación — las series cambian cada semana</string>
     <string name="sports_follow_league">Seguir liga</string>
     <string name="sports_unfollow_league">Dejar de seguir la liga</string>

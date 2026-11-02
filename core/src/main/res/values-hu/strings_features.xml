@@ -195,6 +195,7 @@
     <string name="recording_group_missed">Kimaradt</string>
     <string name="recording_record">Felvétel</string>
     <string name="recording_stop">Felvétel leállítása</string>
+    <string name="recording_delete_message">Eltávolítja a felvételt és a fájlját erről az eszközről. Ez nem vonható vissza.</string>
     <string name="recording_record_series">Minden adás felvétele</string>
     <string name="recording_stop_series">Ne vegye fel minden adását</string>
     <string name="recording_from_archive">Felvétel az archívumból</string>
@@ -284,6 +285,15 @@
     <string name="sports_starting_soon">Hamarosan kezdődik</string>
     <string name="sports_hint_match_page">Meccsoldal</string>
     <string name="sports_hint_follow_remind">Követés · Emlékeztető</string>
+    <string name="sports_hint_day_matches">A nap meccsei</string>
+    <string name="sports_hint_day">Nap</string>
+    <string name="sports_hint_week">Hét</string>
+    <string name="sports_hint_show_score">Eredmény mutatása</string>
+    <string name="sports_hint_back_to_day">Vissza a naphoz</string>
+    <string name="sports_hint_open_league">Bajnokság megnyitása</string>
+    <string name="sports_hint_sport_chips">Sportág-gombok</string>
+    <string name="sports_hint_league_chips">Bajnokság-gombok</string>
+    <string name="sports_hint_follow_unfollow">Követés · Követés leállítása</string>
     <string name="sports_reminder_set">Emlékeztető</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g>-ig</string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. szett</string>
@@ -390,7 +400,6 @@
     <string name="sports_next_month">Következő hónap</string>
     <string name="sports_next">Következik: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">Következik</string>
-    <string name="sports_new_badge">Új</string>
     <string name="sports_no_table_series">Nincs tabella — a sorozatok hetente változnak</string>
     <string name="sports_follow_league">Bajnokság követése</string>
     <string name="sports_unfollow_league">Bajnokság követésének leállítása</string>

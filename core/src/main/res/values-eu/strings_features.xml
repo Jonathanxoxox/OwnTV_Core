@@ -195,6 +195,7 @@
     <string name="recording_group_missed">Galduak</string>
     <string name="recording_record">Grabatu</string>
     <string name="recording_stop">Gelditu grabazioa</string>
+    <string name="recording_delete_message">Grabazioa eta haren fitxategia gailu honetatik kentzen ditu. Ezin da desegin.</string>
     <string name="recording_record_series">Grabatu emankizun guztiak</string>
     <string name="recording_stop_series">Gelditu emankizun guztien grabazioa</string>
     <string name="recording_from_archive">Grabatu berrikustetik</string>
@@ -284,6 +285,15 @@
     <string name="sports_starting_soon">Laster hasiko da</string>
     <string name="sports_hint_match_page">Partidaren orria</string>
     <string name="sports_hint_follow_remind">Jarraitu · Gogorarazi</string>
+    <string name="sports_hint_day_matches">Eguneko partidak</string>
+    <string name="sports_hint_day">Eguna</string>
+    <string name="sports_hint_week">Astea</string>
+    <string name="sports_hint_show_score">Erakutsi emaitza</string>
+    <string name="sports_hint_back_to_day">Itzuli egunera</string>
+    <string name="sports_hint_open_league">Ireki liga</string>
+    <string name="sports_hint_sport_chips">Kirol-botoiak</string>
+    <string name="sports_hint_league_chips">Liga-botoiak</string>
+    <string name="sports_hint_follow_unfollow">Jarraitu · Utzi jarraitzeari</string>
     <string name="sports_reminder_set">Oroigarria</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g> arte</string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. seta</string>
@@ -390,7 +400,6 @@
     <string name="sports_next_month">Hurrengo hilabetea</string>
     <string name="sports_next">Hurrengoa: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">Hurrengoa</string>
-    <string name="sports_new_badge">Berria</string>
     <string name="sports_no_table_series">Sailkapenik ez — serieak astero aldatzen dira</string>
     <string name="sports_follow_league">Jarraitu ligari</string>
     <string name="sports_unfollow_league">Utzi ligari jarraitzeari</string>
