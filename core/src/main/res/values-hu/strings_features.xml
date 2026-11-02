@@ -65,6 +65,11 @@
     <string name="launcher_recent_live_description">Legutóbb nézett élő csatornák</string>
     <string name="launcher_movie_type">Film</string>
     <string name="launcher_episode_number"><xliff:g id="episode">%1$d</xliff:g>. rész</string>
+    <plurals name="home_library_loading">
+        <item quantity="one">A könyvtár betöltése · eddig <xliff:g id="count">%1$s</xliff:g> cím</item>
+        <item quantity="other">A könyvtár betöltése · eddig <xliff:g id="count">%1$s</xliff:g> cím</item>
+    </plurals>
+    <string name="home_library_loading_trending">A Most felkapott sor a könyvtár betöltése közben jelenik meg.</string>
     <string name="home_no_preview">Még nincs mit előnézetben megjeleníteni.</string>
     <string name="home_no_rows">Minden kezdőlapi sor el van rejtve.</string>
     <string name="home_enable_rows">A sorokat a Beállítások → Kezdőképernyő menüben kapcsolhatod vissza.</string>

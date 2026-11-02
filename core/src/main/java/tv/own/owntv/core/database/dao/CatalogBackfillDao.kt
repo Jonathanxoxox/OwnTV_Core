@@ -88,29 +88,18 @@ interface CatalogBackfillDao {
     suspend fun pendingCount(sourceId: Long, mediaType: MediaType): Int
 
     /**
-     * How many categories this *source* still owes pages, across every media type — the one-read
-     * "is the catalogue whole?" answer.
-     *
-     * Zero is the complete state, and it is also the answer for a source that has no plan at all:
-     * an Xtream or M3U playlist, or a Stalker source imported before the lazy add existed. Both are
-     * genuinely complete, so callers need no special case for them.
+     * Which of [sourceIds] still owe pages. Observes only this small table, so it re-runs on each
+     * cursor advance for the price of an indexed lookup — never a scan of the content tables.
      */
-    @Query("SELECT COUNT(*) FROM catalog_backfill WHERE sourceId = :sourceId AND done = 0")
-    suspend fun pendingCountForSource(sourceId: Long): Int
+    @Query("SELECT DISTINCT sourceId FROM catalog_backfill WHERE done = 0 AND sourceId IN (:sourceIds) ORDER BY sourceId")
+    fun observeFilling(sourceIds: List<Long>): Flow<List<Long>>
 
-    /**
-     * Titles stored so far for whichever of [sourceIds] are still filling in, or 0 when none is — what
-     * Home shows while a lazily-added catalogue drains, so a part-filled library reads as loading rather
-     * than broken. A count, not a percentage: the portal's per-category totals count a title once per
-     * category it is listed in, so a percentage against them stalls short of 100 on a whole catalogue.
-     */
+    /** Films and series stored so far for [sourceIds] — two counts on the `sourceId` index. */
     @Query(
-        "SELECT (SELECT COUNT(*) FROM movies WHERE sourceId IN (:sourceIds) AND sourceId IN " +
-            "(SELECT sourceId FROM catalog_backfill WHERE done = 0)) + " +
-            "(SELECT COUNT(*) FROM series WHERE sourceId IN (:sourceIds) AND sourceId IN " +
-            "(SELECT sourceId FROM catalog_backfill WHERE done = 0))",
+        "SELECT (SELECT COUNT(*) FROM movies WHERE sourceId IN (:sourceIds)) + " +
+            "(SELECT COUNT(*) FROM series WHERE sourceId IN (:sourceIds))",
     )
-    fun observeTitlesWhileFilling(sourceIds: List<Long>): Flow<Int>
+    suspend fun titlesStored(sourceIds: List<Long>): Int
 
     /** The phase's reconciliation target: the sum of the portal's own per-category totals. */
     @Query("SELECT COALESCE(SUM(totalItems), 0) FROM catalog_backfill WHERE sourceId = :sourceId AND mediaType = :mediaType")

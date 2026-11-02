@@ -63,6 +63,10 @@
     <string name="launcher_recent_live_description">최근 시청한 실시간 채널</string>
     <string name="launcher_movie_type">영화</string>
     <string name="launcher_episode_number">에피소드 <xliff:g id="episode">%1$d</xliff:g></string>
+    <plurals name="home_library_loading">
+        <item quantity="other">라이브러리를 불러오는 중 · 지금까지 <xliff:g id="count">%1$s</xliff:g>개</item>
+    </plurals>
+    <string name="home_library_loading_trending">지금 인기 급상승 항목은 라이브러리가 채워지는 대로 표시됩니다.</string>
     <string name="home_no_preview">아직 미리 볼 항목이 없습니다.</string>
     <string name="home_no_rows">홈 화면의 모든 행이 숨겨져 있습니다.</string>
     <string name="home_enable_rows">설정 → 홈 화면에서 행을 다시 켜세요.</string>

@@ -70,7 +70,8 @@ class CatalogBackfillWorker(
             // Paused for playback, or a category hit a page the portal would not serve. Either way
             // the plan still holds the position, so come back after a pause long enough that a
             // yielding drain is not re-woken into the same stream it just stepped away from. When the
-            // pause was for playback, [tv.own.owntv.core.sync.BackfillResume] brings this pass forward once the player closes.
+            // pause was for playback, [tv.own.owntv.core.sync.BackfillResume] brings this pass
+            // forward once the player closes.
             scheduler.enqueueNextBackfillPass(sourceId, RETRY_DELAY_MINUTES)
             return Result.success()
         }
@@ -105,9 +106,7 @@ class CatalogBackfillWorker(
         runCatching { importFinalizer.ensureContentIndexes() }
             .onFailure { Log.w(TAG, "post-backfill index refresh failed sourceId=$sourceId", it) }
 
-        // Trending is a snapshot, and a snapshot of a part-filled catalogue sits behind a
-        // multi-day timer. CatalogSyncWorker now declines to take one while a drain is outstanding,
-        // which makes this the only place it can be taken for a lazily-added source.
+        // The last of the per-pass re-matches: the row now matches against the whole catalogue.
         runCatching { scheduler.enqueueTrendingRefresh(sourceId) }
             .onFailure { Log.w(TAG, "post-backfill trending enqueue failed sourceId=$sourceId", it) }
 
