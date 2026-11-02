@@ -195,6 +195,7 @@
     <string name="recording_group_missed">Gik glip af</string>
     <string name="recording_record">Optag</string>
     <string name="recording_stop">Stop optagelsen</string>
+    <string name="recording_delete_message">Fjerner optagelsen og dens fil fra denne enhed. Det kan ikke fortrydes.</string>
     <string name="recording_record_series">Optag alle visninger</string>
     <string name="recording_stop_series">Stop med at optage alle visninger</string>
     <string name="recording_from_archive">Optag fra arkivet</string>
@@ -284,6 +285,15 @@
     <string name="sports_starting_soon">Starter snart</string>
     <string name="sports_hint_match_page">Kampside</string>
     <string name="sports_hint_follow_remind">Følg · Påmind</string>
+    <string name="sports_hint_day_matches">Dagens kampe</string>
+    <string name="sports_hint_day">Dag</string>
+    <string name="sports_hint_week">Uge</string>
+    <string name="sports_hint_show_score">Vis resultat</string>
+    <string name="sports_hint_back_to_day">Tilbage til dagen</string>
+    <string name="sports_hint_open_league">Åbn liga</string>
+    <string name="sports_hint_sport_chips">Sportsknapper</string>
+    <string name="sports_hint_league_chips">Ligaknapper</string>
+    <string name="sports_hint_follow_unfollow">Følg · Stop med at følge</string>
     <string name="sports_reminder_set">Påmindelse</string>
     <string name="sports_until">til <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. sæt</string>
@@ -390,7 +400,6 @@
     <string name="sports_next_month">Næste måned</string>
     <string name="sports_next">Næste: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">Næste</string>
-    <string name="sports_new_badge">Ny</string>
     <string name="sports_no_table_series">Ingen tabel — serierne skifter hver uge</string>
     <string name="sports_follow_league">Følg liga</string>
     <string name="sports_unfollow_league">Stop med at følge liga</string>

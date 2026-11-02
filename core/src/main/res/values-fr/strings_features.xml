@@ -204,6 +204,7 @@
     <string name="recording_group_missed">Manqué</string>
     <string name="recording_record">Enregistrer</string>
     <string name="recording_stop">Arrêter l’enregistrement</string>
+    <string name="recording_delete_message">Supprime l\'enregistrement et son fichier de cet appareil. Cette action est irréversible.</string>
     <string name="recording_record_series">Enregistrer chaque diffusion</string>
     <string name="recording_stop_series">Ne plus enregistrer chaque diffusion</string>
     <string name="recording_from_archive">Enregistrer depuis le replay</string>
@@ -299,6 +300,15 @@
     <string name="sports_starting_soon">Bientôt</string>
     <string name="sports_hint_match_page">Page du match</string>
     <string name="sports_hint_follow_remind">Suivre · Rappel</string>
+    <string name="sports_hint_day_matches">Matchs du jour</string>
+    <string name="sports_hint_day">Jour</string>
+    <string name="sports_hint_week">Semaine</string>
+    <string name="sports_hint_show_score">Afficher le score</string>
+    <string name="sports_hint_back_to_day">Retour au jour</string>
+    <string name="sports_hint_open_league">Ouvrir le championnat</string>
+    <string name="sports_hint_sport_chips">Boutons de sport</string>
+    <string name="sports_hint_league_chips">Boutons de championnat</string>
+    <string name="sports_hint_follow_unfollow">Suivre · Ne plus suivre</string>
     <string name="sports_reminder_set">Rappel</string>
     <string name="sports_until">jusqu’à <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">Set <xliff:g id="set">%1$d</xliff:g></string>
@@ -408,7 +418,6 @@
     <string name="sports_next_month">Mois suivant</string>
     <string name="sports_next">À suivre : <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">À suivre</string>
-    <string name="sports_new_badge">Nouveau</string>
     <string name="sports_no_table_series">Pas de classement — les séries changent chaque semaine</string>
     <string name="sports_follow_league">Suivre le championnat</string>
     <string name="sports_unfollow_league">Ne plus suivre le championnat</string>

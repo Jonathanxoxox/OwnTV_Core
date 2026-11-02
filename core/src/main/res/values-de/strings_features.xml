@@ -195,6 +195,7 @@
     <string name="recording_group_missed">Verpasst</string>
     <string name="recording_record">Aufnehmen</string>
     <string name="recording_stop">Aufnahme beenden</string>
+    <string name="recording_delete_message">Entfernt die Aufnahme und ihre Datei von diesem Gerät. Das lässt sich nicht rückgängig machen.</string>
     <string name="recording_record_series">Jede Ausstrahlung aufnehmen</string>
     <string name="recording_stop_series">Nicht mehr jede Ausstrahlung aufnehmen</string>
     <string name="recording_from_archive">Aus der Mediathek aufnehmen</string>
@@ -284,6 +285,15 @@
     <string name="sports_starting_soon">Gleich geht’s los</string>
     <string name="sports_hint_match_page">Spielseite</string>
     <string name="sports_hint_follow_remind">Folgen · Erinnern</string>
+    <string name="sports_hint_day_matches">Spiele des Tages</string>
+    <string name="sports_hint_day">Tag</string>
+    <string name="sports_hint_week">Woche</string>
+    <string name="sports_hint_show_score">Ergebnis zeigen</string>
+    <string name="sports_hint_back_to_day">Zurück zum Tag</string>
+    <string name="sports_hint_open_league">Liga öffnen</string>
+    <string name="sports_hint_sport_chips">Sport-Schaltflächen</string>
+    <string name="sports_hint_league_chips">Liga-Schaltflächen</string>
+    <string name="sports_hint_follow_unfollow">Folgen · Nicht mehr folgen</string>
     <string name="sports_reminder_set">Erinnerung</string>
     <string name="sports_until">bis <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. Satz</string>
@@ -390,7 +400,6 @@
     <string name="sports_next_month">Nächster Monat</string>
     <string name="sports_next">Als Nächstes: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">Als Nächstes</string>
-    <string name="sports_new_badge">Neu</string>
     <string name="sports_no_table_series">Keine Tabelle — die Serien wechseln jede Woche</string>
     <string name="sports_follow_league">Liga folgen</string>
     <string name="sports_unfollow_league">Liga nicht mehr folgen</string>

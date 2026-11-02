@@ -195,6 +195,7 @@
     <string name="recording_group_missed">छूट गया</string>
     <string name="recording_record">रिकॉर्ड करें</string>
     <string name="recording_stop">रिकॉर्डिंग रोकें</string>
+    <string name="recording_delete_message">इस डिवाइस से रिकॉर्डिंग और उसकी फ़ाइल हटाता है। इसे पूर्ववत नहीं किया जा सकता।</string>
     <string name="recording_record_series">हर प्रसारण रिकॉर्ड करें</string>
     <string name="recording_stop_series">हर प्रसारण रिकॉर्ड करना बंद करें</string>
     <string name="recording_from_archive">आर्काइव से रिकॉर्ड करें</string>
@@ -284,6 +285,15 @@
     <string name="sports_starting_soon">जल्द शुरू</string>
     <string name="sports_hint_match_page">मैच पेज</string>
     <string name="sports_hint_follow_remind">फ़ॉलो करें · याद दिलाएँ</string>
+    <string name="sports_hint_day_matches">दिन के मैच</string>
+    <string name="sports_hint_day">दिन</string>
+    <string name="sports_hint_week">सप्ताह</string>
+    <string name="sports_hint_show_score">स्कोर दिखाएँ</string>
+    <string name="sports_hint_back_to_day">दिन पर वापस</string>
+    <string name="sports_hint_open_league">लीग खोलें</string>
+    <string name="sports_hint_sport_chips">खेल बटन</string>
+    <string name="sports_hint_league_chips">लीग बटन</string>
+    <string name="sports_hint_follow_unfollow">फ़ॉलो करें · अनफ़ॉलो करें</string>
     <string name="sports_reminder_set">रिमाइंडर</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g> तक</string>
     <string name="sports_set">सेट <xliff:g id="set">%1$d</xliff:g></string>
@@ -390,7 +400,6 @@
     <string name="sports_next_month">अगला महीना</string>
     <string name="sports_next">अगला: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">अगला</string>
-    <string name="sports_new_badge">नया</string>
     <string name="sports_no_table_series">कोई तालिका नहीं — सीरीज़ हर हफ़्ते बदलती हैं</string>
     <string name="sports_follow_league">लीग फ़ॉलो करें</string>
     <string name="sports_unfollow_league">लीग अनफ़ॉलो करें</string>

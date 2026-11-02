@@ -195,6 +195,7 @@
     <string name="recording_group_missed">Kaçırıldı</string>
     <string name="recording_record">Kaydet</string>
     <string name="recording_stop">Kaydı durdur</string>
+    <string name="recording_delete_message">Kaydı ve dosyasını bu cihazdan kaldırır. Bu işlem geri alınamaz.</string>
     <string name="recording_record_series">Her yayını kaydet</string>
     <string name="recording_stop_series">Her yayını kaydetmeyi bırak</string>
     <string name="recording_from_archive">Arşivden kaydet</string>
@@ -284,6 +285,15 @@
     <string name="sports_starting_soon">Birazdan başlıyor</string>
     <string name="sports_hint_match_page">Maç sayfası</string>
     <string name="sports_hint_follow_remind">Takip et · Hatırlat</string>
+    <string name="sports_hint_day_matches">Günün maçları</string>
+    <string name="sports_hint_day">Gün</string>
+    <string name="sports_hint_week">Hafta</string>
+    <string name="sports_hint_show_score">Skoru göster</string>
+    <string name="sports_hint_back_to_day">Güne dön</string>
+    <string name="sports_hint_open_league">Ligi aç</string>
+    <string name="sports_hint_sport_chips">Spor düğmeleri</string>
+    <string name="sports_hint_league_chips">Lig düğmeleri</string>
+    <string name="sports_hint_follow_unfollow">Takip et · Takipten çık</string>
     <string name="sports_reminder_set">Hatırlatıcı</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g>’e kadar</string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. set</string>
@@ -390,7 +400,6 @@
     <string name="sports_next_month">Sonraki ay</string>
     <string name="sports_next">Sıradaki: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">Sıradaki</string>
-    <string name="sports_new_badge">Yeni</string>
     <string name="sports_no_table_series">Puan tablosu yok — seriler her hafta değişir</string>
     <string name="sports_follow_league">Ligi takip et</string>
     <string name="sports_unfollow_league">Ligi takipten çık</string>

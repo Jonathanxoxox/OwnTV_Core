@@ -204,6 +204,7 @@
     <string name="recording_group_missed">Persa</string>
     <string name="recording_record">Registra</string>
     <string name="recording_stop">Interrompi la registrazione</string>
+    <string name="recording_delete_message">Rimuove la registrazione e il relativo file da questo dispositivo. L\'operazione non può essere annullata.</string>
     <string name="recording_record_series">Registra ogni trasmissione</string>
     <string name="recording_stop_series">Non registrare più ogni trasmissione</string>
     <string name="recording_from_archive">Registra dall’archivio</string>
@@ -299,6 +300,15 @@
     <string name="sports_starting_soon">Tra poco</string>
     <string name="sports_hint_match_page">Pagina della partita</string>
     <string name="sports_hint_follow_remind">Segui · Promemoria</string>
+    <string name="sports_hint_day_matches">Partite del giorno</string>
+    <string name="sports_hint_day">Giorno</string>
+    <string name="sports_hint_week">Settimana</string>
+    <string name="sports_hint_show_score">Mostra risultato</string>
+    <string name="sports_hint_back_to_day">Torna al giorno</string>
+    <string name="sports_hint_open_league">Apri campionato</string>
+    <string name="sports_hint_sport_chips">Pulsanti sport</string>
+    <string name="sports_hint_league_chips">Pulsanti campionati</string>
+    <string name="sports_hint_follow_unfollow">Segui · Non seguire più</string>
     <string name="sports_reminder_set">Promemoria</string>
     <string name="sports_until">fino alle <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">Set <xliff:g id="set">%1$d</xliff:g></string>
@@ -408,7 +418,6 @@
     <string name="sports_next_month">Mese successivo</string>
     <string name="sports_next">A seguire: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">A seguire</string>
-    <string name="sports_new_badge">Nuovo</string>
     <string name="sports_no_table_series">Nessuna classifica — le serie cambiano ogni settimana</string>
     <string name="sports_follow_league">Segui il campionato</string>
     <string name="sports_unfollow_league">Non seguire più il campionato</string>

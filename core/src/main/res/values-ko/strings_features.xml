@@ -186,6 +186,7 @@
     <string name="recording_group_missed">놓침</string>
     <string name="recording_record">녹화</string>
     <string name="recording_stop">녹화 중지</string>
+    <string name="recording_delete_message">이 기기에서 녹화와 해당 파일을 제거합니다. 되돌릴 수 없습니다.</string>
     <string name="recording_record_series">모든 방송 녹화</string>
     <string name="recording_stop_series">모든 방송 녹화 중지</string>
     <string name="recording_from_archive">다시보기에서 녹화</string>
@@ -269,6 +270,15 @@
     <string name="sports_starting_soon">곧 시작</string>
     <string name="sports_hint_match_page">경기 페이지</string>
     <string name="sports_hint_follow_remind">팔로우 · 알림</string>
+    <string name="sports_hint_day_matches">그날 경기</string>
+    <string name="sports_hint_day">날짜</string>
+    <string name="sports_hint_week">주</string>
+    <string name="sports_hint_show_score">점수 보기</string>
+    <string name="sports_hint_back_to_day">날짜로 돌아가기</string>
+    <string name="sports_hint_open_league">리그 열기</string>
+    <string name="sports_hint_sport_chips">종목 버튼</string>
+    <string name="sports_hint_league_chips">리그 버튼</string>
+    <string name="sports_hint_follow_unfollow">팔로우 · 팔로우 취소</string>
     <string name="sports_reminder_set">알림</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g>까지</string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>세트</string>
@@ -372,7 +382,6 @@
     <string name="sports_next_month">다음 달</string>
     <string name="sports_next">다음: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">다음</string>
-    <string name="sports_new_badge">신규</string>
     <string name="sports_no_table_series">순위표 없음 — 시리즈가 매주 바뀝니다</string>
     <string name="sports_follow_league">리그 팔로우</string>
     <string name="sports_unfollow_league">리그 팔로우 취소</string>
