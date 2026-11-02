@@ -315,6 +315,15 @@
     <string name="sports_starting_soon">Скоро начало</string>
     <string name="sports_hint_match_page">Страница матча</string>
     <string name="sports_hint_follow_remind">Следить · Напомнить</string>
+    <string name="sports_hint_day_matches">Матчи дня</string>
+    <string name="sports_hint_day">День</string>
+    <string name="sports_hint_week">Неделя</string>
+    <string name="sports_hint_show_score">Показать счёт</string>
+    <string name="sports_hint_back_to_day">Назад ко дню</string>
+    <string name="sports_hint_open_league">Открыть лигу</string>
+    <string name="sports_hint_sport_chips">Кнопки видов спорта</string>
+    <string name="sports_hint_league_chips">Кнопки лиг</string>
+    <string name="sports_hint_follow_unfollow">Следить · Не следить</string>
     <string name="sports_reminder_set">Напоминание</string>
     <string name="sports_until">до <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">Сет <xliff:g id="set">%1$d</xliff:g></string>

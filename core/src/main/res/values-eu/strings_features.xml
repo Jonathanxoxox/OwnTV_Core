@@ -285,6 +285,15 @@
     <string name="sports_starting_soon">Laster hasiko da</string>
     <string name="sports_hint_match_page">Partidaren orria</string>
     <string name="sports_hint_follow_remind">Jarraitu · Gogorarazi</string>
+    <string name="sports_hint_day_matches">Eguneko partidak</string>
+    <string name="sports_hint_day">Eguna</string>
+    <string name="sports_hint_week">Astea</string>
+    <string name="sports_hint_show_score">Erakutsi emaitza</string>
+    <string name="sports_hint_back_to_day">Itzuli egunera</string>
+    <string name="sports_hint_open_league">Ireki liga</string>
+    <string name="sports_hint_sport_chips">Kirol-botoiak</string>
+    <string name="sports_hint_league_chips">Liga-botoiak</string>
+    <string name="sports_hint_follow_unfollow">Jarraitu · Utzi jarraitzeari</string>
     <string name="sports_reminder_set">Oroigarria</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g> arte</string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. seta</string>

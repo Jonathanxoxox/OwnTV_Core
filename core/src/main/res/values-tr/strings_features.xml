@@ -285,6 +285,15 @@
     <string name="sports_starting_soon">Birazdan başlıyor</string>
     <string name="sports_hint_match_page">Maç sayfası</string>
     <string name="sports_hint_follow_remind">Takip et · Hatırlat</string>
+    <string name="sports_hint_day_matches">Günün maçları</string>
+    <string name="sports_hint_day">Gün</string>
+    <string name="sports_hint_week">Hafta</string>
+    <string name="sports_hint_show_score">Skoru göster</string>
+    <string name="sports_hint_back_to_day">Güne dön</string>
+    <string name="sports_hint_open_league">Ligi aç</string>
+    <string name="sports_hint_sport_chips">Spor düğmeleri</string>
+    <string name="sports_hint_league_chips">Lig düğmeleri</string>
+    <string name="sports_hint_follow_unfollow">Takip et · Takipten çık</string>
     <string name="sports_reminder_set">Hatırlatıcı</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g>’e kadar</string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. set</string>

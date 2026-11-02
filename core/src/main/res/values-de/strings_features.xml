@@ -285,6 +285,15 @@
     <string name="sports_starting_soon">Gleich geht’s los</string>
     <string name="sports_hint_match_page">Spielseite</string>
     <string name="sports_hint_follow_remind">Folgen · Erinnern</string>
+    <string name="sports_hint_day_matches">Spiele des Tages</string>
+    <string name="sports_hint_day">Tag</string>
+    <string name="sports_hint_week">Woche</string>
+    <string name="sports_hint_show_score">Ergebnis zeigen</string>
+    <string name="sports_hint_back_to_day">Zurück zum Tag</string>
+    <string name="sports_hint_open_league">Liga öffnen</string>
+    <string name="sports_hint_sport_chips">Sport-Schaltflächen</string>
+    <string name="sports_hint_league_chips">Liga-Schaltflächen</string>
+    <string name="sports_hint_follow_unfollow">Folgen · Nicht mehr folgen</string>
     <string name="sports_reminder_set">Erinnerung</string>
     <string name="sports_until">bis <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. Satz</string>

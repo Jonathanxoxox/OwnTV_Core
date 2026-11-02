@@ -270,6 +270,15 @@
     <string name="sports_starting_soon">곧 시작</string>
     <string name="sports_hint_match_page">경기 페이지</string>
     <string name="sports_hint_follow_remind">팔로우 · 알림</string>
+    <string name="sports_hint_day_matches">그날 경기</string>
+    <string name="sports_hint_day">날짜</string>
+    <string name="sports_hint_week">주</string>
+    <string name="sports_hint_show_score">점수 보기</string>
+    <string name="sports_hint_back_to_day">날짜로 돌아가기</string>
+    <string name="sports_hint_open_league">리그 열기</string>
+    <string name="sports_hint_sport_chips">종목 버튼</string>
+    <string name="sports_hint_league_chips">리그 버튼</string>
+    <string name="sports_hint_follow_unfollow">팔로우 · 팔로우 취소</string>
     <string name="sports_reminder_set">알림</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g>까지</string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>세트</string>
