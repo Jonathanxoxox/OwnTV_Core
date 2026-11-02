@@ -400,7 +400,6 @@
     <string name="sports_next_month">അടുത്ത മാസം</string>
     <string name="sports_next">അടുത്തത്: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">അടുത്തത്</string>
-    <string name="sports_new_badge">പുതിയത്</string>
     <string name="sports_no_table_series">പട്ടികയില്ല — സീരീസുകൾ ഓരോ ആഴ്ചയും മാറുന്നു</string>
     <string name="sports_follow_league">ലീഗ് പിന്തുടരുക</string>
     <string name="sports_unfollow_league">ലീഗ് പിന്തുടരുന്നത് നിർത്തുക</string>

@@ -436,7 +436,6 @@
     <string name="sports_next_month">Další měsíc</string>
     <string name="sports_next">Další: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">Další</string>
-    <string name="sports_new_badge">Nové</string>
     <string name="sports_no_table_series">Bez tabulky — série se mění každý týden</string>
     <string name="sports_follow_league">Sledovat soutěž</string>
     <string name="sports_unfollow_league">Přestat sledovat soutěž</string>
