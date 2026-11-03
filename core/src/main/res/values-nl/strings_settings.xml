@@ -234,8 +234,10 @@
     <string name="settings_pip_on_leave">Beeld-in-beeld bij het verlaten van de app</string>
     <string name="settings_pip_on_leave_description">De video speelt verder in een klein venster als je op Home drukt</string>
     <string name="settings_prefer_sdr_description">Als een stream zowel een SDR- als een HDR-beeld biedt, wordt het SDR-beeld afgespeeld: voor een tv waarop HDR flets of te donker oogt. Een stream met alleen HDR blijft HDR. Alleen ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Automatische beeldfrequentie</string>
-    <string name="settings_auto_frame_rate_description">Stem in volledig scherm de vernieuwingsfrequentie van de tv af op de video (24/25/50/60 fps), voor live-tv en VOD, en herstel deze bij afsluiten. Schakel dit uit als je tv of ontvanger bij elke zenderwissel de HDMI-verbinding hoorbaar opnieuw opbouwt.</string>
+    <string name="settings_auto_frame_rate_films">Automatische beeldfrequentie voor films en series</string>
+    <string name="settings_auto_frame_rate_films_description">Stem in volledig scherm de vernieuwingsfrequentie van de tv af op de film of aflevering (24/25/50/60 fps), en herstel deze bij afsluiten.</string>
+    <string name="settings_auto_frame_rate_live">Automatische beeldfrequentie voor live-tv</string>
+    <string name="settings_auto_frame_rate_live_description">Stem in volledig scherm de vernieuwingsfrequentie van de tv af op de zender (25/50/60 fps), en herstel deze bij afsluiten. Schakel dit uit als je tv of ontvanger bij elke zenderwissel de HDMI-verbinding hoorbaar opnieuw opbouwt.</string>
     <string name="settings_afr_pause">Pauzeren tijdens de beeldwissel</string>
     <string name="settings_afr_pause_description">Alleen films. Als de tv opnieuw moet synchroniseren op een nieuwe beeldmodus, wacht de film zo lang, zodat het begin niet in het zwarte beeld verloren gaat. Een naadloze wissel pauzeert nooit.</string>
     <string name="settings_afr_resolution">Resolutie aanpassen</string>
@@ -718,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">Ook verwijderen</string>
     <string name="settings_sources_clean_names_custom_hint">Woorden gescheiden door ; bijv. VIP; Backup</string>
     <string name="settings_sources_retest">Opnieuw testen</string>
+    <string name="settings_sources_ignore_limit">Verbindingslimiet negeren</string>
+    <string name="settings_sources_ignore_limit_on">Verbindingslimiet genegeerd: Multiview en opnames kunnen meer streams openen dan deze playlist opgeeft. Een stream die de provider weigert, meldt dat nog steeds.</string>
     <string name="settings_sources_probe_title">Deze afspeellijst testen?</string>
     <string name="settings_sources_probe_warning">Veel providers zeggen nooit hoeveel kanalen je tegelijk mag kijken, dus OwnTV zoekt het uit door er een paar te openen en te kijken welke blijven werken. Alles wat nu speelt, stopt en dit kan tot twee minuten duren.</string>
     <string name="settings_sources_probe_running">Bezig met nagaan hoeveel kanalen deze provider toestaat… (<xliff:g id="current">%1$d</xliff:g> van <xliff:g id="total">%2$d</xliff:g>)</string>

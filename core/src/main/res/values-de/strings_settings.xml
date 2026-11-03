@@ -234,8 +234,10 @@
     <string name="settings_pip_on_leave">Bild-im-Bild beim Verlassen der App</string>
     <string name="settings_pip_on_leave_description">Das Video läuft in einem kleinen Fenster weiter, wenn Sie Home drücken</string>
     <string name="settings_prefer_sdr_description">Bietet ein Stream ein SDR- und ein HDR-Bild, wird das SDR-Bild abgespielt: für Fernseher, auf denen HDR blass oder zu dunkel aussieht. Ein Stream nur mit HDR bleibt HDR. Nur ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Automatische Bildrate</string>
-    <string name="settings_auto_frame_rate_description">Die Bildwiederholfrequenz des Fernsehers im Vollbild für Live-TV und VOD an das Video anpassen (24/25/50/60 Bilder/s) und beim Beenden wiederherstellen. Deaktivieren Sie dies, wenn Ihr Fernseher oder Receiver bei jedem Senderwechsel geräuschvoll einen neuen HDMI-Handshake durchführt.</string>
+    <string name="settings_auto_frame_rate_films">Automatische Bildrate für Filme und Serien</string>
+    <string name="settings_auto_frame_rate_films_description">Die Bildwiederholfrequenz des Fernsehers im Vollbild an den Film oder die Folge anpassen (24/25/50/60 Bilder/s) und beim Beenden wiederherstellen.</string>
+    <string name="settings_auto_frame_rate_live">Automatische Bildrate für Live-TV</string>
+    <string name="settings_auto_frame_rate_live_description">Die Bildwiederholfrequenz des Fernsehers im Vollbild an den Sender anpassen (25/50/60 Bilder/s) und beim Beenden wiederherstellen. Deaktivieren Sie dies, wenn Ihr Fernseher oder Receiver bei jedem Senderwechsel geräuschvoll einen neuen HDMI-Handshake durchführt.</string>
     <string name="settings_afr_pause">Pause beim Umschalten der Anzeige</string>
     <string name="settings_afr_pause_description">Nur Filme. Muss sich der Fernseher auf einen neuen Anzeigemodus neu synchronisieren, wartet der Film so lange, damit sein Anfang nicht im schwarzen Bild verloren geht. Ein nahtloser Wechsel pausiert nie.</string>
     <string name="settings_afr_resolution">Auflösung anpassen</string>
@@ -718,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">Außerdem entfernen</string>
     <string name="settings_sources_clean_names_custom_hint">Wörter durch ; getrennt, z. B. VIP; Backup</string>
     <string name="settings_sources_retest">Erneut testen</string>
+    <string name="settings_sources_ignore_limit">Verbindungslimit ignorieren</string>
+    <string name="settings_sources_ignore_limit_on">Verbindungslimit wird ignoriert: Multiview und Aufnahmen können mehr Streams öffnen, als diese Playlist angibt. Ein Stream, den der Anbieter ablehnt, meldet das weiterhin.</string>
     <string name="settings_sources_probe_title">Diese Playlist testen?</string>
     <string name="settings_sources_probe_warning">Viele Anbieter verraten nie, wie viele Kanäle Sie gleichzeitig sehen dürfen. OwnTV findet es deshalb heraus, indem es einige öffnet und beobachtet, welche bestehen bleiben. Alles, was gerade läuft, wird beendet, und das kann bis zu zwei Minuten dauern.</string>
     <string name="settings_sources_probe_running">Es wird geprüft, wie viele Kanäle dieser Anbieter erlaubt… (<xliff:g id="current">%1$d</xliff:g> von <xliff:g id="total">%2$d</xliff:g>)</string>

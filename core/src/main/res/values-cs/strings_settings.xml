@@ -236,8 +236,10 @@
     <string name="settings_pip_on_leave">Obraz v obraze při opuštění aplikace</string>
     <string name="settings_pip_on_leave_description">Po stisknutí Domů hraje video dál v malém okně</string>
     <string name="settings_prefer_sdr_description">Když stream nabízí obraz SDR i HDR, přehraje se SDR: pro televizor, na kterém HDR vypadá vybledle nebo příliš tmavě. Stream jen s HDR zůstane v HDR. Pouze ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Automatická snímková frekvence</string>
-    <string name="settings_auto_frame_rate_description">Při zobrazení na celé obrazovce přizpůsobit obnovovací frekvenci televizoru videu (24/25/50/60 sn./s) pro živé vysílání i VOD a při ukončení ji obnovit. Vypněte, pokud televizor nebo přijímač při každé změně kanálu rušivě znovu navazuje spojení HDMI.</string>
+    <string name="settings_auto_frame_rate_films">Automatická snímková frekvence pro filmy a seriály</string>
+    <string name="settings_auto_frame_rate_films_description">Při zobrazení na celé obrazovce přizpůsobit obnovovací frekvenci televizoru filmu nebo epizodě (24/25/50/60 sn./s) a při ukončení ji obnovit.</string>
+    <string name="settings_auto_frame_rate_live">Automatická snímková frekvence pro živé vysílání</string>
+    <string name="settings_auto_frame_rate_live_description">Při zobrazení na celé obrazovce přizpůsobit obnovovací frekvenci televizoru kanálu (25/50/60 sn./s) a při ukončení ji obnovit. Vypněte, pokud televizor nebo přijímač při každé změně kanálu rušivě znovu navazuje spojení HDMI.</string>
     <string name="settings_afr_pause">Pozastavit při přepnutí obrazu</string>
     <string name="settings_afr_pause_description">Jen filmy. Když se televizor musí znovu synchronizovat na nový režim obrazu, film tak dlouho počká, aby se jeho začátek neztratil v černé obrazovce. Plynulé přepnutí nikdy nepozastaví.</string>
     <string name="settings_afr_resolution">Přizpůsobit rozlišení</string>
@@ -728,6 +730,8 @@
     <string name="settings_sources_clean_names_custom">Odstranit také</string>
     <string name="settings_sources_clean_names_custom_hint">Slova oddělená ; např. VIP; Backup</string>
     <string name="settings_sources_retest">Otestovat znovu</string>
+    <string name="settings_sources_ignore_limit">Ignorovat limit připojení</string>
+    <string name="settings_sources_ignore_limit_on">Limit připojení se ignoruje: Multiview a nahrávání mohou otevřít více streamů, než tento playlist uvádí. Stream, který poskytovatel odmítne, to stále oznámí.</string>
     <string name="settings_sources_probe_title">Otestovat tento seznam?</string>
     <string name="settings_sources_probe_warning">Mnozí poskytovatelé nikdy neuvedou, kolik kanálů můžete sledovat najednou, a tak to OwnTV zjistí tím, že jich několik otevře a sleduje, které vydrží. Vše, co právě běží, se zastaví a může to trvat až dvě minuty.</string>
     <string name="settings_sources_probe_running">Zjišťuje se, kolik kanálů tento poskytovatel dovolí… (<xliff:g id="current">%1$d</xliff:g> z <xliff:g id="total">%2$d</xliff:g>)</string>

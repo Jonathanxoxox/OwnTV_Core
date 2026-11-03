@@ -234,8 +234,10 @@
     <string name="settings_pip_on_leave">অ্যাপ ছাড়লে পিকচার-ইন-পিকচার</string>
     <string name="settings_pip_on_leave_description">হোম চাপলে ভিডিওটি একটি ছোট উইন্ডোতে চলতে থাকে</string>
     <string name="settings_prefer_sdr_description">কোনো স্ট্রিমে SDR ও HDR দুই ধরনের ছবি থাকলে SDR ছবিটি চালানো হয়: যে টিভিতে HDR ফ্যাকাশে বা খুব অন্ধকার দেখায় তার জন্য। শুধু HDR থাকা স্ট্রিম HDR-ই থাকে। শুধু ExoPlayer-এ।</string>
-    <string name="settings_auto_frame_rate">স্বয়ংক্রিয় ফ্রেম রেট</string>
-    <string name="settings_auto_frame_rate_description">পূর্ণ পর্দায় লাইভ টিভি ও VOD-এর জন্য ভিডিওর সঙ্গে TV-এর রিফ্রেশ রেট (24/25/50/60 fps) মিলিয়ে নিন এবং বের হলে আগের অবস্থায় ফিরিয়ে দিন। প্রতিবার চ্যানেল বদলালে আপনার TV বা রিসিভার HDMI-তে শব্দসহ আবার হ্যান্ডশেক করলে এটি বন্ধ করুন।</string>
+    <string name="settings_auto_frame_rate_films">সিনেমা ও সিরিজের জন্য স্বয়ংক্রিয় ফ্রেম রেট</string>
+    <string name="settings_auto_frame_rate_films_description">পূর্ণ পর্দায় সিনেমা বা পর্বের সঙ্গে TV-এর রিফ্রেশ রেট (24/25/50/60 fps) মিলিয়ে নিন এবং বের হলে আগের অবস্থায় ফিরিয়ে দিন।</string>
+    <string name="settings_auto_frame_rate_live">লাইভ টিভির জন্য স্বয়ংক্রিয় ফ্রেম রেট</string>
+    <string name="settings_auto_frame_rate_live_description">পূর্ণ পর্দায় চ্যানেলের সঙ্গে TV-এর রিফ্রেশ রেট (25/50/60 fps) মিলিয়ে নিন এবং বের হলে আগের অবস্থায় ফিরিয়ে দিন। প্রতিবার চ্যানেল বদলালে আপনার TV বা রিসিভার HDMI-তে শব্দসহ আবার হ্যান্ডশেক করলে এটি বন্ধ করুন।</string>
     <string name="settings_afr_pause">ডিসপ্লে বদলের সময় বিরতি</string>
     <string name="settings_afr_pause_description">শুধু সিনেমা। টিভিকে নতুন ডিসপ্লে মোডে আবার সিঙ্ক করতে হলে, সিনেমা এতক্ষণ অপেক্ষা করে যাতে শুরুটা কালো পর্দায় হারিয়ে না যায়। মসৃণ বদলে কখনও বিরতি হয় না।</string>
     <string name="settings_afr_resolution">রেজোলিউশন মেলান</string>
@@ -718,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">এগুলোও সরান</string>
     <string name="settings_sources_clean_names_custom_hint">; দিয়ে আলাদা শব্দ, যেমন VIP; Backup</string>
     <string name="settings_sources_retest">আবার পরীক্ষা করুন</string>
+    <string name="settings_sources_ignore_limit">সংযোগের সীমা উপেক্ষা করুন</string>
+    <string name="settings_sources_ignore_limit_on">সংযোগের সীমা উপেক্ষা করা হচ্ছে: মাল্টিভিউ ও রেকর্ডিং এই প্লেলিস্টের জানানো সংখ্যার চেয়ে বেশি স্ট্রিম খুলতে পারে। প্রদানকারী কোনো স্ট্রিম ফিরিয়ে দিলে তা আগের মতোই জানানো হবে।</string>
     <string name="settings_sources_probe_title">এই প্লেলিস্ট পরীক্ষা করবেন?</string>
     <string name="settings_sources_probe_warning">অনেক সরবরাহকারী কখনোই জানায় না আপনি একসঙ্গে কতগুলি চ্যানেল দেখতে পারবেন, তাই OwnTV কয়েকটি চ্যানেল খুলে কোনগুলি টিকে থাকে তা দেখে এটি নির্ণয় করে। এখন যা চলছে সব বন্ধ হয়ে যাবে, এবং এতে দুই মিনিট পর্যন্ত লাগতে পারে।</string>
     <string name="settings_sources_probe_running">এই সরবরাহকারী কতগুলি চ্যানেল অনুমোদন করে তা পরীক্ষা করা হচ্ছে… (<xliff:g id="total">%2$d</xliff:g>-এর মধ্যে <xliff:g id="current">%1$d</xliff:g>)</string>

@@ -234,8 +234,10 @@
     <string name="settings_pip_on_leave">Uygulamadan çıkınca pencere içinde pencere</string>
     <string name="settings_pip_on_leave_description">Ana Ekran’a bastığınızda video küçük bir pencerede oynamaya devam eder</string>
     <string name="settings_prefer_sdr_description">Bir yayın hem SDR hem HDR görüntü sunuyorsa SDR oynatılır: HDR görüntünün soluk veya çok karanlık göründüğü TV’ler için. Yalnızca HDR olan yayın HDR kalır. Yalnızca ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Otomatik kare hızı</string>
-    <string name="settings_auto_frame_rate_description">Canlı TV ve VOD içeriklerinde tam ekrandayken TV\'nin yenileme hızını videoyla (24/25/50/60 fps) eşleştirin ve çıkışta eski hâline getirin. TV\'niz veya alıcınız her kanal değişikliğinde HDMI el sıkışmasını gürültülü biçimde tekrarlıyorsa bu seçeneği kapatın.</string>
+    <string name="settings_auto_frame_rate_films">Filmler ve diziler için otomatik kare hızı</string>
+    <string name="settings_auto_frame_rate_films_description">Tam ekrandayken TV\'nin yenileme hızını filme veya bölüme (24/25/50/60 fps) eşleştirin ve çıkışta eski hâline getirin.</string>
+    <string name="settings_auto_frame_rate_live">Canlı TV için otomatik kare hızı</string>
+    <string name="settings_auto_frame_rate_live_description">Tam ekrandayken TV\'nin yenileme hızını kanala (25/50/60 fps) eşleştirin ve çıkışta eski hâline getirin. TV\'niz veya alıcınız her kanal değişikliğinde HDMI el sıkışmasını gürültülü biçimde tekrarlıyorsa bu seçeneği kapatın.</string>
     <string name="settings_afr_pause">Ekran geçişinde duraklat</string>
     <string name="settings_afr_pause_description">Yalnızca filmler. Televizyonun yeni bir ekran moduna yeniden eşitlenmesi gerektiğinde, film bu süre kadar bekler; böylece başlangıcı siyah ekranda kaybolmaz. Kesintisiz bir geçiş hiç duraklatmaz.</string>
     <string name="settings_afr_resolution">Çözünürlüğü eşleştir</string>
@@ -718,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">Bunları da kaldır</string>
     <string name="settings_sources_clean_names_custom_hint">; ile ayrılmış sözcükler, örn. VIP; Backup</string>
     <string name="settings_sources_retest">Yeniden test et</string>
+    <string name="settings_sources_ignore_limit">Bağlantı sınırını yok say</string>
+    <string name="settings_sources_ignore_limit_on">Bağlantı sınırı yok sayılıyor: Çoklu görünüm ve kayıtlar bu oynatma listesinin bildirdiğinden fazla yayın açabilir. Sağlayıcının reddettiği bir yayın bunu yine bildirir.</string>
     <string name="settings_sources_probe_title">Bu oynatma listesi test edilsin mi?</string>
     <string name="settings_sources_probe_warning">Birçok sağlayıcı aynı anda kaç kanal izleyebileceğinizi hiç belirtmez; bu yüzden OwnTV birkaç kanal açıp hangilerinin devam ettiğine bakarak bunu kendisi bulur. Şu anda oynatılan her şey duracak ve bu işlem iki dakikaya kadar sürebilir.</string>
     <string name="settings_sources_probe_running">Bu sağlayıcının kaç kanala izin verdiği kontrol ediliyor… (<xliff:g id="current">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>)</string>
