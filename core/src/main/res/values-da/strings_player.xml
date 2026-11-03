@@ -109,6 +109,7 @@
     <string name="player_error_account_in_use">Denne konto afspiller allerede på en anden enhed eller app. Stop den der, og tryk derefter på Prøv igen.</string>
     <string name="player_error_mpv_open_decode">mpv kunne ikke åbne eller afkode denne fil.</string>
     <string name="player_error_mpv_stream_never_started">Streamen startede aldrig i mpv efter flere forsøg.</string>
+    <string name="player_error_fairplay">Denne stream er beskyttet med Apple FairPlay, som Android-enheder ikke kan afspille. Playlisten er lavet til Apple-enheder.</string>
     <string name="player_error_surround">Denne lydudgang understøtter ikke surroundlyd — der blev skiftet til stereo.</string>
     <string name="player_error_hardware_fallback">Denne streams format kunne ikke hardwaredekodes på dette tv, så der blev skiftet til softwaredekodning — som ikke kan håndtere <xliff:g id="resolution">%1$s</xliff:g> uden at overbelaste tv\'et. Tv\'et kan muligvis stadig afspille andet 4K-indhold uden problemer; det er formatet på netop denne stream, der er problemet.</string>
     <string name="player_error_hardware_disabled">Hardwaredekodning er slået fra — softwaredekodning kan ikke håndtere video i <xliff:g id="resolution">%1$s</xliff:g>. Aktivér den under Indstillinger → Videoafspiller.</string>

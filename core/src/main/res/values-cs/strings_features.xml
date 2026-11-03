@@ -69,6 +69,13 @@
     <string name="launcher_recent_live_description">Nedávno sledované kanály živého vysílání</string>
     <string name="launcher_movie_type">Film</string>
     <string name="launcher_episode_number">Epizoda <xliff:g id="episode">%1$d</xliff:g></string>
+    <plurals name="home_library_loading">
+        <item quantity="one">Načítání knihovny · zatím <xliff:g id="count">%1$s</xliff:g> titul</item>
+        <item quantity="few">Načítání knihovny · zatím <xliff:g id="count">%1$s</xliff:g> tituly</item>
+        <item quantity="many">Načítání knihovny · zatím <xliff:g id="count">%1$s</xliff:g> titulů</item>
+        <item quantity="other">Načítání knihovny · zatím <xliff:g id="count">%1$s</xliff:g> titulů</item>
+    </plurals>
+    <string name="home_library_loading_trending">Sekce Právě populární se zobrazí, jak se bude knihovna plnit.</string>
     <string name="home_no_preview">Zatím není k dispozici žádný náhled.</string>
     <string name="home_no_rows">Všechny řádky na domovské obrazovce jsou skryté.</string>
     <string name="home_enable_rows">Řádky znovu zapnete v Nastavení → Domovská obrazovka.</string>
@@ -315,6 +322,15 @@
     <string name="sports_starting_soon">Brzy začíná</string>
     <string name="sports_hint_match_page">Stránka zápasu</string>
     <string name="sports_hint_follow_remind">Sledovat · Připomenout</string>
+    <string name="sports_hint_day_matches">Zápasy dne</string>
+    <string name="sports_hint_day">Den</string>
+    <string name="sports_hint_week">Týden</string>
+    <string name="sports_hint_show_score">Zobrazit skóre</string>
+    <string name="sports_hint_back_to_day">Zpět na den</string>
+    <string name="sports_hint_open_league">Otevřít soutěž</string>
+    <string name="sports_hint_sport_chips">Tlačítka sportů</string>
+    <string name="sports_hint_league_chips">Tlačítka soutěží</string>
+    <string name="sports_hint_follow_unfollow">Sledovat · Přestat sledovat</string>
     <string name="sports_reminder_set">Připomínka</string>
     <string name="sports_until">do <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. set</string>
@@ -427,7 +443,6 @@
     <string name="sports_next_month">Další měsíc</string>
     <string name="sports_next">Další: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">Další</string>
-    <string name="sports_new_badge">Nové</string>
     <string name="sports_no_table_series">Bez tabulky — série se mění každý týden</string>
     <string name="sports_follow_league">Sledovat soutěž</string>
     <string name="sports_unfollow_league">Přestat sledovat soutěž</string>

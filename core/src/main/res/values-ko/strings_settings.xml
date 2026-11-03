@@ -854,6 +854,7 @@
         <item quantity="other">플레이리스트 유형이 지원되지 않아 <xliff:g id="count">%1$d</xliff:g>개 소스를 건너뛰었습니다.</item>
     </plurals>
     <string name="settings_backup_export_error">내보내기에 실패했습니다.</string>
+    <string name="settings_backup_no_file_app">이 휴대전화에는 파일을 저장할 수 있는 앱이 없습니다. 대신 공유를 사용하세요.</string>
     <string name="settings_backup_read_error">백업 파일을 읽을 수 없습니다.</string>
     <string name="settings_backup_import_error">가져오기에 실패했습니다.</string>
     <string name="settings_backup_invalid_locale">이 백업에 지원되지 않는 앱 언어가 포함되어 있습니다. 복원은 완료되었지만 현재 언어가 유지되었습니다.</string>

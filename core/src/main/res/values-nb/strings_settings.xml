@@ -866,6 +866,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> kilder ble hoppet over fordi spillelistetypene ikke støttes.</item>
     </plurals>
     <string name="settings_backup_export_error">Eksporteringen mislyktes.</string>
+    <string name="settings_backup_no_file_app">Ingen app på denne telefonen kan lagre filen. Bruk Del i stedet.</string>
     <string name="settings_backup_read_error">Kunne ikke lese sikkerhetskopifilen.</string>
     <string name="settings_backup_import_error">Importeringen mislyktes.</string>
     <string name="settings_backup_invalid_locale">Denne sikkerhetskopien inneholdt et appspråk som ikke støttes. Gjenopprettingen var vellykket, men det gjeldende språket ditt ble beholdt.</string>

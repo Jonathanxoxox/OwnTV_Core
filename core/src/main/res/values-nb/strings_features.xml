@@ -65,6 +65,11 @@
     <string name="launcher_recent_live_description">Direktekanaler du nylig har sett på</string>
     <string name="launcher_movie_type">Film</string>
     <string name="launcher_episode_number">Episode <xliff:g id="episode">%1$d</xliff:g></string>
+    <plurals name="home_library_loading">
+        <item quantity="one">Laster inn biblioteket · <xliff:g id="count">%1$s</xliff:g> tittel så langt</item>
+        <item quantity="other">Laster inn biblioteket · <xliff:g id="count">%1$s</xliff:g> titler så langt</item>
+    </plurals>
+    <string name="home_library_loading_trending">Populært nå vises etter hvert som biblioteket fylles.</string>
     <string name="home_no_preview">Ingenting å forhåndsvise ennå.</string>
     <string name="home_no_rows">Alle radene på startskjermen er skjult.</string>
     <string name="home_enable_rows">Slå på radene igjen under Innstillinger → Startskjerm.</string>
@@ -285,6 +290,15 @@
     <string name="sports_starting_soon">Starter snart</string>
     <string name="sports_hint_match_page">Kampside</string>
     <string name="sports_hint_follow_remind">Følg · Påminn</string>
+    <string name="sports_hint_day_matches">Dagens kamper</string>
+    <string name="sports_hint_day">Dag</string>
+    <string name="sports_hint_week">Uke</string>
+    <string name="sports_hint_show_score">Vis resultat</string>
+    <string name="sports_hint_back_to_day">Tilbake til dagen</string>
+    <string name="sports_hint_open_league">Åpne liga</string>
+    <string name="sports_hint_sport_chips">Sportsknapper</string>
+    <string name="sports_hint_league_chips">Ligaknapper</string>
+    <string name="sports_hint_follow_unfollow">Følg · Slutt å følge</string>
     <string name="sports_reminder_set">Påminnelse</string>
     <string name="sports_until">til <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. sett</string>
@@ -391,7 +405,6 @@
     <string name="sports_next_month">Neste måned</string>
     <string name="sports_next">Neste: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">Neste</string>
-    <string name="sports_new_badge">Ny</string>
     <string name="sports_no_table_series">Ingen tabell — seriene skifter hver uke</string>
     <string name="sports_follow_league">Følg liga</string>
     <string name="sports_unfollow_league">Slutt å følge liga</string>

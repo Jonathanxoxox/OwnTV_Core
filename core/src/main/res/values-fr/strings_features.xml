@@ -67,6 +67,12 @@
     <string name="launcher_recent_live_description">Chaînes en direct vues récemment</string>
     <string name="launcher_movie_type">Film</string>
     <string name="launcher_episode_number">Épisode <xliff:g id="episode">%1$d</xliff:g></string>
+    <plurals name="home_library_loading">
+        <item quantity="one">Chargement de votre bibliothèque · <xliff:g id="count">%1$s</xliff:g> titre pour l’instant</item>
+        <item quantity="many">Chargement de votre bibliothèque · <xliff:g id="count">%1$s</xliff:g> de titres pour l’instant</item>
+        <item quantity="other">Chargement de votre bibliothèque · <xliff:g id="count">%1$s</xliff:g> titres pour l’instant</item>
+    </plurals>
+    <string name="home_library_loading_trending">Tendances actuelles apparaîtra à mesure que votre bibliothèque se remplit.</string>
     <string name="home_no_preview">Rien à prévisualiser pour le moment.</string>
     <string name="home_no_rows">Toutes les rangées de l’écran d’accueil sont masquées.</string>
     <string name="home_enable_rows">Réactivez les rangées dans Paramètres → Écran d’accueil.</string>
@@ -300,6 +306,15 @@
     <string name="sports_starting_soon">Bientôt</string>
     <string name="sports_hint_match_page">Page du match</string>
     <string name="sports_hint_follow_remind">Suivre · Rappel</string>
+    <string name="sports_hint_day_matches">Matchs du jour</string>
+    <string name="sports_hint_day">Jour</string>
+    <string name="sports_hint_week">Semaine</string>
+    <string name="sports_hint_show_score">Afficher le score</string>
+    <string name="sports_hint_back_to_day">Retour au jour</string>
+    <string name="sports_hint_open_league">Ouvrir le championnat</string>
+    <string name="sports_hint_sport_chips">Boutons de sport</string>
+    <string name="sports_hint_league_chips">Boutons de championnat</string>
+    <string name="sports_hint_follow_unfollow">Suivre · Ne plus suivre</string>
     <string name="sports_reminder_set">Rappel</string>
     <string name="sports_until">jusqu’à <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">Set <xliff:g id="set">%1$d</xliff:g></string>
@@ -409,7 +424,6 @@
     <string name="sports_next_month">Mois suivant</string>
     <string name="sports_next">À suivre : <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">À suivre</string>
-    <string name="sports_new_badge">Nouveau</string>
     <string name="sports_no_table_series">Pas de classement — les séries changent chaque semaine</string>
     <string name="sports_follow_league">Suivre le championnat</string>
     <string name="sports_unfollow_league">Ne plus suivre le championnat</string>

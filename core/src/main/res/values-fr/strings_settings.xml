@@ -878,6 +878,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> sources ont été ignorées, car leurs types de listes de lecture ne sont pas pris en charge.</item>
     </plurals>
     <string name="settings_backup_export_error">Échec de l’exportation.</string>
+    <string name="settings_backup_no_file_app">Aucune app de ce téléphone ne peut enregistrer le fichier. Utilisez plutôt Partager.</string>
     <string name="settings_backup_read_error">Impossible de lire le fichier de sauvegarde.</string>
     <string name="settings_backup_import_error">Échec de l’importation.</string>
     <string name="settings_backup_invalid_locale">Cette sauvegarde contenait une langue d’application non prise en charge. La restauration a réussi, mais votre langue actuelle a été conservée.</string>

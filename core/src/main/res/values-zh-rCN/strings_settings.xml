@@ -854,6 +854,7 @@
         <item quantity="other">由于播放列表类型不受支持，已跳过 <xliff:g id="count">%1$d</xliff:g> 个源。</item>
     </plurals>
     <string name="settings_backup_export_error">导出失败。</string>
+    <string name="settings_backup_no_file_app">这部手机上没有可以保存文件的应用。请改用“分享”。</string>
     <string name="settings_backup_read_error">无法读取备份文件。</string>
     <string name="settings_backup_import_error">导入失败。</string>
     <string name="settings_backup_invalid_locale">此备份包含不受支持的应用语言。恢复已成功完成，但保留了您当前使用的语言。</string>

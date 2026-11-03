@@ -63,6 +63,10 @@
     <string name="launcher_recent_live_description">最近視聴したライブチャンネル</string>
     <string name="launcher_movie_type">映画</string>
     <string name="launcher_episode_number">エピソード <xliff:g id="episode">%1$d</xliff:g></string>
+    <plurals name="home_library_loading">
+        <item quantity="other">ライブラリを読み込み中 · これまでに <xliff:g id="count">%1$s</xliff:g> 件</item>
+    </plurals>
+    <string name="home_library_loading_trending">「現在のトレンド」はライブラリの読み込みが進むと表示されます。</string>
     <string name="home_no_preview">プレビューできるコンテンツはまだありません。</string>
     <string name="home_no_rows">ホーム画面の行はすべて非表示です。</string>
     <string name="home_enable_rows">設定 → ホーム画面で行を再度オンにしてください。</string>
@@ -270,6 +274,15 @@
     <string name="sports_starting_soon">まもなく開始</string>
     <string name="sports_hint_match_page">試合ページ</string>
     <string name="sports_hint_follow_remind">フォロー · リマインダー</string>
+    <string name="sports_hint_day_matches">その日の試合</string>
+    <string name="sports_hint_day">日</string>
+    <string name="sports_hint_week">週</string>
+    <string name="sports_hint_show_score">スコアを表示</string>
+    <string name="sports_hint_back_to_day">日に戻る</string>
+    <string name="sports_hint_open_league">リーグを開く</string>
+    <string name="sports_hint_sport_chips">競技ボタン</string>
+    <string name="sports_hint_league_chips">リーグボタン</string>
+    <string name="sports_hint_follow_unfollow">フォロー · フォロー解除</string>
     <string name="sports_reminder_set">リマインダー</string>
     <string name="sports_until"><xliff:g id="time">%1$s</xliff:g> まで</string>
     <string name="sports_set">第<xliff:g id="set">%1$d</xliff:g>セット</string>
@@ -373,7 +386,6 @@
     <string name="sports_next_month">次の月</string>
     <string name="sports_next">次：<xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">次</string>
-    <string name="sports_new_badge">新着</string>
     <string name="sports_no_table_series">順位表なし — シリーズは毎週変わります</string>
     <string name="sports_follow_league">リーグをフォロー</string>
     <string name="sports_unfollow_league">リーグのフォローを解除</string>

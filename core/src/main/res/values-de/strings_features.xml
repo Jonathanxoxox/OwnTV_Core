@@ -65,6 +65,11 @@
     <string name="launcher_recent_live_description">Zuletzt angesehene Live-Sender</string>
     <string name="launcher_movie_type">Film</string>
     <string name="launcher_episode_number">Folge <xliff:g id="episode">%1$d</xliff:g></string>
+    <plurals name="home_library_loading">
+        <item quantity="one">Mediathek wird geladen · bisher <xliff:g id="count">%1$s</xliff:g> Titel</item>
+        <item quantity="other">Mediathek wird geladen · bisher <xliff:g id="count">%1$s</xliff:g> Titel</item>
+    </plurals>
+    <string name="home_library_loading_trending">„Jetzt im Trend“ erscheint, während sich deine Mediathek füllt.</string>
     <string name="home_no_preview">Noch nichts für die Vorschau verfügbar.</string>
     <string name="home_no_rows">Alle Startseitenzeilen sind ausgeblendet.</string>
     <string name="home_enable_rows">Zeilen unter Einstellungen → Startbildschirm wieder aktivieren.</string>
@@ -285,6 +290,15 @@
     <string name="sports_starting_soon">Gleich geht’s los</string>
     <string name="sports_hint_match_page">Spielseite</string>
     <string name="sports_hint_follow_remind">Folgen · Erinnern</string>
+    <string name="sports_hint_day_matches">Spiele des Tages</string>
+    <string name="sports_hint_day">Tag</string>
+    <string name="sports_hint_week">Woche</string>
+    <string name="sports_hint_show_score">Ergebnis zeigen</string>
+    <string name="sports_hint_back_to_day">Zurück zum Tag</string>
+    <string name="sports_hint_open_league">Liga öffnen</string>
+    <string name="sports_hint_sport_chips">Sport-Schaltflächen</string>
+    <string name="sports_hint_league_chips">Liga-Schaltflächen</string>
+    <string name="sports_hint_follow_unfollow">Folgen · Nicht mehr folgen</string>
     <string name="sports_reminder_set">Erinnerung</string>
     <string name="sports_until">bis <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set"><xliff:g id="set">%1$d</xliff:g>. Satz</string>
@@ -391,7 +405,6 @@
     <string name="sports_next_month">Nächster Monat</string>
     <string name="sports_next">Als Nächstes: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">Als Nächstes</string>
-    <string name="sports_new_badge">Neu</string>
     <string name="sports_no_table_series">Keine Tabelle — die Serien wechseln jede Woche</string>
     <string name="sports_follow_league">Liga folgen</string>
     <string name="sports_unfollow_league">Liga nicht mehr folgen</string>

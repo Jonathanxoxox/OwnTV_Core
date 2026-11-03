@@ -890,6 +890,7 @@
         <item quantity="other">Pominięto <xliff:g id="count">%1$d</xliff:g> źródeł, ponieważ typy ich list odtwarzania nie są obsługiwane.</item>
     </plurals>
     <string name="settings_backup_export_error">Eksport nie powiódł się.</string>
+    <string name="settings_backup_no_file_app">Żadna aplikacja na tym telefonie nie może zapisać pliku. Użyj opcji Udostępnij.</string>
     <string name="settings_backup_read_error">Nie udało się odczytać pliku kopii zapasowej.</string>
     <string name="settings_backup_import_error">Import nie powiódł się.</string>
     <string name="settings_backup_invalid_locale">Ta kopia zapasowa zawierała nieobsługiwany język aplikacji. Przywracanie zakończyło się pomyślnie, ale zachowano bieżący język.</string>
