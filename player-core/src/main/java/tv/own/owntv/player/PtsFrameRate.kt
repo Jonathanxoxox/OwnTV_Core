@@ -18,9 +18,15 @@ class PtsFrameRate {
     private var count = 0
     private var next = 0
     private var lastUs = NONE
+    // Diagnose (mayo-debug): what the window has seen since the last reset.
+    private var adds = 0
+    private var resets = 0
+    private var stalls = 0
+    private var backwards = 0
 
     @Synchronized
     fun add(presentationTimeUs: Long) {
+        adds++
         if (lastUs != NONE) {
             val gap = presentationTimeUs - lastUs
             if (gap in 1..MAX_GAP_US) {
@@ -28,11 +34,14 @@ class PtsFrameRate {
                 next = (next + 1) % WINDOW
                 if (count < WINDOW) count++
             } else if (gap in 1..MAX_STALL_US) {
+                stalls++
                 // A stall or a run of dropped frames on the same clock: the frames on either side are the same
                 // video, so what was measured stays. Emptying the window here meant a stream that hiccups while
                 // starting (common on IPTV) never collected MIN_SPAN_US in one go: a 60p channel read no exact
                 // rate for ~40 s, and the frame counter's guess went out in the meantime.
             } else {
+                resets++
+                if (gap <= 0) backwards++
                 // A jump: the clock restarted, or these are the next channel's frames (unrelated clock).
                 // Gaps from before it belong to other video.
                 count = 0
@@ -57,11 +66,23 @@ class PtsFrameRate {
         return if (abs(nearest - raw) <= nearest * SNAP_FRACTION) nearest else raw
     }
 
+    /** Diagnose (mayo-debug): window size, median and steady span, and what happened to the timestamps. */
+    @Synchronized
+    fun debug(): String {
+        val window = gaps.copyOf(count).also { it.sort() }
+        val median = if (count > 0) window[count / 2] else 0L
+        val steady = window.filter { it * 4 >= median * 3 && it * 4 <= median * 5 }
+        val p10 = if (count > 0) window[count / 10] else 0L
+        val p90 = if (count > 0) window[count * 9 / 10] else 0L
+        return "adds=$adds count=$count medianUs=$median p10=$p10 p90=$p90 steadyN=${steady.size} steadySumMs=${steady.sum() / 1000} resets=$resets backwards=$backwards stalls=$stalls"
+    }
+
     @Synchronized
     fun reset() {
         count = 0
         next = 0
         lastUs = NONE
+        adds = 0; resets = 0; stalls = 0; backwards = 0
     }
 
     private companion object {

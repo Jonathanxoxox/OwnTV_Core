@@ -848,6 +848,7 @@ class LivePreviewEngine(
         val exact = ptsRate.rate()
         val fresh = exact ?: player?.let { fpsSample.peek(it) }
         fpsAttempts++
+        android.util.Log.i("FpsProbe", "attempt=$fpsAttempts exact=$exact counter=$fresh ${ptsRate.debug()}")
         // Wait for the timestamp reading — a counter reading published first would switch the display to 60
         // for 59.94 content. The counter is the fallback, capped so an unusual stream doesn't retry forever.
         val done = exact != null || fpsAttempts >= FPS_MAX_ATTEMPTS
