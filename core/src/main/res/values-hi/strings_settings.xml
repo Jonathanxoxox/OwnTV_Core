@@ -866,6 +866,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> स्रोत छोड़ दिए गए क्योंकि उनकी प्लेलिस्ट के प्रकार समर्थित नहीं हैं।</item>
     </plurals>
     <string name="settings_backup_export_error">एक्सपोर्ट नहीं हो सका।</string>
+    <string name="settings_backup_no_file_app">इस फ़ोन पर कोई ऐप फ़ाइल सेव नहीं कर सकता। इसके बजाय शेयर करें का उपयोग करें।</string>
     <string name="settings_backup_read_error">बैकअप फ़ाइल पढ़ी नहीं जा सकी।</string>
     <string name="settings_backup_import_error">इंपोर्ट नहीं हो सका।</string>
     <string name="settings_backup_invalid_locale">इस बैकअप में ऐप की एक असमर्थित भाषा थी। रीस्टोर सफल रहा, लेकिन आपकी वर्तमान भाषा रखी गई।</string>

@@ -964,6 +964,8 @@
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	UPDATE catalog_backfill SET done = 0, nextPage = 2 WHERE sourceId = :sourceId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	UPDATE catalog_backfill SET done = 1, nextPage = lastPage + 1 WHERE sourceId = :sourceId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	UPDATE catalog_backfill SET nextPage = :nextPage WHERE sourceId = :sourceId
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CategoryDao.kt	AND NOT EXISTS (SELECT 1 FROM movies WHERE movies.categoryId = categories.id)
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CategoryDao.kt	DELETE FROM categories WHERE sourceId = :sourceId AND mediaType = 'MOVIE'
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CategoryDao.kt	DELETE FROM categories WHERE sourceId = :sourceId AND mediaType = :type
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CategoryDao.kt	DELETE FROM categories WHERE sourceId = :sourceId AND mediaType = :type AND remoteId IN (:remoteIds)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CategoryDao.kt	JOIN sources ON sources.id = categories.sourceId
@@ -2981,6 +2983,8 @@
 1	technical	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	series
 1	log	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	stalker episodes seriesId=${series.id} remoteId=$remoteId seasons=${seasons.size} episodes=${episodes.size}
 1	log	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	stalker seasons via type=series failed remoteId=$remoteId (${e.message})
+1	log	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	stalker vod tree episodes seriesId=${series.id} remoteId=$remoteId seasons=${seasons.size} episodes=${episodes.size}
+1	log	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	stalker vod tree failed remoteId=$remoteId (${e.message})
 1	log	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	updated=${plan.updates.size} removed=${plan.deleteIds.size}
 1	technical	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	vod
 1	log	core/src/main/java/tv/own/owntv/core/repository/SourceEditor.kt	playlist_edit
@@ -4262,6 +4266,7 @@
 2	technical	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	watchdog_timeout
 7	empty	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	\0
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$1=***
+1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$VOD_EPISODE_SCHEME$movieId/$seasonId/$episodeId
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=${enc(type)}&action=create_link&cmd=${enc(cmd)}$seriesParam&forced_storage=0&disable_ad=0&JsHttpRequest=1-xml
 1	uri	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=${enc(type)}&action=get_ordered_list$cat&movie_id=${enc(movieId)}&p=$page&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=account_info&action=get_main_info&JsHttpRequest=1-xml
@@ -4275,6 +4280,9 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=stb&action=handshake&token=&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=vod&action=get_categories&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=vod&action=get_ordered_list&category=${enc(categoryId)}&sortby=added&p=$page&JsHttpRequest=1-xml
+1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=vod&action=get_ordered_list&movie_id=${enc(movieId)}&season_id=${enc(seasonId)}&episode_id=${enc(episodeId)}&p=1&JsHttpRequest=1-xml
+1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=vod&action=get_ordered_list&movie_id=${enc(movieId)}&season_id=${enc(seasonId)}&episode_id=0&p=$page&JsHttpRequest=1-xml
+1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=vod&action=get_ordered_list&movie_id=${enc(movieId)}&season_id=0&episode_id=0&p=$page&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$root/portal.php
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$root/server/load.php
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$root/stalker_portal/server/load.php
@@ -4362,10 +4370,10 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	category
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	category_id
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	ch_id
-4	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	cmd
+5	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	cmd
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	cover
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	create_link inCmd=${redactForLog(cmd)} rawOut=${redactForLog(raw)} resolved=${redactForLog(resolved)}
-6	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	data
+8	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	data
 2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	descr
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	description
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	enable_tv_archive
@@ -4379,16 +4387,16 @@
 1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	handshake ok apiBase=$landed
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	http://
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	https://
-6	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	id
+8	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	id
 1	json	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	is_series
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	itv
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	js
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	localhost
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	logo
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	mac=${URLEncoder.encode(mac, "UTF-8")}; stb_lang=en; timezone=${TimeZone.getDefault().id}
-3	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	max_page_items
+5	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	max_page_items
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	msg
-7	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	name
+8	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	name
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	number
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	o_name
 1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	portal response is not JSON (got $got): ${redactForLog(peeking.head())}
@@ -4397,14 +4405,19 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	rating_imdb
 1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	redirectedFrom=$apiBase
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	screenshot_uri
+1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	season_name
+1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	season_number
 2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	series
+1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	series_name
+1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	series_number
+1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	stalker-vod-episode://
 2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	start_timestamp
 2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	stop_timestamp
 2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	time
 2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	time_to
 2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	title
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	token
-3	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	total_items
+5	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	total_items
 1	technical	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	true
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	tv_archive
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	tv_archive_duration
@@ -4434,12 +4447,13 @@
 1	json	core/src/main/java/tv/own/owntv/core/stalker/StalkerExpiry.kt	null
 1	json	core/src/main/java/tv/own/owntv/core/stalker/StalkerExpiry.kt	phone
 1	json	core/src/main/java/tv/own/owntv/core/stalker/StalkerExpiry.kt	tariff_expired_date
-2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	Stalker source ${source.id} has no valid MAC
+1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	Portal listed no file for episode ${ref.episodeId}
+3	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	Stalker source ${source.id} has no valid MAC
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	itv
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	resolveCatchup is Stalker-only
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	shortEpg is Stalker-only
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	tv_archive
-1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	vod
+2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	vod
 1	file-path	core/src/main/java/tv/own/owntv/core/storage/MediaFolders.kt	$SERIES/${StorageAccess.sanitize(showName)}/$SEASON_PREFIX $seasonNumber
 1	file-path	core/src/main/java/tv/own/owntv/core/storage/MediaFolders.kt	Movies
 1	file-path	core/src/main/java/tv/own/owntv/core/storage/MediaFolders.kt	Season
@@ -4688,6 +4702,9 @@
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	${e.javaClass.simpleName}: ${e.message}
 5	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	*
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	HTTP ${it.code}
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	MOVIES backfill skipped sourceId=${s.id} — could not tell whether the films hold the shows
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	MOVIES show-only categories removed sourceId=${s.id} count=$it
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	MOVIES show-only category cleanup failed sourceId=${s.id}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	SERIES from film catalogue sourceId=${s.id} categories=${films.elsewhere.size} shows=${films.elsewhere.values.sumOf { it.size }} filmWalkComplete=${films.complete}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	SERIES no series categories sourceId=${s.id} — shows come from the film catalogue
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	SERIES no series section sourceId=${s.id} (${e.message}) — shows come from the film catalogue
@@ -4713,8 +4730,8 @@
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	portal XMLTV probe failed sourceId=${s.id}: ${it.message}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	portal ceiling sourceId=${s.id} learned=${learned.ceiling} cleanRuns=${learned.cleanRuns} max=${budget.max}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	portal limit sourceId=${s.id} throttledAt=${budget.throttledAt} reachedMax=${budget.reachedMax} final=${budget.currentLimit}
-6	room-schema	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	series
-2	room-schema	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	series_fts
+7	room-schema	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	series
+3	room-schema	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	series_fts
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	streamUrl=${StalkerClient.withoutPlayToken(c.streamUrl).hashCode()} epgChannelId=${c.epgChannelId.hashCode()}
 1	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	tv_guide_url
 1	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	unknown

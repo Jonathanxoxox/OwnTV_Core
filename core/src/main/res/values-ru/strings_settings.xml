@@ -890,6 +890,7 @@
         <item quantity="other">Пропущено <xliff:g id="count">%1$d</xliff:g> источников, поскольку типы их плейлистов не поддерживаются.</item>
     </plurals>
     <string name="settings_backup_export_error">Не удалось выполнить экспорт.</string>
+    <string name="settings_backup_no_file_app">На этом телефоне нет приложения, которое может сохранить файл. Используйте «Поделиться».</string>
     <string name="settings_backup_read_error">Не удалось прочитать файл резервной копии.</string>
     <string name="settings_backup_import_error">Не удалось выполнить импорт.</string>
     <string name="settings_backup_invalid_locale">Эта резервная копия содержала неподдерживаемый язык приложения. Восстановление выполнено, но текущий язык не изменён.</string>

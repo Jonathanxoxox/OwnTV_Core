@@ -878,6 +878,7 @@
         <item quantity="other">Se omitieron <xliff:g id="count">%1$d</xliff:g> fuentes porque sus tipos de lista de reproducción no son compatibles.</item>
     </plurals>
     <string name="settings_backup_export_error">No se pudo exportar.</string>
+    <string name="settings_backup_no_file_app">Ninguna app de este teléfono puede guardar el archivo. Usa Compartir.</string>
     <string name="settings_backup_read_error">No se pudo leer el archivo de copia de seguridad.</string>
     <string name="settings_backup_import_error">No se pudo importar.</string>
     <string name="settings_backup_invalid_locale">Esta copia de seguridad contenía un idioma de la aplicación no compatible. La restauración se completó, pero se conservó el idioma actual.</string>

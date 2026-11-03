@@ -866,6 +866,7 @@
         <item quantity="other">പ്ലേലിസ്റ്റ് തരങ്ങൾ പിന്തുണയ്‌ക്കാത്തതിനാൽ <xliff:g id="count">%1$d</xliff:g> ഉറവിടങ്ങൾ ഒഴിവാക്കി.</item>
     </plurals>
     <string name="settings_backup_export_error">എക്സ്പോർട്ട് പരാജയപ്പെട്ടു.</string>
+    <string name="settings_backup_no_file_app">ഈ ഫോണിൽ ഫയൽ സേവ് ചെയ്യാൻ കഴിയുന്ന ആപ്പ് ഇല്ല. പകരം പങ്കിടുക ഉപയോഗിക്കുക.</string>
     <string name="settings_backup_read_error">ബാക്കപ്പ് ഫയൽ വായിക്കാനായില്ല.</string>
     <string name="settings_backup_import_error">ഇമ്പോർട്ട് പരാജയപ്പെട്ടു.</string>
     <string name="settings_backup_invalid_locale">ഈ ബാക്കപ്പിൽ പിന്തുണയ്‌ക്കാത്ത ഒരു ആപ്പ് ഭാഷ ഉണ്ടായിരുന്നു. പുനഃസ്ഥാപിക്കൽ വിജയിച്ചു, എന്നാൽ നിങ്ങളുടെ നിലവിലെ ഭാഷ നിലനിർത്തി.</string>

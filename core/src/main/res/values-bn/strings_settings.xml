@@ -866,6 +866,7 @@
         <item quantity="other">প্লেলিস্টের ধরন সমর্থিত নয় বলে <xliff:g id="count">%1$d</xliff:g>টি উৎস এড়িয়ে যাওয়া হয়েছে।</item>
     </plurals>
     <string name="settings_backup_export_error">এক্সপোর্ট করা যায়নি।</string>
+    <string name="settings_backup_no_file_app">এই ফোনে ফাইল সেভ করতে পারে এমন কোনো অ্যাপ নেই। এর বদলে শেয়ার করুন ব্যবহার করুন।</string>
     <string name="settings_backup_read_error">ব্যাকআপ ফাইল পড়া যায়নি।</string>
     <string name="settings_backup_import_error">ইমপোর্ট করা যায়নি।</string>
     <string name="settings_backup_invalid_locale">এই ব্যাকআপে অ্যাপের একটি অসমর্থিত ভাষা ছিল। পুনরুদ্ধার সফল হয়েছে, তবে আপনার বর্তমান ভাষাই রাখা হয়েছে।</string>

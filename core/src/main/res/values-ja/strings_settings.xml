@@ -854,6 +854,7 @@
         <item quantity="other">プレイリストの種類がサポートされていないため、<xliff:g id="count">%1$d</xliff:g>件のソースをスキップしました。</item>
     </plurals>
     <string name="settings_backup_export_error">エクスポートに失敗しました。</string>
+    <string name="settings_backup_no_file_app">この端末にはファイルを保存できるアプリがありません。代わりに「共有」を使ってください。</string>
     <string name="settings_backup_read_error">バックアップファイルを読み取れませんでした。</string>
     <string name="settings_backup_import_error">インポートに失敗しました。</string>
     <string name="settings_backup_invalid_locale">このバックアップには、サポートされていないアプリ言語が含まれていました。復元は完了しましたが、現在の言語が維持されました。</string>

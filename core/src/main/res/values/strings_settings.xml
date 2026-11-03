@@ -1748,6 +1748,8 @@
     </plurals>
     <!-- Translators: Error text when backup export fails. -->
     <string name="settings_backup_export_error">Export failed.</string>
+    <!-- Translators: Shown instead of the file picker when no app on the phone can save a file (some phones have the system Files app disabled or removed). "Share" is the backup page's Share button. -->
+    <string name="settings_backup_no_file_app">No app on this phone can save the file. Use Share instead.</string>
     <!-- Translators: Error text when the backup file cannot be read. -->
     <string name="settings_backup_read_error">Couldn\'t read the backup file.</string>
     <!-- Translators: Error text when backup import fails. -->
