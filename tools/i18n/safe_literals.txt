@@ -2104,6 +2104,14 @@
 1	technical	core/src/main/java/tv/own/owntv/core/launcher/LauncherRecommendationPlanner.kt	episode:${show.sourceId}:${show.remoteId ?: show.name}:${episode.remoteId ?: "${episode.seasonNumber}-${episode.episodeNumber}"}
 1	technical	core/src/main/java/tv/own/owntv/core/launcher/LauncherRecommendationPlanner.kt	live:${channel.sourceId}:${channel.remoteId ?: channel.name}
 1	technical	core/src/main/java/tv/own/owntv/core/launcher/LauncherRecommendationPlanner.kt	movie:${movie.sourceId}:${movie.remoteId ?: movie.name}
+1	technical	core/src/main/java/tv/own/owntv/core/live/ChannelVersions.kt	$it*
+1	technical	core/src/main/java/tv/own/owntv/core/live/ChannelVersions.kt	${it.id}@${it.lastSyncAt}
+1	technical	core/src/main/java/tv/own/owntv/core/live/ChannelVersions.kt	,
+1	log	core/src/main/java/tv/own/owntv/core/live/ChannelVersions.kt	ChannelVersions
+1	regex	core/src/main/java/tv/own/owntv/core/live/ChannelVersions.kt	[^\p{L}\p{N}]+
+1	technical	core/src/main/java/tv/own/owntv/core/live/ChannelVersions.kt	\0
+1	log	core/src/main/java/tv/own/owntv/core/live/ChannelVersions.kt	channel search failed: ${it.message}
+1	technical	core/src/main/java/tv/own/owntv/core/live/ChannelVersions.kt	|
 1	log	core/src/main/java/tv/own/owntv/core/live/ConnectionLimits.kt	ConnectionLimits
 1	log	core/src/main/java/tv/own/owntv/core/live/ConnectionLimits.kt	measured source ${source.id}: $result
 1	log	core/src/main/java/tv/own/owntv/core/live/ConnectionLimits.kt	no playable channels for source ${source.id}
