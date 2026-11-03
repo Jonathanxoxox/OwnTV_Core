@@ -867,10 +867,11 @@ class EpgRepository(
     /** When each channel's archive schedule was last asked for — see [fillArchiveGuide]. Memory only. */
     private val archiveTries = java.util.concurrent.ConcurrentHashMap<Long, Long>()
 
-    private val _archiveGuideAdded = MutableSharedFlow<Long>(extraBufferCapacity = 8)
+    // Room for a whole queue of fills (ArchiveGuideFiller), so a slow collector misses no channel.
+    private val _archiveGuideAdded = MutableSharedFlow<Long>(extraBufferCapacity = 32)
 
     /** Ids of channels whose past programmes [fillArchiveGuide] just changed, so an open guide can re-read them. */
-    val archiveGuideAdded: SharedFlow<Long> = _archiveGuideAdded.asSharedFlow()
+    internal val archiveGuideAdded: SharedFlow<Long> = _archiveGuideAdded.asSharedFlow()
 
     /**
      * Add the past of a catch-up Xtream [channel] that its guide feed does not carry, from the
@@ -889,7 +890,7 @@ class EpgRepository(
      * they did not (or the request failed), and null when the provider was not asked at all (not a
      * catch-up Xtream channel, or asked too recently), so a caller pacing its requests can skip ahead.
      */
-    suspend fun fillArchiveGuide(channel: ChannelEntity, cust: SectionCustomizations): Int? = withContext(Dispatchers.IO) {
+    internal suspend fun fillArchiveGuide(channel: ChannelEntity, cust: SectionCustomizations): Int? = withContext(Dispatchers.IO) {
         if (!channel.catchup) return@withContext null
         val streamId = channel.remoteId?.takeIf { it.isNotBlank() } ?: return@withContext null
         // Trimmed and lower-cased, the way the guide stores and reads its ids.

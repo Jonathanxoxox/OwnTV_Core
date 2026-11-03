@@ -2520,6 +2520,7 @@
 1	technical	core/src/main/java/tv/own/owntv/core/parser/XmltvParser.kt	xmltv_ns
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XmltvParser.kt	—
 2	protocol	core/src/main/java/tv/own/owntv/core/parser/XmltvTime.kt	\0
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	1
 7	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	\0
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	#EXTM3U
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${base(s)}/live/${credentials(s)}/$streamId.m3u8
@@ -2570,6 +2571,7 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	get_simple_data_table
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	get_vod_categories
 2	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	get_vod_streams
+1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	has_archive
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	id
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	info
 1	log	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	isXtreamAccount: no (${e.message})

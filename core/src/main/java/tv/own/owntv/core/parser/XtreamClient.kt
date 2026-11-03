@@ -487,7 +487,8 @@ class XtreamClient(private val http: HttpClient) {
     /**
      * A live channel's whole schedule as the provider keeps it, via `get_simple_data_table`: past
      * programmes as far back as its archive goes, which is often several days more than `xmltv.php`
-     * carries. Same entry format as [getShortEpg]; untitled entries are left out. Sorted by start.
+     * carries. Same entry format as [getShortEpg]; untitled entries and those the panel marks as not
+     * archived are left out. Sorted by start.
      */
     suspend fun getArchiveSchedule(s: SourceEntity, streamId: String): List<XtEpgEntry> {
         val out = ArrayList<XtEpgEntry>()
@@ -498,7 +499,7 @@ class XtreamClient(private val http: HttpClient) {
                 reader.beginObject()
                 while (reader.hasNext()) {
                     if (reader.nextName() == "epg_listings" && reader.peek() == JsonToken.BEGIN_ARRAY) {
-                        readEpgListings(reader, out, keepUntitled = false)
+                        readEpgListings(reader, out, keepUntitled = false, archivedOnly = true)
                     } else {
                         reader.skipValue()
                     }
@@ -509,13 +510,23 @@ class XtreamClient(private val http: HttpClient) {
         return out.sortedBy { it.startMs }
     }
 
-    private fun readEpgListings(reader: JsonReader, out: MutableList<XtEpgEntry>, keepUntitled: Boolean = true) {
+    /**
+     * [archivedOnly]: drop the programmes the panel marks `has_archive: 0`. Panels whose archive has
+     * holes list every programme of the schedule, playable or not; an entry without the field is kept.
+     */
+    private fun readEpgListings(
+        reader: JsonReader,
+        out: MutableList<XtEpgEntry>,
+        keepUntitled: Boolean = true,
+        archivedOnly: Boolean = false,
+    ) {
         reader.beginArray()
         while (reader.hasNext()) {
             var title = ""
             var desc: String? = null
             var startTs = 0L
             var stopTs = 0L
+            var archived: Boolean? = null
             reader.beginObject()
             while (reader.hasNext()) {
                 val name = reader.nextName()
@@ -525,10 +536,17 @@ class XtreamClient(private val http: HttpClient) {
                     "description" -> desc = EpgText.clean(decodeBase64(reader.nextString()))
                     "start_timestamp" -> startTs = reader.nextString().toLongOrNull() ?: 0
                     "stop_timestamp" -> stopTs = reader.nextString().toLongOrNull() ?: 0
+                    // 1 / "1" / true on the panels seen; anything else that parses means no archive.
+                    "has_archive" -> archived = if (reader.peek() == JsonToken.BOOLEAN) {
+                        reader.nextBoolean()
+                    } else {
+                        reader.nextString().trim() == "1"
+                    }
                     else -> reader.skipValue()
                 }
             }
             reader.endObject()
+            if (archivedOnly && archived == false) continue
             if (startTs > 0 && stopTs > startTs && (keepUntitled || title.isNotBlank())) {
                 out.add(XtEpgEntry(title.ifBlank { "—" }, desc, startTs * 1000, stopTs * 1000))
             }
