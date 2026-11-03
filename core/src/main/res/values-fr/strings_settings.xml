@@ -725,6 +725,8 @@
     <string name="settings_sources_clean_names_custom">Retirer aussi</string>
     <string name="settings_sources_clean_names_custom_hint">Mots séparés par ; ex. VIP; Backup</string>
     <string name="settings_sources_retest">Retester</string>
+    <string name="settings_sources_ignore_limit">Ignorer la limite de connexions</string>
+    <string name="settings_sources_ignore_limit_on">Limite de connexions ignorée : Multivue et les enregistrements peuvent ouvrir plus de flux que cette playlist n’en annonce. Un flux refusé par le fournisseur le signale toujours.</string>
     <string name="settings_sources_probe_title">Tester cette liste ?</string>
     <string name="settings_sources_probe_warning">Beaucoup de fournisseurs n’indiquent jamais combien de chaînes vous pouvez regarder en même temps ; OwnTV le découvre donc en en ouvrant quelques-unes et en observant lesquelles tiennent. Tout ce qui est en cours de lecture s’arrêtera, et cela peut prendre jusqu’à deux minutes.</string>
     <string name="settings_sources_probe_running">Recherche du nombre de chaînes autorisées par ce fournisseur… (<xliff:g id="current">%1$d</xliff:g> sur <xliff:g id="total">%2$d</xliff:g>)</string>

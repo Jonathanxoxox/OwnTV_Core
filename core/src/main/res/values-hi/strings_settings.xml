@@ -720,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">यह भी हटाएँ</string>
     <string name="settings_sources_clean_names_custom_hint">; से अलग किए शब्द, जैसे VIP; Backup</string>
     <string name="settings_sources_retest">फिर से जाँचें</string>
+    <string name="settings_sources_ignore_limit">कनेक्शन सीमा अनदेखी करें</string>
+    <string name="settings_sources_ignore_limit_on">कनेक्शन सीमा अनदेखी की जा रही है: मल्टीव्यू और रिकॉर्डिंग इस प्लेलिस्ट की बताई संख्या से ज़्यादा स्ट्रीम खोल सकते हैं। प्रदाता किसी स्ट्रीम को मना करे तो यह पहले की तरह बताया जाएगा।</string>
     <string name="settings_sources_probe_title">इस प्लेलिस्ट की जाँच करें?</string>
     <string name="settings_sources_probe_warning">कई प्रदाता कभी नहीं बताते कि आप एक साथ कितने चैनल देख सकते हैं, इसलिए OwnTV कुछ चैनल खोलकर और यह देखकर पता लगाता है कि कौन से चलते रहते हैं। अभी जो कुछ चल रहा है वह रुक जाएगा, और इसमें दो मिनट तक लग सकते हैं।</string>
     <string name="settings_sources_probe_running">जाँचा जा रहा है कि यह प्रदाता कितने चैनलों की अनुमति देता है… (<xliff:g id="total">%2$d</xliff:g> में से <xliff:g id="current">%1$d</xliff:g>)</string>

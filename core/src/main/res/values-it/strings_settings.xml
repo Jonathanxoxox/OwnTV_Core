@@ -725,6 +725,8 @@
     <string name="settings_sources_clean_names_custom">Rimuovi anche</string>
     <string name="settings_sources_clean_names_custom_hint">Parole separate da ; es. VIP; Backup</string>
     <string name="settings_sources_retest">Riprova test</string>
+    <string name="settings_sources_ignore_limit">Ignora il limite di connessioni</string>
+    <string name="settings_sources_ignore_limit_on">Limite di connessioni ignorato: Multivista e le registrazioni possono aprire più stream di quanti ne indichi questa playlist. Uno stream rifiutato dal provider lo segnala comunque.</string>
     <string name="settings_sources_probe_title">Testare questa playlist?</string>
     <string name="settings_sources_probe_warning">Molti provider non dicono mai quanti canali puoi guardare contemporaneamente, così OwnTV lo scopre aprendone alcuni e vedendo quali resistono. Tutto ciò che è in riproduzione si fermerà e l’operazione può richiedere fino a due minuti.</string>
     <string name="settings_sources_probe_running">Verifica di quanti canali consente questo provider… (<xliff:g id="current">%1$d</xliff:g> di <xliff:g id="total">%2$d</xliff:g>)</string>

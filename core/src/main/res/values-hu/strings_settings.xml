@@ -759,6 +759,8 @@
     <string name="settings_sources_clean_names_custom">Ezeket is törölje</string>
     <string name="settings_sources_clean_names_custom_hint">Pontosvesszővel (;) elválasztott szavak, pl. VIP; Backup</string>
     <string name="settings_sources_retest">Újratesztelés</string>
+    <string name="settings_sources_ignore_limit">Kapcsolatkorlát figyelmen kívül hagyása</string>
+    <string name="settings_sources_ignore_limit_on">A kapcsolatkorlát figyelmen kívül marad: a Többnézet és a felvételek több streamet nyithatnak, mint amennyit ez a lejátszási lista jelez. Ha a szolgáltató elutasít egy streamet, azt továbbra is jelezzük.</string>
     <string name="settings_sources_probe_title">Teszteli ezt a lejátszási listát?</string>
     <string name="settings_sources_probe_warning">Sok szolgáltató soha nem árulja el, hány csatornát nézhet egyszerre, ezért az OwnTV úgy deríti ki, hogy megnyit néhányat, és megnézi, melyik marad életben. Minden, ami most szól, le fog állni, és ez akár két percig is eltarthat.</string>
     <string name="settings_sources_probe_running">Annak ellenőrzése, hány csatornát enged ez a szolgáltató… (<xliff:g id="current">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>)</string>

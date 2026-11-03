@@ -730,6 +730,8 @@
     <string name="settings_sources_clean_names_custom">Usuń też</string>
     <string name="settings_sources_clean_names_custom_hint">Słowa oddzielone ; np. VIP; Backup</string>
     <string name="settings_sources_retest">Testuj ponownie</string>
+    <string name="settings_sources_ignore_limit">Ignoruj limit połączeń</string>
+    <string name="settings_sources_ignore_limit_on">Limit połączeń jest ignorowany: Multiview i nagrania mogą otworzyć więcej strumieni, niż podaje ta playlista. Strumień odrzucony przez dostawcę nadal to zgłosi.</string>
     <string name="settings_sources_probe_title">Przetestować tę playlistę?</string>
     <string name="settings_sources_probe_warning">Wielu dostawców nigdy nie podaje, ile kanałów można oglądać jednocześnie, więc OwnTV sprawdza to, otwierając kilka i obserwując, które przetrwają. Wszystko, co jest teraz odtwarzane, zostanie zatrzymane, a może to potrwać do dwóch minut.</string>
     <string name="settings_sources_probe_running">Sprawdzanie, ile kanałów dopuszcza ten dostawca… (<xliff:g id="current">%1$d</xliff:g> z <xliff:g id="total">%2$d</xliff:g>)</string>

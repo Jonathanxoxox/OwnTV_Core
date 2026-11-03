@@ -720,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">ഇവയും നീക്കുക</string>
     <string name="settings_sources_clean_names_custom_hint">; കൊണ്ട് വേർതിരിച്ച വാക്കുകൾ, ഉദാ. VIP; Backup</string>
     <string name="settings_sources_retest">വീണ്ടും പരിശോധിക്കുക</string>
+    <string name="settings_sources_ignore_limit">കണക്ഷൻ പരിധി അവഗണിക്കുക</string>
+    <string name="settings_sources_ignore_limit_on">കണക്ഷൻ പരിധി അവഗണിക്കുന്നു: ഈ പ്ലേലിസ്റ്റ് പറയുന്നതിലും കൂടുതൽ സ്ട്രീമുകൾ മൾട്ടിവ്യൂവും റെക്കോർഡിംഗുകളും തുറന്നേക്കാം. ദാതാവ് ഒരു സ്ട്രീം നിരസിച്ചാൽ അത് മുമ്പത്തെപ്പോലെ അറിയിക്കും.</string>
     <string name="settings_sources_probe_title">ഈ പ്ലേലിസ്റ്റ് പരിശോധിക്കണോ?</string>
     <string name="settings_sources_probe_warning">ഒരേസമയം എത്ര ചാനലുകൾ കാണാമെന്ന് പല ദാതാക്കളും ഒരിക്കലും പറയാറില്ല. അതിനാൽ കുറച്ച് ചാനലുകൾ തുറന്ന് ഏതൊക്കെ തുടരുന്നു എന്ന് നോക്കിയാണ് OwnTV ഇത് കണ്ടെത്തുന്നത്. ഇപ്പോൾ പ്ലേ ചെയ്യുന്നതെല്ലാം നിലയ്ക്കും, ഇതിന് രണ്ട് മിനിറ്റ് വരെ എടുത്തേക്കാം.</string>
     <string name="settings_sources_probe_running">ഈ ദാതാവ് എത്ര ചാനലുകൾ അനുവദിക്കുന്നു എന്ന് പരിശോധിക്കുന്നു… (<xliff:g id="total">%2$d</xliff:g>-ൽ <xliff:g id="current">%1$d</xliff:g>)</string>

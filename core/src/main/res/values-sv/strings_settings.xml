@@ -720,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">Ta även bort</string>
     <string name="settings_sources_clean_names_custom_hint">Ord åtskilda med ; t.ex. VIP; Backup</string>
     <string name="settings_sources_retest">Testa igen</string>
+    <string name="settings_sources_ignore_limit">Ignorera anslutningsgränsen</string>
+    <string name="settings_sources_ignore_limit_on">Anslutningsgränsen ignoreras: Multivy och inspelningar kan öppna fler strömmar än den här spellistan anger. En ström som leverantören nekar säger fortfarande ifrån.</string>
     <string name="settings_sources_probe_title">Testa den här spellistan?</string>
     <string name="settings_sources_probe_warning">Många leverantörer talar aldrig om hur många kanaler du får titta på samtidigt, så OwnTV tar reda på det genom att öppna några och se vilka som håller. Allt som spelas upp nu stoppas, och det här kan ta upp till två minuter.</string>
     <string name="settings_sources_probe_running">Kontrollerar hur många kanaler den här leverantören tillåter… (<xliff:g id="current">%1$d</xliff:g> av <xliff:g id="total">%2$d</xliff:g>)</string>

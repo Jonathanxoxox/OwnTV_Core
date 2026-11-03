@@ -1474,6 +1474,10 @@
     <string name="settings_sources_clean_names_custom_hint">Words separated by ; e.g. VIP; Backup</string>
     <!-- Translators: Button inside the Info popup: measure the playlist again. -->
     <string name="settings_sources_retest">Re-test</string>
+    <!-- Translators: Button or switch beside Re-test for a playlist: let Multiview and recordings open more streams than the provider's stated limit. -->
+    <string name="settings_sources_ignore_limit">Ignore connection limit</string>
+    <!-- Translators: Line shown while settings_sources_ignore_limit is on. "Multiview" is the feature that plays several channels at once. -->
+    <string name="settings_sources_ignore_limit_on">Connection limit ignored: Multiview and recordings may open more streams than this playlist reports. A stream the provider refuses still says so.</string>
     <!-- Translators: Title of the confirmation shown before the connection measurement runs. -->
     <string name="settings_sources_probe_title">Test this playlist?</string>
     <!-- Translators: Body of that confirmation. It must be clear that playback stops and that it is slow. -->

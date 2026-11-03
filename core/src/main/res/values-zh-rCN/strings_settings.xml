@@ -715,6 +715,8 @@
     <string name="settings_sources_clean_names_custom">另外删除</string>
     <string name="settings_sources_clean_names_custom_hint">用 ; 分隔的词,例如 VIP; Backup</string>
     <string name="settings_sources_retest">重新测试</string>
+    <string name="settings_sources_ignore_limit">忽略连接数限制</string>
+    <string name="settings_sources_ignore_limit_on">已忽略连接数限制：多画面和录制可能会打开超过此播放列表所报告数量的流。提供商拒绝的流仍会照常提示。</string>
     <string name="settings_sources_probe_title">测试此播放列表？</string>
     <string name="settings_sources_probe_warning">许多运营商从不说明你可以同时观看多少个频道，因此 OwnTV 会打开几个频道，看哪些能够持续播放，以此来确定。当前正在播放的内容会停止，此过程最多需要两分钟。</string>
     <string name="settings_sources_probe_running">正在检测此运营商允许的频道数量…（<xliff:g id="current">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>）</string>

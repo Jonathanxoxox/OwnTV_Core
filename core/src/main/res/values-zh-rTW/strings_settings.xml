@@ -715,6 +715,8 @@
     <string name="settings_sources_clean_names_custom">另外移除</string>
     <string name="settings_sources_clean_names_custom_hint">以 ; 分隔的字詞,例如 VIP; Backup</string>
     <string name="settings_sources_retest">重新測試</string>
+    <string name="settings_sources_ignore_limit">忽略連線數限制</string>
+    <string name="settings_sources_ignore_limit_on">已忽略連線數限制：多畫面和錄影可能會開啟超過此播放清單所報告數量的串流。供應商拒絕的串流仍會照常提示。</string>
     <string name="settings_sources_probe_title">測試此播放清單？</string>
     <string name="settings_sources_probe_warning">許多供應商從不說明你可以同時觀看多少個頻道，因此 OwnTV 會開啟幾個頻道，看看哪些能持續播放來判斷。目前正在播放的內容會停止，此過程最多需要兩分鐘。</string>
     <string name="settings_sources_probe_running">正在檢測此供應商允許的頻道數量…（<xliff:g id="current">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>）</string>

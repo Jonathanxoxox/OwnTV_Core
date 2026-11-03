@@ -715,6 +715,8 @@
     <string name="settings_sources_clean_names_custom">ほかに削除する語</string>
     <string name="settings_sources_clean_names_custom_hint">; で区切った語(例: VIP; Backup)</string>
     <string name="settings_sources_retest">再テスト</string>
+    <string name="settings_sources_ignore_limit">接続数の上限を無視</string>
+    <string name="settings_sources_ignore_limit_on">接続数の上限を無視しています：マルチビューと録画は、このプレイリストが示す数より多くのストリームを開くことがあります。プロバイダーが拒否したストリームは、これまでどおり表示されます。</string>
     <string name="settings_sources_probe_title">このプレイリストをテストしますか？</string>
     <string name="settings_sources_probe_warning">同時に視聴できるチャンネル数を知らせないプロバイダーは少なくありません。そこで OwnTV はいくつか実際に開き、どれが続くかを見て判断します。再生中のものはすべて停止し、最大で 2 分ほどかかります。</string>
     <string name="settings_sources_probe_running">このプロバイダーが許可するチャンネル数を確認しています…（<xliff:g id="current">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>）</string>

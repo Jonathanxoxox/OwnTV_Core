@@ -740,6 +740,8 @@
     <string name="settings_sources_clean_names_custom">إزالة أيضًا</string>
     <string name="settings_sources_clean_names_custom_hint">كلمات مفصولة بـ ; مثل VIP; Backup</string>
     <string name="settings_sources_retest">إعادة الاختبار</string>
+    <string name="settings_sources_ignore_limit">تجاهل حد الاتصالات</string>
+    <string name="settings_sources_ignore_limit_on">تم تجاهل حد الاتصالات: قد يفتح العرض المتعدد والتسجيلات بثًا أكثر مما تذكره قائمة التشغيل هذه. وإذا رفض المزوّد بثًا فسيظهر ذلك كالمعتاد.</string>
     <string name="settings_sources_probe_title">اختبار هذه القائمة؟</string>
     <string name="settings_sources_probe_warning">لا يذكر كثير من المزوّدين عدد القنوات التي يمكنك مشاهدتها في وقت واحد، لذا يكتشف OwnTV ذلك بفتح بضع قنوات ومعرفة أيها يستمر. سيتوقف كل ما يعمل الآن، وقد يستغرق هذا حتى دقيقتين.</string>
     <string name="settings_sources_probe_running">جارٍ التحقق من عدد القنوات التي يسمح بها هذا المزوّد… (<xliff:g id="current">%1$d</xliff:g> من <xliff:g id="total">%2$d</xliff:g>)</string>

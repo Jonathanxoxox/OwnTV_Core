@@ -730,6 +730,8 @@
     <string name="settings_sources_clean_names_custom">Odstranit také</string>
     <string name="settings_sources_clean_names_custom_hint">Slova oddělená ; např. VIP; Backup</string>
     <string name="settings_sources_retest">Otestovat znovu</string>
+    <string name="settings_sources_ignore_limit">Ignorovat limit připojení</string>
+    <string name="settings_sources_ignore_limit_on">Limit připojení se ignoruje: Multiview a nahrávání mohou otevřít více streamů, než tento playlist uvádí. Stream, který poskytovatel odmítne, to stále oznámí.</string>
     <string name="settings_sources_probe_title">Otestovat tento seznam?</string>
     <string name="settings_sources_probe_warning">Mnozí poskytovatelé nikdy neuvedou, kolik kanálů můžete sledovat najednou, a tak to OwnTV zjistí tím, že jich několik otevře a sleduje, které vydrží. Vše, co právě běží, se zastaví a může to trvat až dvě minuty.</string>
     <string name="settings_sources_probe_running">Zjišťuje se, kolik kanálů tento poskytovatel dovolí… (<xliff:g id="current">%1$d</xliff:g> z <xliff:g id="total">%2$d</xliff:g>)</string>

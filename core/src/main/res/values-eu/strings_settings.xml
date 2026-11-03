@@ -819,6 +819,8 @@
     <string name="settings_sources_clean_names_custom">Kendu hauek ere</string>
     <string name="settings_sources_clean_names_custom_hint">; bidez bereizitako hitzak, adib. VIP; Backup</string>
     <string name="settings_sources_retest">Probatu berriro</string>
+    <string name="settings_sources_ignore_limit">Ez ikusiarena egin konexio-mugari</string>
+    <string name="settings_sources_ignore_limit_on">Konexio-muga ez da kontuan hartzen: Multiview-ek eta grabazioek erreprodukzio-zerrenda honek dioena baino transmisio gehiago ireki ditzakete. Hornitzaileak transmisio bat ukatzen badu, hala esango da.</string>
     <string name="settings_sources_probe_title">Erreprodukzio-zerrenda hau probatu?</string>
     <string name="settings_sources_probe_warning">Hornitzaile askok ez dute inoiz esaten zenbat kanal ikus ditzakezun aldi berean, beraz OwnTVk hainbat ireki eta zeintzuk irauten duten ikusiz jakiten du. Orain erreproduzitzen ari den guztia gelditu egingo da, eta honek bi minutu arte iraun dezake.</string>
     <string name="settings_sources_probe_running">Hornitzaile honek zenbat kanal onartzen dituen egiaztatzen… (<xliff:g id="current">%1$d</xliff:g> / <xliff:g id="total">%2$d</xliff:g>)</string>

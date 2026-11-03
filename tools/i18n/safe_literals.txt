@@ -114,6 +114,7 @@
 3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	homeConfigs
 3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	httpReferer
 7	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	id
+3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	ignoreConnectionLimit
 3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	importPortalEpg
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	isKids
 1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	json
@@ -582,6 +583,9 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration51To52.kt	channels
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration51To52.kt	movies
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration51To52.kt	series
+1	sql	core/src/main/java/tv/own/owntv/core/database/Migration52To53.kt	ALTER TABLE `sources` ADD COLUMN `ignoreConnectionLimit` INTEGER NOT NULL DEFAULT 0
+1	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration52To53.kt	ignoreConnectionLimit
+1	room-schema	core/src/main/java/tv/own/owntv/core/database/Migration52To53.kt	sources
 18	sql	core/src/main/java/tv/own/owntv/core/database/OwnTVDatabase.kt	)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/OwnTVDatabase.kt	,
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/OwnTVDatabase.kt	?
@@ -1572,10 +1576,12 @@
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET catchupTimezone = :mode, catchupOffsetMin = :offsetMin WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET cleanChannelNames = :enabled, channelNameStrip = :strip WHERE id = :id
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET hlsSupported = :hlsSupported WHERE id = :id
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET ignoreConnectionLimit = :ignore WHERE id = :id
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET lastSyncAt = :timestamp WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET livePrerollSecs = :secs WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET liveTuneTimeoutSecs = :secs WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET maxConnections = :maxConnections WHERE id = :id
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET maxConnections = :maxConnections WHERE id = :id AND maxConnectionsProbedAt <= 0
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET maxConnections = :maxConnections, maxConnectionsProbedAt = :probedAt WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET serverTimeZone = :zone WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SourceDao.kt	UPDATE sources SET vodEnginePreference = :preference WHERE id = :id
@@ -1672,7 +1678,7 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/entity/MetadataEntities.kt	metadata_match
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/entity/MetadataEntities.kt	tmdbId
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/entity/MetadataEntities.kt	updatedAt
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/entity/ProfileEntities.kt	0
+2	room-schema	core/src/main/java/tv/own/owntv/core/database/entity/ProfileEntities.kt	0
 1	sql	core/src/main/java/tv/own/owntv/core/database/entity/ProfileEntities.kt	1
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/entity/ProfileEntities.kt	id
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/entity/ProfileEntities.kt	profileId

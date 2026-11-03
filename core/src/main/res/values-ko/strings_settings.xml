@@ -715,6 +715,8 @@
     <string name="settings_sources_clean_names_custom">추가로 제거할 단어</string>
     <string name="settings_sources_clean_names_custom_hint">; 로 구분한 단어, 예: VIP; Backup</string>
     <string name="settings_sources_retest">다시 테스트</string>
+    <string name="settings_sources_ignore_limit">연결 수 제한 무시</string>
+    <string name="settings_sources_ignore_limit_on">연결 수 제한을 무시하는 중: 멀티뷰와 녹화가 이 재생 목록에 표시된 것보다 많은 스트림을 열 수 있습니다. 제공업체가 거부한 스트림은 이전처럼 알려 드립니다.</string>
     <string name="settings_sources_probe_title">이 재생목록을 테스트할까요?</string>
     <string name="settings_sources_probe_warning">동시에 시청할 수 있는 채널 수를 알려 주지 않는 공급자가 많습니다. 그래서 OwnTV는 몇 개를 직접 열어 어느 것이 유지되는지 확인합니다. 지금 재생 중인 항목은 모두 멈추며, 최대 2분이 걸릴 수 있습니다.</string>
     <string name="settings_sources_probe_running">이 공급자가 허용하는 채널 수를 확인하는 중…(<xliff:g id="current">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>)</string>

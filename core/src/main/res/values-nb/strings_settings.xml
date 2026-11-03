@@ -720,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">Fjern også</string>
     <string name="settings_sources_clean_names_custom_hint">Ord atskilt med ; f.eks. VIP; Backup</string>
     <string name="settings_sources_retest">Test på nytt</string>
+    <string name="settings_sources_ignore_limit">Ignorer tilkoblingsgrensen</string>
+    <string name="settings_sources_ignore_limit_on">Tilkoblingsgrensen ignoreres: Multivisning og opptak kan åpne flere strømmer enn denne spillelisten oppgir. En strøm leverandøren avviser, sier fortsatt ifra.</string>
     <string name="settings_sources_probe_title">Vil du teste denne spillelisten?</string>
     <string name="settings_sources_probe_warning">Mange leverandører sier aldri hvor mange kanaler du kan se samtidig, så OwnTV finner det ut ved å åpne noen og se hvilke som holder. Alt som spilles av nå, stopper, og dette kan ta opptil to minutter.</string>
     <string name="settings_sources_probe_running">Sjekker hvor mange kanaler denne leverandøren tillater… (<xliff:g id="current">%1$d</xliff:g> av <xliff:g id="total">%2$d</xliff:g>)</string>

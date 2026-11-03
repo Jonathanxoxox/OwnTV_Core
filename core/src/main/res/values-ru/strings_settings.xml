@@ -730,6 +730,8 @@
     <string name="settings_sources_clean_names_custom">Также удалять</string>
     <string name="settings_sources_clean_names_custom_hint">Слова через ; например VIP; Backup</string>
     <string name="settings_sources_retest">Проверить снова</string>
+    <string name="settings_sources_ignore_limit">Не учитывать лимит подключений</string>
+    <string name="settings_sources_ignore_limit_on">Лимит подключений не учитывается: мультиэкран и записи могут открыть больше потоков, чем указано для этого плейлиста. Если провайдер отклонит поток, об этом по-прежнему будет сообщено.</string>
     <string name="settings_sources_probe_title">Проверить этот плейлист?</string>
     <string name="settings_sources_probe_warning">Многие провайдеры не сообщают, сколько каналов можно смотреть одновременно, поэтому OwnTV выясняет это, открывая несколько каналов и наблюдая, какие из них продолжают работать. Всё, что сейчас воспроизводится, остановится, и это может занять до двух минут.</string>
     <string name="settings_sources_probe_running">Проверяем, сколько каналов разрешает этот провайдер… (<xliff:g id="current">%1$d</xliff:g> из <xliff:g id="total">%2$d</xliff:g>)</string>

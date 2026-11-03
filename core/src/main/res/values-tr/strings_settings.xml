@@ -720,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">Bunları da kaldır</string>
     <string name="settings_sources_clean_names_custom_hint">; ile ayrılmış sözcükler, örn. VIP; Backup</string>
     <string name="settings_sources_retest">Yeniden test et</string>
+    <string name="settings_sources_ignore_limit">Bağlantı sınırını yok say</string>
+    <string name="settings_sources_ignore_limit_on">Bağlantı sınırı yok sayılıyor: Çoklu görünüm ve kayıtlar bu oynatma listesinin bildirdiğinden fazla yayın açabilir. Sağlayıcının reddettiği bir yayın bunu yine bildirir.</string>
     <string name="settings_sources_probe_title">Bu oynatma listesi test edilsin mi?</string>
     <string name="settings_sources_probe_warning">Birçok sağlayıcı aynı anda kaç kanal izleyebileceğinizi hiç belirtmez; bu yüzden OwnTV birkaç kanal açıp hangilerinin devam ettiğine bakarak bunu kendisi bulur. Şu anda oynatılan her şey duracak ve bu işlem iki dakikaya kadar sürebilir.</string>
     <string name="settings_sources_probe_running">Bu sağlayıcının kaç kanala izin verdiği kontrol ediliyor… (<xliff:g id="current">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>)</string>

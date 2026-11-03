@@ -725,6 +725,8 @@
     <string name="settings_sources_clean_names_custom">Remover também</string>
     <string name="settings_sources_clean_names_custom_hint">Palavras separadas por ; p. ex. VIP; Backup</string>
     <string name="settings_sources_retest">Testar de novo</string>
+    <string name="settings_sources_ignore_limit">Ignorar limite de ligações</string>
+    <string name="settings_sources_ignore_limit_on">Limite de ligações ignorado: a Multivisão e as gravações podem abrir mais streams do que esta playlist indica. Um stream recusado pelo fornecedor continua a indicá-lo.</string>
     <string name="settings_sources_probe_title">Testar esta lista?</string>
     <string name="settings_sources_probe_warning">Muitos fornecedores nunca indicam quantos canais pode ver em simultâneo, por isso o OwnTV descobre abrindo alguns e vendo quais resistem. Tudo o que estiver a ser reproduzido vai parar, e isto pode demorar até dois minutos.</string>
     <string name="settings_sources_probe_running">A verificar quantos canais este fornecedor permite… (<xliff:g id="current">%1$d</xliff:g> de <xliff:g id="total">%2$d</xliff:g>)</string>

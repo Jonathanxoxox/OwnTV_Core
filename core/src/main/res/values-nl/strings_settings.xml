@@ -720,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">Ook verwijderen</string>
     <string name="settings_sources_clean_names_custom_hint">Woorden gescheiden door ; bijv. VIP; Backup</string>
     <string name="settings_sources_retest">Opnieuw testen</string>
+    <string name="settings_sources_ignore_limit">Verbindingslimiet negeren</string>
+    <string name="settings_sources_ignore_limit_on">Verbindingslimiet genegeerd: Multiview en opnames kunnen meer streams openen dan deze playlist opgeeft. Een stream die de provider weigert, meldt dat nog steeds.</string>
     <string name="settings_sources_probe_title">Deze afspeellijst testen?</string>
     <string name="settings_sources_probe_warning">Veel providers zeggen nooit hoeveel kanalen je tegelijk mag kijken, dus OwnTV zoekt het uit door er een paar te openen en te kijken welke blijven werken. Alles wat nu speelt, stopt en dit kan tot twee minuten duren.</string>
     <string name="settings_sources_probe_running">Bezig met nagaan hoeveel kanalen deze provider toestaat… (<xliff:g id="current">%1$d</xliff:g> van <xliff:g id="total">%2$d</xliff:g>)</string>
