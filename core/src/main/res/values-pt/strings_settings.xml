@@ -196,8 +196,9 @@
     <string name="settings_ch_paging">Atalhos do controle remoto</string>
     <string name="settings_ch_paging_description">Atribua botões livres à navegação, reprodução e exploração. Os botões essenciais continuam protegidos.</string>
     <string name="settings_content_menus_title">Menus de toque longo</string>
-    <string name="settings_content_menus_description">Reordene as ações nos menus de canais, filmes, séries e episódios</string>
-    <string name="settings_content_menus_hint">Mantenha OK numa ação para a pegar e mova-a com Cima e Baixo. Prima OK novamente para a largar.</string>
+    <string name="settings_content_menus_description">Reordene ou oculte as ações nos menus de canais, filmes, séries e episódios</string>
+    <string name="settings_content_menus_hint">Pressione OK numa ação para mostrá-la ou ocultá-la. Mantenha OK para pegá-la, mova-a com Cima e Baixo e pressione OK novamente para soltá-la.</string>
+    <string name="settings_content_menus_note">Algumas ações aparecem apenas onde se aplicam.</string>
     <string name="settings_browsing_lists">Navegação e listas</string>
     <string name="settings_browsing_description">Lembre a última categoria e o último item em TV ao vivo, filmes e séries</string>
     <string name="settings_home_root">Tela inicial</string>
@@ -234,8 +235,10 @@
     <string name="settings_pip_on_leave">Picture-in-picture ao sair do app</string>
     <string name="settings_pip_on_leave_description">O vídeo continua em uma janela pequena quando você pressiona Início</string>
     <string name="settings_prefer_sdr_description">Quando um stream oferece imagem SDR e HDR, a SDR é reproduzida: para TVs em que o HDR parece desbotado ou escuro demais. Um stream só com HDR continua em HDR. Só ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Taxa de quadros automática</string>
-    <string name="settings_auto_frame_rate_description">Ajuste a taxa de atualização da TV ao vídeo (24/25/50/60 fps) em tela cheia, para TV ao vivo e VOD, e restaure-a ao sair. Desative se a TV ou o receiver refizer a negociação HDMI com ruído a cada troca de canal.</string>
+    <string name="settings_auto_frame_rate_films">Taxa de quadros automática para filmes e séries</string>
+    <string name="settings_auto_frame_rate_films_description">Ajuste a taxa de atualização da TV ao filme ou episódio (24/25/50/60 fps) em tela cheia e restaure-a ao sair.</string>
+    <string name="settings_auto_frame_rate_live">Taxa de quadros automática para TV ao vivo</string>
+    <string name="settings_auto_frame_rate_live_description">Ajuste a taxa de atualização da TV ao canal (25/50/60 fps) em tela cheia e restaure-a ao sair. Desative se a TV ou o receiver refizer a negociação HDMI com ruído a cada troca de canal.</string>
     <string name="settings_afr_pause">Pausar durante a troca de tela</string>
     <string name="settings_afr_pause_description">Somente filmes. Quando a TV precisa se ressincronizar com um novo modo de tela, o filme espera esse tempo para que o início não se perca na tela preta. Uma troca sem interrupção nunca pausa.</string>
     <string name="settings_afr_resolution">Ajustar a resolução</string>
@@ -612,6 +615,8 @@
     <string name="settings_browsing_last_category_description">Reabra a seção na categoria em que você estava, em vez de em Todas.</string>
     <string name="settings_browsing_last_item">Lembrar último item</string>
     <string name="settings_browsing_last_item_description">Cada categoria mantém sua própria posição de rolagem, em vez de começar no topo. A TV ao vivo também restaura o último canal em foco.</string>
+    <string name="settings_browsing_live_categories">Categorias da TV ao vivo</string>
+    <string name="settings_browsing_live_categories_description">Exibidas na TV ao vivo, no guia, no player e na Multivisão. Com Todos os canais desativado, a TV ao vivo abre na sua primeira categoria, ou em Favoritos se você não tiver nenhuma.</string>
     <string name="settings_catchup_player">Reproduzir programação retroativa em</string>
     <string name="settings_customize_title">Personalizar categorias e itens</string>
     <string name="settings_customize_pin_locked">Esta tela está bloqueada por PIN.</string>
@@ -720,6 +725,8 @@
     <string name="settings_sources_clean_names_custom">Remover também</string>
     <string name="settings_sources_clean_names_custom_hint">Palavras separadas por ; ex.: VIP; Backup</string>
     <string name="settings_sources_retest">Testar novamente</string>
+    <string name="settings_sources_ignore_limit">Ignorar limite de conexões</string>
+    <string name="settings_sources_ignore_limit_on">Limite de conexões ignorado: a Multivisão e as gravações podem abrir mais streams do que esta playlist informa. Um stream recusado pelo provedor continua avisando.</string>
     <string name="settings_sources_probe_title">Testar esta lista?</string>
     <string name="settings_sources_probe_warning">Muitos provedores nunca informam quantos canais você pode assistir ao mesmo tempo, então o OwnTV descobre abrindo alguns e vendo quais continuam. Tudo o que estiver em reprodução será interrompido, e isso pode levar até dois minutos.</string>
     <string name="settings_sources_probe_running">Verificando quantos canais este provedor permite… (<xliff:g id="current">%1$d</xliff:g> de <xliff:g id="total">%2$d</xliff:g>)</string>
@@ -1427,7 +1434,7 @@
     <string name="settings_line_guide_width">Lista de canais e linha do tempo</string>
     <string name="settings_line_browsing">Lembra a última categoria e o último item</string>
     <string name="settings_line_home">Escolha, reordene e filtre as linhas</string>
-    <string name="settings_line_content_menus">Reorganize as ações de cada menu</string>
+    <string name="settings_line_content_menus">Reorganize ou oculte as ações de cada menu</string>
     <string name="settings_line_remote_shortcuts">Atribua botões livres do controle remoto</string>
     <string name="settings_line_customize">Oculte e mostre, renomeie e reordene</string>
     <string name="settings_line_metadata">Pôsteres, sinopses, elenco e notas de filmes e séries</string>

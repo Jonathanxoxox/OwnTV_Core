@@ -194,8 +194,9 @@
     <string name="settings_ch_paging">リモコンショートカット</string>
     <string name="settings_ch_paging_description">リモコンの空きボタンにナビゲーション、再生、一覧操作を割り当てます。重要な操作ボタンは保護されます。</string>
     <string name="settings_content_menus_title">長押しメニュー</string>
-    <string name="settings_content_menus_description">チャンネル・映画・シリーズ・エピソードのメニューの項目を並べ替えます</string>
-    <string name="settings_content_menus_hint">項目で OK を長押しするとつかめます。上下で移動し、もう一度 OK で置きます。</string>
+    <string name="settings_content_menus_description">チャンネル・映画・シリーズ・エピソードのメニューの項目を並べ替えたり非表示にしたりします</string>
+    <string name="settings_content_menus_hint">項目で OK を押すと表示と非表示を切り替えます。OK を長押しするとつかめます。上下で移動し、もう一度 OK で置きます。</string>
+    <string name="settings_content_menus_note">一部の項目は、使える場面でのみ表示されます。</string>
     <string name="settings_browsing_lists">ブラウズと一覧</string>
     <string name="settings_browsing_description">ライブTV、映画、シリーズで最後のカテゴリと項目を記憶</string>
     <string name="settings_home_root">ホーム画面</string>
@@ -232,8 +233,10 @@
     <string name="settings_pip_on_leave">アプリを離れたときのピクチャー イン ピクチャー</string>
     <string name="settings_pip_on_leave_description">ホームを押すと、動画が小さなウィンドウで再生され続けます</string>
     <string name="settings_prefer_sdr_description">ストリームに SDR と HDR の両方の映像がある場合、SDR を再生します。HDR が白っぽく、または暗すぎて見えるテレビ向けです。HDR のみのストリームは HDR のままです。ExoPlayer のみ。</string>
-    <string name="settings_auto_frame_rate">自動フレームレート</string>
-    <string name="settings_auto_frame_rate_description">全画面表示でライブTVとVODの再生時にTVのリフレッシュレートを動画（24/25/50/60 fps）に合わせ、終了時に元に戻します。チャンネルを切り替えるたびにTVやレシーバーが大きな音を伴ってHDMIを再ハンドシェイクする場合はオフにしてください。</string>
+    <string name="settings_auto_frame_rate_films">映画・シリーズの自動フレームレート</string>
+    <string name="settings_auto_frame_rate_films_description">全画面表示で映画やエピソードの再生時にTVのリフレッシュレートを動画（24/25/50/60 fps）に合わせ、終了時に元に戻します。</string>
+    <string name="settings_auto_frame_rate_live">ライブTVの自動フレームレート</string>
+    <string name="settings_auto_frame_rate_live_description">全画面表示でチャンネルの再生時にTVのリフレッシュレートを映像（25/50/60 fps）に合わせ、終了時に元に戻します。チャンネルを切り替えるたびにTVやレシーバーが大きな音を伴ってHDMIを再ハンドシェイクする場合はオフにしてください。</string>
     <string name="settings_afr_pause">表示切り替え中は一時停止</string>
     <string name="settings_afr_pause_description">映画のみ。テレビが新しい表示モードへ再同期する必要があるとき、冒頭が黒い画面で失われないよう、映画はこの時間だけ待ちます。シームレスな切り替えでは一時停止しません。</string>
     <string name="settings_afr_resolution">解像度を合わせる</string>
@@ -606,6 +609,8 @@
     <string name="settings_browsing_last_category_description">セクションを再度開いたとき、「すべて」ではなく最後に表示していたカテゴリを開きます。</string>
     <string name="settings_browsing_last_item">最後の項目を記憶</string>
     <string name="settings_browsing_last_item_description">各カテゴリで先頭からではなく、前回のスクロール位置を復元します。ライブTVでは、最後にフォーカスしていたチャンネルも復元します。</string>
+    <string name="settings_browsing_live_categories">ライブTVのカテゴリ</string>
+    <string name="settings_browsing_live_categories_description">ライブTV、番組表、プレーヤー、マルチビューに表示されます。「すべてのチャンネル」をオフにすると、ライブTVは最初のカテゴリ（カテゴリがない場合はお気に入り）で開きます。</string>
     <string name="settings_catchup_player">見逃し配信の再生方法</string>
     <string name="settings_customize_title">カテゴリと項目をカスタマイズ</string>
     <string name="settings_customize_pin_locked">この画面はPINロックされています。</string>
@@ -710,6 +715,8 @@
     <string name="settings_sources_clean_names_custom">ほかに削除する語</string>
     <string name="settings_sources_clean_names_custom_hint">; で区切った語(例: VIP; Backup)</string>
     <string name="settings_sources_retest">再テスト</string>
+    <string name="settings_sources_ignore_limit">接続数の上限を無視</string>
+    <string name="settings_sources_ignore_limit_on">接続数の上限を無視しています：マルチビューと録画は、このプレイリストが示す数より多くのストリームを開くことがあります。プロバイダーが拒否したストリームは、これまでどおり表示されます。</string>
     <string name="settings_sources_probe_title">このプレイリストをテストしますか？</string>
     <string name="settings_sources_probe_warning">同時に視聴できるチャンネル数を知らせないプロバイダーは少なくありません。そこで OwnTV はいくつか実際に開き、どれが続くかを見て判断します。再生中のものはすべて停止し、最大で 2 分ほどかかります。</string>
     <string name="settings_sources_probe_running">このプロバイダーが許可するチャンネル数を確認しています…（<xliff:g id="current">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>）</string>
@@ -1371,7 +1378,7 @@
     <string name="settings_line_guide_width">チャンネル一覧とタイムライン</string>
     <string name="settings_line_browsing">最後のカテゴリと項目を記憶</string>
     <string name="settings_line_home">行を選んで並べ替え、絞り込む</string>
-    <string name="settings_line_content_menus">各メニューの操作を並べ替え</string>
+    <string name="settings_line_content_menus">各メニューの操作を並べ替え・非表示</string>
     <string name="settings_line_remote_shortcuts">リモコンの空きボタンを割り当て</string>
     <string name="settings_line_customize">非表示と再表示、名前の変更、並べ替え</string>
     <string name="settings_line_metadata">映画とシリーズのポスター、あらすじ、出演者、評価</string>

@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">صورتك الخاصة</string>
     <string name="profiles_kids">ملف الأطفال الشخصي</string>
     <string name="profiles_kids_description">تصفح مبسّط وآمن</string>
+    <string name="profiles_allow_downloads">السماح بالتنزيلات</string>
+    <string name="profiles_allow_downloads_description">عند الإيقاف تُخفى كل أزرار التنزيل لهذا الملف الشخصي</string>
     <string name="profiles_remove_pin">إزالة قفل PIN</string>
     <string name="profiles_no_pin">يمكن فتح هذا الملف الشخصي من دون PIN</string>
     <string name="profiles_change_pin">تغيير PIN (اتركه فارغًا للاحتفاظ بالحالي)</string>

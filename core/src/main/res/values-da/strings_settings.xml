@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">Fjernbetjeningsgenveje</string>
     <string name="settings_ch_paging_description">Tildel ledige knapper til navigation, afspilning og søgning. Vigtige navigationsknapper forbliver beskyttede.</string>
     <string name="settings_content_menus_title">Menuer ved langt tryk</string>
-    <string name="settings_content_menus_description">Omarrangér handlingerne i menuerne for kanaler, film, serier og afsnit</string>
-    <string name="settings_content_menus_hint">Hold OK nede på en handling for at tage den op, og flyt den så op og ned. Tryk på OK igen for at slippe den.</string>
+    <string name="settings_content_menus_description">Omarrangér eller skjul handlingerne i menuerne for kanaler, film, serier og afsnit</string>
+    <string name="settings_content_menus_hint">Tryk på OK på en handling for at vise eller skjule den. Hold OK nede for at tage den op, flyt den op og ned, og tryk på OK igen for at slippe den.</string>
+    <string name="settings_content_menus_note">Nogle handlinger vises kun, hvor de giver mening.</string>
     <string name="settings_browsing_lists">Navigation og lister</string>
     <string name="settings_browsing_description">Husk den seneste kategori og det seneste element i Live-tv, film og serier</string>
     <string name="settings_home_root">Startskærm</string>
@@ -233,8 +234,10 @@
     <string name="settings_pip_on_leave">Billede-i-billede, når du forlader appen</string>
     <string name="settings_pip_on_leave_description">Videoen bliver ved med at spille i et lille vindue, når du trykker på Hjem</string>
     <string name="settings_prefer_sdr_description">Når en stream har både et SDR- og et HDR-billede, afspilles SDR: til et tv, hvor HDR ser udvasket eller for mørkt ud. En stream med kun HDR forbliver HDR. Kun ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Automatisk billedfrekvens</string>
-    <string name="settings_auto_frame_rate_description">Tilpas tv\'ets opdateringshastighed til videoen (24/25/50/60 fps) på fuld skærm for Live-tv og VOD, og gendan den ved afslutning. Slå dette fra, hvis dit tv eller din receiver foretager et støjende nyt HDMI-handshake ved hvert kanalskift.</string>
+    <string name="settings_auto_frame_rate_films">Automatisk billedfrekvens for film og serier</string>
+    <string name="settings_auto_frame_rate_films_description">Tilpas tv\'ets opdateringshastighed til filmen eller afsnittet (24/25/50/60 fps) på fuld skærm, og gendan den ved afslutning.</string>
+    <string name="settings_auto_frame_rate_live">Automatisk billedfrekvens for Live-tv</string>
+    <string name="settings_auto_frame_rate_live_description">Tilpas tv\'ets opdateringshastighed til kanalen (25/50/60 fps) på fuld skærm, og gendan den ved afslutning. Slå dette fra, hvis dit tv eller din receiver foretager et støjende nyt HDMI-handshake ved hvert kanalskift.</string>
     <string name="settings_afr_pause">Pause under skærmskift</string>
     <string name="settings_afr_pause_description">Kun film. Når tv’et skal synkronisere igen til en ny skærmtilstand, venter filmen så længe, så begyndelsen ikke går tabt i det sorte billede. Et problemfrit skift pauser aldrig.</string>
     <string name="settings_afr_resolution">Tilpas opløsning</string>
@@ -609,6 +612,8 @@
     <string name="settings_browsing_last_category_description">Åbn sektionen igen i den kategori, du forlod, og ikke i Alle.</string>
     <string name="settings_browsing_last_item">Husk seneste element</string>
     <string name="settings_browsing_last_item_description">Hver kategori beholder sin egen rulleposition i stedet for at starte øverst. Live-tv gendanner også den senest fokuserede kanal.</string>
+    <string name="settings_browsing_live_categories">Live-tv-kategorier</string>
+    <string name="settings_browsing_live_categories_description">Vises i Live-tv, programguiden, afspilleren og Multivisning. Med Alle kanaler slået fra åbner Live-tv i din første kategori eller i Favoritter, hvis du ingen har.</string>
     <string name="settings_catchup_player">Afspil arkiv med</string>
     <string name="settings_customize_title">Tilpas kategorier og elementer</string>
     <string name="settings_customize_pin_locked">Denne skærm er PIN-låst.</string>
@@ -715,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">Fjern også</string>
     <string name="settings_sources_clean_names_custom_hint">Ord adskilt af ; f.eks. VIP; Backup</string>
     <string name="settings_sources_retest">Test igen</string>
+    <string name="settings_sources_ignore_limit">Ignorer forbindelsesgrænse</string>
+    <string name="settings_sources_ignore_limit_on">Forbindelsesgrænsen ignoreres: Multivisning og optagelser kan åbne flere streams, end denne playliste angiver. En stream, som udbyderen afviser, siger det stadig.</string>
     <string name="settings_sources_probe_title">Vil du teste denne playliste?</string>
     <string name="settings_sources_probe_warning">Mange udbydere oplyser aldrig, hvor mange kanaler du må se samtidig, så OwnTV finder ud af det ved at åbne nogle stykker og se, hvilke der overlever. Alt, der afspilles nu, stopper, og det kan tage op til to minutter.</string>
     <string name="settings_sources_probe_running">Kontrollerer, hvor mange kanaler denne udbyder tillader… (<xliff:g id="current">%1$d</xliff:g> af <xliff:g id="total">%2$d</xliff:g>)</string>
@@ -1399,7 +1406,7 @@
     <string name="settings_line_guide_width">Kanalliste og tidslinje</string>
     <string name="settings_line_browsing">Husk den sidste kategori og det sidste element</string>
     <string name="settings_line_home">Vælg, omarranger og filtrér rækkerne</string>
-    <string name="settings_line_content_menus">Omarranger handlingerne i hver menu</string>
+    <string name="settings_line_content_menus">Omarranger eller skjul handlingerne i hver menu</string>
     <string name="settings_line_remote_shortcuts">Tildel ledige knapper på fjernbetjeningen</string>
     <string name="settings_line_customize">Skjul og vis, omdøb og omarranger</string>
     <string name="settings_line_metadata">Plakater, handling, medvirkende og bedømmelser til film og serier</string>

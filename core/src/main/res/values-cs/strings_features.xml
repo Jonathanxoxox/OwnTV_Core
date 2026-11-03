@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">Vlastní obrázek</string>
     <string name="profiles_kids">Dětský profil</string>
     <string name="profiles_kids_description">Zjednodušené a bezpečné procházení</string>
+    <string name="profiles_allow_downloads">Povolit stahování</string>
+    <string name="profiles_allow_downloads_description">Vypnuto skryje u tohoto profilu všechna tlačítka stahování</string>
     <string name="profiles_remove_pin">Odstranit zámek PIN</string>
     <string name="profiles_no_pin">Tento profil se otevírá bez kódu PIN</string>
     <string name="profiles_change_pin">Změnit PIN (prázdné = ponechat)</string>

@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">रिमोट शॉर्टकट</string>
     <string name="settings_ch_paging_description">नेविगेशन, प्लेबैक और ब्राउज़िंग के लिए रिमोट के अतिरिक्त बटन तय करें। ज़रूरी नेविगेशन बटन सुरक्षित रहेंगे।</string>
     <string name="settings_content_menus_title">लॉन्ग-प्रेस मेन्यू</string>
-    <string name="settings_content_menus_description">चैनल, मूवी, सीरीज़ और एपिसोड मेन्यू की क्रियाओं का क्रम बदलें</string>
-    <string name="settings_content_menus_hint">किसी क्रिया पर OK दबाए रखकर उसे उठाएँ, फिर ऊपर-नीचे से हिलाएँ। छोड़ने के लिए फिर से OK दबाएँ।</string>
+    <string name="settings_content_menus_description">चैनल, मूवी, सीरीज़ और एपिसोड मेन्यू की क्रियाओं का क्रम बदलें या उन्हें छिपाएँ</string>
+    <string name="settings_content_menus_hint">किसी क्रिया को दिखाने या छिपाने के लिए उस पर OK दबाएँ। उठाने के लिए OK दबाए रखें, ऊपर-नीचे से हिलाएँ और छोड़ने के लिए फिर से OK दबाएँ।</string>
+    <string name="settings_content_menus_note">कुछ क्रियाएँ सिर्फ़ वहीं दिखती हैं जहाँ वे लागू होती हैं।</string>
     <string name="settings_browsing_lists">ब्राउज़िंग और सूचियाँ</string>
     <string name="settings_browsing_description">लाइव टीवी, फ़िल्मों और सीरीज़ में पिछली श्रेणी और पिछला आइटम याद रखें</string>
     <string name="settings_home_root">होम स्क्रीन</string>
@@ -233,8 +234,10 @@
     <string name="settings_pip_on_leave">ऐप छोड़ने पर पिक्चर-इन-पिक्चर</string>
     <string name="settings_pip_on_leave_description">होम दबाने पर वीडियो एक छोटी विंडो में चलता रहता है</string>
     <string name="settings_prefer_sdr_description">जब किसी स्ट्रीम में SDR और HDR दोनों तस्वीरें हों, तो SDR चलती है: उस टीवी के लिए जिस पर HDR फीका या बहुत गहरा दिखता है। सिर्फ़ HDR वाली स्ट्रीम HDR ही रहती है। सिर्फ़ ExoPlayer।</string>
-    <string name="settings_auto_frame_rate">अपने-आप फ़्रेम दर मिलाना</string>
-    <string name="settings_auto_frame_rate_description">फ़ुल स्क्रीन में लाइव टीवी और VOD के लिए TV की रीफ़्रेश दर को वीडियो (24/25/50/60 fps) से मिलाएँ और बाहर निकलने पर उसे पहले जैसा करें। यदि हर चैनल बदलने पर आपका TV या रिसीवर शोर के साथ फिर से HDMI हैंडशेक करता है, तो इसे बंद कर दें।</string>
+    <string name="settings_auto_frame_rate_films">फ़िल्मों और सीरीज़ के लिए अपने-आप फ़्रेम दर मिलाना</string>
+    <string name="settings_auto_frame_rate_films_description">फ़ुल स्क्रीन में TV की रीफ़्रेश दर को फ़िल्म या एपिसोड (24/25/50/60 fps) से मिलाएँ और बाहर निकलने पर उसे पहले जैसा करें।</string>
+    <string name="settings_auto_frame_rate_live">लाइव टीवी के लिए अपने-आप फ़्रेम दर मिलाना</string>
+    <string name="settings_auto_frame_rate_live_description">फ़ुल स्क्रीन में TV की रीफ़्रेश दर को चैनल (25/50/60 fps) से मिलाएँ और बाहर निकलने पर उसे पहले जैसा करें। यदि हर चैनल बदलने पर आपका TV या रिसीवर शोर के साथ फिर से HDMI हैंडशेक करता है, तो इसे बंद कर दें।</string>
     <string name="settings_afr_pause">डिस्प्ले बदलते समय रोकें</string>
     <string name="settings_afr_pause_description">सिर्फ़ फ़िल्में। जब टीवी को नए डिस्प्ले मोड पर दोबारा सिंक होना पड़ता है, तो फ़िल्म इतनी देर रुकती है ताकि उसकी शुरुआत काली स्क्रीन में न छूटे। सहज बदलाव पर कभी नहीं रुकती।</string>
     <string name="settings_afr_resolution">रिज़ॉल्यूशन मिलाएँ</string>
@@ -609,6 +612,8 @@
     <string name="settings_browsing_last_category_description">अनुभाग को सभी के बजाय उसी श्रेणी पर दोबारा खोलें जहाँ आपने उसे छोड़ा था।</string>
     <string name="settings_browsing_last_item">पिछला आइटम याद रखें</string>
     <string name="settings_browsing_last_item_description">हर श्रेणी ऊपर से शुरू होने के बजाय अपनी स्क्रॉल स्थिति बनाए रखती है। लाइव टीवी पिछली बार फ़ोकस में रहा चैनल भी वापस लाता है।</string>
+    <string name="settings_browsing_live_categories">लाइव टीवी श्रेणियाँ</string>
+    <string name="settings_browsing_live_categories_description">लाइव टीवी, गाइड, प्लेयर और मल्टीव्यू में दिखती हैं। सभी channels बंद होने पर लाइव टीवी आपकी पहली श्रेणी में खुलता है, और कोई श्रेणी न हो तो पसंदीदा में।</string>
     <string name="settings_catchup_player">कैच-अप इसमें चलाएँ</string>
     <string name="settings_customize_title">श्रेणियाँ और आइटम कस्टमाइज़ करें</string>
     <string name="settings_customize_pin_locked">यह स्क्रीन PIN से लॉक है।</string>
@@ -715,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">यह भी हटाएँ</string>
     <string name="settings_sources_clean_names_custom_hint">; से अलग किए शब्द, जैसे VIP; Backup</string>
     <string name="settings_sources_retest">फिर से जाँचें</string>
+    <string name="settings_sources_ignore_limit">कनेक्शन सीमा अनदेखी करें</string>
+    <string name="settings_sources_ignore_limit_on">कनेक्शन सीमा अनदेखी की जा रही है: मल्टीव्यू और रिकॉर्डिंग इस प्लेलिस्ट की बताई संख्या से ज़्यादा स्ट्रीम खोल सकते हैं। प्रदाता किसी स्ट्रीम को मना करे तो यह पहले की तरह बताया जाएगा।</string>
     <string name="settings_sources_probe_title">इस प्लेलिस्ट की जाँच करें?</string>
     <string name="settings_sources_probe_warning">कई प्रदाता कभी नहीं बताते कि आप एक साथ कितने चैनल देख सकते हैं, इसलिए OwnTV कुछ चैनल खोलकर और यह देखकर पता लगाता है कि कौन से चलते रहते हैं। अभी जो कुछ चल रहा है वह रुक जाएगा, और इसमें दो मिनट तक लग सकते हैं।</string>
     <string name="settings_sources_probe_running">जाँचा जा रहा है कि यह प्रदाता कितने चैनलों की अनुमति देता है… (<xliff:g id="total">%2$d</xliff:g> में से <xliff:g id="current">%1$d</xliff:g>)</string>
@@ -1399,7 +1406,7 @@
     <string name="settings_line_guide_width">चैनल सूची और टाइमलाइन</string>
     <string name="settings_line_browsing">आखिरी श्रेणी और आइटम याद रखें</string>
     <string name="settings_line_home">पंक्तियाँ चुनें, क्रम बदलें और फ़िल्टर करें</string>
-    <string name="settings_line_content_menus">हर मेनू की क्रियाएँ फिर से व्यवस्थित करें</string>
+    <string name="settings_line_content_menus">हर मेनू की क्रियाएँ फिर से व्यवस्थित करें या छिपाएँ</string>
     <string name="settings_line_remote_shortcuts">रिमोट के खाली बटन असाइन करें</string>
     <string name="settings_line_customize">छिपाएँ और दिखाएँ, नाम बदलें और क्रम बदलें</string>
     <string name="settings_line_metadata">मूवी और सीरीज़ के पोस्टर, कहानी, कलाकार और रेटिंग</string>

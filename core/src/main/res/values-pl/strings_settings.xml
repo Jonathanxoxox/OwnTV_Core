@@ -197,8 +197,9 @@
     <string name="settings_ch_paging">Skróty pilota</string>
     <string name="settings_ch_paging_description">Przypisz wolne przyciski pilota do nawigacji, odtwarzania i przeglądania. Podstawowe przyciski pozostają chronione.</string>
     <string name="settings_content_menus_title">Menu długiego naciśnięcia</string>
-    <string name="settings_content_menus_description">Zmień kolejność akcji w menu kanałów, filmów, seriali i odcinków</string>
-    <string name="settings_content_menus_hint">Przytrzymaj OK na akcji, aby ją chwycić, a potem przesuwaj w górę i w dół. Ponowne OK ją upuszcza.</string>
+    <string name="settings_content_menus_description">Zmień kolejność akcji w menu kanałów, filmów, seriali i odcinków lub je ukryj</string>
+    <string name="settings_content_menus_hint">Naciśnij OK na akcji, aby ją pokazać lub ukryć. Przytrzymaj OK, aby ją chwycić, przesuwaj w górę i w dół, a ponowne OK ją upuszcza.</string>
+    <string name="settings_content_menus_note">Niektóre akcje pojawiają się tylko tam, gdzie mają zastosowanie.</string>
     <string name="settings_browsing_lists">Przeglądanie i listy</string>
     <string name="settings_browsing_description">Zapamiętuj ostatnią kategorię i ostatni element w telewizji na żywo, filmach i serialach</string>
     <string name="settings_home_root">Ekran główny</string>
@@ -235,8 +236,10 @@
     <string name="settings_pip_on_leave">Obraz w obrazie po wyjściu z aplikacji</string>
     <string name="settings_pip_on_leave_description">Wideo gra dalej w małym oknie po naciśnięciu przycisku ekranu głównego</string>
     <string name="settings_prefer_sdr_description">Gdy strumień oferuje obraz SDR i HDR, odtwarzany jest SDR: dla telewizora, na którym HDR wygląda na wyblakły lub zbyt ciemny. Strumień tylko z HDR pozostaje w HDR. Tylko ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Automatyczne dopasowanie klatek</string>
-    <string name="settings_auto_frame_rate_description">Dopasuj częstotliwość odświeżania telewizora do filmu (24/25/50/60 kl./s) na pełnym ekranie w telewizji na żywo i VOD, a po zakończeniu przywróć poprzednią wartość. Wyłącz tę opcję, jeśli telewizor lub amplituner głośno ponawia uzgadnianie połączenia HDMI przy każdej zmianie kanału.</string>
+    <string name="settings_auto_frame_rate_films">Automatyczne dopasowanie klatek dla filmów i seriali</string>
+    <string name="settings_auto_frame_rate_films_description">Dopasuj częstotliwość odświeżania telewizora do filmu lub odcinka (24/25/50/60 kl./s) na pełnym ekranie, a po zakończeniu przywróć poprzednią wartość.</string>
+    <string name="settings_auto_frame_rate_live">Automatyczne dopasowanie klatek dla telewizji na żywo</string>
+    <string name="settings_auto_frame_rate_live_description">Dopasuj częstotliwość odświeżania telewizora do kanału (25/50/60 kl./s) na pełnym ekranie, a po zakończeniu przywróć poprzednią wartość. Wyłącz tę opcję, jeśli telewizor lub amplituner głośno ponawia uzgadnianie połączenia HDMI przy każdej zmianie kanału.</string>
     <string name="settings_afr_pause">Pauza podczas przełączania ekranu</string>
     <string name="settings_afr_pause_description">Tylko filmy. Gdy telewizor musi ponownie zsynchronizować się z nowym trybem ekranu, film czeka tyle czasu, aby jego początek nie przepadł w czarnym obrazie. Płynne przełączenie nigdy nie wstrzymuje.</string>
     <string name="settings_afr_resolution">Dopasuj rozdzielczość</string>
@@ -615,6 +618,8 @@
     <string name="settings_browsing_last_category_description">Po ponownym otwarciu sekcji wracaj do opuszczonej kategorii zamiast do kategorii Wszystkie.</string>
     <string name="settings_browsing_last_item">Zapamiętuj ostatni element</string>
     <string name="settings_browsing_last_item_description">Każda kategoria zachowuje własną pozycję przewijania zamiast wracać na początek. Telewizja na żywo przywraca również ostatnio zaznaczony kanał.</string>
+    <string name="settings_browsing_live_categories">Kategorie telewizji na żywo</string>
+    <string name="settings_browsing_live_categories_description">Widoczne w telewizji na żywo, przewodniku TV, odtwarzaczu i Multiview. Gdy Wszystkie kanały są wyłączone, telewizja na żywo otwiera się na pierwszej kategorii, a jeśli żadnej nie masz — na Ulubionych.</string>
     <string name="settings_catchup_player">Odtwarzaj materiały z telewizji wstecz w</string>
     <string name="settings_customize_title">Personalizuj kategorie i elementy</string>
     <string name="settings_customize_pin_locked">Ten ekran jest zablokowany kodem PIN.</string>
@@ -725,6 +730,8 @@
     <string name="settings_sources_clean_names_custom">Usuń też</string>
     <string name="settings_sources_clean_names_custom_hint">Słowa oddzielone ; np. VIP; Backup</string>
     <string name="settings_sources_retest">Testuj ponownie</string>
+    <string name="settings_sources_ignore_limit">Ignoruj limit połączeń</string>
+    <string name="settings_sources_ignore_limit_on">Limit połączeń jest ignorowany: Multiview i nagrania mogą otworzyć więcej strumieni, niż podaje ta playlista. Strumień odrzucony przez dostawcę nadal to zgłosi.</string>
     <string name="settings_sources_probe_title">Przetestować tę playlistę?</string>
     <string name="settings_sources_probe_warning">Wielu dostawców nigdy nie podaje, ile kanałów można oglądać jednocześnie, więc OwnTV sprawdza to, otwierając kilka i obserwując, które przetrwają. Wszystko, co jest teraz odtwarzane, zostanie zatrzymane, a może to potrwać do dwóch minut.</string>
     <string name="settings_sources_probe_running">Sprawdzanie, ile kanałów dopuszcza ten dostawca… (<xliff:g id="current">%1$d</xliff:g> z <xliff:g id="total">%2$d</xliff:g>)</string>
@@ -1455,7 +1462,7 @@
     <string name="settings_line_guide_width">Lista kanałów i oś czasu</string>
     <string name="settings_line_browsing">Zapamiętaj ostatnią kategorię i pozycję</string>
     <string name="settings_line_home">Wybierz, uporządkuj i filtruj rzędy</string>
-    <string name="settings_line_content_menus">Zmień układ działań w każdym menu</string>
+    <string name="settings_line_content_menus">Zmień układ działań w każdym menu lub je ukryj</string>
     <string name="settings_line_remote_shortcuts">Przypisz wolne przyciski pilota</string>
     <string name="settings_line_customize">Ukrywaj i pokazuj, zmieniaj nazwy i kolejność</string>
     <string name="settings_line_metadata">Plakaty, fabuła, obsada i oceny filmów i seriali</string>

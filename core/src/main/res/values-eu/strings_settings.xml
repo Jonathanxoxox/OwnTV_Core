@@ -246,8 +246,9 @@
     <string name="settings_ch_paging">Urrutiko aginteko lasterbideak</string>
     <string name="settings_ch_paging_description">Esleitu urrutiko aginteko botoi libreak nabigazio funtsezkoa babestuta mantenduz</string>
     <string name="settings_content_menus_title">Luze sakatzeko menuak</string>
-    <string name="settings_content_menus_description">Berrantolatu kanal-, film-, telesail- eta atal-menuetako ekintzak</string>
-    <string name="settings_content_menus_hint">Eutsi Ados ekintza bati hartzeko, gero Gora eta Behera mugitzeko. Sakatu Ados berriro uzteko.</string>
+    <string name="settings_content_menus_description">Berrantolatu edo ezkutatu kanal-, film-, telesail- eta atal-menuetako ekintzak</string>
+    <string name="settings_content_menus_hint">Sakatu Ados ekintza batean hura erakusteko edo ezkutatzeko. Eutsi Ados hartzeko, mugitu Gora eta Behera, eta sakatu Ados berriro uzteko.</string>
+    <string name="settings_content_menus_note">Ekintza batzuk dagozkien lekuetan bakarrik agertzen dira.</string>
     <string name="settings_browsing_lists">Arakatzea eta zerrendak</string>
     <string name="settings_browsing_description">Gogoratu azken kategoria eta azken elementua Zuzeneko telebistan, Filmetan eta Telesailetan</string>
     <string name="settings_home_root">Hasierako pantaila</string>
@@ -301,8 +302,10 @@
     <string name="settings_pip_on_leave">Irudi-barruko irudia aplikaziotik irtetean</string>
     <string name="settings_pip_on_leave_description">Bideoak leiho txiki batean jarraitzen du Hasiera sakatzean</string>
     <string name="settings_prefer_sdr_description">Jario batek SDR eta HDR irudiak eskaintzen dituenean, SDR irudia erreproduzitzen da: HDRa margul edo ilunegi ikusten den telebistetarako. HDR soilik duen jarioa HDR geratzen da. ExoPlayer soilik.</string>
-    <string name="settings_auto_frame_rate">Fotograma-maiztasun automatikoa</string>
-    <string name="settings_auto_frame_rate_description">Egokitu telebistaren freskatze-maiztasuna bideoari (24/25/50/60 fps) pantaila osoan, Zuzeneko telebistan eta VODean, eta lehengoratu irtetean. Desaktibatu zure telebistak edo hartzaileak HDMI azkar berrehunkatzen badu kanal-aldaketa bakoitzean.</string>
+    <string name="settings_auto_frame_rate_films">Fotograma-maiztasun automatikoa filmetarako eta telesailetarako</string>
+    <string name="settings_auto_frame_rate_films_description">Egokitu telebistaren freskatze-maiztasuna filmari edo atalari (24/25/50/60 fps) pantaila osoan, eta lehengoratu irtetean.</string>
+    <string name="settings_auto_frame_rate_live">Fotograma-maiztasun automatikoa Zuzeneko telebistarako</string>
+    <string name="settings_auto_frame_rate_live_description">Egokitu telebistaren freskatze-maiztasuna kanalari (25/50/60 fps) pantaila osoan, eta lehengoratu irtetean. Desaktibatu zure telebistak edo hartzaileak HDMI azkar berrehunkatzen badu kanal-aldaketa bakoitzean.</string>
     <string name="settings_afr_pause">Pausatu pantaila-aldaketan zehar</string>
     <string name="settings_afr_pause_description">Filmetarako soilik. Telebistak pantaila-modu berri batera berriro sinkronizatu behar duenean, filmak hainbeste itxaroten du hasiera pantaila beltzean galdu ez dadin. Aldaketa leunak ez du inoiz pausatzen.</string>
     <string name="settings_afr_resolution">Parekatu bereizmena</string>
@@ -708,6 +711,8 @@
     <string name="settings_browsing_last_category_description">Berrireki atala utzi zenuen kategorian, ez Denak atalean.</string>
     <string name="settings_browsing_last_item">Gogoratu azken elementua</string>
     <string name="settings_browsing_last_item_description">Kategoria bakoitzak bere korritze-posizioa mantentzen du goian hasi beharrean. Zuzeneko telebistak fokuan egon zen azken kanala ere leheneratzen du.</string>
+    <string name="settings_browsing_live_categories">Zuzeneko telebistaren kategoriak</string>
+    <string name="settings_browsing_live_categories_description">Zuzeneko telebistan, gidan, erreproduzigailuan eta Multiview-n erakusten dira. Kanal guztiak desaktibatuta badago, zuzeneko telebista zure lehen kategorian irekitzen da, edo Gogokoetan kategoriarik ez baduzu.</string>
     <string name="settings_catchup_player">Erreproduzitu berrikustea hemen</string>
     <string name="settings_customize_title">Pertsonalizatu kategoriak eta elementuak</string>
     <string name="settings_customize_pin_locked">Pantaila hau PINez blokeatuta dago.</string>
@@ -814,6 +819,8 @@
     <string name="settings_sources_clean_names_custom">Kendu hauek ere</string>
     <string name="settings_sources_clean_names_custom_hint">; bidez bereizitako hitzak, adib. VIP; Backup</string>
     <string name="settings_sources_retest">Probatu berriro</string>
+    <string name="settings_sources_ignore_limit">Ez ikusiarena egin konexio-mugari</string>
+    <string name="settings_sources_ignore_limit_on">Konexio-muga ez da kontuan hartzen: Multiview-ek eta grabazioek erreprodukzio-zerrenda honek dioena baino transmisio gehiago ireki ditzakete. Hornitzaileak transmisio bat ukatzen badu, hala esango da.</string>
     <string name="settings_sources_probe_title">Erreprodukzio-zerrenda hau probatu?</string>
     <string name="settings_sources_probe_warning">Hornitzaile askok ez dute inoiz esaten zenbat kanal ikus ditzakezun aldi berean, beraz OwnTVk hainbat ireki eta zeintzuk irauten duten ikusiz jakiten du. Orain erreproduzitzen ari den guztia gelditu egingo da, eta honek bi minutu arte iraun dezake.</string>
     <string name="settings_sources_probe_running">Hornitzaile honek zenbat kanal onartzen dituen egiaztatzen… (<xliff:g id="current">%1$d</xliff:g> / <xliff:g id="total">%2$d</xliff:g>)</string>
@@ -1399,7 +1406,7 @@
     <string name="settings_line_guide_width">Kanal-zerrenda eta kronologia</string>
     <string name="settings_line_browsing">Gogoratu azken kategoria eta elementua</string>
     <string name="settings_line_home">Aukeratu, berrantolatu eta iragazi errenkadak</string>
-    <string name="settings_line_content_menus">Berrantolatu ekintzak menu bakoitzean</string>
+    <string name="settings_line_content_menus">Berrantolatu edo ezkutatu ekintzak menu bakoitzean</string>
     <string name="settings_line_remote_shortcuts">Esleitu urrutiko aginteko botoi libreak</string>
     <string name="settings_line_customize">Ezkutatu eta erakutsi, aldatu izena eta berrantolatu</string>
     <string name="settings_line_metadata">Posterrak, sinopsiak, aktoreak eta balorazioak Filmetarako eta Telesailetarako</string>

@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">Ditt eget bilde</string>
     <string name="profiles_kids">Barneprofil</string>
     <string name="profiles_kids_description">Forenklet, trygg navigering</string>
+    <string name="profiles_allow_downloads">Tillat nedlastinger</string>
+    <string name="profiles_allow_downloads_description">Av skjuler alle nedlastingsknapper for denne profilen</string>
     <string name="profiles_remove_pin">Fjern PIN-lås</string>
     <string name="profiles_no_pin">Denne profilen åpnes uten PIN</string>
     <string name="profiles_change_pin">Endre PIN (tomt felt = behold)</string>

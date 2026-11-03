@@ -199,8 +199,9 @@
     <string name="settings_ch_paging">اختصارات جهاز التحكم</string>
     <string name="settings_ch_paging_description">عيّن أزرار جهاز التحكم الإضافية لإجراءات التنقل والتشغيل والتصفح. تظل أزرار التنقل الأساسية محمية.</string>
     <string name="settings_content_menus_title">قوائم الضغط المطوّل</string>
-    <string name="settings_content_menus_description">أعد ترتيب الإجراءات في قوائم القنوات والأفلام والمسلسلات والحلقات</string>
-    <string name="settings_content_menus_hint">اضغط مطوّلًا على «موافق» فوق إجراء لالتقاطه، ثم استخدم الأعلى والأسفل لتحريكه. اضغط «موافق» مرة أخرى لإفلاته.</string>
+    <string name="settings_content_menus_description">أعد ترتيب الإجراءات أو أخفها في قوائم القنوات والأفلام والمسلسلات والحلقات</string>
+    <string name="settings_content_menus_hint">اضغط «موافق» على إجراء لإظهاره أو إخفائه. اضغط مطوّلًا على «موافق» لالتقاطه، ثم استخدم الأعلى والأسفل لتحريكه، واضغط «موافق» مرة أخرى لإفلاته.</string>
+    <string name="settings_content_menus_note">تظهر بعض الإجراءات فقط حيث تنطبق.</string>
     <string name="settings_browsing_lists">التصفح والقوائم</string>
     <string name="settings_browsing_description">تذكّر آخر فئة وآخر عنصر في البث التلفزيوني المباشر والأفلام والمسلسلات</string>
     <string name="settings_home_root">الشاشة الرئيسية</string>
@@ -237,8 +238,10 @@
     <string name="settings_pip_on_leave">صورة داخل صورة عند مغادرة التطبيق</string>
     <string name="settings_pip_on_leave_description">يستمر تشغيل الفيديو في نافذة صغيرة عند الضغط على الرئيسية</string>
     <string name="settings_prefer_sdr_description">عندما يوفّر البث صورة SDR وصورة HDR معًا، تُشغَّل صورة SDR: للتلفاز الذي تبدو فيه صورة HDR باهتة أو داكنة جدًا. البث الذي يوفّر HDR فقط يبقى HDR. مع ExoPlayer فقط.</string>
-    <string name="settings_auto_frame_rate">معدل الإطارات التلقائي</string>
-    <string name="settings_auto_frame_rate_description">مطابقة معدل تحديث التلفزيون مع الفيديو (24/25/50/60 إطارًا في الثانية) في وضع ملء الشاشة، للبث التلفزيوني المباشر والفيديو حسب الطلب، واستعادته عند الخروج. عطّل هذا الخيار إذا كان التلفزيون أو جهاز الاستقبال يعيد مصافحة HDMI بصورة مزعجة عند كل تغيير للقناة.</string>
+    <string name="settings_auto_frame_rate_films">معدل الإطارات التلقائي للأفلام والمسلسلات</string>
+    <string name="settings_auto_frame_rate_films_description">مطابقة معدل تحديث التلفزيون مع الفيلم أو الحلقة (24/25/50/60 إطارًا في الثانية) في وضع ملء الشاشة، واستعادته عند الخروج.</string>
+    <string name="settings_auto_frame_rate_live">معدل الإطارات التلقائي للبث التلفزيوني المباشر</string>
+    <string name="settings_auto_frame_rate_live_description">مطابقة معدل تحديث التلفزيون مع القناة (25/50/60 إطارًا في الثانية) في وضع ملء الشاشة، واستعادته عند الخروج. عطّل هذا الخيار إذا كان التلفزيون أو جهاز الاستقبال يعيد مصافحة HDMI بصورة مزعجة عند كل تغيير للقناة.</string>
     <string name="settings_afr_pause">إيقاف مؤقت أثناء تبديل الشاشة</string>
     <string name="settings_afr_pause_description">للأفلام فقط. عندما يحتاج التلفاز إلى إعادة المزامنة مع وضع شاشة جديد، ينتظر الفيلم هذه المدة حتى لا تضيع بدايته في الشاشة السوداء. التبديل السلس لا يوقف التشغيل أبدًا.</string>
     <string name="settings_afr_resolution">مطابقة الدقة</string>
@@ -621,6 +624,8 @@
     <string name="settings_browsing_last_category_description">أعد فتح القسم على الفئة التي غادرتها، وليس على «الكل».</string>
     <string name="settings_browsing_last_item">تذكّر آخر عنصر</string>
     <string name="settings_browsing_last_item_description">تحتفظ كل فئة بموضع التمرير الخاص بها بدلًا من البدء من الأعلى. ويستعيد البث التلفزيوني المباشر أيضًا آخر قناة كانت قيد التركيز.</string>
+    <string name="settings_browsing_live_categories">فئات البث التلفزيوني المباشر</string>
+    <string name="settings_browsing_live_categories_description">تظهر في البث التلفزيوني المباشر ودليل البرامج والمشغّل والعرض المتعدد. عند إيقاف «كل القنوات» يفتح البث المباشر على فئتك الأولى، أو على المفضّلة إن لم تكن لديك فئات.</string>
     <string name="settings_catchup_player">تشغيل مشاهدة البث الفائت باستخدام</string>
     <string name="settings_customize_title">تخصيص الفئات والعناصر</string>
     <string name="settings_customize_pin_locked">هذه الشاشة مقفلة باستخدام PIN.</string>
@@ -735,6 +740,8 @@
     <string name="settings_sources_clean_names_custom">إزالة أيضًا</string>
     <string name="settings_sources_clean_names_custom_hint">كلمات مفصولة بـ ; مثل VIP; Backup</string>
     <string name="settings_sources_retest">إعادة الاختبار</string>
+    <string name="settings_sources_ignore_limit">تجاهل حد الاتصالات</string>
+    <string name="settings_sources_ignore_limit_on">تم تجاهل حد الاتصالات: قد يفتح العرض المتعدد والتسجيلات بثًا أكثر مما تذكره قائمة التشغيل هذه. وإذا رفض المزوّد بثًا فسيظهر ذلك كالمعتاد.</string>
     <string name="settings_sources_probe_title">اختبار هذه القائمة؟</string>
     <string name="settings_sources_probe_warning">لا يذكر كثير من المزوّدين عدد القنوات التي يمكنك مشاهدتها في وقت واحد، لذا يكتشف OwnTV ذلك بفتح بضع قنوات ومعرفة أيها يستمر. سيتوقف كل ما يعمل الآن، وقد يستغرق هذا حتى دقيقتين.</string>
     <string name="settings_sources_probe_running">جارٍ التحقق من عدد القنوات التي يسمح بها هذا المزوّد… (<xliff:g id="current">%1$d</xliff:g> من <xliff:g id="total">%2$d</xliff:g>)</string>
@@ -1511,7 +1518,7 @@
     <string name="settings_line_guide_width">قائمة القنوات والخط الزمني</string>
     <string name="settings_line_browsing">تذكُّر آخر فئة وآخر عنصر</string>
     <string name="settings_line_home">اختيار الصفوف وترتيبها وتصفيتها</string>
-    <string name="settings_line_content_menus">إعادة ترتيب الإجراءات في كل قائمة</string>
+    <string name="settings_line_content_menus">أعد ترتيب الإجراءات أو أخفها في كل قائمة</string>
     <string name="settings_line_remote_shortcuts">تعيين أزرار الريموت غير المستخدمة</string>
     <string name="settings_line_customize">الإخفاء والإظهار وإعادة التسمية والترتيب</string>
     <string name="settings_line_metadata">الملصقات والقصص وطاقم التمثيل والتقييمات للأفلام والمسلسلات</string>

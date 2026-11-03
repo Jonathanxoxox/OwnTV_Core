@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">Fjärrkontrollsgenvägar</string>
     <string name="settings_ch_paging_description">Tilldela lediga knappar till navigering, uppspelning och bläddring. Viktiga navigeringsknappar förblir skyddade.</string>
     <string name="settings_content_menus_title">Menyer vid långt tryck</string>
-    <string name="settings_content_menus_description">Ändra ordningen på åtgärderna i menyerna för kanaler, filmer, serier och avsnitt</string>
-    <string name="settings_content_menus_hint">Håll in OK på en åtgärd för att plocka upp den och flytta den sedan upp och ner. Tryck på OK igen för att släppa den.</string>
+    <string name="settings_content_menus_description">Ändra ordningen på eller dölj åtgärderna i menyerna för kanaler, filmer, serier och avsnitt</string>
+    <string name="settings_content_menus_hint">Tryck på OK på en åtgärd för att visa eller dölja den. Håll in OK för att plocka upp den, flytta den upp och ner och tryck på OK igen för att släppa den.</string>
+    <string name="settings_content_menus_note">Vissa åtgärder visas bara där de passar.</string>
     <string name="settings_browsing_lists">Bläddring och listor</string>
     <string name="settings_browsing_description">Kom ihåg den senaste kategorin och det senaste objektet i live-tv, filmer och serier</string>
     <string name="settings_home_root">Startskärm</string>
@@ -233,8 +234,10 @@
     <string name="settings_pip_on_leave">Bild-i-bild när du lämnar appen</string>
     <string name="settings_pip_on_leave_description">Videon fortsätter i ett litet fönster när du trycker på Hem</string>
     <string name="settings_prefer_sdr_description">När en ström har både en SDR- och en HDR-bild spelas SDR upp: för en tv där HDR ser blekt eller för mörkt ut. En ström med bara HDR förblir HDR. Endast ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Automatisk bildfrekvens</string>
-    <string name="settings_auto_frame_rate_description">Matcha tv:ns uppdateringsfrekvens med videon (24/25/50/60 bildrutor/s) i helskärm för live-tv och VOD och återställ den vid avslut. Stäng av om tv:n eller mottagaren genomför en ny HDMI-handskakning med störande ljud vid varje kanalbyte.</string>
+    <string name="settings_auto_frame_rate_films">Automatisk bildfrekvens för filmer och serier</string>
+    <string name="settings_auto_frame_rate_films_description">Matcha tv:ns uppdateringsfrekvens med filmen eller avsnittet (24/25/50/60 bildrutor/s) i helskärm och återställ den vid avslut.</string>
+    <string name="settings_auto_frame_rate_live">Automatisk bildfrekvens för live-tv</string>
+    <string name="settings_auto_frame_rate_live_description">Matcha tv:ns uppdateringsfrekvens med kanalen (25/50/60 bildrutor/s) i helskärm och återställ den vid avslut. Stäng av om tv:n eller mottagaren genomför en ny HDMI-handskakning med störande ljud vid varje kanalbyte.</string>
     <string name="settings_afr_pause">Pausa under skärmbytet</string>
     <string name="settings_afr_pause_description">Endast filmer. När tv:n måste synka om till ett nytt skärmläge väntar filmen så länge, så att början inte går förlorad i den svarta bilden. Ett sömlöst byte pausar aldrig.</string>
     <string name="settings_afr_resolution">Anpassa upplösning</string>
@@ -609,6 +612,8 @@
     <string name="settings_browsing_last_category_description">Öppna avsnittet igen i den kategori du lämnade i stället för Alla.</string>
     <string name="settings_browsing_last_item">Kom ihåg senaste objektet</string>
     <string name="settings_browsing_last_item_description">Varje kategori behåller sin egen rullningsposition i stället för att börja högst upp. Live-tv återställer även den senast fokuserade kanalen.</string>
+    <string name="settings_browsing_live_categories">Live-tv-kategorier</string>
+    <string name="settings_browsing_live_categories_description">Visas i Live-tv, programguiden, spelaren och Multivy. Med Alla kanaler avstängt öppnas Live-tv i din första kategori, eller i Favoriter om du inte har någon.</string>
     <string name="settings_catchup_player">Spela upp tv-arkiv i</string>
     <string name="settings_customize_title">Anpassa kategorier och objekt</string>
     <string name="settings_customize_pin_locked">Den här skärmen är låst med PIN.</string>
@@ -715,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">Ta även bort</string>
     <string name="settings_sources_clean_names_custom_hint">Ord åtskilda med ; t.ex. VIP; Backup</string>
     <string name="settings_sources_retest">Testa igen</string>
+    <string name="settings_sources_ignore_limit">Ignorera anslutningsgränsen</string>
+    <string name="settings_sources_ignore_limit_on">Anslutningsgränsen ignoreras: Multivy och inspelningar kan öppna fler strömmar än den här spellistan anger. En ström som leverantören nekar säger fortfarande ifrån.</string>
     <string name="settings_sources_probe_title">Testa den här spellistan?</string>
     <string name="settings_sources_probe_warning">Många leverantörer talar aldrig om hur många kanaler du får titta på samtidigt, så OwnTV tar reda på det genom att öppna några och se vilka som håller. Allt som spelas upp nu stoppas, och det här kan ta upp till två minuter.</string>
     <string name="settings_sources_probe_running">Kontrollerar hur många kanaler den här leverantören tillåter… (<xliff:g id="current">%1$d</xliff:g> av <xliff:g id="total">%2$d</xliff:g>)</string>
@@ -1399,7 +1406,7 @@
     <string name="settings_line_guide_width">Kanallista och tidslinje</string>
     <string name="settings_line_browsing">Kom ihåg senaste kategorin och objektet</string>
     <string name="settings_line_home">Välj, sortera och filtrera raderna</string>
-    <string name="settings_line_content_menus">Ordna om åtgärderna i varje meny</string>
+    <string name="settings_line_content_menus">Ordna om eller dölj åtgärderna i varje meny</string>
     <string name="settings_line_remote_shortcuts">Tilldela lediga knappar på fjärrkontrollen</string>
     <string name="settings_line_customize">Dölj och visa, byt namn och ordna</string>
     <string name="settings_line_metadata">Affischer, handling, rollista och betyg för filmer och serier</string>

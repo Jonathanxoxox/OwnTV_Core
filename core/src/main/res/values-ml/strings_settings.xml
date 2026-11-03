@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">റിമോട്ട് കുറുക്കുവഴികൾ</string>
     <string name="settings_ch_paging_description">നാവിഗേഷൻ, പ്ലേബാക്ക്, ബ്രൗസിംഗ് എന്നിവയ്ക്കായി റിമോട്ടിലെ അധിക ബട്ടണുകൾ നൽകുക. പ്രധാന നാവിഗേഷൻ ബട്ടണുകൾ സംരക്ഷിക്കപ്പെടും.</string>
     <string name="settings_content_menus_title">ലോങ്-പ്രസ് മെനുകൾ</string>
-    <string name="settings_content_menus_description">ചാനൽ, സിനിമ, സീരീസ്, എപ്പിസോഡ് മെനുകളിലെ പ്രവർത്തനങ്ങൾ പുനഃക്രമീകരിക്കുക</string>
-    <string name="settings_content_menus_hint">ഒരു പ്രവർത്തനത്തിൽ OK അമർത്തിപ്പിടിച്ച് അത് എടുക്കുക, മുകളിലേക്കും താഴേക്കും നീക്കുക. വീണ്ടും OK അമർത്തി വയ്ക്കുക.</string>
+    <string name="settings_content_menus_description">ചാനൽ, സിനിമ, സീരീസ്, എപ്പിസോഡ് മെനുകളിലെ പ്രവർത്തനങ്ങൾ പുനഃക്രമീകരിക്കുക അല്ലെങ്കിൽ മറയ്ക്കുക</string>
+    <string name="settings_content_menus_hint">ഒരു പ്രവർത്തനം കാണിക്കാനോ മറയ്ക്കാനോ അതിൽ OK അമർത്തുക. എടുക്കാൻ OK അമർത്തിപ്പിടിക്കുക, മുകളിലേക്കും താഴേക്കും നീക്കുക, വീണ്ടും OK അമർത്തി വയ്ക്കുക.</string>
+    <string name="settings_content_menus_note">ചില പ്രവർത്തനങ്ങൾ ബാധകമായ ഇടങ്ങളിൽ മാത്രമേ കാണൂ.</string>
     <string name="settings_browsing_lists">ബ്രൗസിംഗും പട്ടികകളും</string>
     <string name="settings_browsing_description">തത്സമയ ടിവി, സിനിമകൾ, സീരീസ് എന്നിവയിലെ അവസാന വിഭാഗവും അവസാന ഇനവും ഓർക്കുക</string>
     <string name="settings_home_root">ഹോം സ്ക്രീൻ</string>
@@ -233,8 +234,10 @@
     <string name="settings_pip_on_leave">ആപ്പ് വിടുമ്പോൾ പിക്ചർ-ഇൻ-പിക്ചർ</string>
     <string name="settings_pip_on_leave_description">ഹോം അമർത്തുമ്പോൾ വീഡിയോ ഒരു ചെറിയ വിൻഡോയിൽ തുടരും</string>
     <string name="settings_prefer_sdr_description">ഒരു സ്ട്രീമിൽ SDR, HDR ചിത്രങ്ങൾ രണ്ടും ഉണ്ടെങ്കിൽ SDR പ്ലേ ചെയ്യും: HDR മങ്ങിയോ വളരെ ഇരുണ്ടോ കാണുന്ന ടിവിക്കായി. HDR മാത്രമുള്ള സ്ട്രീം HDR ആയി തുടരും. ExoPlayer-ൽ മാത്രം.</string>
-    <string name="settings_auto_frame_rate">സ്വയമേവയുള്ള ഫ്രെയിം നിരക്ക്</string>
-    <string name="settings_auto_frame_rate_description">തത്സമയ ടിവിക്കും VOD-ക്കും പൂർണ്ണ സ്ക്രീനിൽ ടിവിയുടെ പുതുക്കൽ നിരക്ക് വീഡിയോയുമായി (24/25/50/60 fps) പൊരുത്തപ്പെടുത്തി, പുറത്തുകടക്കുമ്പോൾ പഴയ നിലയിലാക്കുക. ഓരോ ചാനൽ മാറ്റത്തിലും നിങ്ങളുടെ ടിവിയോ റിസീവറോ HDMI ഹാൻഡ്‌ഷേക്ക് ശബ്ദത്തോടെ വീണ്ടും നടത്തുകയാണെങ്കിൽ ഇത് പ്രവർത്തനരഹിതമാക്കുക.</string>
+    <string name="settings_auto_frame_rate_films">സിനിമകൾക്കും സീരീസുകൾക്കും സ്വയമേവയുള്ള ഫ്രെയിം നിരക്ക്</string>
+    <string name="settings_auto_frame_rate_films_description">പൂർണ്ണ സ്ക്രീനിൽ ടിവിയുടെ പുതുക്കൽ നിരക്ക് സിനിമയുമായോ എപ്പിസോഡുമായോ (24/25/50/60 fps) പൊരുത്തപ്പെടുത്തി, പുറത്തുകടക്കുമ്പോൾ പഴയ നിലയിലാക്കുക.</string>
+    <string name="settings_auto_frame_rate_live">തത്സമയ ടിവിക്ക് സ്വയമേവയുള്ള ഫ്രെയിം നിരക്ക്</string>
+    <string name="settings_auto_frame_rate_live_description">പൂർണ്ണ സ്ക്രീനിൽ ടിവിയുടെ പുതുക്കൽ നിരക്ക് ചാനലുമായി (25/50/60 fps) പൊരുത്തപ്പെടുത്തി, പുറത്തുകടക്കുമ്പോൾ പഴയ നിലയിലാക്കുക. ഓരോ ചാനൽ മാറ്റത്തിലും നിങ്ങളുടെ ടിവിയോ റിസീവറോ HDMI ഹാൻഡ്‌ഷേക്ക് ശബ്ദത്തോടെ വീണ്ടും നടത്തുകയാണെങ്കിൽ ഇത് പ്രവർത്തനരഹിതമാക്കുക.</string>
     <string name="settings_afr_pause">ഡിസ്‌പ്ലേ മാറുമ്പോൾ താൽക്കാലികമായി നിർത്തുക</string>
     <string name="settings_afr_pause_description">സിനിമകൾക്ക് മാത്രം. പുതിയ ഡിസ്‌പ്ലേ മോഡിലേക്ക് ടിവി വീണ്ടും സിങ്ക് ചെയ്യേണ്ടിവരുമ്പോൾ, തുടക്കം കറുത്ത സ്‌ക്രീനിൽ നഷ്ടപ്പെടാതിരിക്കാൻ സിനിമ ഇത്രയും സമയം കാത്തിരിക്കും. തടസ്സമില്ലാത്ത മാറ്റത്തിൽ ഒരിക്കലും നിർത്തില്ല.</string>
     <string name="settings_afr_resolution">റെസല്യൂഷൻ പൊരുത്തപ്പെടുത്തുക</string>
@@ -609,6 +612,8 @@
     <string name="settings_browsing_last_category_description">എല്ലാം എന്നതിൽ നിന്നല്ല, നിങ്ങൾ വിട്ട വിഭാഗത്തിൽ നിന്ന് ഈ ഭാഗം വീണ്ടും തുറക്കുക.</string>
     <string name="settings_browsing_last_item">അവസാന ഇനം ഓർക്കുക</string>
     <string name="settings_browsing_last_item_description">ഓരോ വിഭാഗവും മുകളിൽ നിന്ന് ആരംഭിക്കുന്നതിന് പകരം അതത് സ്ക്രോൾ സ്ഥാനം നിലനിർത്തും. തത്സമയ ടിവി അവസാനം ഫോക്കസിലുണ്ടായിരുന്ന ചാനലും പുനഃസ്ഥാപിക്കും.</string>
+    <string name="settings_browsing_live_categories">തത്സമയ ടിവി വിഭാഗങ്ങൾ</string>
+    <string name="settings_browsing_live_categories_description">തത്സമയ ടിവിയിലും ഗൈഡിലും പ്ലെയറിലും മൾട്ടിവ്യൂവിലും കാണിക്കും. എല്ലാ ചാനലുകളും ഓഫാക്കിയാൽ തത്സമയ ടിവി നിങ്ങളുടെ ആദ്യ വിഭാഗത്തിൽ തുറക്കും, ഒന്നുമില്ലെങ്കിൽ പ്രിയപ്പെട്ടവയിൽ.</string>
     <string name="settings_catchup_player">ക്യാച്ച്-അപ്പ് പ്ലേ ചെയ്യേണ്ടത്</string>
     <string name="settings_customize_title">വിഭാഗങ്ങളും ഇനങ്ങളും ഇഷ്ടാനുസൃതമാക്കുക</string>
     <string name="settings_customize_pin_locked">ഈ സ്ക്രീൻ PIN ഉപയോഗിച്ച് ലോക്ക് ചെയ്തിരിക്കുന്നു.</string>
@@ -715,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">ഇവയും നീക്കുക</string>
     <string name="settings_sources_clean_names_custom_hint">; കൊണ്ട് വേർതിരിച്ച വാക്കുകൾ, ഉദാ. VIP; Backup</string>
     <string name="settings_sources_retest">വീണ്ടും പരിശോധിക്കുക</string>
+    <string name="settings_sources_ignore_limit">കണക്ഷൻ പരിധി അവഗണിക്കുക</string>
+    <string name="settings_sources_ignore_limit_on">കണക്ഷൻ പരിധി അവഗണിക്കുന്നു: ഈ പ്ലേലിസ്റ്റ് പറയുന്നതിലും കൂടുതൽ സ്ട്രീമുകൾ മൾട്ടിവ്യൂവും റെക്കോർഡിംഗുകളും തുറന്നേക്കാം. ദാതാവ് ഒരു സ്ട്രീം നിരസിച്ചാൽ അത് മുമ്പത്തെപ്പോലെ അറിയിക്കും.</string>
     <string name="settings_sources_probe_title">ഈ പ്ലേലിസ്റ്റ് പരിശോധിക്കണോ?</string>
     <string name="settings_sources_probe_warning">ഒരേസമയം എത്ര ചാനലുകൾ കാണാമെന്ന് പല ദാതാക്കളും ഒരിക്കലും പറയാറില്ല. അതിനാൽ കുറച്ച് ചാനലുകൾ തുറന്ന് ഏതൊക്കെ തുടരുന്നു എന്ന് നോക്കിയാണ് OwnTV ഇത് കണ്ടെത്തുന്നത്. ഇപ്പോൾ പ്ലേ ചെയ്യുന്നതെല്ലാം നിലയ്ക്കും, ഇതിന് രണ്ട് മിനിറ്റ് വരെ എടുത്തേക്കാം.</string>
     <string name="settings_sources_probe_running">ഈ ദാതാവ് എത്ര ചാനലുകൾ അനുവദിക്കുന്നു എന്ന് പരിശോധിക്കുന്നു… (<xliff:g id="total">%2$d</xliff:g>-ൽ <xliff:g id="current">%1$d</xliff:g>)</string>
@@ -1399,7 +1406,7 @@
     <string name="settings_line_guide_width">ചാനൽ പട്ടികയും ടൈംലൈനും</string>
     <string name="settings_line_browsing">അവസാന വിഭാഗവും ഇനവും ഓർക്കുക</string>
     <string name="settings_line_home">നിരകൾ തിരഞ്ഞെടുക്കുക, ക്രമീകരിക്കുക, ഫിൽട്ടർ ചെയ്യുക</string>
-    <string name="settings_line_content_menus">ഓരോ മെനുവിലെയും പ്രവർത്തനങ്ങൾ പുനഃക്രമീകരിക്കുക</string>
+    <string name="settings_line_content_menus">ഓരോ മെനുവിലെയും പ്രവർത്തനങ്ങൾ പുനഃക്രമീകരിക്കുക അല്ലെങ്കിൽ മറയ്ക്കുക</string>
     <string name="settings_line_remote_shortcuts">റിമോട്ടിലെ ഒഴിവുള്ള ബട്ടണുകൾ നൽകുക</string>
     <string name="settings_line_customize">മറയ്ക്കുക, കാണിക്കുക, പേര് മാറ്റുക, ക്രമീകരിക്കുക</string>
     <string name="settings_line_metadata">സിനിമകൾക്കും സീരീസുകൾക്കും പോസ്റ്ററുകൾ, കഥ, അഭിനേതാക്കൾ, റേറ്റിംഗുകൾ</string>

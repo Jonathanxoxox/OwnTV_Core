@@ -196,8 +196,9 @@
     <string name="settings_ch_paging">Raccourcis de la télécommande</string>
     <string name="settings_ch_paging_description">Attribuez les touches libres à la navigation, la lecture et la consultation. Les touches essentielles restent protégées.</string>
     <string name="settings_content_menus_title">Menus d’appui long</string>
-    <string name="settings_content_menus_description">Réorganisez les actions des menus chaînes, films, séries et épisodes</string>
-    <string name="settings_content_menus_hint">Maintenez OK sur une action pour la saisir, puis déplacez-la avec Haut et Bas. Appuyez de nouveau sur OK pour la déposer.</string>
+    <string name="settings_content_menus_description">Réorganisez ou masquez les actions des menus chaînes, films, séries et épisodes</string>
+    <string name="settings_content_menus_hint">Appuyez sur OK sur une action pour l\'afficher ou la masquer. Maintenez OK pour la saisir, déplacez-la avec Haut et Bas, puis appuyez de nouveau sur OK pour la déposer.</string>
+    <string name="settings_content_menus_note">Certaines actions n\'apparaissent que là où elles s\'appliquent.</string>
     <string name="settings_browsing_lists">Navigation et listes</string>
     <string name="settings_browsing_description">Mémoriser la dernière catégorie et le dernier élément dans TV en direct, Films et Séries</string>
     <string name="settings_home_root">Écran d’accueil</string>
@@ -234,8 +235,10 @@
     <string name="settings_pip_on_leave">Picture-in-picture en quittant l’app</string>
     <string name="settings_pip_on_leave_description">La vidéo continue dans une petite fenêtre quand vous appuyez sur Accueil</string>
     <string name="settings_prefer_sdr_description">Quand un flux propose une image SDR et une image HDR, l’image SDR est lue : pour un téléviseur où le HDR paraît délavé ou trop sombre. Un flux uniquement HDR reste en HDR. ExoPlayer uniquement.</string>
-    <string name="settings_auto_frame_rate">Fréquence d’images automatique</string>
-    <string name="settings_auto_frame_rate_description">Adapter la fréquence de rafraîchissement du téléviseur à la vidéo (24/25/50/60 ips) en plein écran, pour la TV en direct et la VOD, puis la rétablir en quittant la lecture. Désactivez cette option si votre téléviseur ou récepteur relance bruyamment la négociation HDMI à chaque changement de chaîne.</string>
+    <string name="settings_auto_frame_rate_films">Fréquence d’images automatique pour les films et séries</string>
+    <string name="settings_auto_frame_rate_films_description">Adapter la fréquence de rafraîchissement du téléviseur au film ou à l’épisode (24/25/50/60 ips) en plein écran, puis la rétablir en quittant la lecture.</string>
+    <string name="settings_auto_frame_rate_live">Fréquence d’images automatique pour la TV en direct</string>
+    <string name="settings_auto_frame_rate_live_description">Adapter la fréquence de rafraîchissement du téléviseur à la chaîne (25/50/60 ips) en plein écran, puis la rétablir en quittant la lecture. Désactivez cette option si votre téléviseur ou récepteur relance bruyamment la négociation HDMI à chaque changement de chaîne.</string>
     <string name="settings_afr_pause">Pause pendant le changement d’affichage</string>
     <string name="settings_afr_pause_description">Films uniquement. Quand le téléviseur doit se resynchroniser sur un nouveau mode d’affichage, le film attend ce délai pour que son début ne se perde pas dans l’écran noir. Un changement sans coupure ne met jamais en pause.</string>
     <string name="settings_afr_resolution">Adapter la résolution</string>
@@ -612,6 +615,8 @@
     <string name="settings_browsing_last_category_description">Rouvrir la section sur la catégorie que vous avez quittée plutôt que sur Toutes.</string>
     <string name="settings_browsing_last_item">Mémoriser le dernier élément</string>
     <string name="settings_browsing_last_item_description">Chaque catégorie conserve sa propre position de défilement au lieu de recommencer en haut. La TV en direct restaure également la dernière chaîne sélectionnée.</string>
+    <string name="settings_browsing_live_categories">Catégories de la TV en direct</string>
+    <string name="settings_browsing_live_categories_description">Affichées dans la TV en direct, le guide TV, le lecteur et Multivue. Avec Toutes les chaînes désactivé, la TV en direct s\'ouvre sur votre première catégorie, ou sur Favoris si vous n\'en avez aucune.</string>
     <string name="settings_catchup_player">Lire le rattrapage avec</string>
     <string name="settings_customize_title">Personnaliser les catégories et les éléments</string>
     <string name="settings_customize_pin_locked">Cet écran est verrouillé par PIN.</string>
@@ -720,6 +725,8 @@
     <string name="settings_sources_clean_names_custom">Retirer aussi</string>
     <string name="settings_sources_clean_names_custom_hint">Mots séparés par ; ex. VIP; Backup</string>
     <string name="settings_sources_retest">Retester</string>
+    <string name="settings_sources_ignore_limit">Ignorer la limite de connexions</string>
+    <string name="settings_sources_ignore_limit_on">Limite de connexions ignorée : Multivue et les enregistrements peuvent ouvrir plus de flux que cette playlist n’en annonce. Un flux refusé par le fournisseur le signale toujours.</string>
     <string name="settings_sources_probe_title">Tester cette liste ?</string>
     <string name="settings_sources_probe_warning">Beaucoup de fournisseurs n’indiquent jamais combien de chaînes vous pouvez regarder en même temps ; OwnTV le découvre donc en en ouvrant quelques-unes et en observant lesquelles tiennent. Tout ce qui est en cours de lecture s’arrêtera, et cela peut prendre jusqu’à deux minutes.</string>
     <string name="settings_sources_probe_running">Recherche du nombre de chaînes autorisées par ce fournisseur… (<xliff:g id="current">%1$d</xliff:g> sur <xliff:g id="total">%2$d</xliff:g>)</string>
@@ -1427,7 +1434,7 @@
     <string name="settings_line_guide_width">Liste des chaînes et frise horaire</string>
     <string name="settings_line_browsing">Retenir la dernière catégorie et le dernier élément</string>
     <string name="settings_line_home">Choisir, réordonner et filtrer les rangées</string>
-    <string name="settings_line_content_menus">Réorganiser les actions de chaque menu</string>
+    <string name="settings_line_content_menus">Réorganiser ou masquer les actions de chaque menu</string>
     <string name="settings_line_remote_shortcuts">Attribuer les touches libres de la télécommande</string>
     <string name="settings_line_customize">Masquer et afficher, renommer et réordonner</string>
     <string name="settings_line_metadata">Affiches, résumés, distribution et notes des films et séries</string>

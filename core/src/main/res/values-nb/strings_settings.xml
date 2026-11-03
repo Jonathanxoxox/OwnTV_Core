@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">Fjernkontrollsnarveier</string>
     <string name="settings_ch_paging_description">Tilordne ledige knapper til navigasjon, avspilling og blaing. Viktige navigasjonsknapper forblir beskyttet.</string>
     <string name="settings_content_menus_title">Menyer ved langt trykk</string>
-    <string name="settings_content_menus_description">Endre rekkefølgen på handlingene i menyene for kanaler, filmer, serier og episoder</string>
-    <string name="settings_content_menus_hint">Hold inne OK på en handling for å plukke den opp, og flytt den så opp og ned. Trykk OK igjen for å slippe den.</string>
+    <string name="settings_content_menus_description">Endre rekkefølgen på eller skjul handlingene i menyene for kanaler, filmer, serier og episoder</string>
+    <string name="settings_content_menus_hint">Trykk OK på en handling for å vise eller skjule den. Hold inne OK for å plukke den opp, flytt den opp og ned, og trykk OK igjen for å slippe den.</string>
+    <string name="settings_content_menus_note">Noen handlinger vises bare der de passer.</string>
     <string name="settings_browsing_lists">Blaing og lister</string>
     <string name="settings_browsing_description">Husk den siste kategorien og det siste elementet i Direkte-TV, filmer og serier</string>
     <string name="settings_home_root">Startskjerm</string>
@@ -233,8 +234,10 @@
     <string name="settings_pip_on_leave">Bilde-i-bilde når du forlater appen</string>
     <string name="settings_pip_on_leave_description">Videoen fortsetter i et lite vindu når du trykker på Hjem</string>
     <string name="settings_prefer_sdr_description">Når en strøm har både et SDR- og et HDR-bilde, spilles SDR av: for en TV der HDR ser blek eller for mørk ut. En strøm med bare HDR forblir HDR. Bare ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Automatisk bildefrekvens</string>
-    <string name="settings_auto_frame_rate_description">Tilpass TV-ens oppdateringsfrekvens til videoen (24/25/50/60 bilder/s) i fullskjerm for Direkte-TV og VOD, og gjenopprett den når du avslutter. Slå av hvis TV-en eller mottakeren utfører et støyende HDMI-håndtrykk ved hvert kanalbytte.</string>
+    <string name="settings_auto_frame_rate_films">Automatisk bildefrekvens for filmer og serier</string>
+    <string name="settings_auto_frame_rate_films_description">Tilpass TV-ens oppdateringsfrekvens til filmen eller episoden (24/25/50/60 bilder/s) i fullskjerm, og gjenopprett den når du avslutter.</string>
+    <string name="settings_auto_frame_rate_live">Automatisk bildefrekvens for Direkte-TV</string>
+    <string name="settings_auto_frame_rate_live_description">Tilpass TV-ens oppdateringsfrekvens til kanalen (25/50/60 bilder/s) i fullskjerm, og gjenopprett den når du avslutter. Slå av hvis TV-en eller mottakeren utfører et støyende HDMI-håndtrykk ved hvert kanalbytte.</string>
     <string name="settings_afr_pause">Pause under skjermbytte</string>
     <string name="settings_afr_pause_description">Bare filmer. Når TV-en må synkronisere på nytt til en ny skjermmodus, venter filmen så lenge, slik at begynnelsen ikke går tapt i det svarte bildet. Et sømløst bytte pauser aldri.</string>
     <string name="settings_afr_resolution">Tilpass oppløsning</string>
@@ -609,6 +612,8 @@
     <string name="settings_browsing_last_category_description">Åpne delen igjen i kategorien du forlot, ikke Alle.</string>
     <string name="settings_browsing_last_item">Husk siste element</string>
     <string name="settings_browsing_last_item_description">Hver kategori beholder sin egen rulleposisjon i stedet for å starte øverst. Direkte-TV gjenoppretter også den sist fokuserte kanalen.</string>
+    <string name="settings_browsing_live_categories">Direkte-TV-kategorier</string>
+    <string name="settings_browsing_live_categories_description">Vises i Direkte-TV, programoversikten, avspilleren og Multivisning. Med Alle kanaler slått av åpner Direkte-TV i den første kategorien din, eller i Favoritter hvis du ikke har noen.</string>
     <string name="settings_catchup_player">Spill av arkiv med</string>
     <string name="settings_customize_title">Tilpass kategorier og elementer</string>
     <string name="settings_customize_pin_locked">Denne skjermen er låst med PIN.</string>
@@ -715,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">Fjern også</string>
     <string name="settings_sources_clean_names_custom_hint">Ord atskilt med ; f.eks. VIP; Backup</string>
     <string name="settings_sources_retest">Test på nytt</string>
+    <string name="settings_sources_ignore_limit">Ignorer tilkoblingsgrensen</string>
+    <string name="settings_sources_ignore_limit_on">Tilkoblingsgrensen ignoreres: Multivisning og opptak kan åpne flere strømmer enn denne spillelisten oppgir. En strøm leverandøren avviser, sier fortsatt ifra.</string>
     <string name="settings_sources_probe_title">Vil du teste denne spillelisten?</string>
     <string name="settings_sources_probe_warning">Mange leverandører sier aldri hvor mange kanaler du kan se samtidig, så OwnTV finner det ut ved å åpne noen og se hvilke som holder. Alt som spilles av nå, stopper, og dette kan ta opptil to minutter.</string>
     <string name="settings_sources_probe_running">Sjekker hvor mange kanaler denne leverandøren tillater… (<xliff:g id="current">%1$d</xliff:g> av <xliff:g id="total">%2$d</xliff:g>)</string>
@@ -1399,7 +1406,7 @@
     <string name="settings_line_guide_width">Kanalliste og tidslinje</string>
     <string name="settings_line_browsing">Husk siste kategori og element</string>
     <string name="settings_line_home">Velg, sorter og filtrer radene</string>
-    <string name="settings_line_content_menus">Omorganiser handlingene i hver meny</string>
+    <string name="settings_line_content_menus">Omorganiser eller skjul handlingene i hver meny</string>
     <string name="settings_line_remote_shortcuts">Tilordne ledige knapper på fjernkontrollen</string>
     <string name="settings_line_customize">Skjul og vis, gi nytt navn og sorter</string>
     <string name="settings_line_metadata">Plakater, handling, rolleliste og vurderinger for filmer og serier</string>

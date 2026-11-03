@@ -307,6 +307,9 @@ val dataModule = module {
             stalkerEpg = get(),
         )
     }
+    single { tv.own.owntv.core.epg.ArchiveGuideFiller(get()) }
+    // channelDao, categoryDao, sourceDao, profileDao, customize, settings
+    single { tv.own.owntv.core.live.ChannelVersions(get(), get(), get(), get(), get(), get()) }
     // seriesDao, sourceDao, xtreamClient, userDataResolver, stalkerClient, stalkerAuthManager
     single { SeriesRepository(get(), get(), get(), get(), get(), get()) }
     // sourceDao, movieDao, seriesDao, progressDao

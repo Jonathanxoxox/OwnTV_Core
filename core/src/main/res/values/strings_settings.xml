@@ -421,9 +421,11 @@
     <!-- Translators: Settings navigation label for the long-press content menus. -->
     <string name="settings_content_menus_title">Long-press menus</string>
     <!-- Translators: Description of the long-press content menus settings. -->
-    <string name="settings_content_menus_description">Rearrange the actions in the channel, movie, series &amp; episode menus</string>
-    <!-- Translators: Hint shown above the list when arranging a long-press menu. -->
-    <string name="settings_content_menus_hint">Hold OK on an action to pick it up, then Up and Down to move it. Press OK again to drop it.</string>
+    <string name="settings_content_menus_description">Rearrange or hide the actions in the channel, movie, series &amp; episode menus</string>
+    <!-- Translators: Hint shown above the list when arranging a long-press menu with the remote: OK shows or hides an action, a held OK picks it up to move it. -->
+    <string name="settings_content_menus_hint">Press OK on an action to show or hide it. Hold OK to pick it up, then Up and Down to move it; press OK again to drop it.</string>
+    <!-- Translators: Note on the long-press menus settings: some actions in the list are only offered in some places (Catch-up only on catch-up channels, Remove from history only in History). -->
+    <string name="settings_content_menus_note">Some actions appear only where they apply.</string>
     <!-- Translators: Settings navigation label for Browsing & lists. -->
     <string name="settings_browsing_lists">Browsing &amp; lists</string>
     <!-- Translators: Description of the Browsing & lists settings. -->
@@ -522,10 +524,14 @@
     <string name="settings_pip_on_leave">Picture-in-picture when leaving the app</string>
     <!-- Translators: Description of the picture-in-picture setting. -->
     <string name="settings_pip_on_leave_description">Keep the video playing in a small window when you press Home</string>
-    <!-- Translators: Setting label for auto frame rate matching. -->
-    <string name="settings_auto_frame_rate">Auto frame rate</string>
-    <!-- Translators: Description of the auto frame rate setting. Explains when to turn it off. -->
-    <string name="settings_auto_frame_rate_description">Match the TV\'s refresh rate to the video (24/25/50/60 fps) in full screen, for Live TV and VOD, and restore it on exit. Turn off if your TV or receiver re-handshakes HDMI noisily on every channel change.</string>
+    <!-- Translators: Setting label: auto frame rate matching for films and episodes. -->
+    <string name="settings_auto_frame_rate_films">Auto frame rate for films and series</string>
+    <!-- Translators: Description of settings_auto_frame_rate_films. -->
+    <string name="settings_auto_frame_rate_films_description">Match the TV\'s refresh rate to the film or episode (24/25/50/60 fps) in full screen, and restore it on exit.</string>
+    <!-- Translators: Setting label: auto frame rate matching for live channels. -->
+    <string name="settings_auto_frame_rate_live">Auto frame rate for Live TV</string>
+    <!-- Translators: Description of settings_auto_frame_rate_live. Explains when to turn it off. -->
+    <string name="settings_auto_frame_rate_live_description">Match the TV\'s refresh rate to the channel (25/50/60 fps) in full screen, and restore it on exit. Turn off if your TV or receiver re-handshakes HDMI noisily on every channel change.</string>
     <!-- Translators: TV setting under Auto frame rate. How long a film pauses while the TV switches display mode. -->
     <string name="settings_afr_pause">Pause during the display switch</string>
     <!-- Translators: Description of settings_afr_pause. "Re-sync" = the HDMI handshake that blacks the screen for a moment. -->
@@ -1254,6 +1260,10 @@
     <string name="settings_browsing_last_item">Remember last item</string>
     <!-- Translators: Description of the remember-last-item setting. -->
     <string name="settings_browsing_last_item_description">Each category keeps its own scroll position instead of starting at the top. Live TV also restores the last focused channel.</string>
+    <!-- Translators: Section heading in Browsing & lists for showing or hiding the built-in Live TV categories (Catch-up, All channels). -->
+    <string name="settings_browsing_live_categories">Live TV categories</string>
+    <!-- Translators: Help text under the Live TV categories switches (Catch-up, All channels). "All channels" and "Favorites" are the names of those two categories. -->
+    <string name="settings_browsing_live_categories_description">Shown in Live TV, the guide, the player and Multiview. With All channels off, Live TV opens on your first category, or Favorites if you have none.</string>
     <!-- Translators: Setting label for the catch-up player preference. -->
     <string name="settings_catchup_player">Play catch-up in</string>
 
@@ -1464,6 +1474,10 @@
     <string name="settings_sources_clean_names_custom_hint">Words separated by ; e.g. VIP; Backup</string>
     <!-- Translators: Button inside the Info popup: measure the playlist again. -->
     <string name="settings_sources_retest">Re-test</string>
+    <!-- Translators: Button or switch beside Re-test for a playlist: let Multiview and recordings open more streams than the provider's stated limit. -->
+    <string name="settings_sources_ignore_limit">Ignore connection limit</string>
+    <!-- Translators: Line shown while settings_sources_ignore_limit is on. "Multiview" is the feature that plays several channels at once. -->
+    <string name="settings_sources_ignore_limit_on">Connection limit ignored: Multiview and recordings may open more streams than this playlist reports. A stream the provider refuses still says so.</string>
     <!-- Translators: Title of the confirmation shown before the connection measurement runs. -->
     <string name="settings_sources_probe_title">Test this playlist?</string>
     <!-- Translators: Body of that confirmation. It must be clear that playback stops and that it is slow. -->
@@ -2639,7 +2653,7 @@
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_home">Choose, reorder and filter the rows</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
-    <string name="settings_line_content_menus">Rearrange the actions in each menu</string>
+    <string name="settings_line_content_menus">Rearrange or hide the actions in each menu</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_remote_shortcuts">Assign spare remote buttons</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->

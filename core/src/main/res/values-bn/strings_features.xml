@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">আপনার নিজের ছবি</string>
     <string name="profiles_kids">শিশুদের প্রোফাইল</string>
     <string name="profiles_kids_description">সহজ ও নিরাপদ ব্রাউজিং</string>
+    <string name="profiles_allow_downloads">ডাউনলোডের অনুমতি দিন</string>
+    <string name="profiles_allow_downloads_description">বন্ধ থাকলে এই প্রোফাইলে সব ডাউনলোড বোতাম লুকানো থাকে</string>
     <string name="profiles_remove_pin">PIN লক সরান</string>
     <string name="profiles_no_pin">এই প্রোফাইলটি PIN ছাড়াই খোলে</string>
     <string name="profiles_change_pin">PIN পরিবর্তন করুন (খালি রাখলে আগেরটি থাকবে)</string>

@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">使用自己的圖片</string>
     <string name="profiles_kids">兒童使用者檔案</string>
     <string name="profiles_kids_description">簡化且安全的瀏覽體驗</string>
+    <string name="profiles_allow_downloads">允許下載</string>
+    <string name="profiles_allow_downloads_description">關閉後，此設定檔會隱藏所有下載按鈕</string>
     <string name="profiles_remove_pin">移除 PIN 鎖定</string>
     <string name="profiles_no_pin">此使用者檔案無須 PIN 即可開啟</string>
     <string name="profiles_change_pin">變更 PIN（留白表示保留原 PIN）</string>

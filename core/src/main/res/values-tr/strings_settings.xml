@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">Kumanda kısayolları</string>
     <string name="settings_ch_paging_description">Kumandanın boş tuşlarına gezinme, oynatma ve liste işlemleri atayın. Temel gezinme tuşları korunur.</string>
     <string name="settings_content_menus_title">Uzun basma menüleri</string>
-    <string name="settings_content_menus_description">Kanal, film, dizi ve bölüm menülerindeki eylemleri yeniden sıralayın</string>
-    <string name="settings_content_menus_hint">Bir eylemi almak için üzerinde OK tuşunu basılı tutun, sonra Yukarı ve Aşağı ile taşıyın. Bırakmak için tekrar OK’a basın.</string>
+    <string name="settings_content_menus_description">Kanal, film, dizi ve bölüm menülerindeki eylemleri yeniden sıralayın veya gizleyin</string>
+    <string name="settings_content_menus_hint">Bir eylemi göstermek veya gizlemek için üzerinde OK’a basın. Almak için OK’u basılı tutun, Yukarı ve Aşağı ile taşıyın, bırakmak için tekrar OK’a basın.</string>
+    <string name="settings_content_menus_note">Bazı eylemler yalnızca geçerli oldukları yerde görünür.</string>
     <string name="settings_browsing_lists">Gezinme ve listeler</string>
     <string name="settings_browsing_description">Canlı TV, Filmler ve Diziler bölümlerindeki son kategoriyi ve son ögeyi hatırlayın</string>
     <string name="settings_home_root">Ana ekran</string>
@@ -233,8 +234,10 @@
     <string name="settings_pip_on_leave">Uygulamadan çıkınca pencere içinde pencere</string>
     <string name="settings_pip_on_leave_description">Ana Ekran’a bastığınızda video küçük bir pencerede oynamaya devam eder</string>
     <string name="settings_prefer_sdr_description">Bir yayın hem SDR hem HDR görüntü sunuyorsa SDR oynatılır: HDR görüntünün soluk veya çok karanlık göründüğü TV’ler için. Yalnızca HDR olan yayın HDR kalır. Yalnızca ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Otomatik kare hızı</string>
-    <string name="settings_auto_frame_rate_description">Canlı TV ve VOD içeriklerinde tam ekrandayken TV\'nin yenileme hızını videoyla (24/25/50/60 fps) eşleştirin ve çıkışta eski hâline getirin. TV\'niz veya alıcınız her kanal değişikliğinde HDMI el sıkışmasını gürültülü biçimde tekrarlıyorsa bu seçeneği kapatın.</string>
+    <string name="settings_auto_frame_rate_films">Filmler ve diziler için otomatik kare hızı</string>
+    <string name="settings_auto_frame_rate_films_description">Tam ekrandayken TV\'nin yenileme hızını filme veya bölüme (24/25/50/60 fps) eşleştirin ve çıkışta eski hâline getirin.</string>
+    <string name="settings_auto_frame_rate_live">Canlı TV için otomatik kare hızı</string>
+    <string name="settings_auto_frame_rate_live_description">Tam ekrandayken TV\'nin yenileme hızını kanala (25/50/60 fps) eşleştirin ve çıkışta eski hâline getirin. TV\'niz veya alıcınız her kanal değişikliğinde HDMI el sıkışmasını gürültülü biçimde tekrarlıyorsa bu seçeneği kapatın.</string>
     <string name="settings_afr_pause">Ekran geçişinde duraklat</string>
     <string name="settings_afr_pause_description">Yalnızca filmler. Televizyonun yeni bir ekran moduna yeniden eşitlenmesi gerektiğinde, film bu süre kadar bekler; böylece başlangıcı siyah ekranda kaybolmaz. Kesintisiz bir geçiş hiç duraklatmaz.</string>
     <string name="settings_afr_resolution">Çözünürlüğü eşleştir</string>
@@ -609,6 +612,8 @@
     <string name="settings_browsing_last_category_description">Bölümü Tümü yerine bıraktığınız kategoride yeniden açın.</string>
     <string name="settings_browsing_last_item">Son öğeyi hatırla</string>
     <string name="settings_browsing_last_item_description">Her kategori, en baştan başlamak yerine kendi kaydırma konumunu korur. Canlı TV ayrıca son odaklanılan kanalı geri getirir.</string>
+    <string name="settings_browsing_live_categories">Canlı TV kategorileri</string>
+    <string name="settings_browsing_live_categories_description">Canlı TV’de, TV Rehberinde, oynatıcıda ve Çoklu görünümde gösterilir. Tüm kanallar kapalıyken Canlı TV ilk kategorinizde, hiç kategoriniz yoksa Favorilerde açılır.</string>
     <string name="settings_catchup_player">Geri izlemeyi şununla oynat</string>
     <string name="settings_customize_title">Kategorileri ve Öğeleri Özelleştir</string>
     <string name="settings_customize_pin_locked">Bu ekran PIN ile kilitli.</string>
@@ -715,6 +720,8 @@
     <string name="settings_sources_clean_names_custom">Bunları da kaldır</string>
     <string name="settings_sources_clean_names_custom_hint">; ile ayrılmış sözcükler, örn. VIP; Backup</string>
     <string name="settings_sources_retest">Yeniden test et</string>
+    <string name="settings_sources_ignore_limit">Bağlantı sınırını yok say</string>
+    <string name="settings_sources_ignore_limit_on">Bağlantı sınırı yok sayılıyor: Çoklu görünüm ve kayıtlar bu oynatma listesinin bildirdiğinden fazla yayın açabilir. Sağlayıcının reddettiği bir yayın bunu yine bildirir.</string>
     <string name="settings_sources_probe_title">Bu oynatma listesi test edilsin mi?</string>
     <string name="settings_sources_probe_warning">Birçok sağlayıcı aynı anda kaç kanal izleyebileceğinizi hiç belirtmez; bu yüzden OwnTV birkaç kanal açıp hangilerinin devam ettiğine bakarak bunu kendisi bulur. Şu anda oynatılan her şey duracak ve bu işlem iki dakikaya kadar sürebilir.</string>
     <string name="settings_sources_probe_running">Bu sağlayıcının kaç kanala izin verdiği kontrol ediliyor… (<xliff:g id="current">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>)</string>
@@ -1399,7 +1406,7 @@
     <string name="settings_line_guide_width">Kanal listesi ve zaman çizelgesi</string>
     <string name="settings_line_browsing">Son kategoriyi ve öğeyi hatırlayın</string>
     <string name="settings_line_home">Satırları seçin, sıralayın ve süzün</string>
-    <string name="settings_line_content_menus">Her menüdeki işlemleri yeniden düzenleyin</string>
+    <string name="settings_line_content_menus">Her menüdeki işlemleri yeniden düzenleyin veya gizleyin</string>
     <string name="settings_line_remote_shortcuts">Boştaki kumanda tuşlarını atayın</string>
     <string name="settings_line_customize">Gizleyin ve gösterin, yeniden adlandırın ve sıralayın</string>
     <string name="settings_line_metadata">Filmler ve diziler için afiş, konu, oyuncular ve puanlar</string>

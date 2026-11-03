@@ -197,8 +197,9 @@
     <string name="settings_ch_paging">Команды пульта</string>
     <string name="settings_ch_paging_description">Назначьте свободным кнопкам навигацию, воспроизведение и просмотр списков. Основные кнопки навигации останутся защищёнными.</string>
     <string name="settings_content_menus_title">Меню долгого нажатия</string>
-    <string name="settings_content_menus_description">Измените порядок действий в меню каналов, фильмов, сериалов и серий</string>
-    <string name="settings_content_menus_hint">Удерживайте OK на действии, чтобы взять его, затем перемещайте вверх и вниз. Повторное OK опускает его.</string>
+    <string name="settings_content_menus_description">Измените порядок действий в меню каналов, фильмов, сериалов и серий или скройте их</string>
+    <string name="settings_content_menus_hint">Нажмите OK на действии, чтобы показать или скрыть его. Удерживайте OK, чтобы взять его, перемещайте вверх и вниз, а повторное OK опускает его.</string>
+    <string name="settings_content_menus_note">Некоторые действия появляются только там, где они применимы.</string>
     <string name="settings_browsing_lists">Просмотр и списки</string>
     <string name="settings_browsing_description">Запоминание последней категории и последнего элемента в прямом эфире, фильмах и сериалах</string>
     <string name="settings_home_root">Главный экран</string>
@@ -235,8 +236,10 @@
     <string name="settings_pip_on_leave">Картинка в картинке при выходе из приложения</string>
     <string name="settings_pip_on_leave_description">Видео продолжает играть в маленьком окне, когда вы нажимаете «Главная»</string>
     <string name="settings_prefer_sdr_description">Если поток предлагает и SDR, и HDR изображение, воспроизводится SDR: для телевизора, на котором HDR выглядит блёклым или слишком тёмным. Поток только с HDR остаётся в HDR. Только ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Автоматическая частота кадров</string>
-    <string name="settings_auto_frame_rate_description">Согласовывать частоту обновления телевизора с видео (24/25/50/60 кадров/с) в полноэкранном режиме для прямого эфира и VOD и восстанавливать её при выходе. Отключите, если телевизор или ресивер при каждой смене канала заново устанавливает соединение HDMI с заметными помехами.</string>
+    <string name="settings_auto_frame_rate_films">Автоматическая частота кадров для фильмов и сериалов</string>
+    <string name="settings_auto_frame_rate_films_description">Согласовывать частоту обновления телевизора с фильмом или серией (24/25/50/60 кадров/с) в полноэкранном режиме и восстанавливать её при выходе.</string>
+    <string name="settings_auto_frame_rate_live">Автоматическая частота кадров для прямого эфира</string>
+    <string name="settings_auto_frame_rate_live_description">Согласовывать частоту обновления телевизора с каналом (25/50/60 кадров/с) в полноэкранном режиме и восстанавливать её при выходе. Отключите, если телевизор или ресивер при каждой смене канала заново устанавливает соединение HDMI с заметными помехами.</string>
     <string name="settings_afr_pause">Пауза при переключении экрана</string>
     <string name="settings_afr_pause_description">Только фильмы. Когда телевизору нужно заново синхронизироваться с новым режимом экрана, фильм ждёт столько, чтобы начало не потерялось в чёрном экране. При плавном переключении пауза не делается.</string>
     <string name="settings_afr_resolution">Подбирать разрешение</string>
@@ -615,6 +618,8 @@
     <string name="settings_browsing_last_category_description">Снова открывать раздел с той категорией, которую вы покинули, а не со «Все».</string>
     <string name="settings_browsing_last_item">Запоминать последний элемент</string>
     <string name="settings_browsing_last_item_description">В каждой категории сохраняется собственная позиция прокрутки, поэтому она не открывается с самого начала. В прямом эфире также восстанавливается последний канал в фокусе.</string>
+    <string name="settings_browsing_live_categories">Категории прямого эфира</string>
+    <string name="settings_browsing_live_categories_description">Показываются в прямом эфире, программе передач, плеере и мультиэкране. Если «Все каналы» выключены, прямой эфир открывается на первой категории, а если категорий нет — на «Избранном».</string>
     <string name="settings_catchup_player">Воспроизводить архив через</string>
     <string name="settings_customize_title">Настройка категорий и элементов</string>
     <string name="settings_customize_pin_locked">Этот экран заблокирован с помощью PIN.</string>
@@ -725,6 +730,8 @@
     <string name="settings_sources_clean_names_custom">Также удалять</string>
     <string name="settings_sources_clean_names_custom_hint">Слова через ; например VIP; Backup</string>
     <string name="settings_sources_retest">Проверить снова</string>
+    <string name="settings_sources_ignore_limit">Не учитывать лимит подключений</string>
+    <string name="settings_sources_ignore_limit_on">Лимит подключений не учитывается: мультиэкран и записи могут открыть больше потоков, чем указано для этого плейлиста. Если провайдер отклонит поток, об этом по-прежнему будет сообщено.</string>
     <string name="settings_sources_probe_title">Проверить этот плейлист?</string>
     <string name="settings_sources_probe_warning">Многие провайдеры не сообщают, сколько каналов можно смотреть одновременно, поэтому OwnTV выясняет это, открывая несколько каналов и наблюдая, какие из них продолжают работать. Всё, что сейчас воспроизводится, остановится, и это может занять до двух минут.</string>
     <string name="settings_sources_probe_running">Проверяем, сколько каналов разрешает этот провайдер… (<xliff:g id="current">%1$d</xliff:g> из <xliff:g id="total">%2$d</xliff:g>)</string>
@@ -1455,7 +1462,7 @@
     <string name="settings_line_guide_width">Список каналов и шкала времени</string>
     <string name="settings_line_browsing">Запоминать последнюю категорию и элемент</string>
     <string name="settings_line_home">Выбор, порядок и фильтр строк</string>
-    <string name="settings_line_content_menus">Порядок действий в каждом меню</string>
+    <string name="settings_line_content_menus">Порядок и видимость действий в каждом меню</string>
     <string name="settings_line_remote_shortcuts">Назначить свободные кнопки пульта</string>
     <string name="settings_line_customize">Скрыть и показать, переименовать и упорядочить</string>
     <string name="settings_line_metadata">Постеры, сюжеты, актёры и рейтинги фильмов и сериалов</string>
