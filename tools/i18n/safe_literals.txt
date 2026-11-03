@@ -5520,6 +5520,7 @@
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	ExoPlayer can't play this stream (${error.errorCodeName})
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	ExoPlayer error: ${error.errorCodeName}
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	FFmpeg
+1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	FpsProbe
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	H.264
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	HEVC
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	HTTP $HTTP_TOO_MANY_REQUESTS with Retry-After ${secs}s — waiting it out and retrying automatically
@@ -5550,6 +5551,7 @@
 1	mime	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	application/dash+xml
 1	mime	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	application/vnd.apple.mpegurl
 1	mime	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	application/x-mpegurl
+1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	attempt=$fpsAttempts exact=$exact counter=$fresh ${ptsRate.debug()}
 2	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	audio
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	audio decoder released: $decoderName
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	audio decoder: $decoderName ($kind, init ${initializationDurationMs}ms)
@@ -6354,6 +6356,7 @@
 1	log	player-core/src/main/java/tv/own/owntv/player/PlayerDiagnostics.kt	timed out
 1	log	player-core/src/main/java/tv/own/owntv/player/PlayerDiagnostics.kt	timeout
 1	log	player-core/src/main/java/tv/own/owntv/player/PlayerDiagnostics.kt	unrecognized file format
+1	log	player-core/src/main/java/tv/own/owntv/player/PtsFrameRate.kt	adds=$adds count=$count medianUs=$median p10=$p10 p90=$p90 steadyN=${steady.size} steadySumMs=${steady.sum() / 1000} resets=$resets backwards=$backwards stalls=$stalls
 1	technical	player-core/src/main/java/tv/own/owntv/player/ResolutionLabel.kt	${height}p
 1	technical	player-core/src/main/java/tv/own/owntv/player/ResolutionLabel.kt	1080p
 1	technical	player-core/src/main/java/tv/own/owntv/player/ResolutionLabel.kt	1440p
