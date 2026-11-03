@@ -137,6 +137,9 @@
     <string name="content_catchup_jump_prompt">Välj en tid att börja titta från. Ingen tablå behövs.</string>
     <string name="content_catchup_jump_exact">Välj exakt tid…</string>
     <string name="content_catchup_jump_hint">Tryck på OK på dagen, timmen eller minuten, ändra med upp och ner och tryck på OK igen.</string>
+    <string name="content_catchup_jump_programme_start">Början av ”<xliff:g id="title">%1$s</xliff:g>”</string>
+    <string name="content_catchup_jump_programme_start_untitled">Början av programmet</string>
+    <string name="content_catchup_jump_programme_start_at">Började kl. <xliff:g id="time">%1$s</xliff:g></string>
     <string name="content_epg_match_prompt">Välj kanalen i programguiden för ”<xliff:g id="channel">%1$s</xliff:g>”.</string>
     <string name="content_epg_match_prompt_current">Välj kanalen i programguiden för ”<xliff:g id="channel">%1$s</xliff:g>”. Nuvarande: <xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">Sök bland kanaler i programguiden…</string>

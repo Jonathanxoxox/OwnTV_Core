@@ -137,6 +137,9 @@
     <string name="content_catchup_jump_prompt">কোন সময় থেকে দেখতে চান তা বেছে নিন। গাইড লাগবে না।</string>
     <string name="content_catchup_jump_exact">নির্দিষ্ট সময় বাছুন…</string>
     <string name="content_catchup_jump_hint">দিন, ঘণ্টা বা মিনিটে OK চাপুন, উপর-নিচ দিয়ে বদলান, তারপর আবার OK চাপুন।</string>
+    <string name="content_catchup_jump_programme_start">“<xliff:g id="title">%1$s</xliff:g>”-এর শুরু</string>
+    <string name="content_catchup_jump_programme_start_untitled">অনুষ্ঠানের শুরু</string>
+    <string name="content_catchup_jump_programme_start_at">শুরু হয়েছে <xliff:g id="time">%1$s</xliff:g>-এ</string>
     <string name="content_epg_match_prompt">“<xliff:g id="channel">%1$s</xliff:g>”-এর জন্য অনুষ্ঠান নির্দেশিকার চ্যানেল বেছে নিন।</string>
     <string name="content_epg_match_prompt_current">“<xliff:g id="channel">%1$s</xliff:g>”-এর জন্য অনুষ্ঠান নির্দেশিকার চ্যানেল বেছে নিন। বর্তমানে: <xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">অনুষ্ঠান নির্দেশিকার চ্যানেল অনুসন্ধান করুন…</string>

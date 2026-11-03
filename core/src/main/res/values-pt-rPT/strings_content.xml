@@ -145,6 +145,9 @@
     <string name="content_catchup_jump_prompt">Escolha uma hora para começar a ver. Não é preciso guia.</string>
     <string name="content_catchup_jump_exact">Escolher hora exata…</string>
     <string name="content_catchup_jump_hint">Prima OK no dia, na hora ou no minuto, altere com cima e baixo e prima OK novamente.</string>
+    <string name="content_catchup_jump_programme_start">Início de “<xliff:g id="title">%1$s</xliff:g>”</string>
+    <string name="content_catchup_jump_programme_start_untitled">Início do programa</string>
+    <string name="content_catchup_jump_programme_start_at">Começou às <xliff:g id="time">%1$s</xliff:g></string>
     <string name="content_epg_match_prompt">Escolha o canal do guia para “<xliff:g id="channel">%1$s</xliff:g>”.</string>
     <string name="content_epg_match_prompt_current">Escolha o canal do guia para “<xliff:g id="channel">%1$s</xliff:g>”. Atual: <xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">Pesquisar canais do guia…</string>

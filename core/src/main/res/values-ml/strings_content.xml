@@ -137,6 +137,9 @@
     <string name="content_catchup_jump_prompt">കാണാൻ തുടങ്ങേണ്ട സമയം തിരഞ്ഞെടുക്കുക. ഗൈഡ് ആവശ്യമില്ല.</string>
     <string name="content_catchup_jump_exact">കൃത്യമായ സമയം തിരഞ്ഞെടുക്കുക…</string>
     <string name="content_catchup_jump_hint">ദിവസം, മണിക്കൂർ അല്ലെങ്കിൽ മിനിറ്റിൽ OK അമർത്തുക, മുകളിലേക്കും താഴേക്കും ഉപയോഗിച്ച് മാറ്റുക, പിന്നെ വീണ്ടും OK അമർത്തുക.</string>
+    <string name="content_catchup_jump_programme_start">“<xliff:g id="title">%1$s</xliff:g>” ന്റെ തുടക്കം</string>
+    <string name="content_catchup_jump_programme_start_untitled">പരിപാടിയുടെ തുടക്കം</string>
+    <string name="content_catchup_jump_programme_start_at"><xliff:g id="time">%1$s</xliff:g>-ന് ആരംഭിച്ചു</string>
     <string name="content_epg_match_prompt">“<xliff:g id="channel">%1$s</xliff:g>” എന്നതിനായി പരിപാടികളുടെ ഗൈഡിലെ ചാനൽ തിരഞ്ഞെടുക്കുക.</string>
     <string name="content_epg_match_prompt_current">“<xliff:g id="channel">%1$s</xliff:g>” എന്നതിനായി പരിപാടികളുടെ ഗൈഡിലെ ചാനൽ തിരഞ്ഞെടുക്കുക. നിലവിലുള്ളത്: <xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">ഗൈഡ് ചാനലുകൾ തിരയുക…</string>

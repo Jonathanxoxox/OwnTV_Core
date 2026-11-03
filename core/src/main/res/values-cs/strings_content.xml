@@ -153,6 +153,9 @@
     <string name="content_catchup_jump_prompt">Vyberte čas, od kterého chcete začít sledovat. Programý průvodce není potřeba.</string>
     <string name="content_catchup_jump_exact">Zvolit přesný čas…</string>
     <string name="content_catchup_jump_hint">Stiskněte OK na dni, hodině nebo minutě, změňte hodnotu šipkami nahoru a dolů a stiskněte OK znovu.</string>
+    <string name="content_catchup_jump_programme_start">Začátek „<xliff:g id="title">%1$s</xliff:g>“</string>
+    <string name="content_catchup_jump_programme_start_untitled">Začátek pořadu</string>
+    <string name="content_catchup_jump_programme_start_at">Začalo v <xliff:g id="time">%1$s</xliff:g></string>
     <string name="content_epg_match_prompt">Vyberte kanál EPG pro „<xliff:g id="channel">%1$s</xliff:g>“.</string>
     <string name="content_epg_match_prompt_current">Vyberte kanál EPG pro „<xliff:g id="channel">%1$s</xliff:g>“. Aktuální: <xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">Hledat kanály EPG…</string>

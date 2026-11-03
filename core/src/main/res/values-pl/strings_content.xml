@@ -153,6 +153,9 @@
     <string name="content_catchup_jump_prompt">Wybierz godzinę, od której chcesz oglądać. Program telewizyjny nie jest potrzebny.</string>
     <string name="content_catchup_jump_exact">Wybierz dokładną godzinę…</string>
     <string name="content_catchup_jump_hint">Naciśnij OK na dniu, godzinie lub minucie, zmień wartość strzałkami w górę i w dół, a potem naciśnij OK ponownie.</string>
+    <string name="content_catchup_jump_programme_start">Początek „<xliff:g id="title">%1$s</xliff:g>”</string>
+    <string name="content_catchup_jump_programme_start_untitled">Początek programu</string>
+    <string name="content_catchup_jump_programme_start_at">Rozpoczęto o <xliff:g id="time">%1$s</xliff:g></string>
     <string name="content_epg_match_prompt">Wybierz kanał przewodnika dla „<xliff:g id="channel">%1$s</xliff:g>”.</string>
     <string name="content_epg_match_prompt_current">Wybierz kanał przewodnika dla „<xliff:g id="channel">%1$s</xliff:g>”. Bieżące dopasowanie: <xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">Wyszukaj kanały przewodnika…</string>
