@@ -137,6 +137,9 @@
     <string name="content_catchup_jump_prompt">Válaszd ki, mikortól szeretnéd nézni. Műsorújság nem szükséges.</string>
     <string name="content_catchup_jump_exact">Pontos idő megadása…</string>
     <string name="content_catchup_jump_hint">Nyomd meg az OK gombot a napon, órán vagy percen, állítsd a Fel és Le gombokkal, majd nyomd meg újra az OK gombot.</string>
+    <string name="content_catchup_jump_programme_start">„<xliff:g id="title">%1$s</xliff:g>” eleje</string>
+    <string name="content_catchup_jump_programme_start_untitled">A műsor eleje</string>
+    <string name="content_catchup_jump_programme_start_at">Kezdés: <xliff:g id="time">%1$s</xliff:g></string>
     <string name="content_epg_match_prompt">Válaszd ki a(z) „<xliff:g id="channel">%1$s</xliff:g>” csatornához tartozó műsorújság-csatornát.</string>
     <string name="content_epg_match_prompt_current">Válaszd ki a(z) „<xliff:g id="channel">%1$s</xliff:g>” csatornához tartozó műsorújság-csatornát. Jelenleg: <xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">EPG-csatornák keresése…</string>

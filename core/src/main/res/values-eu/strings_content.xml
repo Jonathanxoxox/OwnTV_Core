@@ -117,6 +117,9 @@
     <string name="content_catchup_jump_prompt">Aukeratu ikusten hasteko ordua. Ez da gidarik behar.</string>
     <string name="content_catchup_jump_exact">Aukeratu ordu zehatza…</string>
     <string name="content_catchup_jump_hint">Sakatu Ados egunean, orduan edo minutuan, aldatu gora eta behera teklekin, eta sakatu Ados berriro.</string>
+    <string name="content_catchup_jump_programme_start">Hasiera: “<xliff:g id="title">%1$s</xliff:g>”</string>
+    <string name="content_catchup_jump_programme_start_untitled">Saioaren hasiera</string>
+    <string name="content_catchup_jump_programme_start_at">Hasiera-ordua: <xliff:g id="time">%1$s</xliff:g></string>
     <string name="content_epg_match_prompt">Aukeratu <xliff:g id="channel">%1$s</xliff:g> kanalaren gida-kanala.</string>
     <string name="content_epg_match_prompt_current">Aukeratu <xliff:g id="channel">%1$s</xliff:g> kanalaren gida-kanala. Unekoa: <xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">Bilatu gida-kanalak…</string>

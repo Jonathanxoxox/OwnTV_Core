@@ -129,6 +129,9 @@
     <string name="content_catchup_jump_prompt">选择开始观看的时间。无需节目单。</string>
     <string name="content_catchup_jump_exact">选择具体时间…</string>
     <string name="content_catchup_jump_hint">在日期、小时或分钟上按 OK，用上下键调整，然后再次按 OK。</string>
+    <string name="content_catchup_jump_programme_start">“<xliff:g id="title">%1$s</xliff:g>”的开头</string>
+    <string name="content_catchup_jump_programme_start_untitled">节目开头</string>
+    <string name="content_catchup_jump_programme_start_at">开始于 <xliff:g id="time">%1$s</xliff:g></string>
     <string name="content_epg_match_prompt">为“<xliff:g id="channel">%1$s</xliff:g>”选择节目指南频道。</string>
     <string name="content_epg_match_prompt_current">为“<xliff:g id="channel">%1$s</xliff:g>”选择节目指南频道。当前：<xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">搜索节目指南频道…</string>

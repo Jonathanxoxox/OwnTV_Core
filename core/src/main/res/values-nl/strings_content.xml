@@ -137,6 +137,9 @@
     <string name="content_catchup_jump_prompt">Kies een tijd om vanaf te kijken. Geen gids nodig.</string>
     <string name="content_catchup_jump_exact">Exacte tijd kiezen…</string>
     <string name="content_catchup_jump_hint">Druk op OK op de dag, het uur of de minuut, wijzig het met omhoog en omlaag en druk opnieuw op OK.</string>
+    <string name="content_catchup_jump_programme_start">Begin van “<xliff:g id="title">%1$s</xliff:g>”</string>
+    <string name="content_catchup_jump_programme_start_untitled">Begin van het programma</string>
+    <string name="content_catchup_jump_programme_start_at">Begonnen om <xliff:g id="time">%1$s</xliff:g></string>
     <string name="content_epg_match_prompt">Kies de gidszender voor “<xliff:g id="channel">%1$s</xliff:g>”.</string>
     <string name="content_epg_match_prompt_current">Kies de gidszender voor “<xliff:g id="channel">%1$s</xliff:g>”. Huidig: <xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">Gidszenders zoeken…</string>

@@ -169,6 +169,9 @@
     <string name="content_catchup_jump_prompt">اختر وقتًا لبدء المشاهدة منه. لا حاجة إلى دليل.</string>
     <string name="content_catchup_jump_exact">اختيار وقت محدد…</string>
     <string name="content_catchup_jump_hint">اضغط OK على اليوم أو الساعة أو الدقيقة، وغيّرها بالأعلى والأسفل، ثم اضغط OK مرة أخرى.</string>
+    <string name="content_catchup_jump_programme_start">بداية «<xliff:g id="title">%1$s</xliff:g>»</string>
+    <string name="content_catchup_jump_programme_start_untitled">بداية البرنامج</string>
+    <string name="content_catchup_jump_programme_start_at">بدأ الساعة <xliff:g id="time">%1$s</xliff:g></string>
     <string name="content_epg_match_prompt">اختر قناة دليل البرامج المطابقة لـ «<xliff:g id="channel">%1$s</xliff:g>».</string>
     <string name="content_epg_match_prompt_current">اختر قناة دليل البرامج المطابقة لـ «<xliff:g id="channel">%1$s</xliff:g>». المطابقة الحالية: <xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">بحث في قنوات دليل البرامج…</string>

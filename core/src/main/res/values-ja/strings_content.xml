@@ -129,6 +129,9 @@
     <string name="content_catchup_jump_prompt">視聴を開始する時刻を選んでください。番組表は不要です。</string>
     <string name="content_catchup_jump_exact">時刻を指定…</string>
     <string name="content_catchup_jump_hint">日付・時・分で OK を押し、上下で変更してから、もう一度 OK を押します。</string>
+    <string name="content_catchup_jump_programme_start">「<xliff:g id="title">%1$s</xliff:g>」の最初から</string>
+    <string name="content_catchup_jump_programme_start_untitled">番組の最初から</string>
+    <string name="content_catchup_jump_programme_start_at"><xliff:g id="time">%1$s</xliff:g> に開始</string>
     <string name="content_epg_match_prompt">「<xliff:g id="channel">%1$s</xliff:g>」に対応する番組表チャンネルを選択してください。</string>
     <string name="content_epg_match_prompt_current">「<xliff:g id="channel">%1$s</xliff:g>」に対応する番組表チャンネルを選択してください。現在：<xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">番組表チャンネルを検索…</string>
