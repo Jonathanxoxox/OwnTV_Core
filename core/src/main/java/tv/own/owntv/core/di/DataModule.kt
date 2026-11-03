@@ -272,6 +272,8 @@ val dataModule = module {
     // App-wide "sync running" signal for the shell status pill (every sync funnels through SyncManager).
     // Which VOD category the user is looking at, so the lazy-catalogue drain serves it first.
     single { tv.own.owntv.core.sync.CatalogPriority(get(), get()) }
+    // settings, sourceDao, catalogBackfillDao — Home's "library still loading" note, in both apps.
+    single { tv.own.owntv.core.sync.LibraryLoading(get(), get(), get()) }
     // The drain comes back soon after playback stops instead of waiting out its retry delay.
     // createdAtStart: it has to be listening before the first playback closes.
     single(createdAtStart = true) {
