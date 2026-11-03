@@ -242,6 +242,8 @@ val dataModule = module {
     single { tv.own.owntv.core.backup.UserDataWriter(get(), get(), get(), get(), get(), get()) }
     // sourceDao, syncManager, userDataResolver, channelDao, movieDao, seriesDao, categoryDao
     single { SourceRepository(get(), get(), get(), get(), get(), get(), get(), playbackQuirkDao = get(), playbackPrefsDao = get()) }
+    // sourceDao, stalkerAuthManager, catalogSyncScheduler, importFinalizer
+    single { tv.own.owntv.core.repository.SourceEditor(get(), get(), get(), get()) }
     // settings, sourceRepository, channelDao, movieDao, seriesDao
     single { tv.own.owntv.core.nav.NavVisibility(get(), get(), get(), get(), get()) }
     single {
@@ -270,6 +272,20 @@ val dataModule = module {
     // App-wide "sync running" signal for the shell status pill (every sync funnels through SyncManager).
     // Which VOD category the user is looking at, so the lazy-catalogue drain serves it first.
     single { tv.own.owntv.core.sync.CatalogPriority(get(), get()) }
+    // settings, sourceDao, catalogBackfillDao — Home's "library still loading" note, in both apps.
+    single { tv.own.owntv.core.sync.LibraryLoading(get(), get(), get()) }
+    // The drain comes back soon after playback stops instead of waiting out its retry delay.
+    // createdAtStart: it has to be listening before the first playback closes.
+    single(createdAtStart = true) {
+        val scheduler: CatalogSyncScheduler = get()
+        tv.own.owntv.core.sync.BackfillResume(get(), { sourceId ->
+            scheduler.enqueueCatalogBackfill(
+                sourceId,
+                initialDelayMinutes = tv.own.owntv.core.sync.BackfillResume.RESUME_DELAY_MINUTES,
+                onlyIfWaiting = true,
+            )
+        })
+    }
     single { tv.own.owntv.core.sync.SyncActivityTracker() }
     // Same idea for EPG: EpgSyncWorker reports started/progress/finished here so the pill also reflects
     // guide/EPG downloads (manual resync from Settings, auto startup refresh, …).
@@ -379,7 +395,7 @@ val dataModule = module {
     // settings, sourceDao, channelDao, catalogSyncScheduler, importFinalizer
     single { tv.own.owntv.core.sync.M3uVodResort(get(), get(), get(), get(), get()) }
     // profileDao, sourceDao, sourceRepository, backup, settings, connectivity, importFinalizer,
-    // launcherIntegration, catalogSyncScheduler, stalkerAuth — onboarding: add a source, sync it,
-    // undo it when it fails. Factory, not single: each wizard run owns its own state machine.
-    factory { tv.own.owntv.core.setup.SourceImporter(get(), get(), get(), get(), get(), get(), get(), get(), get(), get(), get()) }
+    // launcherIntegration, catalogSyncScheduler, stalkerAuth, xtreamClient, context — onboarding: add a
+    // source, sync it, undo it when it fails. Factory, not single: each wizard run owns its own state machine.
+    factory { tv.own.owntv.core.setup.SourceImporter(get(), get(), get(), get(), get(), get(), get(), get(), get(), get(), get(), androidContext()) }
 }

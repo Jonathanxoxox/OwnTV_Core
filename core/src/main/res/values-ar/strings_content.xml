@@ -99,6 +99,15 @@
     <string name="content_remove_from_category">إزالة من هذه الفئة</string>
     <string name="content_download">تنزيل</string>
     <string name="content_download_all_episodes">تنزيل جميع الحلقات</string>
+    <plurals name="content_download_episodes_confirm">
+        <item quantity="zero">تنزيل <xliff:g id="count">%1$d</xliff:g> حلقة؟</item>
+        <item quantity="one">تنزيل <xliff:g id="count">%1$d</xliff:g> حلقة؟</item>
+        <item quantity="two">تنزيل <xliff:g id="count">%1$d</xliff:g> حلقتين؟</item>
+        <item quantity="few">تنزيل <xliff:g id="count">%1$d</xliff:g> حلقات؟</item>
+        <item quantity="many">تنزيل <xliff:g id="count">%1$d</xliff:g> حلقة؟</item>
+        <item quantity="other">تنزيل <xliff:g id="count">%1$d</xliff:g> حلقة؟</item>
+    </plurals>
+    <string name="content_download_episodes_confirm_message">تُحفَظ على هذا الجهاز وتشغل مساحة من التخزين.</string>
     <string name="content_play">تشغيل</string>
     <string name="content_favorited">مضاف إلى المفضّلة</string>
     <string name="content_favorite">إضافة إلى المفضّلة</string>
@@ -106,9 +115,7 @@
     <string name="content_episodes">الحلقات</string>
     <string name="content_oldest_first">الأقدم أولًا</string>
     <string name="content_newest_first">الأحدث أولًا</string>
-    <string name="content_play_external">تشغيل باستخدام مشغّل خارجي</string>
     <string name="content_delete_subtitles">حذف ترجمات OpenSub</string>
-    <string name="content_tmdb_details">تفاصيل TMDB</string>
     <string name="content_play_trailer">تشغيل الإعلان التشويقي</string>
     <string name="content_refetch_tmdb">إعادة جلب تفاصيل TMDB</string>
     <string name="content_set_tmdb_name">تعيين اسم TMDB</string>
@@ -210,6 +217,8 @@
     <string name="content_downloads_ready">جاهز للمشاهدة</string>
     <string name="content_downloads_paused">متوقف مؤقتًا</string>
     <string name="content_downloads_file_missing">الملف مفقود: لم يعد موجودًا على محرك الأقراص</string>
+    <string name="content_downloads_delete_title">هل تريد حذف «<xliff:g id="name">%1$s</xliff:g>»؟</string>
+    <string name="content_downloads_delete_message">يزيل الملف من هذا الجهاز. يمكن تنزيله مرة أخرى لاحقًا.</string>
     <string name="content_downloads_reason_account_busy">الحساب مشغول: بث آخر يستخدم الاتصال</string>
     <string name="content_downloads_reason_refused">رفض الخادم الرابط</string>
     <string name="content_downloads_reason_not_found">لم يعد هذا الملف متوفرًا على الخادم</string>

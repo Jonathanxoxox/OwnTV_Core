@@ -194,8 +194,9 @@
     <string name="settings_ch_paging">遥控器快捷键</string>
     <string name="settings_ch_paging_description">将遥控器的空闲按键分配给导航、播放和浏览操作。必要的导航按键会保持受保护。</string>
     <string name="settings_content_menus_title">长按菜单</string>
-    <string name="settings_content_menus_description">重新排列频道、电影、剧集和分集菜单中的操作</string>
-    <string name="settings_content_menus_hint">长按“确定”拿起某个操作，然后用上下键移动，再次按“确定”放下。</string>
+    <string name="settings_content_menus_description">重新排列或隐藏频道、电影、剧集和分集菜单中的操作</string>
+    <string name="settings_content_menus_hint">在某个操作上按“确定”可显示或隐藏它。长按“确定”拿起它，用上下键移动，再次按“确定”放下。</string>
+    <string name="settings_content_menus_note">部分操作只在适用的地方出现。</string>
     <string name="settings_browsing_lists">浏览和列表</string>
     <string name="settings_browsing_description">记住直播电视、电影和剧集中的上次分类及上次项目</string>
     <string name="settings_home_root">主屏幕</string>
@@ -606,6 +607,8 @@
     <string name="settings_browsing_last_category_description">重新打开此内容板块时，显示您离开时所在的分类，而不是“全部”。</string>
     <string name="settings_browsing_last_item">记住上次浏览的项目</string>
     <string name="settings_browsing_last_item_description">每个分类都会保留各自的滚动位置，而不是从顶部开始。直播电视还会恢复上次聚焦的频道。</string>
+    <string name="settings_browsing_live_categories">直播电视分类</string>
+    <string name="settings_browsing_live_categories_description">显示在直播电视、节目指南、播放器和多画面中。关闭“所有频道”后，直播电视会打开你的第一个分类；如果没有分类，则打开收藏夹。</string>
     <string name="settings_catchup_player">回看播放方式</string>
     <string name="settings_customize_title">自定义分类和项目</string>
     <string name="settings_customize_pin_locked">此界面已启用 PIN 锁。</string>
@@ -854,6 +857,7 @@
         <item quantity="other">由于播放列表类型不受支持，已跳过 <xliff:g id="count">%1$d</xliff:g> 个源。</item>
     </plurals>
     <string name="settings_backup_export_error">导出失败。</string>
+    <string name="settings_backup_no_file_app">这部手机上没有可以保存文件的应用。请改用“分享”。</string>
     <string name="settings_backup_read_error">无法读取备份文件。</string>
     <string name="settings_backup_import_error">导入失败。</string>
     <string name="settings_backup_invalid_locale">此备份包含不受支持的应用语言。恢复已成功完成，但保留了您当前使用的语言。</string>
@@ -1370,7 +1374,7 @@
     <string name="settings_line_guide_width">频道列表和时间轴</string>
     <string name="settings_line_browsing">记住上次的分类和条目</string>
     <string name="settings_line_home">选择、排序和筛选各行</string>
-    <string name="settings_line_content_menus">调整每个菜单里的操作</string>
+    <string name="settings_line_content_menus">调整或隐藏每个菜单里的操作</string>
     <string name="settings_line_remote_shortcuts">为遥控器空闲按键指定功能</string>
     <string name="settings_line_customize">隐藏与显示、重命名和排序</string>
     <string name="settings_line_metadata">电影和剧集的海报、剧情、演员和评分</string>

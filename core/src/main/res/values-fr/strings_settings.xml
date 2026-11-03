@@ -196,8 +196,9 @@
     <string name="settings_ch_paging">Raccourcis de la télécommande</string>
     <string name="settings_ch_paging_description">Attribuez les touches libres à la navigation, la lecture et la consultation. Les touches essentielles restent protégées.</string>
     <string name="settings_content_menus_title">Menus d’appui long</string>
-    <string name="settings_content_menus_description">Réorganisez les actions des menus chaînes, films, séries et épisodes</string>
-    <string name="settings_content_menus_hint">Maintenez OK sur une action pour la saisir, puis déplacez-la avec Haut et Bas. Appuyez de nouveau sur OK pour la déposer.</string>
+    <string name="settings_content_menus_description">Réorganisez ou masquez les actions des menus chaînes, films, séries et épisodes</string>
+    <string name="settings_content_menus_hint">Appuyez sur OK sur une action pour l\'afficher ou la masquer. Maintenez OK pour la saisir, déplacez-la avec Haut et Bas, puis appuyez de nouveau sur OK pour la déposer.</string>
+    <string name="settings_content_menus_note">Certaines actions n\'apparaissent que là où elles s\'appliquent.</string>
     <string name="settings_browsing_lists">Navigation et listes</string>
     <string name="settings_browsing_description">Mémoriser la dernière catégorie et le dernier élément dans TV en direct, Films et Séries</string>
     <string name="settings_home_root">Écran d’accueil</string>
@@ -612,6 +613,8 @@
     <string name="settings_browsing_last_category_description">Rouvrir la section sur la catégorie que vous avez quittée plutôt que sur Toutes.</string>
     <string name="settings_browsing_last_item">Mémoriser le dernier élément</string>
     <string name="settings_browsing_last_item_description">Chaque catégorie conserve sa propre position de défilement au lieu de recommencer en haut. La TV en direct restaure également la dernière chaîne sélectionnée.</string>
+    <string name="settings_browsing_live_categories">Catégories de la TV en direct</string>
+    <string name="settings_browsing_live_categories_description">Affichées dans la TV en direct, le guide TV, le lecteur et Multivue. Avec Toutes les chaînes désactivé, la TV en direct s\'ouvre sur votre première catégorie, ou sur Favoris si vous n\'en avez aucune.</string>
     <string name="settings_catchup_player">Lire le rattrapage avec</string>
     <string name="settings_customize_title">Personnaliser les catégories et les éléments</string>
     <string name="settings_customize_pin_locked">Cet écran est verrouillé par PIN.</string>
@@ -878,6 +881,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> sources ont été ignorées, car leurs types de listes de lecture ne sont pas pris en charge.</item>
     </plurals>
     <string name="settings_backup_export_error">Échec de l’exportation.</string>
+    <string name="settings_backup_no_file_app">Aucune app de ce téléphone ne peut enregistrer le fichier. Utilisez plutôt Partager.</string>
     <string name="settings_backup_read_error">Impossible de lire le fichier de sauvegarde.</string>
     <string name="settings_backup_import_error">Échec de l’importation.</string>
     <string name="settings_backup_invalid_locale">Cette sauvegarde contenait une langue d’application non prise en charge. La restauration a réussi, mais votre langue actuelle a été conservée.</string>
@@ -1426,7 +1430,7 @@
     <string name="settings_line_guide_width">Liste des chaînes et frise horaire</string>
     <string name="settings_line_browsing">Retenir la dernière catégorie et le dernier élément</string>
     <string name="settings_line_home">Choisir, réordonner et filtrer les rangées</string>
-    <string name="settings_line_content_menus">Réorganiser les actions de chaque menu</string>
+    <string name="settings_line_content_menus">Réorganiser ou masquer les actions de chaque menu</string>
     <string name="settings_line_remote_shortcuts">Attribuer les touches libres de la télécommande</string>
     <string name="settings_line_customize">Masquer et afficher, renommer et réordonner</string>
     <string name="settings_line_metadata">Affiches, résumés, distribution et notes des films et séries</string>

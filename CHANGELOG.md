@@ -11,10 +11,16 @@
 
 ## core-1.0.70 — unreleased
 
-**Database v52 · Backup: two new playlist fields**
+**Database v52 · Backup v26 · Backup: two new playlist fields · Moved items keep their place**
 
 ### ✨ New features
 
+- **🏆 Sports: 54 more leagues, with Volleyball and Lacrosse**
+- **📅 Sports calendar: every followed league's month, saved on the device**
+- **🏁 Driver, constructor and tennis rankings**
+- **👕 Team pages: fixtures and results, cups included**
+- **🗂️ League cards: leader and next match**
+- **🔄 Calendar refresh setting**
 - **✨ Clean channel names, per playlist** (community PR #46 by @Kevsosmooth)
 - **🔢 M3U playlists without channel numbers are numbered in playlist order** (community PR #43 by @Kevsosmooth)
 - **🎬 M3U entries that point at a video file go to Movies** (community PR #45 by @Kevsosmooth)
@@ -27,9 +33,19 @@
 - **🔒 Lock a category with the Customize PIN** (community PR #37 by @Kevsosmooth)
 - **🔐 Ask for the PIN to open Settings** (community PR #47 by @Kevsosmooth)
 - **🪟 Picture-in-picture when leaving the app** (community PR #39 by @Kevsosmooth)
+- **🔑 Stalker portals: an optional username and password**
+- **⌨️ Key hints for the Sports Calendar and Leagues tabs**
+- **📚 Home says the library is still loading while a large playlist fills in** (community PR #72 by @DevenP)
+- **👁️ Long-press menus: hide actions, and the default order matches the menus**
+- **📺 Hide All channels or Catch-up from the Live TV categories** (community PR #73 by @sarmadsoomro)
+- **⬇️ Allow downloads per profile; a whole show or season asks first with the episode count**
 
 ### 🐛 Fixes
 
+- **Cups no longer fetch a table they never have**
+- **🗑️ Delete confirmation strings for downloads and recordings**
+- **↕️ A Move keeps only the moved items' positions; A–Z sorts everything else (TV #312)**
+- **🔁 Older saved list orders are dropped once, Favorites kept**
 - **TV guide sync up to 14× faster: adding a guide takes minutes, not a quarter of an hour**
 - **M3U entries the playlist now tags as films or series leave Live TV** (community PR #36 by @Kevsosmooth)
 - **M3U download retried once after a dropped connection** (community PR #44 by @Kevsosmooth)
@@ -41,17 +57,33 @@
 - **Xtream passwords with special characters play; short Xtream links and Stalker MACs masked in logs** (community PR #54 by @sarmadsoomro)
 - **Settings search: a hint while nothing is typed**
 - **Stalker re-sync no longer rewrites every live channel**
+- **An Xtream playlist with a refused password says so instead of syncing empty**
+- **A refused login answered with HTTP 513 shows the wrong-password message**
+- **A changed password, server, username or MAC re-syncs the playlist on save**
+- **Restore leaves Xtream playlists without a password unsynced and names them**
+- **A new playlist with a name already in use is numbered: "My IPTV 2"**
+- **Renamed channels, films and series keep their name on Home and in Continue**
+- **Stalker portals behind a redirect to another host stay signed in**
+- **Stalker posters sent as server paths load**
+- **Stalker sync slows down on portals that refuse parallel requests, remembers it per playlist and loses no page; fast portals keep full speed**
+- **Stalker series listed among the films go to Series when the portal has no series section**
+- **Playlist rows show the full catalogue once the background download finishes**
+- **📞 Phone: a notification sound only turns the sound down; calls, WhatsApp included, pause and resume**
+- **🔁 Live TV: a decoder that fails to start is rebuilt up to three times within "Give up after" (TV #321)**
+- **🍎 FairPlay entries: inline keys play as ClearKey; real FairPlay says it cannot play on Android**
+- **🎨 Dolby Vision profile 5 on mpv opens the device's Dolby Vision decoder (libmpv 2026.11.0, TV #313)**
+- **🏀 League cards in basketball, NFL and baseball lead with the best record**
+- **Background catalogue download keeps going after a pause; an unfinished category loads when opened** (community PR #68 by @DevenP)
+- **Background catalogue download resumes a minute after playback stops (#70)**
+- **Films tagged " - CAM" find their poster** (community PR #69 by @DevenP)
+- **Stalker series filed under films get their episodes** (community PR #67 by @DevenP)
+- **The loading note counts only the playlist Home shows**
+- **A phone with no app to save a backup file is told so**
 
 ## core-1.0.69 — 2026-10-21
 
 ### ✨ New features
 
-- **🏆 Sports: 54 more leagues, with Volleyball and Lacrosse**
-- **📅 Sports calendar: every followed league's month, saved on the device**
-- **🏁 Driver, constructor and tennis rankings**
-- **👕 Team pages: fixtures and results, cups included**
-- **🗂️ League cards: leader and next match**
-- **🔄 Calendar refresh setting**
 - **🎚️ FFmpeg audio for ExoPlayer, as a switch (off by default)**
 - **💡 A hint to try MPV when a live channel keeps dropping frames**
 - **🌗 Prefer SDR when a stream offers both (replaces the HDR switch)**
@@ -60,7 +92,6 @@
 
 ### 🐛 Fixes
 
-- **Cups no longer fetch a table they never have**
 - **A saved channel plays again after the TV wakes from standby**
 - **A live channel ExoPlayer can only show as a slideshow moves to mpv by itself**
 - **Full frame rate on mpv after zapping from a 25 fps channel**

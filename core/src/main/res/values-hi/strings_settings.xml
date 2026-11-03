@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">रिमोट शॉर्टकट</string>
     <string name="settings_ch_paging_description">नेविगेशन, प्लेबैक और ब्राउज़िंग के लिए रिमोट के अतिरिक्त बटन तय करें। ज़रूरी नेविगेशन बटन सुरक्षित रहेंगे।</string>
     <string name="settings_content_menus_title">लॉन्ग-प्रेस मेन्यू</string>
-    <string name="settings_content_menus_description">चैनल, मूवी, सीरीज़ और एपिसोड मेन्यू की क्रियाओं का क्रम बदलें</string>
-    <string name="settings_content_menus_hint">किसी क्रिया पर OK दबाए रखकर उसे उठाएँ, फिर ऊपर-नीचे से हिलाएँ। छोड़ने के लिए फिर से OK दबाएँ।</string>
+    <string name="settings_content_menus_description">चैनल, मूवी, सीरीज़ और एपिसोड मेन्यू की क्रियाओं का क्रम बदलें या उन्हें छिपाएँ</string>
+    <string name="settings_content_menus_hint">किसी क्रिया को दिखाने या छिपाने के लिए उस पर OK दबाएँ। उठाने के लिए OK दबाए रखें, ऊपर-नीचे से हिलाएँ और छोड़ने के लिए फिर से OK दबाएँ।</string>
+    <string name="settings_content_menus_note">कुछ क्रियाएँ सिर्फ़ वहीं दिखती हैं जहाँ वे लागू होती हैं।</string>
     <string name="settings_browsing_lists">ब्राउज़िंग और सूचियाँ</string>
     <string name="settings_browsing_description">लाइव टीवी, फ़िल्मों और सीरीज़ में पिछली श्रेणी और पिछला आइटम याद रखें</string>
     <string name="settings_home_root">होम स्क्रीन</string>
@@ -609,6 +610,8 @@
     <string name="settings_browsing_last_category_description">अनुभाग को सभी के बजाय उसी श्रेणी पर दोबारा खोलें जहाँ आपने उसे छोड़ा था।</string>
     <string name="settings_browsing_last_item">पिछला आइटम याद रखें</string>
     <string name="settings_browsing_last_item_description">हर श्रेणी ऊपर से शुरू होने के बजाय अपनी स्क्रॉल स्थिति बनाए रखती है। लाइव टीवी पिछली बार फ़ोकस में रहा चैनल भी वापस लाता है।</string>
+    <string name="settings_browsing_live_categories">लाइव टीवी श्रेणियाँ</string>
+    <string name="settings_browsing_live_categories_description">लाइव टीवी, गाइड, प्लेयर और मल्टीव्यू में दिखती हैं। सभी channels बंद होने पर लाइव टीवी आपकी पहली श्रेणी में खुलता है, और कोई श्रेणी न हो तो पसंदीदा में।</string>
     <string name="settings_catchup_player">कैच-अप इसमें चलाएँ</string>
     <string name="settings_customize_title">श्रेणियाँ और आइटम कस्टमाइज़ करें</string>
     <string name="settings_customize_pin_locked">यह स्क्रीन PIN से लॉक है।</string>
@@ -866,6 +869,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> स्रोत छोड़ दिए गए क्योंकि उनकी प्लेलिस्ट के प्रकार समर्थित नहीं हैं।</item>
     </plurals>
     <string name="settings_backup_export_error">एक्सपोर्ट नहीं हो सका।</string>
+    <string name="settings_backup_no_file_app">इस फ़ोन पर कोई ऐप फ़ाइल सेव नहीं कर सकता। इसके बजाय शेयर करें का उपयोग करें।</string>
     <string name="settings_backup_read_error">बैकअप फ़ाइल पढ़ी नहीं जा सकी।</string>
     <string name="settings_backup_import_error">इंपोर्ट नहीं हो सका।</string>
     <string name="settings_backup_invalid_locale">इस बैकअप में ऐप की एक असमर्थित भाषा थी। रीस्टोर सफल रहा, लेकिन आपकी वर्तमान भाषा रखी गई।</string>
@@ -1398,7 +1402,7 @@
     <string name="settings_line_guide_width">चैनल सूची और टाइमलाइन</string>
     <string name="settings_line_browsing">आखिरी श्रेणी और आइटम याद रखें</string>
     <string name="settings_line_home">पंक्तियाँ चुनें, क्रम बदलें और फ़िल्टर करें</string>
-    <string name="settings_line_content_menus">हर मेनू की क्रियाएँ फिर से व्यवस्थित करें</string>
+    <string name="settings_line_content_menus">हर मेनू की क्रियाएँ फिर से व्यवस्थित करें या छिपाएँ</string>
     <string name="settings_line_remote_shortcuts">रिमोट के खाली बटन असाइन करें</string>
     <string name="settings_line_customize">छिपाएँ और दिखाएँ, नाम बदलें और क्रम बदलें</string>
     <string name="settings_line_metadata">मूवी और सीरीज़ के पोस्टर, कहानी, कलाकार और रेटिंग</string>

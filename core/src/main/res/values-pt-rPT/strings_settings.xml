@@ -196,8 +196,9 @@
     <string name="settings_ch_paging">Atalhos do comando</string>
     <string name="settings_ch_paging_description">Atribua botões livres à navegação, reprodução e consulta. Os botões essenciais continuam protegidos.</string>
     <string name="settings_content_menus_title">Menus de toque longo</string>
-    <string name="settings_content_menus_description">Reordene as ações nos menus de canais, filmes, séries e episódios</string>
-    <string name="settings_content_menus_hint">Mantenha OK numa ação para a pegar e mova-a com Cima e Baixo. Prima OK novamente para a largar.</string>
+    <string name="settings_content_menus_description">Reordene ou oculte as ações nos menus de canais, filmes, séries e episódios</string>
+    <string name="settings_content_menus_hint">Prima OK numa ação para a mostrar ou ocultar. Mantenha OK para a pegar, mova-a com Cima e Baixo e prima OK novamente para a largar.</string>
+    <string name="settings_content_menus_note">Algumas ações só aparecem onde se aplicam.</string>
     <string name="settings_browsing_lists">Navegação e listas</string>
     <string name="settings_browsing_description">Memorizar a última categoria e o último item em TV em direto, Filmes e Séries</string>
     <string name="settings_home_root">Ecrã principal</string>
@@ -612,6 +613,8 @@
     <string name="settings_browsing_last_category_description">Reabrir a secção na categoria onde ficou, em vez de Tudo.</string>
     <string name="settings_browsing_last_item">Recordar o último item</string>
     <string name="settings_browsing_last_item_description">Cada categoria mantém a sua própria posição de deslocamento, em vez de começar no topo. A TV em direto também repõe o último canal com foco.</string>
+    <string name="settings_browsing_live_categories">Categorias da TV em direto</string>
+    <string name="settings_browsing_live_categories_description">Mostradas na TV em direto, no guia, no leitor e na Multivisão. Com Todos os canais desligado, a TV em direto abre na sua primeira categoria, ou em Favoritos se não tiver nenhuma.</string>
     <string name="settings_catchup_player">Reproduzir programas em diferido em</string>
     <string name="settings_customize_title">Personalizar categorias e itens</string>
     <string name="settings_customize_pin_locked">Este ecrã está bloqueado por PIN.</string>
@@ -878,6 +881,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> origens foram ignoradas porque os respetivos tipos de lista de reprodução não são suportados.</item>
     </plurals>
     <string name="settings_backup_export_error">Falha na exportação.</string>
+    <string name="settings_backup_no_file_app">Nenhuma app neste telemóvel consegue guardar o ficheiro. Utilize Partilhar.</string>
     <string name="settings_backup_read_error">Não foi possível ler o ficheiro da cópia de segurança.</string>
     <string name="settings_backup_import_error">Falha na importação.</string>
     <string name="settings_backup_invalid_locale">Esta cópia de segurança continha um idioma da aplicação não suportado. O restauro foi concluído, mas o idioma atual foi mantido.</string>
@@ -1426,7 +1430,7 @@
     <string name="settings_line_guide_width">Lista de canais e linha temporal</string>
     <string name="settings_line_browsing">Memoriza a última categoria e o último item</string>
     <string name="settings_line_home">Escolha, reordene e filtre as filas</string>
-    <string name="settings_line_content_menus">Reorganize as ações de cada menu</string>
+    <string name="settings_line_content_menus">Reorganize ou oculte as ações de cada menu</string>
     <string name="settings_line_remote_shortcuts">Atribua botões livres do comando</string>
     <string name="settings_line_customize">Oculte e mostre, mude o nome e reordene</string>
     <string name="settings_line_metadata">Cartazes, sinopses, elenco e classificações de filmes e séries</string>
