@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">നിങ്ങളുടെ സ്വന്തം ചിത്രം</string>
     <string name="profiles_kids">കുട്ടികളുടെ പ്രൊഫൈൽ</string>
     <string name="profiles_kids_description">ലളിതവും സുരക്ഷിതവുമായ ബ്രൗസിംഗ്</string>
+    <string name="profiles_allow_downloads">ഡൗൺലോഡുകൾ അനുവദിക്കുക</string>
+    <string name="profiles_allow_downloads_description">ഓഫാക്കിയാൽ ഈ പ്രൊഫൈലിൽ എല്ലാ ഡൗൺലോഡ് ബട്ടണുകളും മറയ്ക്കും</string>
     <string name="profiles_remove_pin">PIN ലോക്ക് നീക്കംചെയ്യുക</string>
     <string name="profiles_no_pin">ഈ പ്രൊഫൈൽ PIN ഇല്ലാതെ തുറക്കും</string>
     <string name="profiles_change_pin">PIN മാറ്റുക (ഒഴിഞ്ഞതായി വിട്ടാൽ നിലവിലുള്ളത് നിലനിർത്തും)</string>

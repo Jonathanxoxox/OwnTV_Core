@@ -75,6 +75,11 @@
     <string name="content_remove_from_category">Eltávolítás ebből a kategóriából</string>
     <string name="content_download">Letöltés</string>
     <string name="content_download_all_episodes">Összes epizód letöltése</string>
+    <plurals name="content_download_episodes_confirm">
+        <item quantity="one">Letöltesz <xliff:g id="count">%1$d</xliff:g> epizódot?</item>
+        <item quantity="other">Letöltesz <xliff:g id="count">%1$d</xliff:g> epizódot?</item>
+    </plurals>
+    <string name="content_download_episodes_confirm_message">Ezen az eszközön tárolódnak, és tárhelyet foglalnak.</string>
     <string name="content_play">Lejátszás</string>
     <string name="content_favorited">Kedvencekhez adva</string>
     <string name="content_favorite">Kedvenc</string>
@@ -82,9 +87,7 @@
     <string name="content_episodes">Epizódok</string>
     <string name="content_oldest_first">Legrégebbi elöl</string>
     <string name="content_newest_first">Legújabb elöl</string>
-    <string name="content_play_external">Lejátszás külső lejátszóval</string>
     <string name="content_delete_subtitles">OpenSub-feliratok törlése</string>
-    <string name="content_tmdb_details">TMDB-adatok</string>
     <string name="content_play_trailer">Előzetes lejátszása</string>
     <string name="content_refetch_tmdb">TMDB-adatok újbóli lekérése</string>
     <string name="content_set_tmdb_name">TMDB-név megadása</string>

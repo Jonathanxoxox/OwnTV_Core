@@ -196,8 +196,9 @@
     <string name="settings_ch_paging">Scorciatoie del telecomando</string>
     <string name="settings_ch_paging_description">Assegna i tasti liberi a navigazione, riproduzione e consultazione. I tasti essenziali restano protetti.</string>
     <string name="settings_content_menus_title">Menu con pressione prolungata</string>
-    <string name="settings_content_menus_description">Riordina le azioni nei menu di canali, film, serie ed episodi</string>
-    <string name="settings_content_menus_hint">Tieni premuto OK su un’azione per prenderla, poi spostala con Su e Giù. Premi di nuovo OK per rilasciarla.</string>
+    <string name="settings_content_menus_description">Riordina o nascondi le azioni nei menu di canali, film, serie ed episodi</string>
+    <string name="settings_content_menus_hint">Premi OK su un\'azione per mostrarla o nasconderla. Tieni premuto OK per prenderla, spostala con Su e Giù e premi di nuovo OK per rilasciarla.</string>
+    <string name="settings_content_menus_note">Alcune azioni compaiono solo dove servono.</string>
     <string name="settings_browsing_lists">Navigazione ed elenchi</string>
     <string name="settings_browsing_description">Ricorda l\'ultima categoria e l\'ultimo elemento in TV in diretta, Film e Serie</string>
     <string name="settings_home_root">Schermata Home</string>
@@ -612,6 +613,8 @@
     <string name="settings_browsing_last_category_description">Riapri la sezione sulla categoria dalla quale sei uscito, anziché su Tutto.</string>
     <string name="settings_browsing_last_item">Ricorda l\'ultimo elemento</string>
     <string name="settings_browsing_last_item_description">Ogni categoria conserva la propria posizione di scorrimento anziché ripartire dall\'inizio. La TV in diretta ripristina anche l\'ultimo canale evidenziato.</string>
+    <string name="settings_browsing_live_categories">Categorie della TV in diretta</string>
+    <string name="settings_browsing_live_categories_description">Mostrate nella TV in diretta, nella guida TV, nel lettore e in Multivista. Con Tutti i canali disattivato, la TV in diretta si apre sulla tua prima categoria, o su Preferiti se non ne hai.</string>
     <string name="settings_catchup_player">Riproduci la visione in differita con</string>
     <string name="settings_customize_title">Personalizza categorie ed elementi</string>
     <string name="settings_customize_pin_locked">Questa schermata è bloccata con PIN.</string>

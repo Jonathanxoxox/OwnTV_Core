@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">Tu propia imagen</string>
     <string name="profiles_kids">Perfil infantil</string>
     <string name="profiles_kids_description">Navegación sencilla y segura</string>
+    <string name="profiles_allow_downloads">Permitir descargas</string>
+    <string name="profiles_allow_downloads_description">Desactivado oculta todos los botones de descarga de este perfil</string>
     <string name="profiles_remove_pin">Quitar bloqueo con PIN</string>
     <string name="profiles_no_pin">Este perfil se abre sin un PIN</string>
     <string name="profiles_change_pin">Cambiar PIN (en blanco = conservar)</string>

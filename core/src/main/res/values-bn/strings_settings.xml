@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">রিমোট শর্টকাট</string>
     <string name="settings_ch_paging_description">নেভিগেশন, প্লেব্যাক ও ব্রাউজিং কাজের জন্য রিমোটের অতিরিক্ত বোতাম নির্ধারণ করুন। জরুরি নেভিগেশন বোতাম সুরক্ষিত থাকবে।</string>
     <string name="settings_content_menus_title">লং-প্রেস মেনু</string>
-    <string name="settings_content_menus_description">চ্যানেল, সিনেমা, সিরিজ ও পর্বের মেনুর অ্যাকশনগুলি সাজিয়ে নিন</string>
-    <string name="settings_content_menus_hint">কোনও অ্যাকশনে OK চেপে ধরে সেটি তুলে নিন, তারপর উপর-নিচ দিয়ে সরান। নামাতে আবার OK চাপুন।</string>
+    <string name="settings_content_menus_description">চ্যানেল, সিনেমা, সিরিজ ও পর্বের মেনুর অ্যাকশনগুলি সাজিয়ে নিন বা লুকিয়ে রাখুন</string>
+    <string name="settings_content_menus_hint">কোনও অ্যাকশন দেখাতে বা লুকাতে তাতে OK চাপুন। তুলে নিতে OK চেপে ধরুন, উপর-নিচ দিয়ে সরান, আর নামাতে আবার OK চাপুন।</string>
+    <string name="settings_content_menus_note">কিছু অ্যাকশন শুধু প্রযোজ্য জায়গাতেই দেখা যায়।</string>
     <string name="settings_browsing_lists">ব্রাউজিং ও তালিকা</string>
     <string name="settings_browsing_description">লাইভ টিভি, সিনেমা ও সিরিজে সর্বশেষ বিভাগ ও সর্বশেষ আইটেম মনে রাখুন</string>
     <string name="settings_home_root">হোম স্ক্রিন</string>
@@ -609,6 +610,8 @@
     <string name="settings_browsing_last_category_description">সব বিভাগে নয়, যে বিভাগে ছেড়েছিলেন সেখানেই আবার খুলুন।</string>
     <string name="settings_browsing_last_item">সর্বশেষ আইটেম মনে রাখুন</string>
     <string name="settings_browsing_last_item_description">প্রতিটি বিভাগ ওপর থেকে শুরু না করে তার নিজস্ব স্ক্রল অবস্থান ধরে রাখে। লাইভ টিভিতে সর্বশেষ ফোকাসে থাকা চ্যানেলটিও ফিরিয়ে আনা হয়।</string>
+    <string name="settings_browsing_live_categories">লাইভ টিভির বিভাগ</string>
+    <string name="settings_browsing_live_categories_description">লাইভ টিভি, অনুষ্ঠান নির্দেশিকা, প্লেয়ার ও মাল্টিভিউতে দেখানো হয়। সব চ্যানেল বন্ধ থাকলে লাইভ টিভি আপনার প্রথম বিভাগে খোলে, কোনও বিভাগ না থাকলে পছন্দেরগুলোতে।</string>
     <string name="settings_catchup_player">ক্যাচ-আপ চালানোর প্লেয়ার</string>
     <string name="settings_customize_title">বিভাগ ও আইটেম নিজের মতো সাজান</string>
     <string name="settings_customize_pin_locked">এই স্ক্রিনটি PIN দিয়ে লক করা।</string>

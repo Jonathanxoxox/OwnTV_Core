@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">Fjernkontrollsnarveier</string>
     <string name="settings_ch_paging_description">Tilordne ledige knapper til navigasjon, avspilling og blaing. Viktige navigasjonsknapper forblir beskyttet.</string>
     <string name="settings_content_menus_title">Menyer ved langt trykk</string>
-    <string name="settings_content_menus_description">Endre rekkefølgen på handlingene i menyene for kanaler, filmer, serier og episoder</string>
-    <string name="settings_content_menus_hint">Hold inne OK på en handling for å plukke den opp, og flytt den så opp og ned. Trykk OK igjen for å slippe den.</string>
+    <string name="settings_content_menus_description">Endre rekkefølgen på eller skjul handlingene i menyene for kanaler, filmer, serier og episoder</string>
+    <string name="settings_content_menus_hint">Trykk OK på en handling for å vise eller skjule den. Hold inne OK for å plukke den opp, flytt den opp og ned, og trykk OK igjen for å slippe den.</string>
+    <string name="settings_content_menus_note">Noen handlinger vises bare der de passer.</string>
     <string name="settings_browsing_lists">Blaing og lister</string>
     <string name="settings_browsing_description">Husk den siste kategorien og det siste elementet i Direkte-TV, filmer og serier</string>
     <string name="settings_home_root">Startskjerm</string>
@@ -609,6 +610,8 @@
     <string name="settings_browsing_last_category_description">Åpne delen igjen i kategorien du forlot, ikke Alle.</string>
     <string name="settings_browsing_last_item">Husk siste element</string>
     <string name="settings_browsing_last_item_description">Hver kategori beholder sin egen rulleposisjon i stedet for å starte øverst. Direkte-TV gjenoppretter også den sist fokuserte kanalen.</string>
+    <string name="settings_browsing_live_categories">Direkte-TV-kategorier</string>
+    <string name="settings_browsing_live_categories_description">Vises i Direkte-TV, programoversikten, avspilleren og Multivisning. Med Alle kanaler slått av åpner Direkte-TV i den første kategorien din, eller i Favoritter hvis du ikke har noen.</string>
     <string name="settings_catchup_player">Spill av arkiv med</string>
     <string name="settings_customize_title">Tilpass kategorier og elementer</string>
     <string name="settings_customize_pin_locked">Denne skjermen er låst med PIN.</string>

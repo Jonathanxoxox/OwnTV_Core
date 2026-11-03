@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">Saját kép</string>
     <string name="profiles_kids">Gyerekprofil</string>
     <string name="profiles_kids_description">Egyszerűsített, biztonságos böngészés</string>
+    <string name="profiles_allow_downloads">Letöltések engedélyezése</string>
+    <string name="profiles_allow_downloads_description">Kikapcsolva ennél a profilnál minden letöltés gomb rejtve marad</string>
     <string name="profiles_remove_pin">PIN-zár eltávolítása</string>
     <string name="profiles_no_pin">Ez a profil PIN-kód nélkül nyílik meg</string>
     <string name="profiles_change_pin">PIN módosítása (üresen hagyva marad a régi)</string>

@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">रिमोट शॉर्टकट</string>
     <string name="settings_ch_paging_description">नेविगेशन, प्लेबैक और ब्राउज़िंग के लिए रिमोट के अतिरिक्त बटन तय करें। ज़रूरी नेविगेशन बटन सुरक्षित रहेंगे।</string>
     <string name="settings_content_menus_title">लॉन्ग-प्रेस मेन्यू</string>
-    <string name="settings_content_menus_description">चैनल, मूवी, सीरीज़ और एपिसोड मेन्यू की क्रियाओं का क्रम बदलें</string>
-    <string name="settings_content_menus_hint">किसी क्रिया पर OK दबाए रखकर उसे उठाएँ, फिर ऊपर-नीचे से हिलाएँ। छोड़ने के लिए फिर से OK दबाएँ।</string>
+    <string name="settings_content_menus_description">चैनल, मूवी, सीरीज़ और एपिसोड मेन्यू की क्रियाओं का क्रम बदलें या उन्हें छिपाएँ</string>
+    <string name="settings_content_menus_hint">किसी क्रिया को दिखाने या छिपाने के लिए उस पर OK दबाएँ। उठाने के लिए OK दबाए रखें, ऊपर-नीचे से हिलाएँ और छोड़ने के लिए फिर से OK दबाएँ।</string>
+    <string name="settings_content_menus_note">कुछ क्रियाएँ सिर्फ़ वहीं दिखती हैं जहाँ वे लागू होती हैं।</string>
     <string name="settings_browsing_lists">ब्राउज़िंग और सूचियाँ</string>
     <string name="settings_browsing_description">लाइव टीवी, फ़िल्मों और सीरीज़ में पिछली श्रेणी और पिछला आइटम याद रखें</string>
     <string name="settings_home_root">होम स्क्रीन</string>
@@ -609,6 +610,8 @@
     <string name="settings_browsing_last_category_description">अनुभाग को सभी के बजाय उसी श्रेणी पर दोबारा खोलें जहाँ आपने उसे छोड़ा था।</string>
     <string name="settings_browsing_last_item">पिछला आइटम याद रखें</string>
     <string name="settings_browsing_last_item_description">हर श्रेणी ऊपर से शुरू होने के बजाय अपनी स्क्रॉल स्थिति बनाए रखती है। लाइव टीवी पिछली बार फ़ोकस में रहा चैनल भी वापस लाता है।</string>
+    <string name="settings_browsing_live_categories">लाइव टीवी श्रेणियाँ</string>
+    <string name="settings_browsing_live_categories_description">लाइव टीवी, गाइड, प्लेयर और मल्टीव्यू में दिखती हैं। सभी channels बंद होने पर लाइव टीवी आपकी पहली श्रेणी में खुलता है, और कोई श्रेणी न हो तो पसंदीदा में।</string>
     <string name="settings_catchup_player">कैच-अप इसमें चलाएँ</string>
     <string name="settings_customize_title">श्रेणियाँ और आइटम कस्टमाइज़ करें</string>
     <string name="settings_customize_pin_locked">यह स्क्रीन PIN से लॉक है।</string>

@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">Kendi resminiz</string>
     <string name="profiles_kids">Çocuk profili</string>
     <string name="profiles_kids_description">Basitleştirilmiş, güvenli gezinme</string>
+    <string name="profiles_allow_downloads">İndirmelere izin ver</string>
+    <string name="profiles_allow_downloads_description">Kapalıyken bu profilde tüm İndir düğmeleri gizlenir</string>
     <string name="profiles_remove_pin">PIN kilidini kaldır</string>
     <string name="profiles_no_pin">Bu profil PIN olmadan açılır</string>
     <string name="profiles_change_pin">PIN\'i değiştir (boş bırakırsanız korunur)</string>

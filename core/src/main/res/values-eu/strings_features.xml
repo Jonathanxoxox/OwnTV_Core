@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">Zure irudia</string>
     <string name="profiles_kids">Haurren profila</string>
     <string name="profiles_kids_description">Arakatze sinplifikatu eta segurua</string>
+    <string name="profiles_allow_downloads">Baimendu deskargak</string>
+    <string name="profiles_allow_downloads_description">Desaktibatuta, profil honetan deskargatzeko botoi guztiak ezkutatzen dira</string>
     <string name="profiles_remove_pin">Kendu PIN blokeoa</string>
     <string name="profiles_no_pin">Profil hau PIN gabe irekitzen da</string>
     <string name="profiles_change_pin">Aldatu PINa (hutsik = mantendu)</string>

@@ -196,8 +196,9 @@
     <string name="settings_ch_paging">Accesos directos del mando</string>
     <string name="settings_ch_paging_description">Asigna botones libres del mando a acciones de navegación, reproducción y exploración. Los botones esenciales siguen protegidos.</string>
     <string name="settings_content_menus_title">Menús de pulsación larga</string>
-    <string name="settings_content_menus_description">Reordena las acciones de los menús de canales, películas, series y episodios</string>
-    <string name="settings_content_menus_hint">Mantén OK sobre una acción para cogerla y muévela con Arriba y Abajo. Pulsa OK otra vez para soltarla.</string>
+    <string name="settings_content_menus_description">Reordena u oculta las acciones de los menús de canales, películas, series y episodios</string>
+    <string name="settings_content_menus_hint">Pulsa OK sobre una acción para mostrarla u ocultarla. Mantén OK para cogerla, muévela con Arriba y Abajo y pulsa OK otra vez para soltarla.</string>
+    <string name="settings_content_menus_note">Algunas acciones solo aparecen donde corresponden.</string>
     <string name="settings_browsing_lists">Navegación y listas</string>
     <string name="settings_browsing_description">Recuerda la última categoría y el último elemento de TV en directo, Películas y Series</string>
     <string name="settings_home_root">Pantalla de inicio</string>
@@ -612,6 +613,8 @@
     <string name="settings_browsing_last_category_description">Vuelve a abrir la sección en la categoría que dejaste, no en Todo.</string>
     <string name="settings_browsing_last_item">Recordar el último elemento</string>
     <string name="settings_browsing_last_item_description">Cada categoría conserva su propia posición de desplazamiento en lugar de empezar desde arriba. La TV en directo también restaura el último canal que tenía el foco.</string>
+    <string name="settings_browsing_live_categories">Categorías de TV en directo</string>
+    <string name="settings_browsing_live_categories_description">Se muestran en TV en directo, la guía de TV, el reproductor y Multivista. Con Todos los canales desactivado, TV en directo se abre en tu primera categoría, o en Favoritos si no tienes ninguna.</string>
     <string name="settings_catchup_player">Reproducir el contenido en diferido con</string>
     <string name="settings_customize_title">Personalizar categories y elementos</string>
     <string name="settings_customize_pin_locked">Esta pantalla está bloqueada con PIN.</string>

@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">റിമോട്ട് കുറുക്കുവഴികൾ</string>
     <string name="settings_ch_paging_description">നാവിഗേഷൻ, പ്ലേബാക്ക്, ബ്രൗസിംഗ് എന്നിവയ്ക്കായി റിമോട്ടിലെ അധിക ബട്ടണുകൾ നൽകുക. പ്രധാന നാവിഗേഷൻ ബട്ടണുകൾ സംരക്ഷിക്കപ്പെടും.</string>
     <string name="settings_content_menus_title">ലോങ്-പ്രസ് മെനുകൾ</string>
-    <string name="settings_content_menus_description">ചാനൽ, സിനിമ, സീരീസ്, എപ്പിസോഡ് മെനുകളിലെ പ്രവർത്തനങ്ങൾ പുനഃക്രമീകരിക്കുക</string>
-    <string name="settings_content_menus_hint">ഒരു പ്രവർത്തനത്തിൽ OK അമർത്തിപ്പിടിച്ച് അത് എടുക്കുക, മുകളിലേക്കും താഴേക്കും നീക്കുക. വീണ്ടും OK അമർത്തി വയ്ക്കുക.</string>
+    <string name="settings_content_menus_description">ചാനൽ, സിനിമ, സീരീസ്, എപ്പിസോഡ് മെനുകളിലെ പ്രവർത്തനങ്ങൾ പുനഃക്രമീകരിക്കുക അല്ലെങ്കിൽ മറയ്ക്കുക</string>
+    <string name="settings_content_menus_hint">ഒരു പ്രവർത്തനം കാണിക്കാനോ മറയ്ക്കാനോ അതിൽ OK അമർത്തുക. എടുക്കാൻ OK അമർത്തിപ്പിടിക്കുക, മുകളിലേക്കും താഴേക്കും നീക്കുക, വീണ്ടും OK അമർത്തി വയ്ക്കുക.</string>
+    <string name="settings_content_menus_note">ചില പ്രവർത്തനങ്ങൾ ബാധകമായ ഇടങ്ങളിൽ മാത്രമേ കാണൂ.</string>
     <string name="settings_browsing_lists">ബ്രൗസിംഗും പട്ടികകളും</string>
     <string name="settings_browsing_description">തത്സമയ ടിവി, സിനിമകൾ, സീരീസ് എന്നിവയിലെ അവസാന വിഭാഗവും അവസാന ഇനവും ഓർക്കുക</string>
     <string name="settings_home_root">ഹോം സ്ക്രീൻ</string>
@@ -609,6 +610,8 @@
     <string name="settings_browsing_last_category_description">എല്ലാം എന്നതിൽ നിന്നല്ല, നിങ്ങൾ വിട്ട വിഭാഗത്തിൽ നിന്ന് ഈ ഭാഗം വീണ്ടും തുറക്കുക.</string>
     <string name="settings_browsing_last_item">അവസാന ഇനം ഓർക്കുക</string>
     <string name="settings_browsing_last_item_description">ഓരോ വിഭാഗവും മുകളിൽ നിന്ന് ആരംഭിക്കുന്നതിന് പകരം അതത് സ്ക്രോൾ സ്ഥാനം നിലനിർത്തും. തത്സമയ ടിവി അവസാനം ഫോക്കസിലുണ്ടായിരുന്ന ചാനലും പുനഃസ്ഥാപിക്കും.</string>
+    <string name="settings_browsing_live_categories">തത്സമയ ടിവി വിഭാഗങ്ങൾ</string>
+    <string name="settings_browsing_live_categories_description">തത്സമയ ടിവിയിലും ഗൈഡിലും പ്ലെയറിലും മൾട്ടിവ്യൂവിലും കാണിക്കും. എല്ലാ ചാനലുകളും ഓഫാക്കിയാൽ തത്സമയ ടിവി നിങ്ങളുടെ ആദ്യ വിഭാഗത്തിൽ തുറക്കും, ഒന്നുമില്ലെങ്കിൽ പ്രിയപ്പെട്ടവയിൽ.</string>
     <string name="settings_catchup_player">ക്യാച്ച്-അപ്പ് പ്ലേ ചെയ്യേണ്ടത്</string>
     <string name="settings_customize_title">വിഭാഗങ്ങളും ഇനങ്ങളും ഇഷ്ടാനുസൃതമാക്കുക</string>
     <string name="settings_customize_pin_locked">ഈ സ്ക്രീൻ PIN ഉപയോഗിച്ച് ലോക്ക് ചെയ്തിരിക്കുന്നു.</string>

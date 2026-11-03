@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">Kumanda kısayolları</string>
     <string name="settings_ch_paging_description">Kumandanın boş tuşlarına gezinme, oynatma ve liste işlemleri atayın. Temel gezinme tuşları korunur.</string>
     <string name="settings_content_menus_title">Uzun basma menüleri</string>
-    <string name="settings_content_menus_description">Kanal, film, dizi ve bölüm menülerindeki eylemleri yeniden sıralayın</string>
-    <string name="settings_content_menus_hint">Bir eylemi almak için üzerinde OK tuşunu basılı tutun, sonra Yukarı ve Aşağı ile taşıyın. Bırakmak için tekrar OK’a basın.</string>
+    <string name="settings_content_menus_description">Kanal, film, dizi ve bölüm menülerindeki eylemleri yeniden sıralayın veya gizleyin</string>
+    <string name="settings_content_menus_hint">Bir eylemi göstermek veya gizlemek için üzerinde OK’a basın. Almak için OK’u basılı tutun, Yukarı ve Aşağı ile taşıyın, bırakmak için tekrar OK’a basın.</string>
+    <string name="settings_content_menus_note">Bazı eylemler yalnızca geçerli oldukları yerde görünür.</string>
     <string name="settings_browsing_lists">Gezinme ve listeler</string>
     <string name="settings_browsing_description">Canlı TV, Filmler ve Diziler bölümlerindeki son kategoriyi ve son ögeyi hatırlayın</string>
     <string name="settings_home_root">Ana ekran</string>
@@ -609,6 +610,8 @@
     <string name="settings_browsing_last_category_description">Bölümü Tümü yerine bıraktığınız kategoride yeniden açın.</string>
     <string name="settings_browsing_last_item">Son öğeyi hatırla</string>
     <string name="settings_browsing_last_item_description">Her kategori, en baştan başlamak yerine kendi kaydırma konumunu korur. Canlı TV ayrıca son odaklanılan kanalı geri getirir.</string>
+    <string name="settings_browsing_live_categories">Canlı TV kategorileri</string>
+    <string name="settings_browsing_live_categories_description">Canlı TV’de, TV Rehberinde, oynatıcıda ve Çoklu görünümde gösterilir. Tüm kanallar kapalıyken Canlı TV ilk kategorinizde, hiç kategoriniz yoksa Favorilerde açılır.</string>
     <string name="settings_catchup_player">Geri izlemeyi şununla oynat</string>
     <string name="settings_customize_title">Kategorileri ve Öğeleri Özelleştir</string>
     <string name="settings_customize_pin_locked">Bu ekran PIN ile kilitli.</string>

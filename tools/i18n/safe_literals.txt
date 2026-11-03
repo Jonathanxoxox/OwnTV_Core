@@ -97,6 +97,7 @@
 5	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	d
 3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	defaultSourceId
 4	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	device
+2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	downloadsAllowed
 1	log	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	encrypted=${crypto != null} key=${key != null} profiles=${fileProfiles.length()} sources=${fileSources.length()}
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	epgAutoRefresh
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	epgSources
@@ -2156,7 +2157,7 @@
 1	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	add_to_multiview
 1	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	catchup
 2	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	delete_subtitles
-3	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	download
+1	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	download
 1	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	epg_offset
 3	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	favourite
 3	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	hide
@@ -3027,9 +3028,10 @@
 1	technical	core/src/main/java/tv/own/owntv/core/settings/SettingsImportRules.kt	player_short_ok
 1	technical	core/src/main/java/tv/own/owntv/core/settings/SettingsImportRules.kt	seek_step_sec
 36	empty	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	\0
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	$DOWNLOADS_ALLOWED_PREFIX$profileId
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	$SPORTS_CONFIG_PREFIX$profileId
 2	log	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	${mode.name}$SEPARATOR$manualDays
-3	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	,
+4	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	,
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	ALL
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	CUSTOM:
 1	protocol	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	DAYS_7
@@ -3092,6 +3094,7 @@
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	direct_tune
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	download_root
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	download_watch_choice
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	downloads_allowed_
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	downloads_wifi_only
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	epg_auto_refresh
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	epg_offset_minutes
@@ -3245,7 +3248,8 @@
 3	json	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	s
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	seek_step_sec
 1	log	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	settings import: skipped ${k.name}
-1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	settings_menu_order_$menu
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	settings_menu_hidden_${menu.name.lowercase()}
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	settings_menu_order_${menu.name.lowercase()}
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	settings_quick_pinned
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	sheet_counts
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	software_decode_above_1080p
@@ -5247,6 +5251,7 @@
 1	technical	core/src/main/java/tv/own/owntv/core/ui/stage/StageGlyph.kt	M18 5v14M5 5.5v13L15 12z
 1	technical	core/src/main/java/tv/own/owntv/core/ui/stage/StageGlyph.kt	M18 8.5a6 6 0 0 0-12 0c0 7-3 8.5-3 8.5h18s-3-1.5-3-8.5M13.7 21a2 2 0 0 1-3.4 0
 1	technical	core/src/main/java/tv/own/owntv/core/ui/stage/StageGlyph.kt	M19.5 12a7.5 7.5 0 1 1-2.2-5.3L19.5 9M19.5 4.5V9H15
+1	technical	core/src/main/java/tv/own/owntv/core/ui/stage/StageGlyph.kt	M2.5 12S6 5 12 5s9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7zM12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6
 1	technical	core/src/main/java/tv/own/owntv/core/ui/stage/StageGlyph.kt	M20 11a8 8 0 0 0-14.3-4.9L4 8M4 4v4h4M4 13a8 8 0 0 0 14.3 4.9L20 16M20 20v-4h-4
 1	technical	core/src/main/java/tv/own/owntv/core/ui/stage/StageGlyph.kt	M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z
 1	technical	core/src/main/java/tv/own/owntv/core/ui/stage/StageGlyph.kt	M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z

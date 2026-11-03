@@ -197,8 +197,9 @@
     <string name="settings_ch_paging">Zkratky ovladače</string>
     <string name="settings_ch_paging_description">Přiřaďte volná tlačítka ovladače k navigaci, přehrávání a procházení. Základní navigační tlačítka zůstanou chráněná.</string>
     <string name="settings_content_menus_title">Nabídky po dlouhém stisknutí</string>
-    <string name="settings_content_menus_description">Změňte pořadí akcí v nabídkách kanálů, filmů, seriálů a dílů</string>
-    <string name="settings_content_menus_hint">Podržením OK akci uchopte, pak ji posouvejte nahoru a dolů. Dalším stiskem OK ji položíte.</string>
+    <string name="settings_content_menus_description">Změňte pořadí akcí v nabídkách kanálů, filmů, seriálů a dílů, nebo je skryjte</string>
+    <string name="settings_content_menus_hint">Stiskem OK akci zobrazíte nebo skryjete. Podržením OK ji uchopíte, pak ji posouvejte nahoru a dolů a dalším stiskem OK ji položíte.</string>
+    <string name="settings_content_menus_note">Některé akce se zobrazují jen tam, kde dávají smysl.</string>
     <string name="settings_browsing_lists">Procházení a seznamy</string>
     <string name="settings_browsing_description">Pamatovat si poslední kategorii a poslední položku v živém vysílání, filmech a seriálech</string>
     <string name="settings_home_root">Domovská obrazovka</string>
@@ -615,6 +616,8 @@
     <string name="settings_browsing_last_category_description">Sekci znovu otevřít v kategorii, kterou jste opustili, nikoli v kategorii Vše.</string>
     <string name="settings_browsing_last_item">Pamatovat si poslední položku</string>
     <string name="settings_browsing_last_item_description">Každá kategorie si zachová vlastní pozici posunu namísto návratu na začátek. Živé vysílání také obnoví poslední zaměřený kanál.</string>
+    <string name="settings_browsing_live_categories">Kategorie živého vysílání</string>
+    <string name="settings_browsing_live_categories_description">Zobrazují se v živém vysílání, v TV programu, v přehrávači i v režimu Multiview. Když vypnete Všechny kanály, živé vysílání se otevře ve vaší první kategorii, nebo v Oblíbených, pokud žádnou nemáte.</string>
     <string name="settings_catchup_player">Přehrávat TV archiv v</string>
     <string name="settings_customize_title">Přizpůsobení kategorií a položek</string>
     <string name="settings_customize_pin_locked">Tato obrazovka je chráněna zámkem PIN.</string>

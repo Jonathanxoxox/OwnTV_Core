@@ -223,8 +223,9 @@
     <string name="settings_ch_paging">Távirányító-gyorsbillentyűk</string>
     <string name="settings_ch_paging_description">Rendelj műveleteket a szabad távirányítógombokhoz, miközben a fontos navigáció védett marad</string>
     <string name="settings_content_menus_title">Hosszú nyomásos menük</string>
-    <string name="settings_content_menus_description">Rendezd át a műveleteket a csatorna-, film-, sorozat- és epizódmenükben</string>
-    <string name="settings_content_menus_hint">Tartsd lenyomva az OK-t egy műveleten a felvételéhez, majd a Fel és Le gombokkal mozgasd. Az OK ismételt megnyomásával leteszed.</string>
+    <string name="settings_content_menus_description">Rendezd át vagy rejtsd el a műveleteket a csatorna-, film-, sorozat- és epizódmenükben</string>
+    <string name="settings_content_menus_hint">Egy műveleten az OK megnyomásával megjelenítheted vagy elrejtheted. Az OK lenyomva tartásával felveszed, a Fel és Le gombokkal mozgatod, az OK ismételt megnyomásával leteszed.</string>
+    <string name="settings_content_menus_note">Egyes műveletek csak ott jelennek meg, ahol értelmük van.</string>
     <string name="settings_browsing_lists">Böngészés és listák</string>
     <string name="settings_browsing_description">Az utolsó kategória és az utolsó elem megjegyzése az Élő TV-ben, a Filmekben és a Sorozatokban</string>
     <string name="settings_home_root">Kezdőképernyő</string>
@@ -648,6 +649,8 @@
     <string name="settings_browsing_last_category_description">A szakasz azon a kategórián nyíljon meg, ahol elhagytad, ne az Összesen.</string>
     <string name="settings_browsing_last_item">Utolsó elem megjegyzése</string>
     <string name="settings_browsing_last_item_description">Minden kategória megőrzi a saját görgetési pozícióját ahelyett, hogy a tetejéről indulna. Az Élő TV az utoljára fókuszált csatornát is visszaállítja.</string>
+    <string name="settings_browsing_live_categories">Élő TV-kategóriák</string>
+    <string name="settings_browsing_live_categories_description">Megjelennek az Élő TV-ben, a műsorújságban, a lejátszóban és a Többnézetben. Ha az Összes csatorna ki van kapcsolva, az Élő TV az első kategóriádon nyílik meg, vagy a Kedvencekben, ha nincs kategóriád.</string>
     <string name="settings_catchup_player">Visszanézés lejátszása ebben</string>
     <string name="settings_customize_title">Kategóriák és elemek testreszabása</string>
     <string name="settings_customize_pin_locked">Ez a képernyő PIN-kóddal védett.</string>

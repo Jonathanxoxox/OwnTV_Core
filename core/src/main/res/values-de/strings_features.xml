@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">Eigenes Bild</string>
     <string name="profiles_kids">Kinderprofil</string>
     <string name="profiles_kids_description">Vereinfachtes, sicheres Stöbern</string>
+    <string name="profiles_allow_downloads">Downloads erlauben</string>
+    <string name="profiles_allow_downloads_description">Aus blendet für dieses Profil alle Download-Schaltflächen aus</string>
     <string name="profiles_remove_pin">PIN-Sperre entfernen</string>
     <string name="profiles_no_pin">Dieses Profil wird ohne PIN geöffnet</string>
     <string name="profiles_change_pin">PIN ändern (leer lassen = beibehalten)</string>

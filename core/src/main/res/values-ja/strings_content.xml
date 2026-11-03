@@ -69,6 +69,10 @@
     <string name="content_remove_from_category">このカテゴリから削除</string>
     <string name="content_download">ダウンロード</string>
     <string name="content_download_all_episodes">すべてのエピソードをダウンロード</string>
+    <plurals name="content_download_episodes_confirm">
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> 件のエピソードをダウンロードしますか？</item>
+    </plurals>
+    <string name="content_download_episodes_confirm_message">この端末に保存され、ストレージ容量を使います。</string>
     <string name="content_play">再生</string>
     <string name="content_favorited">お気に入り登録済み</string>
     <string name="content_favorite">お気に入りに追加</string>
@@ -76,9 +80,7 @@
     <string name="content_episodes">エピソード</string>
     <string name="content_oldest_first">古い順</string>
     <string name="content_newest_first">新しい順</string>
-    <string name="content_play_external">外部プレーヤーで再生</string>
     <string name="content_delete_subtitles">OpenSubの字幕を削除</string>
-    <string name="content_tmdb_details">TMDBの詳細</string>
     <string name="content_play_trailer">予告編を再生</string>
     <string name="content_refetch_tmdb">TMDBの詳細を再取得</string>
     <string name="content_set_tmdb_name">TMDB名を設定</string>

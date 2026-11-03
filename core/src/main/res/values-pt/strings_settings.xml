@@ -196,8 +196,9 @@
     <string name="settings_ch_paging">Atalhos do controle remoto</string>
     <string name="settings_ch_paging_description">Atribua botões livres à navegação, reprodução e exploração. Os botões essenciais continuam protegidos.</string>
     <string name="settings_content_menus_title">Menus de toque longo</string>
-    <string name="settings_content_menus_description">Reordene as ações nos menus de canais, filmes, séries e episódios</string>
-    <string name="settings_content_menus_hint">Mantenha OK numa ação para a pegar e mova-a com Cima e Baixo. Prima OK novamente para a largar.</string>
+    <string name="settings_content_menus_description">Reordene ou oculte as ações nos menus de canais, filmes, séries e episódios</string>
+    <string name="settings_content_menus_hint">Pressione OK numa ação para mostrá-la ou ocultá-la. Mantenha OK para pegá-la, mova-a com Cima e Baixo e pressione OK novamente para soltá-la.</string>
+    <string name="settings_content_menus_note">Algumas ações aparecem apenas onde se aplicam.</string>
     <string name="settings_browsing_lists">Navegação e listas</string>
     <string name="settings_browsing_description">Lembre a última categoria e o último item em TV ao vivo, filmes e séries</string>
     <string name="settings_home_root">Tela inicial</string>
@@ -612,6 +613,8 @@
     <string name="settings_browsing_last_category_description">Reabra a seção na categoria em que você estava, em vez de em Todas.</string>
     <string name="settings_browsing_last_item">Lembrar último item</string>
     <string name="settings_browsing_last_item_description">Cada categoria mantém sua própria posição de rolagem, em vez de começar no topo. A TV ao vivo também restaura o último canal em foco.</string>
+    <string name="settings_browsing_live_categories">Categorias da TV ao vivo</string>
+    <string name="settings_browsing_live_categories_description">Exibidas na TV ao vivo, no guia, no player e na Multivisão. Com Todos os canais desativado, a TV ao vivo abre na sua primeira categoria, ou em Favoritos se você não tiver nenhuma.</string>
     <string name="settings_catchup_player">Reproduzir programação retroativa em</string>
     <string name="settings_customize_title">Personalizar categorias e itens</string>
     <string name="settings_customize_pin_locked">Esta tela está bloqueada por PIN.</string>
