@@ -1430,7 +1430,7 @@
     <string name="settings_line_guide_width">Elenco canali e linea temporale</string>
     <string name="settings_line_browsing">Ricorda l’ultima categoria e l’ultimo elemento</string>
     <string name="settings_line_home">Scegli, riordina e filtra le righe</string>
-    <string name="settings_line_content_menus">Riordina le azioni di ogni menu</string>
+    <string name="settings_line_content_menus">Riordina o nascondi le azioni di ogni menu</string>
     <string name="settings_line_remote_shortcuts">Assegna i tasti liberi del telecomando</string>
     <string name="settings_line_customize">Nascondi e mostra, rinomina e riordina</string>
     <string name="settings_line_metadata">Locandine, trame, cast e valutazioni per film e serie</string>

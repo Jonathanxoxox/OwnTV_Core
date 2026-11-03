@@ -1402,7 +1402,7 @@
     <string name="settings_line_guide_width">चैनल सूची और टाइमलाइन</string>
     <string name="settings_line_browsing">आखिरी श्रेणी और आइटम याद रखें</string>
     <string name="settings_line_home">पंक्तियाँ चुनें, क्रम बदलें और फ़िल्टर करें</string>
-    <string name="settings_line_content_menus">हर मेनू की क्रियाएँ फिर से व्यवस्थित करें</string>
+    <string name="settings_line_content_menus">हर मेनू की क्रियाएँ फिर से व्यवस्थित करें या छिपाएँ</string>
     <string name="settings_line_remote_shortcuts">रिमोट के खाली बटन असाइन करें</string>
     <string name="settings_line_customize">छिपाएँ और दिखाएँ, नाम बदलें और क्रम बदलें</string>
     <string name="settings_line_metadata">मूवी और सीरीज़ के पोस्टर, कहानी, कलाकार और रेटिंग</string>

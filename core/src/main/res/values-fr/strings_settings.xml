@@ -1430,7 +1430,7 @@
     <string name="settings_line_guide_width">Liste des chaînes et frise horaire</string>
     <string name="settings_line_browsing">Retenir la dernière catégorie et le dernier élément</string>
     <string name="settings_line_home">Choisir, réordonner et filtrer les rangées</string>
-    <string name="settings_line_content_menus">Réorganiser les actions de chaque menu</string>
+    <string name="settings_line_content_menus">Réorganiser ou masquer les actions de chaque menu</string>
     <string name="settings_line_remote_shortcuts">Attribuer les touches libres de la télécommande</string>
     <string name="settings_line_customize">Masquer et afficher, renommer et réordonner</string>
     <string name="settings_line_metadata">Affiches, résumés, distribution et notes des films et séries</string>

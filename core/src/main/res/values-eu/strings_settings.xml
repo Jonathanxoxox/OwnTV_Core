@@ -1402,7 +1402,7 @@
     <string name="settings_line_guide_width">Kanal-zerrenda eta kronologia</string>
     <string name="settings_line_browsing">Gogoratu azken kategoria eta elementua</string>
     <string name="settings_line_home">Aukeratu, berrantolatu eta iragazi errenkadak</string>
-    <string name="settings_line_content_menus">Berrantolatu ekintzak menu bakoitzean</string>
+    <string name="settings_line_content_menus">Berrantolatu edo ezkutatu ekintzak menu bakoitzean</string>
     <string name="settings_line_remote_shortcuts">Esleitu urrutiko aginteko botoi libreak</string>
     <string name="settings_line_customize">Ezkutatu eta erakutsi, aldatu izena eta berrantolatu</string>
     <string name="settings_line_metadata">Posterrak, sinopsiak, aktoreak eta balorazioak Filmetarako eta Telesailetarako</string>

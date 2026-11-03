@@ -2645,7 +2645,7 @@
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_home">Choose, reorder and filter the rows</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
-    <string name="settings_line_content_menus">Rearrange the actions in each menu</string>
+    <string name="settings_line_content_menus">Rearrange or hide the actions in each menu</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_remote_shortcuts">Assign spare remote buttons</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->

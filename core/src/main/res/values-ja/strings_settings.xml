@@ -1374,7 +1374,7 @@
     <string name="settings_line_guide_width">チャンネル一覧とタイムライン</string>
     <string name="settings_line_browsing">最後のカテゴリと項目を記憶</string>
     <string name="settings_line_home">行を選んで並べ替え、絞り込む</string>
-    <string name="settings_line_content_menus">各メニューの操作を並べ替え</string>
+    <string name="settings_line_content_menus">各メニューの操作を並べ替え・非表示</string>
     <string name="settings_line_remote_shortcuts">リモコンの空きボタンを割り当て</string>
     <string name="settings_line_customize">非表示と再表示、名前の変更、並べ替え</string>
     <string name="settings_line_metadata">映画とシリーズのポスター、あらすじ、出演者、評価</string>

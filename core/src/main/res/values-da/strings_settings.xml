@@ -1402,7 +1402,7 @@
     <string name="settings_line_guide_width">Kanalliste og tidslinje</string>
     <string name="settings_line_browsing">Husk den sidste kategori og det sidste element</string>
     <string name="settings_line_home">Vælg, omarranger og filtrér rækkerne</string>
-    <string name="settings_line_content_menus">Omarranger handlingerne i hver menu</string>
+    <string name="settings_line_content_menus">Omarranger eller skjul handlingerne i hver menu</string>
     <string name="settings_line_remote_shortcuts">Tildel ledige knapper på fjernbetjeningen</string>
     <string name="settings_line_customize">Skjul og vis, omdøb og omarranger</string>
     <string name="settings_line_metadata">Plakater, handling, medvirkende og bedømmelser til film og serier</string>

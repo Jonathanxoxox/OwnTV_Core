@@ -1458,7 +1458,7 @@
     <string name="settings_line_guide_width">Seznam kanálů a časová osa</string>
     <string name="settings_line_browsing">Pamatovat poslední kategorii a položku</string>
     <string name="settings_line_home">Vyberte, seřaďte a filtrujte řádky</string>
-    <string name="settings_line_content_menus">Přeskupit akce v každé nabídce</string>
+    <string name="settings_line_content_menus">Přeskupit nebo skrýt akce v každé nabídce</string>
     <string name="settings_line_remote_shortcuts">Přiřadit volná tlačítka ovladače</string>
     <string name="settings_line_customize">Skrýt a zobrazit, přejmenovat a seřadit</string>
     <string name="settings_line_metadata">Plakáty, děj, obsazení a hodnocení pro filmy a seriály</string>

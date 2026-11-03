@@ -1458,7 +1458,7 @@
     <string name="settings_line_guide_width">Lista kanałów i oś czasu</string>
     <string name="settings_line_browsing">Zapamiętaj ostatnią kategorię i pozycję</string>
     <string name="settings_line_home">Wybierz, uporządkuj i filtruj rzędy</string>
-    <string name="settings_line_content_menus">Zmień układ działań w każdym menu</string>
+    <string name="settings_line_content_menus">Zmień układ działań w każdym menu lub je ukryj</string>
     <string name="settings_line_remote_shortcuts">Przypisz wolne przyciski pilota</string>
     <string name="settings_line_customize">Ukrywaj i pokazuj, zmieniaj nazwy i kolejność</string>
     <string name="settings_line_metadata">Plakaty, fabuła, obsada i oceny filmów i seriali</string>

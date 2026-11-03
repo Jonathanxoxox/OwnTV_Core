@@ -1402,7 +1402,7 @@
     <string name="settings_line_guide_width">Zenderlijst en tijdlijn</string>
     <string name="settings_line_browsing">De laatste categorie en het laatste item onthouden</string>
     <string name="settings_line_home">Rijen kiezen, ordenen en filteren</string>
-    <string name="settings_line_content_menus">De acties in elk menu herschikken</string>
+    <string name="settings_line_content_menus">De acties in elk menu herschikken of verbergen</string>
     <string name="settings_line_remote_shortcuts">Vrije knoppen op de afstandsbediening toewijzen</string>
     <string name="settings_line_customize">Verbergen en tonen, hernoemen en ordenen</string>
     <string name="settings_line_metadata">Posters, verhalen, cast en beoordelingen voor films en series</string>

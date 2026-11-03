@@ -1402,7 +1402,7 @@
     <string name="settings_line_guide_width">Kanalliste og tidslinje</string>
     <string name="settings_line_browsing">Husk siste kategori og element</string>
     <string name="settings_line_home">Velg, sorter og filtrer radene</string>
-    <string name="settings_line_content_menus">Omorganiser handlingene i hver meny</string>
+    <string name="settings_line_content_menus">Omorganiser eller skjul handlingene i hver meny</string>
     <string name="settings_line_remote_shortcuts">Tilordne ledige knapper på fjernkontrollen</string>
     <string name="settings_line_customize">Skjul og vis, gi nytt navn og sorter</string>
     <string name="settings_line_metadata">Plakater, handling, rolleliste og vurderinger for filmer og serier</string>

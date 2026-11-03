@@ -1374,7 +1374,7 @@
     <string name="settings_line_guide_width">채널 목록과 타임라인</string>
     <string name="settings_line_browsing">마지막 카테고리와 항목 기억</string>
     <string name="settings_line_home">행 선택, 순서 변경, 필터</string>
-    <string name="settings_line_content_menus">각 메뉴의 동작 재배치</string>
+    <string name="settings_line_content_menus">각 메뉴의 동작 재배치 또는 숨기기</string>
     <string name="settings_line_remote_shortcuts">남는 리모컨 버튼 지정</string>
     <string name="settings_line_customize">숨기기와 표시, 이름 변경, 순서 변경</string>
     <string name="settings_line_metadata">영화와 시리즈의 포스터, 줄거리, 출연진, 평점</string>

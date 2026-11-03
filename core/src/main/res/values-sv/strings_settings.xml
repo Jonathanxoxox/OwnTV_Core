@@ -1402,7 +1402,7 @@
     <string name="settings_line_guide_width">Kanallista och tidslinje</string>
     <string name="settings_line_browsing">Kom ihåg senaste kategorin och objektet</string>
     <string name="settings_line_home">Välj, sortera och filtrera raderna</string>
-    <string name="settings_line_content_menus">Ordna om åtgärderna i varje meny</string>
+    <string name="settings_line_content_menus">Ordna om eller dölj åtgärderna i varje meny</string>
     <string name="settings_line_remote_shortcuts">Tilldela lediga knappar på fjärrkontrollen</string>
     <string name="settings_line_customize">Dölj och visa, byt namn och ordna</string>
     <string name="settings_line_metadata">Affischer, handling, rollista och betyg för filmer och serier</string>

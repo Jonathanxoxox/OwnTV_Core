@@ -1402,7 +1402,7 @@
     <string name="settings_line_guide_width">চ্যানেল তালিকা ও টাইমলাইন</string>
     <string name="settings_line_browsing">শেষ বিভাগ ও আইটেম মনে রাখুন</string>
     <string name="settings_line_home">সারি বেছে নিন, সাজান ও ফিল্টার করুন</string>
-    <string name="settings_line_content_menus">প্রতিটি মেনুর কাজগুলো নতুন করে সাজান</string>
+    <string name="settings_line_content_menus">প্রতিটি মেনুর কাজগুলো সাজান বা লুকান</string>
     <string name="settings_line_remote_shortcuts">রিমোটের অব্যবহৃত বোতাম নির্ধারণ করুন</string>
     <string name="settings_line_customize">লুকান ও দেখান, নাম বদলান ও সাজান</string>
     <string name="settings_line_metadata">মুভি ও সিরিজের পোস্টার, কাহিনি, অভিনেতা ও রেটিং</string>

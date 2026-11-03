@@ -1374,7 +1374,7 @@
     <string name="settings_line_guide_width">頻道清單和時間軸</string>
     <string name="settings_line_browsing">記住上次的分類和項目</string>
     <string name="settings_line_home">選擇、排序和篩選各列</string>
-    <string name="settings_line_content_menus">調整每個選單裡的動作</string>
+    <string name="settings_line_content_menus">調整或隱藏每個選單裡的動作</string>
     <string name="settings_line_remote_shortcuts">為遙控器閒置按鍵指定功能</string>
     <string name="settings_line_customize">隱藏與顯示、重新命名和排序</string>
     <string name="settings_line_metadata">電影和影集的海報、劇情、演員和評分</string>

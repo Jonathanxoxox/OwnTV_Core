@@ -1514,7 +1514,7 @@
     <string name="settings_line_guide_width">قائمة القنوات والخط الزمني</string>
     <string name="settings_line_browsing">تذكُّر آخر فئة وآخر عنصر</string>
     <string name="settings_line_home">اختيار الصفوف وترتيبها وتصفيتها</string>
-    <string name="settings_line_content_menus">إعادة ترتيب الإجراءات في كل قائمة</string>
+    <string name="settings_line_content_menus">أعد ترتيب الإجراءات أو أخفها في كل قائمة</string>
     <string name="settings_line_remote_shortcuts">تعيين أزرار الريموت غير المستخدمة</string>
     <string name="settings_line_customize">الإخفاء والإظهار وإعادة التسمية والترتيب</string>
     <string name="settings_line_metadata">الملصقات والقصص وطاقم التمثيل والتقييمات للأفلام والمسلسلات</string>

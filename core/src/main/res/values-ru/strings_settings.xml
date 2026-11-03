@@ -1458,7 +1458,7 @@
     <string name="settings_line_guide_width">Список каналов и шкала времени</string>
     <string name="settings_line_browsing">Запоминать последнюю категорию и элемент</string>
     <string name="settings_line_home">Выбор, порядок и фильтр строк</string>
-    <string name="settings_line_content_menus">Порядок действий в каждом меню</string>
+    <string name="settings_line_content_menus">Порядок и видимость действий в каждом меню</string>
     <string name="settings_line_remote_shortcuts">Назначить свободные кнопки пульта</string>
     <string name="settings_line_customize">Скрыть и показать, переименовать и упорядочить</string>
     <string name="settings_line_metadata">Постеры, сюжеты, актёры и рейтинги фильмов и сериалов</string>

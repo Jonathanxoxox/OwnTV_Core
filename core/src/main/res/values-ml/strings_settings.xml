@@ -1402,7 +1402,7 @@
     <string name="settings_line_guide_width">ചാനൽ പട്ടികയും ടൈംലൈനും</string>
     <string name="settings_line_browsing">അവസാന വിഭാഗവും ഇനവും ഓർക്കുക</string>
     <string name="settings_line_home">നിരകൾ തിരഞ്ഞെടുക്കുക, ക്രമീകരിക്കുക, ഫിൽട്ടർ ചെയ്യുക</string>
-    <string name="settings_line_content_menus">ഓരോ മെനുവിലെയും പ്രവർത്തനങ്ങൾ പുനഃക്രമീകരിക്കുക</string>
+    <string name="settings_line_content_menus">ഓരോ മെനുവിലെയും പ്രവർത്തനങ്ങൾ പുനഃക്രമീകരിക്കുക അല്ലെങ്കിൽ മറയ്ക്കുക</string>
     <string name="settings_line_remote_shortcuts">റിമോട്ടിലെ ഒഴിവുള്ള ബട്ടണുകൾ നൽകുക</string>
     <string name="settings_line_customize">മറയ്ക്കുക, കാണിക്കുക, പേര് മാറ്റുക, ക്രമീകരിക്കുക</string>
     <string name="settings_line_metadata">സിനിമകൾക്കും സീരീസുകൾക്കും പോസ്റ്ററുകൾ, കഥ, അഭിനേതാക്കൾ, റേറ്റിംഗുകൾ</string>

@@ -1402,7 +1402,7 @@
     <string name="settings_line_guide_width">Kanal listesi ve zaman çizelgesi</string>
     <string name="settings_line_browsing">Son kategoriyi ve öğeyi hatırlayın</string>
     <string name="settings_line_home">Satırları seçin, sıralayın ve süzün</string>
-    <string name="settings_line_content_menus">Her menüdeki işlemleri yeniden düzenleyin</string>
+    <string name="settings_line_content_menus">Her menüdeki işlemleri yeniden düzenleyin veya gizleyin</string>
     <string name="settings_line_remote_shortcuts">Boştaki kumanda tuşlarını atayın</string>
     <string name="settings_line_customize">Gizleyin ve gösterin, yeniden adlandırın ve sıralayın</string>
     <string name="settings_line_metadata">Filmler ve diziler için afiş, konu, oyuncular ve puanlar</string>

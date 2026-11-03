@@ -1402,7 +1402,7 @@
     <string name="settings_line_guide_width">Senderliste und Zeitleiste</string>
     <string name="settings_line_browsing">Letzte Kategorie und letzten Eintrag merken</string>
     <string name="settings_line_home">Zeilen auswählen, sortieren und filtern</string>
-    <string name="settings_line_content_menus">Aktionen in jedem Menü neu anordnen</string>
+    <string name="settings_line_content_menus">Aktionen in jedem Menü neu anordnen oder ausblenden</string>
     <string name="settings_line_remote_shortcuts">Freie Fernbedienungstasten belegen</string>
     <string name="settings_line_customize">Aus- und einblenden, umbenennen und sortieren</string>
     <string name="settings_line_metadata">Poster, Handlung, Besetzung und Bewertungen für Filme und Serien</string>

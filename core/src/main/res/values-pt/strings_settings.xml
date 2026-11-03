@@ -1430,7 +1430,7 @@
     <string name="settings_line_guide_width">Lista de canais e linha do tempo</string>
     <string name="settings_line_browsing">Lembra a última categoria e o último item</string>
     <string name="settings_line_home">Escolha, reordene e filtre as linhas</string>
-    <string name="settings_line_content_menus">Reorganize as ações de cada menu</string>
+    <string name="settings_line_content_menus">Reorganize ou oculte as ações de cada menu</string>
     <string name="settings_line_remote_shortcuts">Atribua botões livres do controle remoto</string>
     <string name="settings_line_customize">Oculte e mostre, renomeie e reordene</string>
     <string name="settings_line_metadata">Pôsteres, sinopses, elenco e notas de filmes e séries</string>

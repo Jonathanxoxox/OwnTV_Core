@@ -1402,7 +1402,7 @@
     <string name="settings_line_guide_width">Csatornalista és idővonal</string>
     <string name="settings_line_browsing">Az utolsó kategória és elem megjegyzése</string>
     <string name="settings_line_home">Sorok kiválasztása, sorrendje és szűrése</string>
-    <string name="settings_line_content_menus">Az egyes menük műveleteinek átrendezése</string>
+    <string name="settings_line_content_menus">Az egyes menük műveleteinek átrendezése vagy elrejtése</string>
     <string name="settings_line_remote_shortcuts">Szabad távirányító-gombok kiosztása</string>
     <string name="settings_line_customize">Elrejtés és megjelenítés, átnevezés és sorrend</string>
     <string name="settings_line_metadata">Plakátok, cselekmény, szereplők és értékelések filmekhez és sorozatokhoz</string>
