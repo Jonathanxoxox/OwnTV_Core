@@ -30,8 +30,13 @@ class ChannelVersionRulesTest {
     }
 
     @Test
-    fun `a shared guide id makes two names one channel`() {
-        assertTrue(ChannelVersionRules.same(f("Das Erste HD"), "daserste.de", f("ARD"), "daserste.de"))
+    fun `a shared guide id makes two names one channel when one name holds the other`() {
+        assertTrue(ChannelVersionRules.same(f("Sky Sports News HEVC"), "ssn.uk", f("Sky Sports News HQ"), "ssn.uk"))
+    }
+
+    @Test
+    fun `a sister channel filed under the same guide id is not a version`() {
+        assertFalse(ChannelVersionRules.same(f("Sky Sports News"), "ssn.uk", f("Sky Sports Main Events HEVC HD"), "ssn.uk"))
     }
 
     @Test
@@ -47,6 +52,14 @@ class ChannelVersionRulesTest {
         )
         val ordered = ChannelVersionRules.ordered(listOf(v(1, 2, 2), v(2, 1, 2), v(3, 1, 4)), sourceOrder = listOf(1L, 2L))
         assertEquals(listOf(3L, 2L, 1L), ordered.map { it.channel.id })
+    }
+
+    @Test
+    fun `the channel playing comes first`() {
+        fun v(id: Long, rank: Int) = ChannelVersion(
+            ChannelEntity(id = id, sourceId = 1, name = "C$id", streamUrl = "http://x/$id"), "C$id", emptyList(), rank, null, null,
+        )
+        assertEquals(listOf(1L, 2L), ChannelVersionRules.ordered(listOf(v(1, 0), v(2, 4)), listOf(1L), playingId = 1).map { it.channel.id })
     }
 
     @Test

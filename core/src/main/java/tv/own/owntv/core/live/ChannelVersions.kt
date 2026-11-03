@@ -40,21 +40,31 @@ object ChannelVersionRules {
     private const val MIN_KEY_LENGTH = 3
 
     /**
-     * The same channel when both read the same guide channel, or when their names agree once the
-     * country prefix and quality marks are gone ([ChannelFacets.portableKey]) and they name no two
-     * different countries — "ES| DAZN 1" and "AR| DAZN 1" are different feeds.
+     * The same channel when their names agree once the country prefix and quality marks are gone
+     * ([ChannelFacets.portableKey]) and they name no two different countries — "ES| DAZN 1" and
+     * "AR| DAZN 1" are different feeds — or when both read the same guide channel and one name's
+     * words all appear in the other. That check is needed because providers file sister channels under one guide id
+     * ("Sky Sports Main Events" under Sky Sports News's).
      */
     fun same(a: ChannelFacets, aGuide: String?, b: ChannelFacets, bGuide: String?): Boolean {
-        if (!aGuide.isNullOrEmpty() && aGuide == bGuide) return true
+        if (!aGuide.isNullOrEmpty() && aGuide == bGuide && sharesWord(a, b)) return true
         val key = a.portableKey
         if (key.length < MIN_KEY_LENGTH || key != b.portableKey) return false
         return a.country == null || b.country == null || a.country == b.country
     }
 
-    /** Best picture first; then the playlists' order and the provider's own order. */
-    fun ordered(versions: List<ChannelVersion>, sourceOrder: List<Long>): List<ChannelVersion> =
+    /** One key's words all in the other: "Sky Sports News" vs "Sky Sports News HQ" passes, vs "Sky Sports Main Events" fails. */
+    private fun sharesWord(a: ChannelFacets, b: ChannelFacets): Boolean {
+        val x = a.portableKey.split(' ').filter { it.length >= 2 }.toSet()
+        val y = b.portableKey.split(' ').filter { it.length >= 2 }.toSet()
+        return x.isNotEmpty() && y.isNotEmpty() && (x.containsAll(y) || y.containsAll(x))
+    }
+
+    /** The channel playing ([playingId]) first; then best picture, the playlists' order and the provider's own. */
+    fun ordered(versions: List<ChannelVersion>, sourceOrder: List<Long>, playingId: Long = -1): List<ChannelVersion> =
         versions.sortedWith(
-            compareByDescending<ChannelVersion> { it.qualityRank }
+            compareByDescending<ChannelVersion> { it.channel.id == playingId }
+                .thenByDescending { it.qualityRank }
                 .thenBy { sourceOrder.indexOf(it.channel.sourceId) }
                 .thenBy { it.channel.sortOrder },
         )
@@ -134,7 +144,7 @@ class ChannelVersions(
                     playlistName = playlistNames[ch.sourceId],
                 )
             }
-        val ordered = ChannelVersionRules.ordered(versions, ids)
+        val ordered = ChannelVersionRules.ordered(versions, ids, channel.id)
         synchronized(cache) { cache[channel.id] = Cached(fingerprint, ordered) }
         ordered
     }
