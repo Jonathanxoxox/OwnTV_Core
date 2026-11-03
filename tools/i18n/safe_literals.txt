@@ -2520,7 +2520,6 @@
 1	technical	core/src/main/java/tv/own/owntv/core/parser/XmltvParser.kt	xmltv_ns
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XmltvParser.kt	—
 2	protocol	core/src/main/java/tv/own/owntv/core/parser/XmltvTime.kt	\0
-1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	1
 7	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	\0
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	#EXTM3U
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	${base(s)}/live/${credentials(s)}/$streamId.m3u8
@@ -2539,7 +2538,7 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	-._~!$&'()*+,;=:@
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	0
 1	technical	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	0123456789ABCDEF
-1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	1
+2	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	1
 1	technical	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	GMT$sign${(minutes / 60).toString().padStart(2, '0')}:${(minutes % 60).toString().padStart(2, '0')}
 1	protocol	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	Stream truncated after $count items label=$label — partial list kept
 2	technical	core/src/main/java/tv/own/owntv/core/parser/XtreamClient.kt	UTC
@@ -3067,6 +3066,7 @@
 1	technical	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	audio_passthrough
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	audio_per_channel
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	auto_frame_rate
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	auto_frame_rate_live
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	auto_frame_rate_prompted
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	auto_frame_rate_reset_pre12
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	auto_play_next

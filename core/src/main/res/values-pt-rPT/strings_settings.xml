@@ -235,8 +235,10 @@
     <string name="settings_pip_on_leave">Picture-in-picture ao sair da app</string>
     <string name="settings_pip_on_leave_description">O vídeo continua numa janela pequena quando prime Início</string>
     <string name="settings_prefer_sdr_description">Quando uma emissão oferece imagem SDR e HDR, é reproduzida a SDR: para televisores em que o HDR parece desbotado ou demasiado escuro. Uma emissão só com HDR mantém-se em HDR. Apenas ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Taxa de fotogramas automática</string>
-    <string name="settings_auto_frame_rate_description">Ajustar a frequência de atualização da TV ao vídeo (24/25/50/60 fps) em ecrã inteiro, para TV em direto e VOD, e restaurá-la ao sair. Desative esta opção se a TV ou o recetor voltar a negociar a ligação HDMI de forma ruidosa sempre que muda de canal.</string>
+    <string name="settings_auto_frame_rate_films">Taxa de fotogramas automática para filmes e séries</string>
+    <string name="settings_auto_frame_rate_films_description">Ajustar a frequência de atualização da TV ao filme ou episódio (24/25/50/60 fps) em ecrã inteiro e restaurá-la ao sair.</string>
+    <string name="settings_auto_frame_rate_live">Taxa de fotogramas automática para TV em direto</string>
+    <string name="settings_auto_frame_rate_live_description">Ajustar a frequência de atualização da TV ao canal (25/50/60 fps) em ecrã inteiro e restaurá-la ao sair. Desative esta opção se a TV ou o recetor voltar a negociar a ligação HDMI de forma ruidosa sempre que muda de canal.</string>
     <string name="settings_afr_pause">Pausar durante a mudança de ecrã</string>
     <string name="settings_afr_pause_description">Apenas filmes. Quando o televisor tem de voltar a sincronizar com um novo modo de ecrã, o filme espera este tempo para que o início não se perca no ecrã preto. Uma mudança sem interrupção nunca pausa.</string>
     <string name="settings_afr_resolution">Ajustar a resolução</string>

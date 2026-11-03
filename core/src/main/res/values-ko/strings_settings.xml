@@ -233,8 +233,10 @@
     <string name="settings_pip_on_leave">앱을 나갈 때 화면 속 화면</string>
     <string name="settings_pip_on_leave_description">홈을 누르면 동영상이 작은 창에서 계속 재생됩니다</string>
     <string name="settings_prefer_sdr_description">스트림에 SDR과 HDR 화면이 모두 있으면 SDR을 재생합니다. HDR이 바래 보이거나 너무 어둡게 보이는 TV를 위한 설정입니다. HDR만 있는 스트림은 HDR로 유지됩니다. ExoPlayer 전용.</string>
-    <string name="settings_auto_frame_rate">자동 프레임 레이트</string>
-    <string name="settings_auto_frame_rate_description">전체 화면에서 실시간 TV와 VOD의 동영상에 맞게 TV 화면 주사율(24/25/50/60fps)을 조정하고 종료할 때 복원합니다. 채널을 바꿀 때마다 TV 또는 리시버가 HDMI 핸드셰이크를 다시 수행해 소음이 발생하면 끄세요.</string>
+    <string name="settings_auto_frame_rate_films">영화 및 시리즈 자동 프레임 레이트</string>
+    <string name="settings_auto_frame_rate_films_description">전체 화면에서 영화나 에피소드에 맞게 TV 화면 주사율(24/25/50/60fps)을 조정하고 종료할 때 복원합니다.</string>
+    <string name="settings_auto_frame_rate_live">실시간 TV 자동 프레임 레이트</string>
+    <string name="settings_auto_frame_rate_live_description">전체 화면에서 채널에 맞게 TV 화면 주사율(25/50/60fps)을 조정하고 종료할 때 복원합니다. 채널을 바꿀 때마다 TV 또는 리시버가 HDMI 핸드셰이크를 다시 수행해 소음이 발생하면 끄세요.</string>
     <string name="settings_afr_pause">화면 전환 중 일시정지</string>
     <string name="settings_afr_pause_description">영화만 해당. TV가 새 화면 모드에 다시 동기화해야 할 때, 시작 부분이 검은 화면에서 사라지지 않도록 영화가 이 시간만큼 기다립니다. 매끄러운 전환에서는 일시정지하지 않습니다.</string>
     <string name="settings_afr_resolution">해상도 맞추기</string>

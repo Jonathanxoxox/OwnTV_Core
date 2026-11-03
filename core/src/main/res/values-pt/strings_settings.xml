@@ -235,8 +235,10 @@
     <string name="settings_pip_on_leave">Picture-in-picture ao sair do app</string>
     <string name="settings_pip_on_leave_description">O vídeo continua em uma janela pequena quando você pressiona Início</string>
     <string name="settings_prefer_sdr_description">Quando um stream oferece imagem SDR e HDR, a SDR é reproduzida: para TVs em que o HDR parece desbotado ou escuro demais. Um stream só com HDR continua em HDR. Só ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Taxa de quadros automática</string>
-    <string name="settings_auto_frame_rate_description">Ajuste a taxa de atualização da TV ao vídeo (24/25/50/60 fps) em tela cheia, para TV ao vivo e VOD, e restaure-a ao sair. Desative se a TV ou o receiver refizer a negociação HDMI com ruído a cada troca de canal.</string>
+    <string name="settings_auto_frame_rate_films">Taxa de quadros automática para filmes e séries</string>
+    <string name="settings_auto_frame_rate_films_description">Ajuste a taxa de atualização da TV ao filme ou episódio (24/25/50/60 fps) em tela cheia e restaure-a ao sair.</string>
+    <string name="settings_auto_frame_rate_live">Taxa de quadros automática para TV ao vivo</string>
+    <string name="settings_auto_frame_rate_live_description">Ajuste a taxa de atualização da TV ao canal (25/50/60 fps) em tela cheia e restaure-a ao sair. Desative se a TV ou o receiver refizer a negociação HDMI com ruído a cada troca de canal.</string>
     <string name="settings_afr_pause">Pausar durante a troca de tela</string>
     <string name="settings_afr_pause_description">Somente filmes. Quando a TV precisa se ressincronizar com um novo modo de tela, o filme espera esse tempo para que o início não se perca na tela preta. Uma troca sem interrupção nunca pausa.</string>
     <string name="settings_afr_resolution">Ajustar a resolução</string>

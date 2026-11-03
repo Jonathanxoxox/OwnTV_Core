@@ -234,8 +234,10 @@
     <string name="settings_pip_on_leave">Bild-i-bild när du lämnar appen</string>
     <string name="settings_pip_on_leave_description">Videon fortsätter i ett litet fönster när du trycker på Hem</string>
     <string name="settings_prefer_sdr_description">När en ström har både en SDR- och en HDR-bild spelas SDR upp: för en tv där HDR ser blekt eller för mörkt ut. En ström med bara HDR förblir HDR. Endast ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Automatisk bildfrekvens</string>
-    <string name="settings_auto_frame_rate_description">Matcha tv:ns uppdateringsfrekvens med videon (24/25/50/60 bildrutor/s) i helskärm för live-tv och VOD och återställ den vid avslut. Stäng av om tv:n eller mottagaren genomför en ny HDMI-handskakning med störande ljud vid varje kanalbyte.</string>
+    <string name="settings_auto_frame_rate_films">Automatisk bildfrekvens för filmer och serier</string>
+    <string name="settings_auto_frame_rate_films_description">Matcha tv:ns uppdateringsfrekvens med filmen eller avsnittet (24/25/50/60 bildrutor/s) i helskärm och återställ den vid avslut.</string>
+    <string name="settings_auto_frame_rate_live">Automatisk bildfrekvens för live-tv</string>
+    <string name="settings_auto_frame_rate_live_description">Matcha tv:ns uppdateringsfrekvens med kanalen (25/50/60 bildrutor/s) i helskärm och återställ den vid avslut. Stäng av om tv:n eller mottagaren genomför en ny HDMI-handskakning med störande ljud vid varje kanalbyte.</string>
     <string name="settings_afr_pause">Pausa under skärmbytet</string>
     <string name="settings_afr_pause_description">Endast filmer. När tv:n måste synka om till ett nytt skärmläge väntar filmen så länge, så att början inte går förlorad i den svarta bilden. Ett sömlöst byte pausar aldrig.</string>
     <string name="settings_afr_resolution">Anpassa upplösning</string>

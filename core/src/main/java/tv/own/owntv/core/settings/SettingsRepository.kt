@@ -377,7 +377,9 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         // Stage (2026-10-02): the TV app's new-UI defaults written once (applyStageDefaults). Device-local.
         val STAGE_DEFAULTS_APPLIED = booleanPreferencesKey("stage_defaults_applied")
         val PREFER_SDR = booleanPreferencesKey("prefer_sdr")
+        // Films and series. Live TV has its own switch below, which reads this one until it is set.
         val AUTO_FRAME_RATE = booleanPreferencesKey("auto_frame_rate")
+        val AUTO_FRAME_RATE_LIVE = booleanPreferencesKey("auto_frame_rate_live")
         val AFR_PAUSE_SECS = intPreferencesKey("afr_pause_secs")
         val AFR_MATCH_RESOLUTION = booleanPreferencesKey("afr_match_resolution")
         val VOD_BUFFER_SECS = intPreferencesKey("vod_buffer_secs")
@@ -395,7 +397,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         val AUTO_FRAME_RATE_RESET_416 = booleanPreferencesKey("auto_frame_rate_reset_416")
         // v4.2.0 one-shot: below Android 12 the app cannot tell a seamless refresh-rate switch from one
         // that blanks the panel, so AFR is forced Off once on those devices. Set on every device (so the
-        // migration and the [autoFrameRate] gate below both settle), but only clears AFR on pre-12.
+        // migration and the [autoFrameRateFilms] gate below both settle), but only clears AFR on pre-12.
         val AUTO_FRAME_RATE_RESET_PRE12 = booleanPreferencesKey("auto_frame_rate_reset_pre12")
 
         /** The one-time "this stream judders at your TV's refresh rate" suggestion has been answered. */
@@ -2577,16 +2579,23 @@ class SettingsRepository(private val context: Context, private val localeStore: 
     /**
      * Switch the display's refresh rate to match the video frame rate (24/25/30/50/60 fps and the
      * 23.976/29.97/59.94 variants) during full-screen playback, and restore it on exit. Applies to both
-     * engines and to Live TV as well as
-     * VOD. Default off; users whose display switches cleanly can opt in.
+     * engines. Films and series here, Live TV in [autoFrameRateLive]: a 24 Hz switch can be a nuisance
+     * on films on one TV while 25/50 fps broadcast judders without it. Default off; users whose display
+     * switches cleanly can opt in.
      */
-    val autoFrameRate: Flow<Boolean> = prefsFlow { prefs ->
-        // Also report Off before the startup migration coroutines complete, so an auto-resumed channel
-        // cannot briefly request a display-mode switch on the first launch after either safety reset.
-        val migrated = prefs[Keys.AUTO_FRAME_RATE_RESET_416] == true &&
-            prefs[Keys.AUTO_FRAME_RATE_RESET_PRE12] == true
-        if (migrated) prefs[Keys.AUTO_FRAME_RATE] ?: false else false
+    val autoFrameRateFilms: Flow<Boolean> = prefsFlow { prefs ->
+        if (afrMigrated(prefs)) prefs[Keys.AUTO_FRAME_RATE] ?: false else false
     }
+
+    /** [autoFrameRateFilms] for Live TV. Until it is set it follows the one switch there used to be. */
+    val autoFrameRateLive: Flow<Boolean> = prefsFlow { prefs ->
+        if (afrMigrated(prefs)) prefs[Keys.AUTO_FRAME_RATE_LIVE] ?: prefs[Keys.AUTO_FRAME_RATE] ?: false else false
+    }
+
+    // Also report Off before the startup migration coroutines complete, so an auto-resumed channel
+    // cannot briefly request a display-mode switch on the first launch after either safety reset.
+    private fun afrMigrated(prefs: Preferences): Boolean =
+        prefs[Keys.AUTO_FRAME_RATE_RESET_416] == true && prefs[Keys.AUTO_FRAME_RATE_RESET_PRE12] == true
 
     /**
      * Whether the one-time Auto-frame-rate suggestion has already been answered.
@@ -2653,9 +2662,16 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { it[Keys.AUTO_FRAME_RATE_PROMPTED] = true }
     }
 
-    suspend fun setAutoFrameRate(enabled: Boolean) {
+    suspend fun setAutoFrameRateFilms(enabled: Boolean) = setAutoFrameRate(Keys.AUTO_FRAME_RATE, enabled)
+
+    suspend fun setAutoFrameRateLive(enabled: Boolean) = setAutoFrameRate(Keys.AUTO_FRAME_RATE_LIVE, enabled)
+
+    private suspend fun setAutoFrameRate(key: Preferences.Key<Boolean>, enabled: Boolean) {
         context.dataStore.edit {
-            it[Keys.AUTO_FRAME_RATE] = enabled
+            // Live TV still reading the films value: give it that value of its own first, so changing
+            // films does not change Live TV with it.
+            if (it[Keys.AUTO_FRAME_RATE_LIVE] == null) it[Keys.AUTO_FRAME_RATE_LIVE] = it[Keys.AUTO_FRAME_RATE] ?: false
+            it[key] = enabled
             it[Keys.AUTO_FRAME_RATE_RESET_416] = true
             it[Keys.AUTO_FRAME_RATE_RESET_PRE12] = true
             // Someone who has found the setting doesn't need to be told it exists.
@@ -2668,6 +2684,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { prefs ->
             if (prefs[Keys.AUTO_FRAME_RATE_RESET_416] == true) return@edit
             prefs[Keys.AUTO_FRAME_RATE] = false
+            prefs.remove(Keys.AUTO_FRAME_RATE_LIVE)
             prefs[Keys.AUTO_FRAME_RATE_RESET_416] = true
         }
     }
@@ -2692,6 +2709,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
             if (prefs[Keys.AUTO_FRAME_RATE_RESET_PRE12] == true) return@edit
             if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.S) {
                 prefs[Keys.AUTO_FRAME_RATE] = false
+                prefs.remove(Keys.AUTO_FRAME_RATE_LIVE)
             }
             prefs[Keys.AUTO_FRAME_RATE_RESET_PRE12] = true
         }
@@ -2813,7 +2831,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
 
     /**
      * Every one-shot settings migration, for both apps at start. They used to run from the TV shell
-     * only, so on the phone [liveLatencyMode] and [autoFrameRate] — which read as Balanced / Off until
+     * only, so on the phone [liveLatencyMode] and [autoFrameRateFilms] / [autoFrameRateLive] — which read as Balanced / Off until
      * their migration has run — ignored a restored or synced choice. Each is idempotent and flag-guarded,
      * and one failing must not stop the rest.
      */
@@ -3184,7 +3202,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
             Keys.TIMESHIFT_WINDOW_MINUTES)
         val bools = listOf(
             Keys.GUIDE_SHOW_EMPTY, Keys.GUIDE_PREVIEW,
-            Keys.LIVE_PREVIEW, Keys.LIVE_PREVIEW_AUDIO, Keys.HERO_PREVIEW, Keys.PREFER_SDR, Keys.AUTO_FRAME_RATE, Keys.AFR_MATCH_RESOLUTION, Keys.AUTO_FRAME_RATE_PROMPTED, Keys.ANDROID_TV_HOME, Keys.HW_DECODING, Keys.SOFTWARE_DECODE_ABOVE_1080P,
+            Keys.LIVE_PREVIEW, Keys.LIVE_PREVIEW_AUDIO, Keys.HERO_PREVIEW, Keys.PREFER_SDR, Keys.AUTO_FRAME_RATE, Keys.AUTO_FRAME_RATE_LIVE, Keys.AFR_MATCH_RESOLUTION, Keys.AUTO_FRAME_RATE_PROMPTED, Keys.ANDROID_TV_HOME, Keys.HW_DECODING, Keys.SOFTWARE_DECODE_ABOVE_1080P,
             Keys.VOD_PREFER_EXO, Keys.MEASURED_STREAM_STATS, Keys.DETAILED_DIAGNOSTICS, Keys.DIRECT_TUNE, Keys.LIVE_LEFT_RIGHT_REWINDS, Keys.EXTERNAL_PLAYER,
             Keys.EXTERNAL_PLAYER_LIVE, Keys.EXTERNAL_PLAYER_MOVIES, Keys.EXTERNAL_PLAYER_SERIES, Keys.UPDATE_CHECK_ON_START, Keys.SURROUND_SOUND, Keys.AUTO_PLAY_NEXT, Keys.PROXY_ENABLED,
             Keys.WEATHER_ENABLED, Keys.WEATHER_FAHRENHEIT, Keys.RESUME_LAST_CHANNEL, Keys.METADATA_ENABLED, Keys.CH_NAV_ENABLED, Keys.PLAYER_SWAP_CHANNEL_KEYS, Keys.PLAYER_NUMBER_KEYS_TUNE,
@@ -3282,7 +3300,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
      * Android 11 box's values were simply copied onto whatever the backup was restored to.
      */
     private val deviceSpecificSettings: Set<String> = listOf(
-        Keys.LIVE_ENGINE, Keys.VOD_ENGINE, Keys.VOD_PREFER_EXO, Keys.HW_DECODING, Keys.SOFTWARE_DECODE_ABOVE_1080P, Keys.AUTO_FRAME_RATE,
+        Keys.LIVE_ENGINE, Keys.VOD_ENGINE, Keys.VOD_PREFER_EXO, Keys.HW_DECODING, Keys.SOFTWARE_DECODE_ABOVE_1080P, Keys.AUTO_FRAME_RATE, Keys.AUTO_FRAME_RATE_LIVE,
         Keys.AFR_PAUSE_SECS, Keys.AFR_MATCH_RESOLUTION,
         Keys.PREFER_SDR, Keys.SURROUND_MODE, Keys.SURROUND_SOUND, Keys.AUDIO_PASSTHROUGH,
         Keys.TUNNELED_PLAYBACK,
@@ -3320,7 +3338,11 @@ class SettingsRepository(private val context: Context, private val localeStore: 
             // Settings, so the v4.1.6 one-shot resets must neither hide it nor overwrite it later. The
             // pre-Android-12 AFR reset is deliberately left to run: it is a fact about this device.
             if (o.has(Keys.LIVE_LATENCY_MODE.name)) prefs[Keys.LIVE_LATENCY_RESET_416] = true
-            if (o.has(Keys.AUTO_FRAME_RATE.name) && !keepDeviceSettings) prefs[Keys.AUTO_FRAME_RATE_RESET_416] = true
+            if (o.has(Keys.AUTO_FRAME_RATE.name) && !keepDeviceSettings) {
+                prefs[Keys.AUTO_FRAME_RATE_RESET_416] = true
+                // A backup from before Live TV had its own switch: Live TV follows the restored one.
+                if (!o.has(Keys.AUTO_FRAME_RATE_LIVE.name)) prefs.remove(Keys.AUTO_FRAME_RATE_LIVE)
+            }
         }
         // The last categories live in the position store. Guarded on read as well as on write: a file
         // written by another build (or edited by hand) must not be able to restore a "FOLDER:<id>" that

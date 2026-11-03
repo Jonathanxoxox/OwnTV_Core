@@ -233,8 +233,10 @@
     <string name="settings_pip_on_leave">离开应用时使用画中画</string>
     <string name="settings_pip_on_leave_description">按主页键时，视频会在小窗口中继续播放</string>
     <string name="settings_prefer_sdr_description">当流同时提供 SDR 和 HDR 画面时，播放 SDR 画面：适合 HDR 显得发灰或过暗的电视。仅有 HDR 的流仍为 HDR。仅限 ExoPlayer。</string>
-    <string name="settings_auto_frame_rate">自动匹配帧率</string>
-    <string name="settings_auto_frame_rate_description">在全屏播放直播电视和点播内容时，使电视刷新率与视频匹配（24/25/50/60 fps），并在退出时恢复。如果电视或接收器在每次切换频道时都会重新进行 HDMI 握手并产生明显干扰，请关闭此功能。</string>
+    <string name="settings_auto_frame_rate_films">电影和剧集自动匹配帧率</string>
+    <string name="settings_auto_frame_rate_films_description">在全屏播放电影或剧集时，使电视刷新率与视频匹配（24/25/50/60 fps），并在退出时恢复。</string>
+    <string name="settings_auto_frame_rate_live">直播电视自动匹配帧率</string>
+    <string name="settings_auto_frame_rate_live_description">在全屏播放直播频道时，使电视刷新率与频道匹配（25/50/60 fps），并在退出时恢复。如果电视或接收器在每次切换频道时都会重新进行 HDMI 握手并产生明显干扰，请关闭此功能。</string>
     <string name="settings_afr_pause">切换显示时暂停</string>
     <string name="settings_afr_pause_description">仅限电影。电视需要重新同步到新的显示模式时，电影会等待这段时间，以免开头在黑屏中错过。无缝切换不会暂停。</string>
     <string name="settings_afr_resolution">匹配分辨率</string>

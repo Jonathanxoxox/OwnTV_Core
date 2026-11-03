@@ -235,8 +235,10 @@
     <string name="settings_pip_on_leave">Picture-in-picture quando esci dall’app</string>
     <string name="settings_pip_on_leave_description">Il video continua in una piccola finestra quando premi Home</string>
     <string name="settings_prefer_sdr_description">Se un flusso offre sia un’immagine SDR sia una HDR, viene riprodotta quella SDR: per i televisori in cui l’HDR appare slavato o troppo scuro. Un flusso solo HDR resta in HDR. Solo ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Frequenza fotogrammi automatica</string>
-    <string name="settings_auto_frame_rate_description">Adatta la frequenza di aggiornamento della TV al video (24/25/50/60 fps) a schermo intero, per TV in diretta e VOD, e ripristinala all\'uscita. Disattiva questa opzione se la TV o il ricevitore ripete l\'handshake HDMI in modo fastidioso a ogni cambio di canale.</string>
+    <string name="settings_auto_frame_rate_films">Frequenza fotogrammi automatica per film e serie</string>
+    <string name="settings_auto_frame_rate_films_description">Adatta la frequenza di aggiornamento della TV al film o all\'episodio (24/25/50/60 fps) a schermo intero, e ripristinala all\'uscita.</string>
+    <string name="settings_auto_frame_rate_live">Frequenza fotogrammi automatica per la TV in diretta</string>
+    <string name="settings_auto_frame_rate_live_description">Adatta la frequenza di aggiornamento della TV al canale (25/50/60 fps) a schermo intero, e ripristinala all\'uscita. Disattiva questa opzione se la TV o il ricevitore ripete l\'handshake HDMI in modo fastidioso a ogni cambio di canale.</string>
     <string name="settings_afr_pause">Pausa durante il cambio di schermo</string>
     <string name="settings_afr_pause_description">Solo film. Quando il televisore deve risincronizzarsi su una nuova modalità dello schermo, il film attende questo tempo perché l’inizio non vada perso nello schermo nero. Un cambio senza interruzioni non mette mai in pausa.</string>
     <string name="settings_afr_resolution">Adatta la risoluzione</string>

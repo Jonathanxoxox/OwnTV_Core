@@ -524,10 +524,14 @@
     <string name="settings_pip_on_leave">Picture-in-picture when leaving the app</string>
     <!-- Translators: Description of the picture-in-picture setting. -->
     <string name="settings_pip_on_leave_description">Keep the video playing in a small window when you press Home</string>
-    <!-- Translators: Setting label for auto frame rate matching. -->
-    <string name="settings_auto_frame_rate">Auto frame rate</string>
-    <!-- Translators: Description of the auto frame rate setting. Explains when to turn it off. -->
-    <string name="settings_auto_frame_rate_description">Match the TV\'s refresh rate to the video (24/25/50/60 fps) in full screen, for Live TV and VOD, and restore it on exit. Turn off if your TV or receiver re-handshakes HDMI noisily on every channel change.</string>
+    <!-- Translators: Setting label: auto frame rate matching for films and episodes. -->
+    <string name="settings_auto_frame_rate_films">Auto frame rate for films and series</string>
+    <!-- Translators: Description of settings_auto_frame_rate_films. -->
+    <string name="settings_auto_frame_rate_films_description">Match the TV\'s refresh rate to the film or episode (24/25/50/60 fps) in full screen, and restore it on exit.</string>
+    <!-- Translators: Setting label: auto frame rate matching for live channels. -->
+    <string name="settings_auto_frame_rate_live">Auto frame rate for Live TV</string>
+    <!-- Translators: Description of settings_auto_frame_rate_live. Explains when to turn it off. -->
+    <string name="settings_auto_frame_rate_live_description">Match the TV\'s refresh rate to the channel (25/50/60 fps) in full screen, and restore it on exit. Turn off if your TV or receiver re-handshakes HDMI noisily on every channel change.</string>
     <!-- Translators: TV setting under Auto frame rate. How long a film pauses while the TV switches display mode. -->
     <string name="settings_afr_pause">Pause during the display switch</string>
     <!-- Translators: Description of settings_afr_pause. "Re-sync" = the HDMI handshake that blacks the screen for a moment. -->

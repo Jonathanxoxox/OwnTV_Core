@@ -236,8 +236,10 @@
     <string name="settings_pip_on_leave">Obraz w obrazie po wyjściu z aplikacji</string>
     <string name="settings_pip_on_leave_description">Wideo gra dalej w małym oknie po naciśnięciu przycisku ekranu głównego</string>
     <string name="settings_prefer_sdr_description">Gdy strumień oferuje obraz SDR i HDR, odtwarzany jest SDR: dla telewizora, na którym HDR wygląda na wyblakły lub zbyt ciemny. Strumień tylko z HDR pozostaje w HDR. Tylko ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Automatyczne dopasowanie klatek</string>
-    <string name="settings_auto_frame_rate_description">Dopasuj częstotliwość odświeżania telewizora do filmu (24/25/50/60 kl./s) na pełnym ekranie w telewizji na żywo i VOD, a po zakończeniu przywróć poprzednią wartość. Wyłącz tę opcję, jeśli telewizor lub amplituner głośno ponawia uzgadnianie połączenia HDMI przy każdej zmianie kanału.</string>
+    <string name="settings_auto_frame_rate_films">Automatyczne dopasowanie klatek dla filmów i seriali</string>
+    <string name="settings_auto_frame_rate_films_description">Dopasuj częstotliwość odświeżania telewizora do filmu lub odcinka (24/25/50/60 kl./s) na pełnym ekranie, a po zakończeniu przywróć poprzednią wartość.</string>
+    <string name="settings_auto_frame_rate_live">Automatyczne dopasowanie klatek dla telewizji na żywo</string>
+    <string name="settings_auto_frame_rate_live_description">Dopasuj częstotliwość odświeżania telewizora do kanału (25/50/60 kl./s) na pełnym ekranie, a po zakończeniu przywróć poprzednią wartość. Wyłącz tę opcję, jeśli telewizor lub amplituner głośno ponawia uzgadnianie połączenia HDMI przy każdej zmianie kanału.</string>
     <string name="settings_afr_pause">Pauza podczas przełączania ekranu</string>
     <string name="settings_afr_pause_description">Tylko filmy. Gdy telewizor musi ponownie zsynchronizować się z nowym trybem ekranu, film czeka tyle czasu, aby jego początek nie przepadł w czarnym obrazie. Płynne przełączenie nigdy nie wstrzymuje.</string>
     <string name="settings_afr_resolution">Dopasuj rozdzielczość</string>

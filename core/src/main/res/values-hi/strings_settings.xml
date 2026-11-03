@@ -234,8 +234,10 @@
     <string name="settings_pip_on_leave">ऐप छोड़ने पर पिक्चर-इन-पिक्चर</string>
     <string name="settings_pip_on_leave_description">होम दबाने पर वीडियो एक छोटी विंडो में चलता रहता है</string>
     <string name="settings_prefer_sdr_description">जब किसी स्ट्रीम में SDR और HDR दोनों तस्वीरें हों, तो SDR चलती है: उस टीवी के लिए जिस पर HDR फीका या बहुत गहरा दिखता है। सिर्फ़ HDR वाली स्ट्रीम HDR ही रहती है। सिर्फ़ ExoPlayer।</string>
-    <string name="settings_auto_frame_rate">अपने-आप फ़्रेम दर मिलाना</string>
-    <string name="settings_auto_frame_rate_description">फ़ुल स्क्रीन में लाइव टीवी और VOD के लिए TV की रीफ़्रेश दर को वीडियो (24/25/50/60 fps) से मिलाएँ और बाहर निकलने पर उसे पहले जैसा करें। यदि हर चैनल बदलने पर आपका TV या रिसीवर शोर के साथ फिर से HDMI हैंडशेक करता है, तो इसे बंद कर दें।</string>
+    <string name="settings_auto_frame_rate_films">फ़िल्मों और सीरीज़ के लिए अपने-आप फ़्रेम दर मिलाना</string>
+    <string name="settings_auto_frame_rate_films_description">फ़ुल स्क्रीन में TV की रीफ़्रेश दर को फ़िल्म या एपिसोड (24/25/50/60 fps) से मिलाएँ और बाहर निकलने पर उसे पहले जैसा करें।</string>
+    <string name="settings_auto_frame_rate_live">लाइव टीवी के लिए अपने-आप फ़्रेम दर मिलाना</string>
+    <string name="settings_auto_frame_rate_live_description">फ़ुल स्क्रीन में TV की रीफ़्रेश दर को चैनल (25/50/60 fps) से मिलाएँ और बाहर निकलने पर उसे पहले जैसा करें। यदि हर चैनल बदलने पर आपका TV या रिसीवर शोर के साथ फिर से HDMI हैंडशेक करता है, तो इसे बंद कर दें।</string>
     <string name="settings_afr_pause">डिस्प्ले बदलते समय रोकें</string>
     <string name="settings_afr_pause_description">सिर्फ़ फ़िल्में। जब टीवी को नए डिस्प्ले मोड पर दोबारा सिंक होना पड़ता है, तो फ़िल्म इतनी देर रुकती है ताकि उसकी शुरुआत काली स्क्रीन में न छूटे। सहज बदलाव पर कभी नहीं रुकती।</string>
     <string name="settings_afr_resolution">रिज़ॉल्यूशन मिलाएँ</string>

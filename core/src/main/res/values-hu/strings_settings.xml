@@ -279,8 +279,10 @@
     <string name="settings_pip_on_leave">Kép a képben az alkalmazás elhagyásakor</string>
     <string name="settings_pip_on_leave_description">A videó egy kis ablakban folytatódik, ha megnyomod a Kezdőlap gombot</string>
     <string name="settings_prefer_sdr_description">Ha egy stream SDR és HDR képet is kínál, az SDR kép játszódik le: olyan tévéhez, amelyen a HDR fakónak vagy túl sötétnek tűnik. A csak HDR-es stream HDR marad. Csak ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Automatikus képkockasebesség</string>
-    <string name="settings_auto_frame_rate_description">Teljes képernyőn a TV frissítési frekvenciáját a videóhoz igazítja (24/25/50/60 fps) élő TV és VOD esetén is, kilépéskor pedig visszaállítja. Kapcsold ki, ha a TV-d vagy a vevőd minden csatornaváltásnál zajosan újraegyezteti a HDMI-t.</string>
+    <string name="settings_auto_frame_rate_films">Automatikus képkockasebesség filmekhez és sorozatokhoz</string>
+    <string name="settings_auto_frame_rate_films_description">Teljes képernyőn a TV frissítési frekvenciáját a filmhez vagy epizódhoz igazítja (24/25/50/60 fps), kilépéskor pedig visszaállítja.</string>
+    <string name="settings_auto_frame_rate_live">Automatikus képkockasebesség élő TV-hez</string>
+    <string name="settings_auto_frame_rate_live_description">Teljes képernyőn a TV frissítési frekvenciáját a csatornához igazítja (25/50/60 fps), kilépéskor pedig visszaállítja. Kapcsold ki, ha a TV-d vagy a vevőd minden csatornaváltásnál zajosan újraegyezteti a HDMI-t.</string>
     <string name="settings_afr_pause">Szünet a kijelzőváltás alatt</string>
     <string name="settings_afr_pause_description">Csak filmeknél. Ha a tévének újra kell szinkronizálnia egy új kijelzőmódra, a film ennyit vár, hogy az eleje ne vesszen el a fekete képben. Zökkenőmentes váltásnál sosem áll meg.</string>
     <string name="settings_afr_resolution">Felbontás igazítása</string>

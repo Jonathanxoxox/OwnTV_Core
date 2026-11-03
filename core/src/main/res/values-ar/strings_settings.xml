@@ -238,8 +238,10 @@
     <string name="settings_pip_on_leave">صورة داخل صورة عند مغادرة التطبيق</string>
     <string name="settings_pip_on_leave_description">يستمر تشغيل الفيديو في نافذة صغيرة عند الضغط على الرئيسية</string>
     <string name="settings_prefer_sdr_description">عندما يوفّر البث صورة SDR وصورة HDR معًا، تُشغَّل صورة SDR: للتلفاز الذي تبدو فيه صورة HDR باهتة أو داكنة جدًا. البث الذي يوفّر HDR فقط يبقى HDR. مع ExoPlayer فقط.</string>
-    <string name="settings_auto_frame_rate">معدل الإطارات التلقائي</string>
-    <string name="settings_auto_frame_rate_description">مطابقة معدل تحديث التلفزيون مع الفيديو (24/25/50/60 إطارًا في الثانية) في وضع ملء الشاشة، للبث التلفزيوني المباشر والفيديو حسب الطلب، واستعادته عند الخروج. عطّل هذا الخيار إذا كان التلفزيون أو جهاز الاستقبال يعيد مصافحة HDMI بصورة مزعجة عند كل تغيير للقناة.</string>
+    <string name="settings_auto_frame_rate_films">معدل الإطارات التلقائي للأفلام والمسلسلات</string>
+    <string name="settings_auto_frame_rate_films_description">مطابقة معدل تحديث التلفزيون مع الفيلم أو الحلقة (24/25/50/60 إطارًا في الثانية) في وضع ملء الشاشة، واستعادته عند الخروج.</string>
+    <string name="settings_auto_frame_rate_live">معدل الإطارات التلقائي للبث التلفزيوني المباشر</string>
+    <string name="settings_auto_frame_rate_live_description">مطابقة معدل تحديث التلفزيون مع القناة (25/50/60 إطارًا في الثانية) في وضع ملء الشاشة، واستعادته عند الخروج. عطّل هذا الخيار إذا كان التلفزيون أو جهاز الاستقبال يعيد مصافحة HDMI بصورة مزعجة عند كل تغيير للقناة.</string>
     <string name="settings_afr_pause">إيقاف مؤقت أثناء تبديل الشاشة</string>
     <string name="settings_afr_pause_description">للأفلام فقط. عندما يحتاج التلفاز إلى إعادة المزامنة مع وضع شاشة جديد، ينتظر الفيلم هذه المدة حتى لا تضيع بدايته في الشاشة السوداء. التبديل السلس لا يوقف التشغيل أبدًا.</string>
     <string name="settings_afr_resolution">مطابقة الدقة</string>

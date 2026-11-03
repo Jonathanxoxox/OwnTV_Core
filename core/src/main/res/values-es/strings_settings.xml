@@ -235,8 +235,10 @@
     <string name="settings_pip_on_leave">Imagen en imagen al salir de la app</string>
     <string name="settings_pip_on_leave_description">El vídeo sigue en una ventana pequeña al pulsar Inicio</string>
     <string name="settings_prefer_sdr_description">Si una emisión ofrece imagen SDR y HDR, se reproduce la SDR: para televisores en los que el HDR se ve apagado o demasiado oscuro. Una emisión solo en HDR sigue en HDR. Solo ExoPlayer.</string>
-    <string name="settings_auto_frame_rate">Frecuencia de fotogramas automática</string>
-    <string name="settings_auto_frame_rate_description">Ajusta la frecuencia de refresco del televisor a la del vídeo (24/25/50/60 fps) en pantalla completa, tanto para TV en directo como para VOD, y la restaura al salir. Desactívalo si tu televisor o receptor vuelve a establecer la conexión HDMI de forma molesta cada vez que cambias de canal.</string>
+    <string name="settings_auto_frame_rate_films">Frecuencia de fotogramas automática para películas y series</string>
+    <string name="settings_auto_frame_rate_films_description">Ajusta la frecuencia de refresco del televisor a la de la película o el episodio (24/25/50/60 fps) en pantalla completa, y la restaura al salir.</string>
+    <string name="settings_auto_frame_rate_live">Frecuencia de fotogramas automática para TV en directo</string>
+    <string name="settings_auto_frame_rate_live_description">Ajusta la frecuencia de refresco del televisor a la del canal (25/50/60 fps) en pantalla completa, y la restaura al salir. Desactívalo si tu televisor o receptor vuelve a establecer la conexión HDMI de forma molesta cada vez que cambias de canal.</string>
     <string name="settings_afr_pause">Pausa durante el cambio de pantalla</string>
     <string name="settings_afr_pause_description">Solo películas. Cuando el televisor tiene que resincronizarse a un nuevo modo de pantalla, la película espera este tiempo para que su comienzo no se pierda en la pantalla negra. Un cambio sin cortes nunca pausa.</string>
     <string name="settings_afr_resolution">Ajustar la resolución</string>
