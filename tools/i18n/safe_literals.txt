@@ -46,10 +46,10 @@
 1	json	core/src/main/java/tv/own/owntv/core/backup/BackupCrypto.kt	scheme
 2	empty	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	\0
 1	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	$LOCAL_SUB_PREFIX$mapped
-1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	$base|${normalizeMacForMatch(mac)}
 1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	$mapped:${k.substringAfter(':')}
 1	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	$mapped:${key.substringAfter(':')}
 1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	$type|${url.trim()}|${username.orEmpty()}
+1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	$type|${url.trim()}||${normalizeMacForMatch(mac)}
 1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	${file.name} · ${sections.joinToString(", ") { it.name }}
 1	file-path	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	${file.name}$BAK_SUFFIX
 1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	${parts[0]}:$it:${parts[2]}
@@ -89,6 +89,7 @@
 3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	compatMode
 4	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	createdAt
 3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	crypto
+4	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	ctx
 3	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	cust_
 1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	cust_${pid}_${body.substringAfter('_')}
 4	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	customizations
@@ -96,6 +97,7 @@
 5	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	d
 3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	defaultSourceId
 4	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	device
+2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	downloadsAllowed
 1	log	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	encrypted=${crypto != null} key=${key != null} profiles=${fileProfiles.length()} sources=${fileSources.length()}
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	epgAutoRefresh
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	epgSources
@@ -116,7 +118,7 @@
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	isKids
 1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	json
 8	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	k
-4	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	kind
+5	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	kind
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	language
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	languageName
 3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	lastSyncAt
@@ -140,7 +142,7 @@
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	off
 3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	openSubFileId
 3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	openSubtitles
-3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	order
+4	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	order
 1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	own
 1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	owntv-backup.json
 1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	owntv-backup.own
@@ -194,7 +196,7 @@
 4	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	userData
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	username
 3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	v
-2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	version
+3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	version
 3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	vodEnginePreference
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	vodExoUrls
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	vodMpvUrls
@@ -344,6 +346,7 @@
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	:root{ color-scheme: dark; --bg:#040E0B; --panel:#12191700; --card:#1B211F; --card-2:#252B29; --line:#3F4945; --text:#DEE4E1; --muted:#BFC9C4; --accent:#8CEE2B; --accent-ink:#123A06; --danger:#FFB4AB; } @font-face{ font-family:'Lora'; font-style:normal; font-weight:400 700; src:url('/lora.ttf') format('truetype'); font-display:swap; } *{box-sizing:border-box} body{ margin:0; color:var(--text); font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; background: radial-gradient(1200px 520px at 12% -12%, rgba(140,238,43,0.10) 0%, transparent 60%), radial-gradient(900px 460px at 100% 0%, rgba(140,238,43,0.06) 0%, transparent 62%), var(--bg); min-height:100vh; } h1,h2,.brand{font-family:'Lora',Georgia,'Noto Sans',system-ui,sans-serif; font-weight:700; letter-spacing:.2px} main{max-width:760px; margin:0 auto; padding:28px 20px 56px} .brandrow{display:flex; align-items:center; gap:12px; margin-bottom:22px} .dot{width:34px; height:34px; border-radius:10px; background:#52DBC8; display:grid; place-items:center; color:#003730} .dot svg{width:18px; height:18px} .brand{font-size:20px; color:var(--text)} .card{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:26px 22px; box-shadow:0 24px 60px rgba(0,0,0,.45)} h1{margin:0 0 8px; font-size:24px} p{line-height:1.55; color:var(--muted); margin:0 0 16px} form{display:grid; gap:14px} label{display:grid; gap:6px; font-size:14px; color:var(--text)} input,select{border:1px solid var(--line); border-radius:12px; padding:13px 14px; background:#0C1311; color:var(--text); font-size:16px; width:100%} input:focus,select:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(140,238,43,.20)} .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px} .checks{display:grid; gap:10px; grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:2px} .check{display:flex; align-items:center; gap:9px; color:var(--muted)} .check input{width:18px; height:18px} .tabs{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-bottom:18px} .tab{border:1px solid var(--line); border-radius:12px; padding:12px 10px; background:var(--card-2); color:var(--muted); font-weight:600; font-size:15px; cursor:pointer; font-family:inherit} .tab.active{border-color:var(--accent); background:#1E2E0C; color:#EAFFD0} .panel{display:none} .panel.active{display:grid; gap:14px} button.go{border:0; border-radius:12px; padding:15px 16px; background:var(--accent); color:var(--accent-ink); font-weight:700; font-size:16px; cursor:pointer; margin-top:4px} .pin{font-family:'Lora',Georgia,'Noto Sans',system-ui,sans-serif; font-size:34px; letter-spacing:12px; text-align:center; padding:16px; caret-color:var(--accent)} .err{color:var(--danger); font-size:14px; margin:0 0 12px} .hint{font-size:13px; color:var(--muted); margin-top:6px} a{color:var(--accent)} @media (max-width:640px){.grid,.checks,.tabs{grid-template-columns:1fr}}
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<!doctype html><html lang="${lang.h()}" dir="$dir"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>${title.h()}</title><style>$CSS</style> </head><body><main> <div class="brandrow"><span class="dot">$LOGO_SVG</span><span class="brand">${c.app.h()}</span></div> $inner </main></body></html>
+1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"> <h1>${c.addHeading.h()}</h1> <p>${c.addDescription.h()}</p> <div class="tabs"> <button type="button" class="tab active" data-k="xtream">${c.xtream.h()}</button> <button type="button" class="tab" data-k="m3u">${c.m3u.h()}</button> <button type="button" class="tab" data-k="stalker">${c.stalker.h()}</button> </div> <form class="panel active" data-k="xtream" method="post" action="/xtream?pin=$pin"> <input type="hidden" name="type" value="xtream"> <div class="grid"> <label>${c.name.h()} <input name="name" placeholder="${c.defaultIptv.h()}"></label> ${autoRefreshSelect(c)} </div> <label>${c.serverUrl.h()} <input name="server" placeholder="${c.serverExample.h()}" required></label> <div class="grid"> <label>${c.username.h()} <input name="user" autocomplete="username" required></label> <label>${c.password.h()} <input name="pass" type="password" autocomplete="current-password" required></label> </div> <label>${c.userAgent.h()} <input name="userAgent" placeholder="${c.optional.h()}"></label> <label>${c.epgUrl.h()} <input name="epgUrl" placeholder="${c.optional.h()}"></label> <p class="hint">${c.syncXtreamHint.h()}</p> <div class="grid"> ${scopeSelect(c, "syncLive", c.live)} ${scopeSelect(c, "syncMovies", c.movies)} ${scopeSelect(c, "syncSeries", c.series)} </div> <input type="hidden" name="isDefault" value="false"> <label class="check"><input type="checkbox" name="isDefault" value="true"> ${c.defaultPlaylistLabel.h()}</label> <button class="go" type="submit">${c.sendToTv.h()}</button> </form> <form class="panel" id="m3uForm" data-k="m3u" method="post" action="/m3u?pin=$pin"> <input type="hidden" name="type" value="m3u"> <div class="grid"> <label>${c.name.h()} <input name="name" placeholder="${c.defaultPlaylist.h()}"></label> ${autoRefreshSelect(c)} </div> <label>${c.playlistUrl.h()} <input id="m3uUrl" name="server" placeholder="${c.playlistExample.h()}"></label> <label>${c.playlistFile.h()} <input id="m3uFile" type="file" accept=".m3u,.m3u8,audio/x-mpegurl,application/vnd.apple.mpegurl,text/plain"></label> <label>${c.userAgent.h()} <input name="userAgent" placeholder="${c.optional.h()}"></label> <label>${c.epgUrl.h()} <input name="epgUrl" placeholder="${c.optional.h()}"></label> <input type="hidden" name="isDefault" value="false"> <label class="check"><input type="checkbox" name="isDefault" value="true"> ${c.defaultPlaylistLabel.h()}</label> <button class="go" id="m3uSend" type="submit">${c.sendToTv.h()}</button> <p id="m3uStatus" class="hint"></p> </form> <form class="panel" data-k="stalker" method="post" action="/stalker?pin=$pin"> <input type="hidden" name="type" value="stalker"> <div class="grid"> <label>${c.name.h()} <input name="name" placeholder="${c.defaultPortal.h()}"></label> ${autoRefreshSelect(c)} </div> <label>${c.portalUrl.h()} <input name="portalUrl" placeholder="${c.portalExample.h()}" required></label> <label>${context.getString(R.string.setup_mac_address).h()} <input name="mac" placeholder="${context.getString(R.string.setup_mac_example).h()}" required></label> <div class="grid"> <label>${context.getString(R.string.settings_username_optional).h()} <input name="user" autocomplete="username"></label> <label>${context.getString(R.string.settings_password_optional).h()} <input name="pass" type="password" autocomplete="current-password"></label> </div> <h3>${context.getString(R.string.setup_stalker_advanced_identity).h()}</h3> <div class="grid"> <label>${context.getString(R.string.setup_stalker_serial_number_optional).h()} <input name="serialNumber"></label> <label>${context.getString(R.string.setup_stalker_device_id_optional).h()} <input name="deviceId"></label> <label>${context.getString(R.string.setup_stalker_device_id2_optional).h()} <input name="deviceId2"></label> <label>${context.getString(R.string.setup_stalker_signature_optional).h()} <input name="signature"></label> </div> <label>${c.userAgent.h()} <input name="userAgent" placeholder="${c.optional.h()}"></label> <p class="hint">${c.syncStalkerHint.h()}</p> <div class="grid"> ${scopeSelect(c, "syncLive", c.live, "now")} ${scopeSelect(c, "syncMovies", c.movies, "later")} ${scopeSelect(c, "syncSeries", c.series, "later")} </div> <input type="hidden" name="isDefault" value="false"> <label class="check"><input type="checkbox" name="isDefault" value="true"> ${c.defaultPlaylistLabel.h()}</label> <button class="go" type="submit">${c.sendToTv.h()}</button> </form> </div> <script> var tabs=document.querySelectorAll('.tab'), panels=document.querySelectorAll('.panel'); tabs.forEach(function(t){t.addEventListener('click',function(){ var k=t.getAttribute('data-k'); tabs.forEach(function(x){x.classList.toggle('active',x===t)}); panels.forEach(function(p){p.classList.toggle('active',p.getAttribute('data-k')===k)}); });}); // M3U panel only. With no file chosen this stays a plain form post, exactly as before. // With a file chosen the browser reads it as text and posts it as JSON, because a file // input cannot travel in a normal urlencoded body and the TV has no multipart parser. var mf=document.getElementById('m3uFile'), mu=document.getElementById('m3uUrl'), mb=document.getElementById('m3uSend'), ms=document.getElementById('m3uStatus'); document.getElementById('m3uForm').addEventListener('submit',function(ev){ var file=mf.files&&mf.files[0]; if(!file){ if(!(mu.value||'').trim()){ms.textContent=${c.playlistUrlOrFile.js()};ev.preventDefault();return false;} return true; // URL only — let the browser submit the form the old way. } ev.preventDefault(); mb.disabled=true; ms.textContent=${c.sending.js()}; var body={}; new FormData(document.getElementById('m3uForm')).forEach(function(v,k){body[k]=v;}); var r=new FileReader(); r.onload=function(){ body.playlistFile=r.result; body.playlistFileName=file.name; fetch('/m3u?pin=$pin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}) .then(function(res){ if(res.ok){document.open();res.text().then(function(t){document.write(t);document.close();});} else{mb.disabled=false;ms.textContent=${c.uploadFailed.js()}.replace('__STATUS__',String(res.status));} }) .catch(function(){mb.disabled=false;ms.textContent=${c.couldNotReach.js()};}); }; r.onerror=function(){mb.disabled=false;ms.textContent=${c.couldNotRead.js()};}; r.readAsText(file); return false; }); </script>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"> <h1>${c.pinHeading.h()}</h1> <p>${c.pinDescription.h()}</p> ${if (error != null) "<p class=\\"err\\">${error.h()}</p>" else ""} <form method="post" action="/"> <input class="pin" name="pin" inputmode="numeric" pattern="[0-9]*" maxlength="6" autofocus placeholder="${c.pinPlaceholder.h()}" aria-label="${c.pinAria.h()}" required> <button class="go" type="submit">${c.continueLabel.h()}</button> </form> </div>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"> <h1>${c.savedHeading.h()}</h1> <p>${body.h()}</p> <p><a href="/?pin=$pin">${c.savedSendAnother.h()}</a></p> </div>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"> <h1>${heading.h()}</h1> <p>${description.h()}</p> <form id="f" onsubmit="return false"> <label>${fileLabel.h()} <input id="file" type="file" accept="$accept" required></label> <button class="go" id="send" type="submit">${c.sendToTv.h()}</button> </form> <p id="status" class="hint"></p> </div> <script> var f=document.getElementById('file'), b=document.getElementById('send'), s=document.getElementById('status'); document.getElementById('f').addEventListener('submit',function(){ var file=f.files&&f.files[0]; if(!file){s.textContent=${choose.js()};return false;} ${if (!backup) "if(file.size>25*1024*1024){s.textContent=${c.imageTooLarge.js()};return false;}" else ""} b.disabled=true; s.textContent=${c.sending.js()}; var r=new FileReader(); r.onload=function(){ fetch('$endpoint?pin=$pin',{method:'POST',headers:{'Content-Type':'$contentType'},body:r.result}) .then(function(res){ if(res.ok){document.open();res.text().then(function(t){document.write(t);document.close();});} else{b.disabled=false;s.textContent=${c.uploadFailed.js()}.replace('__STATUS__',String(res.status));} }) .catch(function(){b.disabled=false;s.textContent=${c.couldNotReach.js()};}); }; r.onerror=function(){b.disabled=false;s.textContent=${c.couldNotRead.js()};}; r.readAsDataURL(file); return false; }); </script>
@@ -515,7 +518,7 @@
 1	regex	core/src/main/java/tv/own/owntv/core/customize/ChannelNameCleanup.kt	^$SEPARATORS(?:$words)(?![\\p{L}\\p{N}])$SEPARATORS
 1	regex	core/src/main/java/tv/own/owntv/core/customize/ChannelNameCleanup.kt	|
 2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	catNames
-2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	catOrder
+2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	catPos
 2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	customCats
 2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	epgMatch
 2	json	core/src/main/java/tv/own/owntv/core/customize/CustomizationJson.kt	epgShift
@@ -947,19 +950,23 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/OwnTVDatabase.kt	syncMovies
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/OwnTVDatabase.kt	syncSeries
 1	sql	core/src/main/java/tv/own/owntv/core/database/OwnTVDatabase.kt	vodEnginePreference
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	(SELECT COUNT(*) FROM series WHERE sourceId IN (:sourceIds))
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	AND categoryRemoteId = :categoryRemoteId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	AND done = 0 ORDER BY sortBase ASC
 3	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	AND mediaType = :mediaType AND categoryRemoteId = :categoryRemoteId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	DELETE FROM catalog_backfill WHERE sourceId = :sourceId AND mediaType = :mediaType
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	ORDER BY sortBase ASC
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	SELECT (SELECT COUNT(*) FROM movies WHERE sourceId IN (:sourceIds)) +
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	SELECT * FROM catalog_backfill WHERE categoryDbId = :categoryDbId LIMIT 1
 3	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	SELECT * FROM catalog_backfill WHERE sourceId = :sourceId AND mediaType = :mediaType
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	SELECT COALESCE(SUM(totalItems), 0) FROM catalog_backfill WHERE sourceId = :sourceId AND mediaType = :mediaType
-1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	SELECT COUNT(*) FROM catalog_backfill WHERE sourceId = :sourceId AND done = 0
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	SELECT COUNT(*) FROM catalog_backfill WHERE sourceId = :sourceId AND mediaType = :mediaType AND done = 0
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	SELECT DISTINCT sourceId FROM catalog_backfill WHERE done = 0 AND sourceId IN (:sourceIds) ORDER BY sourceId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	UPDATE catalog_backfill SET done = 0, nextPage = 2 WHERE sourceId = :sourceId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	UPDATE catalog_backfill SET done = 1, nextPage = lastPage + 1 WHERE sourceId = :sourceId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CatalogBackfillDao.kt	UPDATE catalog_backfill SET nextPage = :nextPage WHERE sourceId = :sourceId
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CategoryDao.kt	AND NOT EXISTS (SELECT 1 FROM movies WHERE movies.categoryId = categories.id)
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CategoryDao.kt	DELETE FROM categories WHERE sourceId = :sourceId AND mediaType = 'MOVIE'
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CategoryDao.kt	DELETE FROM categories WHERE sourceId = :sourceId AND mediaType = :type
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CategoryDao.kt	DELETE FROM categories WHERE sourceId = :sourceId AND mediaType = :type AND remoteId IN (:remoteIds)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CategoryDao.kt	JOIN sources ON sources.id = categories.sourceId
@@ -984,13 +991,11 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	DELETE FROM channels WHERE sourceId = :sourceId
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	DELETE FROM channels WHERE sourceId = :sourceId AND remoteId IN (:remoteIds)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	DELETE FROM channels WHERE sourceId = :sourceId AND remoteId IS NULL
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	FROM channels c
 4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	INNER JOIN favorites f ON f.itemId = c.id AND f.mediaType = 'LIVE'
 4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	INNER JOIN watch_history h ON h.itemId = c.id AND h.mediaType = 'LIVE'
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	LEFT JOIN categories cat ON c.categoryId = cat.id
-5	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	LEFT JOIN content_order o ON o.itemId = c.id AND o.profileId = :profileId AND o.mediaType = 'LIVE' AND o.contextKey = :contextKey
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, c.name
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, c.sortOrder, c.name
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, c.sortOrder, c.name LIMIT :limit
+4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	LEFT JOIN content_order o ON o.itemId = c.id AND o.profileId = :profileId AND o.mediaType = 'LIVE' AND o.contextKey = :contextKey
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, f.addedAt DESC
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, f.addedAt DESC LIMIT :limit
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	ORDER BY c.name ASC LIMIT :limit
@@ -1035,8 +1040,10 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT DISTINCT LOWER(TRIM(epgChannelId)) FROM channels
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT DISTINCT LOWER(TRIM(epgChannelId)) FROM channels WHERE epgChannelId IS NOT NULL AND epgChannelId != ''
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT DISTINCT epgChannelId FROM epg_programmes WHERE sourceId IN (:sourceIds)
-9	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT c.* FROM channels c
+6	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT c.* FROM channels c
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT c.* FROM channels c INNER JOIN favorites f ON f.itemId = c.id AND f.mediaType = 'LIVE'
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT c.* FROM channels c INNER JOIN slots sl ON sl.id = c.id ORDER BY sl.slot, sl.grp, sl.tie
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT c.* FROM channels c INNER JOIN slots sl ON sl.id = c.id ORDER BY sl.slot, sl.grp, sl.tie LIMIT :limit
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT c.* FROM channels c INNER JOIN watch_history h ON h.itemId = c.id AND h.mediaType = 'LIVE'
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT c.*, cat.name AS categoryName FROM channels c
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT c.*, h.watchedAt FROM channels c
@@ -1048,11 +1055,12 @@
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT remoteId, epgChannelId FROM channels WHERE sourceId = :sourceId AND remoteId IS NOT NULL AND epgChannelId IS NOT NULL
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT remoteId, id, contentHash, sortOrder FROM channels WHERE sourceId = :sourceId AND remoteId IS NOT NULL
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	SELECT streamUrl FROM channels WHERE sourceId = :sourceId AND streamUrl LIKE :pattern LIMIT :limit
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	UNION ALL SELECT id, ROW_NUMBER() OVER (ORDER BY CASE WHEN :alpha THEN nm END, mp, so, nm) - 1 AS slot, 1 AS grp, 0 AS tie FROM base WHERE pos IS NULL)
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	UPDATE channels SET number = :number WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	UPDATE channels SET sortOrder = :sortOrder WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	UPDATE channels SET sortOrder = sortOrder + :delta WHERE sourceId = :sourceId AND sortOrder BETWEEN :fromSortOrder AND :toSortOrder
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	UPDATE channels SET sortOrder = sortOrder - :parked WHERE sourceId = :sourceId AND sortOrder >= :parked / 2
-3	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	WHERE c.categoryId = :categoryId
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	WHERE c.categoryId = :categoryId),
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	WHERE c.sourceId IN (:sourceIds)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	WHERE c.sourceId IN (:sourceIds) AND c.name LIKE '%' || :query || '%'
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	WHERE f.profileId = :profileId AND c.sourceId IN (:sourceIds)
@@ -1067,6 +1075,8 @@
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	WHERE h.profileId = :profileId ORDER BY h.watchedAt DESC LIMIT :limit
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	WHERE sourceId = :sourceId AND epgChannelId IS NOT NULL AND TRIM(epgChannelId) != ''
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	WHERE sourceId IN (:sourceIds) AND categoryId IS NOT NULL GROUP BY categoryId
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	WITH base AS (SELECT c.id AS id, c.sortOrder AS so, c.name AS nm, 0 AS mp, o.position AS pos
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/ChannelDao.kt	slots AS (SELECT id, pos - (ROW_NUMBER() OVER (ORDER BY pos, id) - 1) AS slot, 0 AS grp, pos AS tie FROM base WHERE pos IS NOT NULL
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	(:type = 'LIVE' AND itemId NOT IN (SELECT id FROM channels)) OR
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	(:type = 'MOVIE' AND itemId NOT IN (SELECT id FROM movies)) OR
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	(:type = 'SERIES' AND itemId NOT IN (SELECT id FROM series))
@@ -1078,6 +1088,7 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	COALESCE(c.remoteId, m.remoteId, s.remoteId) AS remoteId,
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	COALESCE(c.sourceId, m.sourceId, s.sourceId) AS sourceId,
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	DELETE FROM content_order WHERE
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	DELETE FROM content_order WHERE contextKey != :keep
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	DELETE FROM content_order WHERE profileId = :profileId AND mediaType = :type AND contextKey = :contextKey
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	DELETE FROM content_order WHERE profileId = :profileId AND mediaType = :type AND itemId IN (:itemIds) AND (
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	FROM content_order o
@@ -1087,6 +1098,7 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	SELECT * FROM content_order
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	SELECT DISTINCT contextKey FROM content_order WHERE profileId = :profileId AND mediaType = :type
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	SELECT EXISTS(SELECT 1 FROM content_order WHERE profileId = :profileId AND mediaType = :type AND contextKey = :contextKey AND itemId = :itemId)
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	SELECT itemId FROM content_order WHERE profileId = :profileId AND mediaType = :type AND contextKey = :contextKey
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	SELECT o.profileId AS profileId, o.mediaType AS mediaType, o.itemId AS itemId,
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	WHERE c.sourceId = :sourceId OR m.sourceId = :sourceId OR s.sourceId = :sourceId
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/ContentOrderDao.kt	o.contextKey AS contextKey, o.position AS position,
@@ -1099,34 +1111,45 @@
 2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	AND (categoryId IS NULL OR categoryId NOT IN (:excluded)))) OR
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	AND COALESCE(c.sourceId, mv.sourceId, s.sourceId) IN (:sourceIds)
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	DELETE FROM custom_category_members WHERE profileId = :profileId AND mediaType = :type AND itemId IN (:itemIds) AND (
-4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	INNER JOIN custom_category_members m ON m.itemId = c.id AND m.profileId = :profileId AND m.mediaType = 'LIVE' AND m.contextKey = :contextKey
-4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	INNER JOIN custom_category_members m ON m.itemId = mv.id AND m.profileId = :profileId AND m.mediaType = 'MOVIE' AND m.contextKey = :contextKey
-4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	INNER JOIN custom_category_members m ON m.itemId = s.id AND m.profileId = :profileId AND m.mediaType = 'SERIES' AND m.contextKey = :contextKey
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	FROM channels c INNER JOIN custom_category_members m ON m.itemId = c.id AND m.profileId = :profileId AND m.mediaType = 'LIVE' AND m.contextKey = :contextKey
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	FROM movies mv INNER JOIN custom_category_members m ON m.itemId = mv.id AND m.profileId = :profileId AND m.mediaType = 'MOVIE' AND m.contextKey = :contextKey
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	FROM series s INNER JOIN custom_category_members m ON m.itemId = s.id AND m.profileId = :profileId AND m.mediaType = 'SERIES' AND m.contextKey = :contextKey
+1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	INNER JOIN custom_category_members m ON m.itemId = c.id AND m.profileId = :profileId AND m.mediaType = 'LIVE' AND m.contextKey = :contextKey
+1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	INNER JOIN custom_category_members m ON m.itemId = mv.id AND m.profileId = :profileId AND m.mediaType = 'MOVIE' AND m.contextKey = :contextKey
+1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	INNER JOIN custom_category_members m ON m.itemId = s.id AND m.profileId = :profileId AND m.mediaType = 'SERIES' AND m.contextKey = :contextKey
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	LEFT JOIN channels c ON m.mediaType = 'LIVE' AND m.itemId = c.id
-3	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	LEFT JOIN content_order o ON o.itemId = c.id AND o.profileId = :profileId AND o.mediaType = 'LIVE' AND o.contextKey = :contextKey
-3	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	LEFT JOIN content_order o ON o.itemId = mv.id AND o.profileId = :profileId AND o.mediaType = 'MOVIE' AND o.contextKey = :contextKey
-3	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	LEFT JOIN content_order o ON o.itemId = s.id AND o.profileId = :profileId AND o.mediaType = 'SERIES' AND o.contextKey = :contextKey
+2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	LEFT JOIN content_order o ON o.itemId = c.id AND o.profileId = :profileId AND o.mediaType = 'LIVE' AND o.contextKey = :contextKey
+2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	LEFT JOIN content_order o ON o.itemId = mv.id AND o.profileId = :profileId AND o.mediaType = 'MOVIE' AND o.contextKey = :contextKey
+2	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	LEFT JOIN content_order o ON o.itemId = s.id AND o.profileId = :profileId AND o.mediaType = 'SERIES' AND o.contextKey = :contextKey
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	LEFT JOIN movies mv ON m.mediaType = 'MOVIE' AND m.itemId = mv.id
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	LEFT JOIN series s ON m.mediaType = 'SERIES' AND m.itemId = s.id
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	OR COALESCE(c.categoryId, mv.categoryId, s.categoryId) NOT IN (:excluded))
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, c.name
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, mv.name
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, s.name
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT COUNT(*) FROM custom_category_members m
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT DISTINCT contextKey FROM custom_category_members WHERE profileId = :profileId AND mediaType = :type AND itemId = :itemId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT EXISTS(SELECT 1 FROM custom_category_members WHERE profileId = :profileId AND mediaType = :type AND contextKey = :contextKey AND itemId = :itemId)
-4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT c.* FROM channels c
+1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT c.* FROM channels c
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT c.* FROM channels c INNER JOIN slots sl ON sl.id = c.id ORDER BY sl.slot, sl.grp, sl.tie
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT c.* FROM channels c INNER JOIN slots sl ON sl.id = c.id ORDER BY sl.slot, sl.grp, sl.tie LIMIT :limit
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT contextKey, COUNT(*) AS count FROM custom_category_members
-4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT mv.* FROM movies mv
-4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT s.* FROM series s
+1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT mv.* FROM movies mv
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT mv.* FROM movies mv INNER JOIN slots sl ON sl.id = mv.id ORDER BY sl.slot, sl.grp, sl.tie
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT mv.* FROM movies mv INNER JOIN slots sl ON sl.id = mv.id ORDER BY sl.slot, sl.grp, sl.tie LIMIT :limit
+1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT s.* FROM series s
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT s.* FROM series s INNER JOIN slots sl ON sl.id = s.id ORDER BY sl.slot, sl.grp, sl.tie
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	SELECT s.* FROM series s INNER JOIN slots sl ON sl.id = s.id ORDER BY sl.slot, sl.grp, sl.tie LIMIT :limit
 2	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	UNION ALL
-3	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	WHERE c.sourceId IN (:sourceIds)
+6	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	UNION ALL SELECT id, ROW_NUMBER() OVER (ORDER BY CASE WHEN :alpha THEN nm END, mp, so, nm) - 1 AS slot, 1 AS grp, 0 AS tie FROM base WHERE pos IS NULL)
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	WHERE c.sourceId IN (:sourceIds)),
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	WHERE m.profileId = :profileId AND m.mediaType = 'LIVE' AND m.contextKey = :contextKey
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	WHERE m.profileId = :profileId AND m.mediaType = :type AND m.contextKey = :contextKey
-3	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	WHERE mv.sourceId IN (:sourceIds)
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	WHERE mv.sourceId IN (:sourceIds)),
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	WHERE profileId = :profileId AND mediaType = :type AND contextKey IN (:contextKeys) AND (
-3	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	WHERE s.sourceId IN (:sourceIds)
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	WHERE s.sourceId IN (:sourceIds)),
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	WITH base AS (SELECT c.id AS id, c.sortOrder AS so, c.name AS nm, m.position AS mp, o.position AS pos
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	WITH base AS (SELECT mv.id AS id, mv.sortOrder AS so, mv.name AS nm, m.position AS mp, o.position AS pos
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	WITH base AS (SELECT s.id AS id, s.sortOrder AS so, s.name AS nm, m.position AS mp, o.position AS pos
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	m.contextKey AS contextKey, m.position AS position,
+6	sql	core/src/main/java/tv/own/owntv/core/database/dao/CustomCategoryDao.kt	slots AS (SELECT id, pos - (ROW_NUMBER() OVER (ORDER BY pos, id) - 1) AS slot, 0 AS grp, pos AS tie FROM base WHERE pos IS NOT NULL
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/DownloadDao.kt	SELECT * FROM downloads WHERE id = :id
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/DownloadDao.kt	SELECT * FROM downloads WHERE profileId = :profileId ORDER BY createdAt DESC
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/DownloadDao.kt	SELECT * FROM downloads WHERE status = :status ORDER BY createdAt ASC
@@ -1261,16 +1284,14 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	DELETE FROM movies WHERE sourceId = :sourceId
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	DELETE FROM movies WHERE sourceId = :sourceId AND remoteId IN (:remoteIds)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	DELETE FROM movies WHERE sourceId = :sourceId AND remoteId IS NULL
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	FROM movies m
 3	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	INNER JOIN favorites f ON f.itemId = m.id AND f.mediaType = 'MOVIE'
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	INNER JOIN favorites f ON f.itemId = m.id AND f.mediaType = 'MOVIE' AND f.profileId = :profileId
 3	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	INNER JOIN watch_history h ON h.itemId = m.id AND h.mediaType = 'MOVIE'
-5	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	LEFT JOIN content_order o ON o.itemId = m.id AND o.profileId = :profileId AND o.mediaType = 'MOVIE' AND o.contextKey = :contextKey
+4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	LEFT JOIN content_order o ON o.itemId = m.id AND o.profileId = :profileId AND o.mediaType = 'MOVIE' AND o.contextKey = :contextKey
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	LEFT JOIN watch_history h ON h.itemId = m.id AND h.mediaType = 'MOVIE' AND h.profileId = :profileId
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, f.addedAt DESC
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, f.addedAt DESC LIMIT :limit
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, m.name
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, m.sortOrder, m.name
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, m.sortOrder, m.name LIMIT :limit
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	ORDER BY sortOrder ASC, name ASC, id ASC
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	ORDER BY sortOrder ASC, name ASC, id ASC LIMIT :limit
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT * FROM movies WHERE categoryId = :categoryId AND name LIKE '%' || :query || '%' ORDER BY addedAt DESC, sortOrder DESC, id DESC
@@ -1304,13 +1325,16 @@
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT categoryId, COUNT(*) AS itemCount FROM movies
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT categoryId, COUNT(*) AS itemCount FROM movies WHERE sourceId = :sourceId AND categoryId IS NOT NULL GROUP BY categoryId
 2	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT id, sourceId, categoryId, name, year, remoteId, sortOrder, canonicalTitle,
-10	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT m.* FROM movies m
+7	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT m.* FROM movies m
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT m.* FROM movies m INNER JOIN favorites f ON f.itemId = m.id AND f.mediaType = 'MOVIE'
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT m.* FROM movies m INNER JOIN slots sl ON sl.id = m.id ORDER BY sl.slot, sl.grp, sl.tie
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT m.* FROM movies m INNER JOIN slots sl ON sl.id = m.id ORDER BY sl.slot, sl.grp, sl.tie LIMIT :limit
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT m.* FROM movies m INNER JOIN watch_history h ON h.itemId = m.id AND h.mediaType = 'MOVIE'
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT remoteId FROM movies WHERE sourceId = :sourceId AND categoryId = :categoryId AND remoteId IS NOT NULL
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT remoteId FROM movies WHERE sourceId = :sourceId AND categoryId IN (:categoryIds) AND remoteId IS NOT NULL
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT remoteId FROM movies WHERE sourceId = :sourceId AND remoteId IS NOT NULL
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	SELECT remoteId, id, contentHash, sortOrder FROM movies WHERE sourceId = :sourceId AND remoteId IS NOT NULL
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	UNION ALL SELECT id, ROW_NUMBER() OVER (ORDER BY CASE WHEN :alpha THEN nm END, mp, so, nm) - 1 AS slot, 1 AS grp, 0 AS tie FROM base WHERE pos IS NULL)
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	UPDATE movies SET sortOrder = :sortOrder WHERE id = :id
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	UPDATE movies SET sortOrder = sortOrder + :delta WHERE sourceId = :sourceId AND sortOrder BETWEEN :fromSortOrder AND :toSortOrder
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	UPDATE movies SET sortOrder = sortOrder - :parked WHERE sourceId = :sourceId AND sortOrder >= :parked / 2
@@ -1323,11 +1347,13 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	WHERE h.profileId = :profileId AND m.sourceId IN (:sourceIds) ORDER BY h.watchedAt DESC
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	WHERE h.profileId = :profileId AND m.sourceId IN (:sourceIds) ORDER BY h.watchedAt DESC LIMIT :limit
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	WHERE h.profileId = :profileId ORDER BY h.watchedAt DESC LIMIT :limit
-3	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	WHERE m.categoryId = :categoryId
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	WHERE m.categoryId = :categoryId),
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	WHERE m.sourceId IN (:sourceIds) AND h.itemId IS NULL ORDER BY f.addedAt DESC LIMIT :limit
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	WHERE sourceId = :sourceId AND id IN
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	WHERE sourceId = :sourceId AND titleSignature IN (:titleSignatures)
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	WHERE sourceId IN (:sourceIds) AND categoryId IS NOT NULL GROUP BY categoryId
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	WITH base AS (SELECT m.id AS id, m.sortOrder AS so, m.name AS nm, 0 AS mp, o.position AS pos
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	slots AS (SELECT id, pos - (ROW_NUMBER() OVER (ORDER BY pos, id) - 1) AS slot, 0 AS grp, pos AS tie FROM base WHERE pos IS NOT NULL
 2	sql	core/src/main/java/tv/own/owntv/core/database/dao/MovieDao.kt	titleSignature, parsedYear, providerLanguage, qualityRank, advertisedCapabilities FROM movies
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/PlaybackPrefsDao.kt	AND audioLang IS NULL AND subtitleLang IS NULL
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/PlaybackPrefsDao.kt	DELETE FROM playback_prefs WHERE sourceId = :sourceId
@@ -1441,15 +1467,13 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	DELETE FROM series WHERE sourceId = :sourceId
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	DELETE FROM series WHERE sourceId = :sourceId AND remoteId IN (:remoteIds)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	DELETE FROM series WHERE sourceId = :sourceId AND remoteId IS NULL
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	FROM series s
 3	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	INNER JOIN favorites f ON f.itemId = s.id AND f.mediaType = 'SERIES'
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	INNER JOIN favorites f ON f.itemId = s.id AND f.mediaType = 'SERIES' AND f.profileId = :profileId
-5	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	LEFT JOIN content_order o ON o.itemId = s.id AND o.profileId = :profileId AND o.mediaType = 'SERIES' AND o.contextKey = :contextKey
+4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	LEFT JOIN content_order o ON o.itemId = s.id AND o.profileId = :profileId AND o.mediaType = 'SERIES' AND o.contextKey = :contextKey
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	LEFT JOIN watch_history h ON h.itemId = s.id AND h.mediaType = 'SERIES' AND h.profileId = :profileId
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, f.addedAt DESC
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, f.addedAt DESC LIMIT :limit
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, s.name
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, s.sortOrder, s.name
-1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	ORDER BY (CASE WHEN o.position IS NULL THEN 1 ELSE 0 END), o.position, s.sortOrder, s.name LIMIT :limit
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	ORDER BY sortOrder ASC, name ASC, id ASC
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	ORDER BY sortOrder ASC, name ASC, id ASC LIMIT :limit
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT * FROM episodes WHERE id = :id
@@ -1493,10 +1517,13 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT remoteId FROM series WHERE sourceId = :sourceId AND categoryId IN (:categoryIds) AND remoteId IS NOT NULL
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT remoteId FROM series WHERE sourceId = :sourceId AND remoteId IS NOT NULL
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT remoteId, id, contentHash, sortOrder FROM series WHERE sourceId = :sourceId AND remoteId IS NOT NULL
-7	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT s.* FROM series s
+4	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT s.* FROM series s
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT s.* FROM series s INNER JOIN favorites f ON f.itemId = s.id AND f.mediaType = 'SERIES'
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT s.* FROM series s INNER JOIN slots sl ON sl.id = s.id ORDER BY sl.slot, sl.grp, sl.tie
+1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT s.* FROM series s INNER JOIN slots sl ON sl.id = s.id ORDER BY sl.slot, sl.grp, sl.tie LIMIT :limit
 3	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT s.* FROM series s INNER JOIN watch_history h ON h.itemId = s.id AND h.mediaType = 'SERIES'
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	SELECT seriesId, COUNT(DISTINCT seasonNumber) AS seasonCount FROM episodes
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	UNION ALL SELECT id, ROW_NUMBER() OVER (ORDER BY CASE WHEN :alpha THEN nm END, mp, so, nm) - 1 AS slot, 1 AS grp, 0 AS tie FROM base WHERE pos IS NULL)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	UPDATE series SET episodesSyncedAt = 0 WHERE sourceId = :sourceId AND episodesSyncedAt != 0
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	UPDATE series SET episodesSyncedAt = :at WHERE id = :seriesId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	UPDATE series SET sortOrder = :sortOrder WHERE id = :id
@@ -1510,12 +1537,14 @@
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	WHERE h.profileId = :profileId AND s.sourceId IN (:sourceIds) AND s.name LIKE '%' || :query || '%' ORDER BY h.watchedAt DESC
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	WHERE h.profileId = :profileId AND s.sourceId IN (:sourceIds) ORDER BY h.watchedAt DESC
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	WHERE h.profileId = :profileId AND s.sourceId IN (:sourceIds) ORDER BY h.watchedAt DESC LIMIT :limit
-3	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	WHERE s.categoryId = :categoryId
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	WHERE s.categoryId = :categoryId),
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	WHERE s.sourceId IN (:sourceIds) AND h.itemId IS NULL ORDER BY f.addedAt DESC LIMIT :limit
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	WHERE seriesId IN (:seriesIds) AND seasonNumber > 0 GROUP BY seriesId
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	WHERE sourceId = :sourceId AND id IN
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	WHERE sourceId = :sourceId AND titleSignature IN (:titleSignatures)
 1	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	WHERE sourceId IN (:sourceIds) AND categoryId IS NOT NULL GROUP BY categoryId
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	WITH base AS (SELECT s.id AS id, s.sortOrder AS so, s.name AS nm, 0 AS mp, o.position AS pos
+2	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	slots AS (SELECT id, pos - (ROW_NUMBER() OVER (ORDER BY pos, id) - 1) AS slot, 0 AS grp, pos AS tie FROM base WHERE pos IS NOT NULL
 2	sql	core/src/main/java/tv/own/owntv/core/database/dao/SeriesDao.kt	titleSignature, parsedYear, providerLanguage, qualityRank, advertisedCapabilities FROM series
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesSortOrderDao.kt	AND seriesId NOT IN (SELECT id FROM series)
 1	room-schema	core/src/main/java/tv/own/owntv/core/database/dao/SeriesSortOrderDao.kt	DELETE FROM series_sort_order WHERE profileId = :profileId AND seriesId = :seriesId
@@ -1762,7 +1791,7 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/download/DownloadReasons.kt	No space left
 1	log	core/src/main/java/tv/own/owntv/core/download/DownloadReasons.kt	download failed: $reason${httpCode?.let { " (HTTP $it)" } ?: ""}
 1	log	core/src/main/java/tv/own/owntv/core/download/DownloadWorker.kt	owntv-downloads
-3	empty	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	\0
+6	empty	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	\0
 1	technical	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	%02x
 1	technical	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	-
 1	protocol	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	B
@@ -1772,6 +1801,8 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	b{SSM}
 1	json	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	clearKeys
 2	protocol	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	clearkey
+1	protocol	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	com.apple.fps
+2	protocol	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	fairplay
 1	json	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	headers
 1	protocol	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	http://
 1	protocol	core/src/main/java/tv/own/owntv/core/drm/DrmConfig.kt	https://
@@ -2126,7 +2157,7 @@
 1	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	add_to_multiview
 1	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	catchup
 2	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	delete_subtitles
-3	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	download
+1	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	download
 1	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	epg_offset
 3	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	favourite
 3	preference-key	core/src/main/java/tv/own/owntv/core/menu/ContentMenus.kt	hide
@@ -2181,7 +2212,7 @@
 1	preference-key	core/src/main/java/tv/own/owntv/core/metadata/OwnTVClientId.kt	client_id
 1	preference-key	core/src/main/java/tv/own/owntv/core/metadata/OwnTVClientId.kt	owntv_client_id
 1	regex	core/src/main/java/tv/own/owntv/core/metadata/TitleMatchScorer.kt	\\s+
-10	empty	core/src/main/java/tv/own/owntv/core/metadata/TitleNormalizer.kt	\0
+11	empty	core/src/main/java/tv/own/owntv/core/metadata/TitleNormalizer.kt	\0
 1	technical	core/src/main/java/tv/own/owntv/core/metadata/TitleNormalizer.kt	(?:\\s*(?:e|ep|episode|x)\\s*\\d{1,4})?\\s*$
 1	regex	core/src/main/java/tv/own/owntv/core/metadata/TitleNormalizer.kt	(?i)[\\s\\-–—:._]*(?:(?:season|saison|temporada|staffel)\\s*\\d{1,2}|s\\d{1,2})
 1	regex	core/src/main/java/tv/own/owntv/core/metadata/TitleNormalizer.kt	(?i)\\b(4k|uhd|fhd|hd|sd|hevc|h\\.?265|h\\.?264|x265|x264|hdr10?\\+?|dolby|atmos|
@@ -2190,6 +2221,7 @@
 1	regex	core/src/main/java/tv/own/owntv/core/metadata/TitleNormalizer.kt	[\\[{(][^\\[\\]{}()]*[\\]})]
 1	regex	core/src/main/java/tv/own/owntv/core/metadata/TitleNormalizer.kt	[🇦-🇿]
 1	regex	core/src/main/java/tv/own/owntv/core/metadata/TitleNormalizer.kt	\\s+(?:FR|EN|DE|ES|PT|NL|PL|TR|AR|RU|LAT|SUB|DUB|MULTI)$
+1	regex	core/src/main/java/tv/own/owntv/core/metadata/TitleNormalizer.kt	\\s+[-–—]\\s+(?:CAM|TS|HDTS|TC|PRE-?DVD)$
 1	regex	core/src/main/java/tv/own/owntv/core/metadata/TitleNormalizer.kt	\\s{2,}
 1	regex	core/src/main/java/tv/own/owntv/core/metadata/TitleNormalizer.kt	^[\\s\\-–—|:._]+|[\\s\\-–—|:._]+$
 1	regex	core/src/main/java/tv/own/owntv/core/metadata/TitleNormalizer.kt	^\\s*([0-9A-Z][0-9A-Z+\\-]*(?:\\s+[0-9A-Z+\\-]+)*)\\s+-\\s+
@@ -2953,8 +2985,14 @@
 1	technical	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	HTTP ${e.code}
 1	log	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	SeriesRepository
 1	log	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	episodes seriesId=$seriesId fetched=${fetched.size} new=${plan.inserts.size}
+1	technical	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	series
 1	log	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	stalker episodes seriesId=${series.id} remoteId=$remoteId seasons=${seasons.size} episodes=${episodes.size}
+1	log	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	stalker seasons via type=series failed remoteId=$remoteId (${e.message})
+1	log	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	stalker vod tree episodes seriesId=${series.id} remoteId=$remoteId seasons=${seasons.size} episodes=${episodes.size}
+1	log	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	stalker vod tree failed remoteId=$remoteId (${e.message})
 1	log	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	updated=${plan.updates.size} removed=${plan.deleteIds.size}
+1	technical	core/src/main/java/tv/own/owntv/core/repository/SeriesRepository.kt	vod
+1	log	core/src/main/java/tv/own/owntv/core/repository/SourceEditor.kt	playlist_edit
 1	technical	core/src/main/java/tv/own/owntv/core/repository/SourceRepository.kt	Cancelled
 1	technical	core/src/main/java/tv/own/owntv/core/repository/SourceRepository.kt	Failed
 1	log	core/src/main/java/tv/own/owntv/core/repository/SourceRepository.kt	SourceRepository
@@ -2994,9 +3032,10 @@
 1	technical	core/src/main/java/tv/own/owntv/core/settings/SettingsImportRules.kt	player_short_ok
 1	technical	core/src/main/java/tv/own/owntv/core/settings/SettingsImportRules.kt	seek_step_sec
 36	empty	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	\0
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	$DOWNLOADS_ALLOWED_PREFIX$profileId
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	$SPORTS_CONFIG_PREFIX$profileId
 2	log	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	${mode.name}$SEPARATOR$manualDays
-3	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	,
+4	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	,
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	ALL
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	CUSTOM:
 1	protocol	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	DAYS_7
@@ -3059,6 +3098,7 @@
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	direct_tune
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	download_root
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	download_watch_choice
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	downloads_allowed_
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	downloads_wifi_only
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	epg_auto_refresh
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	epg_offset_minutes
@@ -3099,6 +3139,7 @@
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	last_movies_category
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	last_series_category
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	last_update_check_at
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	list_orders_reset
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	live_engine
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	live_latency_custom_secs
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	live_latency_mode
@@ -3108,6 +3149,8 @@
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	live_preview
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	live_preview_audio
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	live_rewind_step_sec
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	live_show_all_rail
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	live_show_catchup_rail
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	live_stage_list
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	live_stage_preview
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	live_stage_sheet
@@ -3209,7 +3252,8 @@
 3	json	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	s
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	seek_step_sec
 1	log	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	settings import: skipped ${k.name}
-1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	settings_menu_order_$menu
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	settings_menu_hidden_${menu.name.lowercase()}
+1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	settings_menu_order_${menu.name.lowercase()}
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	settings_quick_pinned
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	sheet_counts
 1	preference-key	core/src/main/java/tv/own/owntv/core/settings/SettingsRepository.kt	software_decode_above_1080p
@@ -3263,7 +3307,7 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/setup/SetupText.kt	Mozilla/5.0 (QtEmbedded; U; Linux; C) AppleWebKit/533.3 (KHTML, like Gecko) MAG254 stbapp ver: 2 rev: 250 Safari/533.3
 1	protocol	core/src/main/java/tv/own/owntv/core/setup/SetupText.kt	Mozilla/5.0 (QtEmbedded; U; Linux; C) AppleWebKit/533.3 (KHTML, like Gecko) MAG270 stbapp ver: 2 rev: 250 Safari/533.3
 1	protocol	core/src/main/java/tv/own/owntv/core/setup/SetupText.kt	Mozilla/5.0 (QtEmbedded; U; Linux; C) AppleWebKit/601.1 (KHTML, like Gecko) MAG420 stbapp ver: 4 rev: 2721 Safari/601.1
-13	empty	core/src/main/java/tv/own/owntv/core/setup/SourceImporter.kt	\0
+15	empty	core/src/main/java/tv/own/owntv/core/setup/SourceImporter.kt	\0
 1	file-path	core/src/main/java/tv/own/owntv/core/setup/SourceImporter.kt	/
 1	log	core/src/main/java/tv/own/owntv/core/setup/SourceImporter.kt	M3U link is an Xtream account — importing it as Xtream
 1	log	core/src/main/java/tv/own/owntv/core/setup/SourceImporter.kt	SourceImporter
@@ -3820,9 +3864,6 @@
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	arg.1
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	atp
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	aut.1
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	baseball/world-baseball-classic
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	basketball/fiba
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	basketball/womens-college-basketball
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	bel.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	bra.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	bra.copa_do_brazil
@@ -3866,8 +3907,6 @@
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ger.2
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ger.dfb_pokal
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	gre.1
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	hockey/olympics-mens-ice-hockey
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	hockey/olympics-womens-ice-hockey
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ind.1
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	irl
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ita.1
@@ -3876,15 +3915,11 @@
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ita.super_cup
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ksa.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ksa.kings.cup
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	lacrosse/nll
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	lacrosse/pll
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	liv
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	lpga
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	mens-college-basketball
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	mex.1
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	mlb
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	mma/ofc
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	mma/pfl
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	nascar-premier
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	nascar-secondary
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	nascar-truck
@@ -3903,53 +3938,9 @@
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	pll
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	por.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	por.taca.portugal
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	racing/nascar-secondary
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	racing/nascar-truck
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	rugby/17567
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	rugby/268565
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	rugby/272073
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	rugby/289234
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	rugby/289237
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	sco.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	sco.cis
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	sco.tennents
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/afc.asian.cup
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/afc.cup
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/bra.copa_do_brazil
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/caf.champions
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/caf.nations
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/concacaf.champions
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/concacaf.gold
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/concacaf.leagues.cup
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/conmebol.america
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/conmebol.sudamericana
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/den.1
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/eng.3
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/eng.charity
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/esp.2
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/esp.super_cup
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fifa.cwc
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fifa.friendly
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fifa.worldq.afc
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fifa.worldq.caf
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fifa.worldq.concacaf
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fifa.worldq.conmebol
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fifa.wwc
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/fra.2
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/gre.1
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/ita.2
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/ita.super_cup
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/ksa.kings.cup
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/ned.cup
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/nor.1
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/por.taca.portugal
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/sco.cis
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/sco.tennents
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/swe.1
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/uefa.super_cup
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/uefa.wchampions
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/uefa.weuro
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	soccer/usa.nwsl
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	sui.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	swe.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	tur.1
@@ -3965,7 +3956,6 @@
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	ufc
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	usa.1
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	usa.nwsl
-1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	volleyball/womens-college-volleyball
 1	json	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	wnba
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	womens-college-basketball
 1	technical	core/src/main/java/tv/own/owntv/core/sports/SportsCatalog.kt	womens-college-volleyball
@@ -4273,16 +4263,22 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/sports/model/Sport.kt	volleyball
 2	technical	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	?
 1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	StalkerAuth
+1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	StalkerCredentials(sourceId=$sourceId, portalUrl=$portalUrl, login=${if (login.isNullOrBlank()) "none" else "set"})
 1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	account_info unavailable sourceId=${creds.sourceId}: ${it.message}
 1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	auth expired sourceId=${creds.sourceId} (${e.message}) — re-handshaking once
+1	technical	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	none
+1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	portal refused sourceId=${creds.sourceId} — dropping the session for the next attempt
 1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	profileFields=${profile.size} status=${profile["status"] ?: "?"}
 1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	session open sourceId=${creds.sourceId} apiBase=${handshake.apiBase}
+1	technical	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	set
 1	technical	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	status
 1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	watchdog=${profile["watchdog_timeout"] ?: "?"} ms=${SystemClock.elapsedRealtime() - startedAt}
 2	technical	core/src/main/java/tv/own/owntv/core/stalker/StalkerAuthManager.kt	watchdog_timeout
-6	empty	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	\0
+7	empty	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	\0
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$1=***
+1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$VOD_EPISODE_SCHEME$movieId/$seasonId/$episodeId
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=${enc(type)}&action=create_link&cmd=${enc(cmd)}$seriesParam&forced_storage=0&disable_ad=0&JsHttpRequest=1-xml
+1	uri	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=${enc(type)}&action=get_ordered_list$cat&movie_id=${enc(movieId)}&p=$page&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=account_info&action=get_main_info&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=itv&action=get_all_channels&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=itv&action=get_epg_info&period=$periodDays&JsHttpRequest=1-xml
@@ -4290,19 +4286,25 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=itv&action=get_ordered_list&genre=${enc(genreId)}&p=$page&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=itv&action=get_short_epg&ch_id=${enc(channelId)}&size=$size&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=series&action=get_categories&JsHttpRequest=1-xml
-1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=series&action=get_ordered_list$cat&movie_id=${enc(movieId)}&p=$page&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=series&action=get_ordered_list&category=${enc(categoryId)}&sortby=added&p=$page&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=stb&action=handshake&token=&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=vod&action=get_categories&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=vod&action=get_ordered_list&category=${enc(categoryId)}&sortby=added&p=$page&JsHttpRequest=1-xml
+1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=vod&action=get_ordered_list&movie_id=${enc(movieId)}&season_id=${enc(seasonId)}&episode_id=${enc(episodeId)}&p=1&JsHttpRequest=1-xml
+1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=vod&action=get_ordered_list&movie_id=${enc(movieId)}&season_id=${enc(seasonId)}&episode_id=0&p=$page&JsHttpRequest=1-xml
+1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$apiBase?type=vod&action=get_ordered_list&movie_id=${enc(movieId)}&season_id=0&episode_id=0&p=$page&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$root/portal.php
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$root/server/load.php
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	$root/stalker_portal/server/load.php
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	${portalRoot(url.substringBefore('?'))}/c/
-1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	&JsHttpRequest=1-xml
+2	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	&JsHttpRequest=1-xml
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	&category=${enc(it)}
+1	uri	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	&device_id2=${URLEncoder.encode(identity.deviceId2.orEmpty(), "UTF-8")}
 1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	&device_id2=${URLEncoder.encode(it, "UTF-8")}
+1	uri	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	&device_id=${URLEncoder.encode(identity.deviceId.orEmpty(), "UTF-8")}
 1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	&device_id=${URLEncoder.encode(it, "UTF-8")}
+1	uri	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	&login=${URLEncoder.encode(login, "UTF-8")}
+1	uri	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	&password=${URLEncoder.encode(password, "UTF-8")}
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	&series=$it
 1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	&signature=${URLEncoder.encode(it, "UTF-8")}
 1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	&sn=${URLEncoder.encode(it, "UTF-8")}
@@ -4314,12 +4316,16 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	*
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	.
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	.php
+1	uri	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	/
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	/c
 2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	0
+1	technical	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	1
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	127.0.0.1
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	:
+1	uri	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	?type=stb&action=do_auth
 1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	?type=stb&action=get_profile&hd=1&auth_second_step=
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Authorization
+1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Authorization failed
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Bearer $token
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Cookie
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	GET done url=$safeUrl action=$action totalMs=${SystemClock.elapsedRealtime() - startedAt}
@@ -4350,14 +4356,17 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Portal create_link returned no cmd — token may have expired
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Portal guide exceeded $MAX_GUIDE_BYTES bytes
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Portal handshake returned no token
+1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Portal login rejected — check the username and password
+1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Portal refused the request (Authorization failed)
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Portal rejected the request (HTTP $code)
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Portal response has no "js" payload
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Portal response is not JSON (got $got)
-1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Portal returned an empty payload — token expired or MAC not authorized
+2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Portal returned an empty payload — token expired or MAC not authorized
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Referer
+1	technical	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	Retry-After
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	StalkerClient
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	UNCHECKED_CAST
-7	technical	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	UTF-8
+11	technical	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	UTF-8
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	User-Agent
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	X-User-Agent
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	[:\\-. ]
@@ -4371,10 +4380,10 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	category
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	category_id
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	ch_id
-4	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	cmd
+5	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	cmd
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	cover
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	create_link inCmd=${redactForLog(cmd)} rawOut=${redactForLog(raw)} resolved=${redactForLog(resolved)}
-6	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	data
+8	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	data
 2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	descr
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	description
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	enable_tv_archive
@@ -4385,33 +4394,41 @@
 1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	get_profile device conflict — retrying once with stb_type=$model
 1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	guide download url=$safeUrl bytes=$written ms=${SystemClock.elapsedRealtime() - startedAt}
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	handshake candidate failed apiBase=$apiBase message=${e.message}
-1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	handshake ok apiBase=$apiBase
+1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	handshake ok apiBase=$landed
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	http://
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	https://
-6	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	id
+8	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	id
+1	json	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	is_series
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	itv
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	js
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	localhost
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	logo
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	mac=${URLEncoder.encode(mac, "UTF-8")}; stb_lang=en; timezone=${TimeZone.getDefault().id}
-3	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	max_page_items
+5	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	max_page_items
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	msg
-7	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	name
+8	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	name
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	number
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	o_name
 1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	portal response is not JSON (got $got): ${redactForLog(peeking.head())}
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	poster
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	rating
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	rating_imdb
+1	log	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	redirectedFrom=$apiBase
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	screenshot_uri
-1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	series
+1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	season_name
+1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	season_number
+2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	series
+1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	series_name
+1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	series_number
+1	url	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	stalker-vod-episode://
 2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	start_timestamp
 2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	stop_timestamp
 2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	time
 2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	time_to
 2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	title
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	token
-3	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	total_items
+5	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	total_items
+1	technical	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	true
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	tv_archive
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	tv_archive_duration
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StalkerClient.kt	tv_genre_id
@@ -4440,12 +4457,13 @@
 1	json	core/src/main/java/tv/own/owntv/core/stalker/StalkerExpiry.kt	null
 1	json	core/src/main/java/tv/own/owntv/core/stalker/StalkerExpiry.kt	phone
 1	json	core/src/main/java/tv/own/owntv/core/stalker/StalkerExpiry.kt	tariff_expired_date
-2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	Stalker source ${source.id} has no valid MAC
+1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	Portal listed no file for episode ${ref.episodeId}
+3	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	Stalker source ${source.id} has no valid MAC
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	itv
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	resolveCatchup is Stalker-only
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	shortEpg is Stalker-only
 1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	tv_archive
-1	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	vod
+2	protocol	core/src/main/java/tv/own/owntv/core/stalker/StreamUrlResolver.kt	vod
 1	file-path	core/src/main/java/tv/own/owntv/core/storage/MediaFolders.kt	$SERIES/${StorageAccess.sanitize(showName)}/$SEASON_PREFIX $seasonNumber
 1	file-path	core/src/main/java/tv/own/owntv/core/storage/MediaFolders.kt	Movies
 1	file-path	core/src/main/java/tv/own/owntv/core/storage/MediaFolders.kt	Season
@@ -4644,6 +4662,9 @@
 1	log	core/src/main/java/tv/own/owntv/core/sync/M3uVodResort.kt	M3uVodResort
 1	log	core/src/main/java/tv/own/owntv/core/sync/M3uVodResort.kt	m3uVodResort check failed
 1	log	core/src/main/java/tv/own/owntv/core/sync/M3uVodResort.kt	m3uVodResort sourceId=${source.id} — video files in Live TV, re-syncing
+1	preference-key	core/src/main/java/tv/own/owntv/core/sync/PortalCeilingStore.kt	ceiling_$sourceId
+1	preference-key	core/src/main/java/tv/own/owntv/core/sync/PortalCeilingStore.kt	clean_runs_$sourceId
+1	preference-key	core/src/main/java/tv/own/owntv/core/sync/PortalCeilingStore.kt	owntv_portal_ceiling
 2	empty	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	\0
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label backfill cat=${row.categoryRemoteId} page=$p
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label backfill cat=${row.categoryRemoteId} page=$p failed (${e.message})
@@ -4657,10 +4678,12 @@
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label bulk probe failed (${e.message}) — using per-category paging
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label bulk probe not a single-dump (items=${bulk?.items?.size ?: 0} total=${bulk?.totalItems ?: 0}) — per-category paging
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label bulk verification probe failed (${e.message}) — accepting dump unverified
-1	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label cat=$catId page=$p
-1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label cat=$catId page=$p failed (${e.message})
-1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label cat=${cat.id} page1 failed (${e.message})
-1	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label cat=${cat.id} page=1
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label cat=${cat.id} page1 failed (${e.message}) — retrying after the sweep
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label cat=${cat.id} page1 failed again (${e.message})
+2	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label cat=${cat.id} page=1
+2	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label cat=${task.catId} page=${task.page}
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label cat=${task.catId} page=${task.page} failed (${e.message}) — retrying after the drain
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label cat=${task.catId} page=${task.page} failed again (${e.message})
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label catalogue-shape sourceId=${s.id} totalItems=${bulk.totalItems}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label categories sourceId=${s.id} count=${cats.size}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label delta-skip sourceId=${s.id} unchangedCategories=${skippedCatDbIds.size}
@@ -4668,23 +4691,33 @@
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label fieldDiff sourceId=$sourceId remoteId=${c.remoteId} hash=${stalkerChannelHash(c)}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label genre ${gi + 1}/${list.size} id=${genre.id} '${genre.title}' total=${first.totalItems} maxPer=$maxPer pages=$pages
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label genre=${genre.id} page1 failed (${e.message})
-1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label genre=${genre.id} page=$p failed (${e.message})
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label genre=${genre.id} page=$p failed (${e.message}) — retrying at the end of the genre
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label genre=${genre.id} page=$p failed again (${e.message})
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label genres sourceId=${s.id} count=${genres.size}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label get_all_channels failed (${e.message}) — falling back to per-genre paging
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label get_all_channels ok count=${bulk.size} declaredTotal=$declaredTotal ms=${SystemClock.elapsedRealtime() - bulkStart}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label get_all_channels truncated count=${bulk.size} declaredTotal=$declaredTotal — falling back to per-genre paging
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label lazy-setup sourceId=${s.id} deferredPages=${pageTasks.size}
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label missed pages handed to the backfill sourceId=${s.id} pages=${stillMissed.size} categories=${retryPlan.size}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label page-plan sourceId=${s.id} cats=${cats.size} itemsPerPage~=$maxPerSeen extraPages=${pageTasks.size} advertisedTotal=$advertisedTotal concurrency=adaptive(${budget.currentLimit}..${budget.max})
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label per-genre fallback begin genres=${genres.size}
 2	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label phase end sourceId=${s.id} unique=${total[0]} ms=${SystemClock.elapsedRealtime() - elapsedStart}
 2	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label phase start sourceId=${s.id} fresh=$freshSource
 2	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label prune skipped sourceId=${s.id} reason=page_failures failures=${pageFailures.get()}
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label prune skipped sourceId=${s.id} reason=source_walk_incomplete
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$label retrying ${unreached.size} genre(s) whose first page failed
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$phase import failed — keeping the rest of the import
-1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$what transient $reason — retrying (attempt $attempt/${PAGE_ATTEMPTS - 1})
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	$what transient $reason — retrying in ${wait}ms (attempt $attempt/${PAGE_ATTEMPTS - 1})
 1	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	${SyncPhase.LIVE.name} genre=$genreId page=$page
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	${e.javaClass.simpleName}: ${e.message}
-4	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	*
+5	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	*
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	HTTP ${it.code}
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	MOVIES backfill skipped sourceId=${s.id} — could not tell whether the films hold the shows
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	MOVIES show-only categories removed sourceId=${s.id} count=$it
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	MOVIES show-only category cleanup failed sourceId=${s.id}
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	SERIES from film catalogue sourceId=${s.id} categories=${films.elsewhere.size} shows=${films.elsewhere.values.sumOf { it.size }} filmWalkComplete=${films.complete}
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	SERIES no series categories sourceId=${s.id} — shows come from the film catalogue
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	SERIES no series section sourceId=${s.id} (${e.message}) — shows come from the film catalogue
 1	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	Stalker source ${s.id} has no valid MAC address
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	adopting portal-advertised XMLTV url for sourceId=${s.id}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	advertised=$advertised pendingCategories=$stillPending
@@ -4699,14 +4732,16 @@
 1	url	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	https://
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	itemsPerPage=$per estPages=$estPages
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	maxPageItems=${bulk.maxPageItems} itemsOnPage1=${bulk.items.size}
-4	room-schema	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	movies
+5	room-schema	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	movies
 2	room-schema	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	movies_fts
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	ms=${SystemClock.elapsedRealtime() - startedAt}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	number=${c.number} catchup=${c.catchup} catchupDays=${c.catchupDays}
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	plannedCategories=${planRows.size} advertisedTotal=$advertisedTotal
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	portal XMLTV probe failed sourceId=${s.id}: ${it.message}
-4	room-schema	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	series
-2	room-schema	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	series_fts
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	portal ceiling sourceId=${s.id} learned=${learned.ceiling} cleanRuns=${learned.cleanRuns} max=${budget.max}
+1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	portal limit sourceId=${s.id} throttledAt=${budget.throttledAt} reachedMax=${budget.reachedMax} final=${budget.currentLimit}
+7	room-schema	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	series
+3	room-schema	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	series_fts
 1	log	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	streamUrl=${StalkerClient.withoutPlayToken(c.streamUrl).hashCode()} epgChannelId=${c.epgChannelId.hashCode()}
 1	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	tv_guide_url
 1	technical	core/src/main/java/tv/own/owntv/core/sync/StalkerSyncer.kt	unknown
@@ -4789,6 +4824,7 @@
 1	log	core/src/main/java/tv/own/owntv/core/sync/XtreamSyncer.kt	$phase import failed — keeping the rest of the import
 1	technical	core/src/main/java/tv/own/owntv/core/sync/XtreamSyncer.kt	ABORTING fallback
 1	technical	core/src/main/java/tv/own/owntv/core/sync/XtreamSyncer.kt	HTTP
+1	log	core/src/main/java/tv/own/owntv/core/sync/XtreamSyncer.kt	HTTP 401: panel rejected the username or password
 4	log	core/src/main/java/tv/own/owntv/core/sync/XtreamSyncer.kt	SyncManager
 1	log	core/src/main/java/tv/own/owntv/core/sync/XtreamSyncer.kt	Xtream sync scheduling sourceId=${s.id} contentTypes=$contentTypes concurrency=$PHASE_CONCURRENCY hlsSupported=${details?.hlsSupported} maxConnections=${details?.maxConnections} serverTimeZone=${details?.serverTimeZone}
 2	technical	core/src/main/java/tv/own/owntv/core/sync/XtreamSyncer.kt	channels
@@ -4869,13 +4905,14 @@
 1	technical	core/src/main/java/tv/own/owntv/core/sync/work/CatalogBackfillWorker.kt	catalog-backfill
 1	technical	core/src/main/java/tv/own/owntv/core/sync/work/CatalogBackfillWorker.kt	catalog-backfill-source-$sourceId
 1	log	core/src/main/java/tv/own/owntv/core/sync/work/CatalogBackfillWorker.kt	failedCategories=${outcome.failedCategories} paused=${outcome.paused}
+1	log	core/src/main/java/tv/own/owntv/core/sync/work/CatalogBackfillWorker.kt	mid-backfill trending enqueue failed sourceId=$sourceId
 1	log	core/src/main/java/tv/own/owntv/core/sync/work/CatalogBackfillWorker.kt	pending=${outcome.pendingCategories}
 1	log	core/src/main/java/tv/own/owntv/core/sync/work/CatalogBackfillWorker.kt	post-backfill index refresh failed sourceId=$sourceId
 1	log	core/src/main/java/tv/own/owntv/core/sync/work/CatalogBackfillWorker.kt	post-backfill trending enqueue failed sourceId=$sourceId
 1	protocol	core/src/main/java/tv/own/owntv/core/sync/work/CatalogBackfillWorker.kt	sourceId
 1	log	core/src/main/java/tv/own/owntv/core/sync/work/CatalogSyncScheduler.kt	CatalogBackfillWorker
 1	log	core/src/main/java/tv/own/owntv/core/sync/work/CatalogSyncScheduler.kt	ConnectionMeasurement
-1	log	core/src/main/java/tv/own/owntv/core/sync/work/CatalogSyncScheduler.kt	backfill enqueued sourceId=$sourceId delayMinutes=$initialDelayMinutes
+1	log	core/src/main/java/tv/own/owntv/core/sync/work/CatalogSyncScheduler.kt	backfill enqueued sourceId=$sourceId delayMinutes=$initialDelayMinutes policy=$policy
 1	technical	core/src/main/java/tv/own/owntv/core/sync/work/CatalogSyncScheduler.kt	backfill-source-$sourceId
 1	log	core/src/main/java/tv/own/owntv/core/sync/work/CatalogSyncScheduler.kt	catalog-sync
 1	technical	core/src/main/java/tv/own/owntv/core/sync/work/CatalogSyncScheduler.kt	catalog-sync-source-$sourceId
@@ -4887,7 +4924,6 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/sync/work/CatalogSyncScheduler.kt	trending-source-$sourceId
 1	technical	core/src/main/java/tv/own/owntv/core/sync/work/CatalogSyncWorker.kt	Cancelled
 1	log	core/src/main/java/tv/own/owntv/core/sync/work/CatalogSyncWorker.kt	CatalogSyncWorker
-1	log	core/src/main/java/tv/own/owntv/core/sync/work/CatalogSyncWorker.kt	Catalogue completeness read failed sourceId=${source.id}; skip enqueue
 1	technical	core/src/main/java/tv/own/owntv/core/sync/work/CatalogSyncWorker.kt	Failed
 1	log	core/src/main/java/tv/own/owntv/core/sync/work/CatalogSyncWorker.kt	Guide gap fill failed sourceId=${source.id}
 1	log	core/src/main/java/tv/own/owntv/core/sync/work/CatalogSyncWorker.kt	Guide gap fill sourceId=${source.id} channels=$it ms=${SystemClock.elapsedRealtime() - gapFillStartedAt}
@@ -5219,6 +5255,7 @@
 1	technical	core/src/main/java/tv/own/owntv/core/ui/stage/StageGlyph.kt	M18 5v14M5 5.5v13L15 12z
 1	technical	core/src/main/java/tv/own/owntv/core/ui/stage/StageGlyph.kt	M18 8.5a6 6 0 0 0-12 0c0 7-3 8.5-3 8.5h18s-3-1.5-3-8.5M13.7 21a2 2 0 0 1-3.4 0
 1	technical	core/src/main/java/tv/own/owntv/core/ui/stage/StageGlyph.kt	M19.5 12a7.5 7.5 0 1 1-2.2-5.3L19.5 9M19.5 4.5V9H15
+1	technical	core/src/main/java/tv/own/owntv/core/ui/stage/StageGlyph.kt	M2.5 12S6 5 12 5s9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7zM12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6
 1	technical	core/src/main/java/tv/own/owntv/core/ui/stage/StageGlyph.kt	M20 11a8 8 0 0 0-14.3-4.9L4 8M4 4v4h4M4 13a8 8 0 0 0 14.3 4.9L20 16M20 20v-4h-4
 1	technical	core/src/main/java/tv/own/owntv/core/ui/stage/StageGlyph.kt	M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z
 1	technical	core/src/main/java/tv/own/owntv/core/ui/stage/StageGlyph.kt	M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z
@@ -5297,6 +5334,7 @@
 1	file-path	core/src/main/java/tv/own/owntv/core/util/CrashRecorder.kt	diagnostics
 1	file-path	core/src/main/java/tv/own/owntv/core/util/CrashRecorder.kt	last_crash.txt
 1	technical	core/src/main/java/tv/own/owntv/core/util/CrashRecorder.kt	yyyy-MM-dd HH:mm:ss
+2	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	Authorization failed
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	CertPath
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	CertificateException
 2	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	Connection refused
@@ -5313,12 +5351,14 @@
 2	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	HTTP 502
 2	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	HTTP 503
 2	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	HTTP 504
+1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	HTTP 513
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	MAC may not be authorized
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	MAC not authorized
 2	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	No address associated
 2	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	PROTOCOL_ERROR
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	ParserException
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	Portal handshake
+1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	Portal login rejected
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	Portal rejected
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	Portal returned no guide
 1	protocol	core/src/main/java/tv/own/owntv/core/util/ErrorMessages.kt	PullParser
@@ -5383,6 +5423,7 @@
 1	log	core/src/main/java/tv/own/owntv/core/weather/WeatherRepository.kt	results
 1	log	core/src/main/java/tv/own/owntv/core/weather/WeatherRepository.kt	temperature_2m
 1	log	core/src/main/java/tv/own/owntv/core/weather/WeatherRepository.kt	weather_code
+1	assertion	player-core/src/main/java/tv/own/owntv/core/drm/DrmMediaItem.kt	FairPlay has no Android CDM
 1	uri	player-core/src/main/java/tv/own/owntv/core/drm/DrmMediaItem.kt	data:application/json;base64,
 1	json	player-core/src/main/java/tv/own/owntv/core/drm/DrmMediaItem.kt	k
 1	json	player-core/src/main/java/tv/own/owntv/core/drm/DrmMediaItem.kt	keys
@@ -5675,6 +5716,8 @@
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	ExoPlayer can't play this stream (${error.errorCodeName})
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	ExoPlayer error: ${error.errorCodeName}
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	FFmpeg
+1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	FairPlay DRM: no Android CDM
+1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	FairPlay-protected channel — not playable on Android
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	H.264
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	HEVC
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	HTTP $HTTP_TOO_MANY_REQUESTS with Retry-After ${secs}s — waiting it out and retrying automatically
@@ -5724,7 +5767,8 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	dataType=${mediaLoadData.dataType} canceled=$wasCanceled
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	decoder exhausted — no MediaCodec instance available
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	decoder exhausted: no MediaCodec instance available
-1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	decoder failure before first frame — rebuild + retry once
+1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	decoder failed before first frame ($why) — rebuild ${tune.decoderRebuilds} in ${delayMs}ms
+1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	decoder failure before first frame — rebuild ${tune.decoderRebuilds} in ${delayMs}ms
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	device
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	discontinuitySeq=${manifest.mediaPlaylist.discontinuitySequence}
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	distinct segments on this load
@@ -5816,6 +5860,7 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	re-buffer flap ($detail) with no pre-buffer — giving up on ExoPlayer for this stream
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	re-buffer flap ($detail) — this stream can't reach its pre-buffer, reopening without one
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	ready
+1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	rebuilt decoder never started, video=false
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	reconnect attempt ${tune.retryCount}/$MAX_RECONNECTS reason=$reason
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	reconnect exhausted ($reason) at ${tune.retryCount}/$MAX_RECONNECTS after ${failingSecs}s — giving up
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	reconnect fresh-url failed: ${it.message}
@@ -6015,6 +6060,7 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	Emulator
 1	log	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	Exo codec gate: audio codec='$codec' → $verdict
 1	log	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	FILE_LOADED with pendingStopEndFiles=$pendingStops generation=$loadGeneration
+1	log	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	FairPlay-protected item — not playable on Android
 1	technical	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	Genymotion
 1	technical	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	HTTP error (4\\d\\d)
 1	log	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	HUD engine toggle: ExoPlayer → mpv

@@ -194,8 +194,9 @@
     <string name="settings_ch_paging">リモコンショートカット</string>
     <string name="settings_ch_paging_description">リモコンの空きボタンにナビゲーション、再生、一覧操作を割り当てます。重要な操作ボタンは保護されます。</string>
     <string name="settings_content_menus_title">長押しメニュー</string>
-    <string name="settings_content_menus_description">チャンネル・映画・シリーズ・エピソードのメニューの項目を並べ替えます</string>
-    <string name="settings_content_menus_hint">項目で OK を長押しするとつかめます。上下で移動し、もう一度 OK で置きます。</string>
+    <string name="settings_content_menus_description">チャンネル・映画・シリーズ・エピソードのメニューの項目を並べ替えたり非表示にしたりします</string>
+    <string name="settings_content_menus_hint">項目で OK を押すと表示と非表示を切り替えます。OK を長押しするとつかめます。上下で移動し、もう一度 OK で置きます。</string>
+    <string name="settings_content_menus_note">一部の項目は、使える場面でのみ表示されます。</string>
     <string name="settings_browsing_lists">ブラウズと一覧</string>
     <string name="settings_browsing_description">ライブTV、映画、シリーズで最後のカテゴリと項目を記憶</string>
     <string name="settings_home_root">ホーム画面</string>
@@ -606,6 +607,8 @@
     <string name="settings_browsing_last_category_description">セクションを再度開いたとき、「すべて」ではなく最後に表示していたカテゴリを開きます。</string>
     <string name="settings_browsing_last_item">最後の項目を記憶</string>
     <string name="settings_browsing_last_item_description">各カテゴリで先頭からではなく、前回のスクロール位置を復元します。ライブTVでは、最後にフォーカスしていたチャンネルも復元します。</string>
+    <string name="settings_browsing_live_categories">ライブTVのカテゴリ</string>
+    <string name="settings_browsing_live_categories_description">ライブTV、番組表、プレーヤー、マルチビューに表示されます。「すべてのチャンネル」をオフにすると、ライブTVは最初のカテゴリ（カテゴリがない場合はお気に入り）で開きます。</string>
     <string name="settings_catchup_player">見逃し配信の再生方法</string>
     <string name="settings_customize_title">カテゴリと項目をカスタマイズ</string>
     <string name="settings_customize_pin_locked">この画面はPINロックされています。</string>
@@ -854,6 +857,7 @@
         <item quantity="other">プレイリストの種類がサポートされていないため、<xliff:g id="count">%1$d</xliff:g>件のソースをスキップしました。</item>
     </plurals>
     <string name="settings_backup_export_error">エクスポートに失敗しました。</string>
+    <string name="settings_backup_no_file_app">この端末にはファイルを保存できるアプリがありません。代わりに「共有」を使ってください。</string>
     <string name="settings_backup_read_error">バックアップファイルを読み取れませんでした。</string>
     <string name="settings_backup_import_error">インポートに失敗しました。</string>
     <string name="settings_backup_invalid_locale">このバックアップには、サポートされていないアプリ言語が含まれていました。復元は完了しましたが、現在の言語が維持されました。</string>
@@ -1370,7 +1374,7 @@
     <string name="settings_line_guide_width">チャンネル一覧とタイムライン</string>
     <string name="settings_line_browsing">最後のカテゴリと項目を記憶</string>
     <string name="settings_line_home">行を選んで並べ替え、絞り込む</string>
-    <string name="settings_line_content_menus">各メニューの操作を並べ替え</string>
+    <string name="settings_line_content_menus">各メニューの操作を並べ替え・非表示</string>
     <string name="settings_line_remote_shortcuts">リモコンの空きボタンを割り当て</string>
     <string name="settings_line_customize">非表示と再表示、名前の変更、並べ替え</string>
     <string name="settings_line_metadata">映画とシリーズのポスター、あらすじ、出演者、評価</string>

@@ -69,6 +69,10 @@
     <string name="content_remove_from_category">このカテゴリから削除</string>
     <string name="content_download">ダウンロード</string>
     <string name="content_download_all_episodes">すべてのエピソードをダウンロード</string>
+    <plurals name="content_download_episodes_confirm">
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> 件のエピソードをダウンロードしますか？</item>
+    </plurals>
+    <string name="content_download_episodes_confirm_message">この端末に保存され、ストレージ容量を使います。</string>
     <string name="content_play">再生</string>
     <string name="content_favorited">お気に入り登録済み</string>
     <string name="content_favorite">お気に入りに追加</string>
@@ -76,9 +80,7 @@
     <string name="content_episodes">エピソード</string>
     <string name="content_oldest_first">古い順</string>
     <string name="content_newest_first">新しい順</string>
-    <string name="content_play_external">外部プレーヤーで再生</string>
     <string name="content_delete_subtitles">OpenSubの字幕を削除</string>
-    <string name="content_tmdb_details">TMDBの詳細</string>
     <string name="content_play_trailer">予告編を再生</string>
     <string name="content_refetch_tmdb">TMDBの詳細を再取得</string>
     <string name="content_set_tmdb_name">TMDB名を設定</string>
@@ -175,6 +177,8 @@
     <string name="content_downloads_ready">視聴できます</string>
     <string name="content_downloads_paused">一時停止中</string>
     <string name="content_downloads_file_missing">ファイルがありません：ドライブにもうありません</string>
+    <string name="content_downloads_delete_title">「<xliff:g id="name">%1$s</xliff:g>」を削除しますか？</string>
+    <string name="content_downloads_delete_message">このデバイスからファイルを削除します。後でもう一度ダウンロードできます。</string>
     <string name="content_downloads_reason_account_busy">アカウント使用中：別のストリームが接続を使用しています</string>
     <string name="content_downloads_reason_refused">サーバーがリンクを拒否しました</string>
     <string name="content_downloads_reason_not_found">このファイルはサーバーにもうありません</string>

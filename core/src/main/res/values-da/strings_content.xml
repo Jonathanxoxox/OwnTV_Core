@@ -75,6 +75,11 @@
     <string name="content_remove_from_category">Fjern fra denne kategori</string>
     <string name="content_download">Download</string>
     <string name="content_download_all_episodes">Download alle afsnit</string>
+    <plurals name="content_download_episodes_confirm">
+        <item quantity="one">Download <xliff:g id="count">%1$d</xliff:g> afsnit?</item>
+        <item quantity="other">Download <xliff:g id="count">%1$d</xliff:g> afsnit?</item>
+    </plurals>
+    <string name="content_download_episodes_confirm_message">De gemmes på denne enhed og fylder på lageret.</string>
     <string name="content_play">Afspil</string>
     <string name="content_favorited">Føjet til favoritter</string>
     <string name="content_favorite">Føj til favoritter</string>
@@ -82,9 +87,7 @@
     <string name="content_episodes">Afsnit</string>
     <string name="content_oldest_first">Ældste først</string>
     <string name="content_newest_first">Nyeste først</string>
-    <string name="content_play_external">Afspil med ekstern afspiller</string>
     <string name="content_delete_subtitles">Slet OpenSub-undertekster</string>
-    <string name="content_tmdb_details">TMDB-oplysninger</string>
     <string name="content_play_trailer">Afspil trailer</string>
     <string name="content_refetch_tmdb">Hent TMDB-oplysninger igen</string>
     <string name="content_set_tmdb_name">Angiv TMDB-navn</string>
@@ -182,6 +185,8 @@
     <string name="content_downloads_ready">Klar til at se</string>
     <string name="content_downloads_paused">Sat på pause</string>
     <string name="content_downloads_file_missing">Filen mangler: den er ikke længere på drevet</string>
+    <string name="content_downloads_delete_title">Slet “<xliff:g id="name">%1$s</xliff:g>”?</string>
+    <string name="content_downloads_delete_message">Fjerner filen fra denne enhed. Den kan downloades igen senere.</string>
     <string name="content_downloads_reason_account_busy">Kontoen er optaget: en anden stream bruger forbindelsen</string>
     <string name="content_downloads_reason_refused">Serveren afviste linket</string>
     <string name="content_downloads_reason_not_found">Serveren har ikke længere denne fil</string>

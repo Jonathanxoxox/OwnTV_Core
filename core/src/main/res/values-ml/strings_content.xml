@@ -75,6 +75,11 @@
     <string name="content_remove_from_category">ഈ വിഭാഗത്തിൽ നിന്ന് നീക്കുക</string>
     <string name="content_download">ഡൗൺലോഡ് ചെയ്യുക</string>
     <string name="content_download_all_episodes">എല്ലാ എപ്പിസോഡുകളും ഡൗൺലോഡ് ചെയ്യുക</string>
+    <plurals name="content_download_episodes_confirm">
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> എപ്പിസോഡ് ഡൗൺലോഡ് ചെയ്യണോ?</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> എപ്പിസോഡുകൾ ഡൗൺലോഡ് ചെയ്യണോ?</item>
+    </plurals>
+    <string name="content_download_episodes_confirm_message">അവ ഈ ഉപകരണത്തിൽ സംരക്ഷിക്കപ്പെടുകയും സ്റ്റോറേജ് ഇടം എടുക്കുകയും ചെയ്യും.</string>
     <string name="content_play">പ്ലേ ചെയ്യുക</string>
     <string name="content_favorited">പ്രിയപ്പെട്ടവയിൽ ചേർത്തു</string>
     <string name="content_favorite">പ്രിയപ്പെട്ടതാക്കുക</string>
@@ -82,9 +87,7 @@
     <string name="content_episodes">എപ്പിസോഡുകൾ</string>
     <string name="content_oldest_first">പഴയവ ആദ്യം</string>
     <string name="content_newest_first">പുതിയവ ആദ്യം</string>
-    <string name="content_play_external">ബാഹ്യ പ്ലെയർ ഉപയോഗിച്ച് പ്ലേ ചെയ്യുക</string>
     <string name="content_delete_subtitles">OpenSub സബ്‌ടൈറ്റിലുകൾ ഇല്ലാതാക്കുക</string>
-    <string name="content_tmdb_details">TMDB വിശദാംശങ്ങൾ</string>
     <string name="content_play_trailer">ട്രെയിലർ പ്ലേ ചെയ്യുക</string>
     <string name="content_refetch_tmdb">TMDB വിശദാംശങ്ങൾ വീണ്ടും ലഭ്യമാക്കുക</string>
     <string name="content_set_tmdb_name">TMDB പേര് സജ്ജമാക്കുക</string>
@@ -182,6 +185,8 @@
     <string name="content_downloads_ready">കാണാൻ തയ്യാർ</string>
     <string name="content_downloads_paused">താൽക്കാലികമായി നിർത്തി</string>
     <string name="content_downloads_file_missing">ഫയൽ കാണുന്നില്ല: ഇത് ഇനി ഡ്രൈവിൽ ഇല്ല</string>
+    <string name="content_downloads_delete_title">“<xliff:g id="name">%1$s</xliff:g>” ഇല്ലാതാക്കണോ?</string>
+    <string name="content_downloads_delete_message">ഈ ഉപകരണത്തിൽ നിന്ന് ഫയൽ നീക്കംചെയ്യും. പിന്നീട് വീണ്ടും ഡൗൺലോഡ് ചെയ്യാം.</string>
     <string name="content_downloads_reason_account_busy">അക്കൗണ്ട് തിരക്കിലാണ്: മറ്റൊരു സ്ട്രീം കണക്ഷൻ ഉപയോഗിക്കുന്നു</string>
     <string name="content_downloads_reason_refused">സെർവർ ലിങ്ക് നിരസിച്ചു</string>
     <string name="content_downloads_reason_not_found">ഈ ഫയൽ ഇനി സെർവറിൽ ഇല്ല</string>

@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">Własny obraz</string>
     <string name="profiles_kids">Profil dziecięcy</string>
     <string name="profiles_kids_description">Uproszczone, bezpieczne przeglądanie</string>
+    <string name="profiles_allow_downloads">Zezwalaj na pobieranie</string>
+    <string name="profiles_allow_downloads_description">Wyłączenie ukrywa wszystkie przyciski pobierania w tym profilu</string>
     <string name="profiles_remove_pin">Usuń blokadę PIN</string>
     <string name="profiles_no_pin">Ten profil otwiera się bez PIN-u</string>
     <string name="profiles_change_pin">Zmień PIN (puste pole = bez zmian)</string>
@@ -69,6 +71,13 @@
     <string name="launcher_recent_live_description">Ostatnio oglądane kanały na żywo</string>
     <string name="launcher_movie_type">Film</string>
     <string name="launcher_episode_number">Odcinek <xliff:g id="episode">%1$d</xliff:g></string>
+    <plurals name="home_library_loading">
+        <item quantity="one">Wczytywanie biblioteki · na razie <xliff:g id="count">%1$s</xliff:g> tytuł</item>
+        <item quantity="few">Wczytywanie biblioteki · na razie <xliff:g id="count">%1$s</xliff:g> tytuły</item>
+        <item quantity="many">Wczytywanie biblioteki · na razie <xliff:g id="count">%1$s</xliff:g> tytułów</item>
+        <item quantity="other">Wczytywanie biblioteki · na razie <xliff:g id="count">%1$s</xliff:g> tytułów</item>
+    </plurals>
+    <string name="home_library_loading_trending">Sekcja Teraz popularne pojawi się w miarę wczytywania biblioteki.</string>
     <string name="home_no_preview">Nie ma jeszcze niczego do wyświetlenia w podglądzie.</string>
     <string name="home_no_rows">Wszystkie wiersze ekranu głównego są ukryte.</string>
     <string name="home_enable_rows">Włącz ponownie wiersze: Ustawienia → Ekran główny.</string>
@@ -213,6 +222,7 @@
     <string name="recording_group_missed">Pominięte</string>
     <string name="recording_record">Nagraj</string>
     <string name="recording_stop">Zatrzymaj nagrywanie</string>
+    <string name="recording_delete_message">Usuwa nagranie i jego plik z tego urządzenia. Tej operacji nie można cofnąć.</string>
     <string name="recording_record_series">Nagrywaj każdą emisję</string>
     <string name="recording_stop_series">Przestań nagrywać każdą emisję</string>
     <string name="recording_from_archive">Nagraj z archiwum</string>
@@ -314,6 +324,15 @@
     <string name="sports_starting_soon">Wkrótce</string>
     <string name="sports_hint_match_page">Strona meczu</string>
     <string name="sports_hint_follow_remind">Obserwuj · Przypomnij</string>
+    <string name="sports_hint_day_matches">Mecze dnia</string>
+    <string name="sports_hint_day">Dzień</string>
+    <string name="sports_hint_week">Tydzień</string>
+    <string name="sports_hint_show_score">Pokaż wynik</string>
+    <string name="sports_hint_back_to_day">Wróć do dnia</string>
+    <string name="sports_hint_open_league">Otwórz ligę</string>
+    <string name="sports_hint_sport_chips">Przyciski sportów</string>
+    <string name="sports_hint_league_chips">Przyciski lig</string>
+    <string name="sports_hint_follow_unfollow">Obserwuj · Przestań obserwować</string>
     <string name="sports_reminder_set">Przypomnienie</string>
     <string name="sports_until">do <xliff:g id="time">%1$s</xliff:g></string>
     <string name="sports_set">Set <xliff:g id="set">%1$d</xliff:g></string>
@@ -426,7 +445,6 @@
     <string name="sports_next_month">Następny miesiąc</string>
     <string name="sports_next">Następnie: <xliff:g id="match">%1$s</xliff:g></string>
     <string name="sports_next_badge">Następny</string>
-    <string name="sports_new_badge">Nowe</string>
     <string name="sports_no_table_series">Brak tabeli — serie zmieniają się co tydzień</string>
     <string name="sports_follow_league">Obserwuj ligę</string>
     <string name="sports_unfollow_league">Przestań obserwować ligę</string>

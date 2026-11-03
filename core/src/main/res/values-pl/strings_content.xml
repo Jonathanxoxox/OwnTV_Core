@@ -87,6 +87,13 @@
     <string name="content_remove_from_category">Usuń z tej kategorii</string>
     <string name="content_download">Pobierz</string>
     <string name="content_download_all_episodes">Pobierz wszystkie odcinki</string>
+    <plurals name="content_download_episodes_confirm">
+        <item quantity="one">Pobrać <xliff:g id="count">%1$d</xliff:g> odcinek?</item>
+        <item quantity="few">Pobrać <xliff:g id="count">%1$d</xliff:g> odcinki?</item>
+        <item quantity="many">Pobrać <xliff:g id="count">%1$d</xliff:g> odcinków?</item>
+        <item quantity="other">Pobrać <xliff:g id="count">%1$d</xliff:g> odcinków?</item>
+    </plurals>
+    <string name="content_download_episodes_confirm_message">Zostaną zapisane na tym urządzeniu i zajmą miejsce w pamięci.</string>
     <string name="content_play">Odtwórz</string>
     <string name="content_favorited">W ulubionych</string>
     <string name="content_favorite">Dodaj do ulubionych</string>
@@ -94,9 +101,7 @@
     <string name="content_episodes">Odcinki</string>
     <string name="content_oldest_first">Najstarsze najpierw</string>
     <string name="content_newest_first">Najnowsze najpierw</string>
-    <string name="content_play_external">Odtwórz za pomocą odtwarzacza zewnętrznego</string>
     <string name="content_delete_subtitles">Usuń napisy OpenSub</string>
-    <string name="content_tmdb_details">Szczegóły TMDB</string>
     <string name="content_play_trailer">Odtwórz zwiastun</string>
     <string name="content_refetch_tmdb">Pobierz ponownie szczegóły TMDB</string>
     <string name="content_set_tmdb_name">Ustaw nazwę TMDB</string>
@@ -196,6 +201,8 @@
     <string name="content_downloads_ready">Gotowe do obejrzenia</string>
     <string name="content_downloads_paused">Wstrzymane</string>
     <string name="content_downloads_file_missing">Brak pliku: nie ma go już na dysku</string>
+    <string name="content_downloads_delete_title">Usunąć „<xliff:g id="name">%1$s</xliff:g>”?</string>
+    <string name="content_downloads_delete_message">Usuwa plik z tego urządzenia. Można go później pobrać ponownie.</string>
     <string name="content_downloads_reason_account_busy">Konto zajęte: połączenia używa inny strumień</string>
     <string name="content_downloads_reason_refused">Serwer odrzucił link</string>
     <string name="content_downloads_reason_not_found">Serwer nie ma już tego pliku</string>

@@ -196,8 +196,9 @@
     <string name="settings_ch_paging">Accesos directos del mando</string>
     <string name="settings_ch_paging_description">Asigna botones libres del mando a acciones de navegación, reproducción y exploración. Los botones esenciales siguen protegidos.</string>
     <string name="settings_content_menus_title">Menús de pulsación larga</string>
-    <string name="settings_content_menus_description">Reordena las acciones de los menús de canales, películas, series y episodios</string>
-    <string name="settings_content_menus_hint">Mantén OK sobre una acción para cogerla y muévela con Arriba y Abajo. Pulsa OK otra vez para soltarla.</string>
+    <string name="settings_content_menus_description">Reordena u oculta las acciones de los menús de canales, películas, series y episodios</string>
+    <string name="settings_content_menus_hint">Pulsa OK sobre una acción para mostrarla u ocultarla. Mantén OK para cogerla, muévela con Arriba y Abajo y pulsa OK otra vez para soltarla.</string>
+    <string name="settings_content_menus_note">Algunas acciones solo aparecen donde corresponden.</string>
     <string name="settings_browsing_lists">Navegación y listas</string>
     <string name="settings_browsing_description">Recuerda la última categoría y el último elemento de TV en directo, Películas y Series</string>
     <string name="settings_home_root">Pantalla de inicio</string>
@@ -612,6 +613,8 @@
     <string name="settings_browsing_last_category_description">Vuelve a abrir la sección en la categoría que dejaste, no en Todo.</string>
     <string name="settings_browsing_last_item">Recordar el último elemento</string>
     <string name="settings_browsing_last_item_description">Cada categoría conserva su propia posición de desplazamiento en lugar de empezar desde arriba. La TV en directo también restaura el último canal que tenía el foco.</string>
+    <string name="settings_browsing_live_categories">Categorías de TV en directo</string>
+    <string name="settings_browsing_live_categories_description">Se muestran en TV en directo, la guía de TV, el reproductor y Multivista. Con Todos los canales desactivado, TV en directo se abre en tu primera categoría, o en Favoritos si no tienes ninguna.</string>
     <string name="settings_catchup_player">Reproducir el contenido en diferido con</string>
     <string name="settings_customize_title">Personalizar categories y elementos</string>
     <string name="settings_customize_pin_locked">Esta pantalla está bloqueada con PIN.</string>
@@ -878,6 +881,7 @@
         <item quantity="other">Se han omitido <xliff:g id="count">%1$d</xliff:g> fuentes porque sus tipos de lista de reproducción no son compatibles.</item>
     </plurals>
     <string name="settings_backup_export_error">Ha fallado la exportación.</string>
+    <string name="settings_backup_no_file_app">Ninguna aplicación de este teléfono puede guardar el archivo. Usa Compartir.</string>
     <string name="settings_backup_read_error">No se ha podido leer el archivo de copia de seguridad.</string>
     <string name="settings_backup_import_error">Error al importar.</string>
     <string name="settings_backup_invalid_locale">Esta copia de seguridad contenía un idioma de la aplicación no compatible. La restauración se ha completado, pero se ha conservado el idioma actual.</string>
@@ -1426,7 +1430,7 @@
     <string name="settings_line_guide_width">Lista de canales y línea de tiempo</string>
     <string name="settings_line_browsing">Recuerda la última categoría y el último elemento</string>
     <string name="settings_line_home">Elige, ordena y filtra las filas</string>
-    <string name="settings_line_content_menus">Reorganiza las acciones de cada menú</string>
+    <string name="settings_line_content_menus">Reorganiza u oculta las acciones de cada menú</string>
     <string name="settings_line_remote_shortcuts">Asigna los botones libres del mando</string>
     <string name="settings_line_customize">Oculta y muestra, cambia nombres y ordena</string>
     <string name="settings_line_metadata">Pósteres, sinopsis, reparto y valoraciones de películas y series</string>
