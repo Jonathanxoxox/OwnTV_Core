@@ -153,6 +153,9 @@
     <string name="content_catchup_jump_prompt">Выберите время, с которого начать просмотр. Телепрограмма не нужна.</string>
     <string name="content_catchup_jump_exact">Выбрать точное время…</string>
     <string name="content_catchup_jump_hint">Нажмите OK на дне, часе или минуте, измените значение стрелками вверх и вниз, затем нажмите OK ещё раз.</string>
+    <string name="content_catchup_jump_programme_start">Начало «<xliff:g id="title">%1$s</xliff:g>»</string>
+    <string name="content_catchup_jump_programme_start_untitled">Начало передачи</string>
+    <string name="content_catchup_jump_programme_start_at">Началось в <xliff:g id="time">%1$s</xliff:g></string>
     <string name="content_epg_match_prompt">Выберите канал программы передач для «<xliff:g id="channel">%1$s</xliff:g>».</string>
     <string name="content_epg_match_prompt_current">Выберите канал программы передач для «<xliff:g id="channel">%1$s</xliff:g>». Текущее сопоставление: <xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">Поиск каналов программы передач…</string>

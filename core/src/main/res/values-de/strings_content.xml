@@ -137,6 +137,9 @@
     <string name="content_catchup_jump_prompt">Wähle eine Uhrzeit, ab der du sehen willst. Kein Programmführer nötig.</string>
     <string name="content_catchup_jump_exact">Genaue Uhrzeit wählen…</string>
     <string name="content_catchup_jump_hint">Drücke OK auf Tag, Stunde oder Minute, ändere den Wert mit Auf und Ab und drücke dann erneut OK.</string>
+    <string name="content_catchup_jump_programme_start">Anfang von „<xliff:g id="title">%1$s</xliff:g>“</string>
+    <string name="content_catchup_jump_programme_start_untitled">Anfang der Sendung</string>
+    <string name="content_catchup_jump_programme_start_at">Begann um <xliff:g id="time">%1$s</xliff:g></string>
     <string name="content_epg_match_prompt">Wählen Sie für „<xliff:g id="channel">%1$s</xliff:g>“ den Sender der Programmübersicht aus.</string>
     <string name="content_epg_match_prompt_current">Wählen Sie für „<xliff:g id="channel">%1$s</xliff:g>“ den Sender der Programmübersicht aus. Aktuell: <xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">EPG-Sender suchen…</string>

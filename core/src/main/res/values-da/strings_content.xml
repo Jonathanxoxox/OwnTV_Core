@@ -137,6 +137,9 @@
     <string name="content_catchup_jump_prompt">Vælg et tidspunkt at starte fra. Der kræves ingen programoversigt.</string>
     <string name="content_catchup_jump_exact">Vælg præcist tidspunkt…</string>
     <string name="content_catchup_jump_hint">Tryk på OK på dagen, timen eller minuttet, skift værdien med op og ned, og tryk på OK igen.</string>
+    <string name="content_catchup_jump_programme_start">Starten af “<xliff:g id="title">%1$s</xliff:g>”</string>
+    <string name="content_catchup_jump_programme_start_untitled">Programmets start</string>
+    <string name="content_catchup_jump_programme_start_at">Startede kl. <xliff:g id="time">%1$s</xliff:g></string>
     <string name="content_epg_match_prompt">Vælg kanalen i programguiden for “<xliff:g id="channel">%1$s</xliff:g>”.</string>
     <string name="content_epg_match_prompt_current">Vælg kanalen i programguiden for “<xliff:g id="channel">%1$s</xliff:g>”. Nuværende: <xliff:g id="match">%2$s</xliff:g></string>
     <string name="content_search_guide_channels">Søg efter kanaler i programguiden…</string>
