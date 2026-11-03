@@ -11,7 +11,7 @@
 
 ## core-1.0.70 — unreleased
 
-**Database v52 · Backup v26 · Backup: two new playlist fields · Moved items keep their place**
+**Database v53 · Backup v26 · Backup: two new playlist fields · Moved items keep their place**
 
 ### ✨ New features
 
@@ -39,6 +39,11 @@
 - **👁️ Long-press menus: hide actions, and the default order matches the menus**
 - **📺 Hide All channels or Catch-up from the Live TV categories** (community PR #73 by @sarmadsoomro)
 - **⬇️ Allow downloads per profile; a whole show or season asks first with the episode count**
+- **📅 Catch-up channels get their past days in the guide from the provider's archive** (community PRs #64 by @Zangetsu-Sama and TV #324)
+- **⏮️ "Start of the programme" first in "Go back to…"** (community PRs #65 by @Zangetsu-Sama and TV #326)
+- **🎞️ Auto frame rate: separate switches for films and series, and Live TV (TV #318)**
+- **🔓 Ignore connection limit, per playlist (TV #244)**
+- **🔀 Sources: the other versions of the channel playing** (idea from community PR TV #317 by @Aaronnn17)
 
 ### 🐛 Fixes
 
@@ -79,6 +84,7 @@
 - **Stalker series filed under films get their episodes** (community PR #67 by @DevenP)
 - **The loading note counts only the playlist Home shows**
 - **A phone with no app to save a backup file is told so**
+- **Re-test measures the connection limit on Xtream, and the next sync keeps it (TV #244)**
 
 ## core-1.0.69 — 2026-10-21
 
