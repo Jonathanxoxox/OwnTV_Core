@@ -36,6 +36,9 @@
 - **🔑 Stalker portals: an optional username and password**
 - **⌨️ Key hints for the Sports Calendar and Leagues tabs**
 - **📚 Home says the library is still loading while a large playlist fills in** (community PR #72 by @DevenP)
+- **👁️ Long-press menus: hide actions, and the default order matches the menus**
+- **📺 Hide All channels or Catch-up from the Live TV categories** (community PR #73 by @sarmadsoomro)
+- **⬇️ Allow downloads per profile; a whole show or season asks first with the episode count**
 
 ### 🐛 Fixes
 
