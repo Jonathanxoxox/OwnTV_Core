@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import tv.own.owntv.core.database.dao.CatalogBackfillDao
 import tv.own.owntv.core.database.dao.SourceDao
+import tv.own.owntv.core.repository.activeProfileSources
 import tv.own.owntv.core.settings.SettingsRepository
 
 /**
@@ -31,11 +32,14 @@ class LibraryLoading(
     private val sourceDao: SourceDao,
     private val catalogBackfillDao: CatalogBackfillDao,
 ) {
-    /** Titles stored so far on the active profile's playlists that are still filling in; 0 when none is. */
+    /**
+     * Titles stored so far on the playlists Home is showing that are still filling in; 0 when none is.
+     * Narrowed to the playlist picker, like Home's rows: a full playlist's Home must not say it is
+     * still loading because another one is.
+     */
     @OptIn(ExperimentalCoroutinesApi::class)
-    val titles: Flow<Int> = settings.activeProfileId
-        .flatMapLatest { pid -> if (pid < 0) flowOf(emptyList()) else sourceDao.observeForProfile(pid) }
-        .map { sources -> sources.map { it.id } }
+    val titles: Flow<Int> = activeProfileSources(settings, sourceDao)
+        .map { it.sourceIds }
         .distinctUntilChanged()
         .flatMapLatest { ids -> if (ids.isEmpty()) flowOf(emptyList()) else catalogBackfillDao.observeFilling(ids) }
         .distinctUntilChanged()
