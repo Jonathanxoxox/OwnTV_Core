@@ -965,6 +965,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> iturburu saltatu dira beren erreprodukzio-zerrenda motak onartzen ez direlako.</item>
     </plurals>
     <string name="settings_backup_export_error">Esportazioak huts egin du.</string>
+    <string name="settings_backup_no_file_app">Telefono honetako aplikazio batek ere ezin du fitxategia gorde. Erabili Partekatu horren ordez.</string>
     <string name="settings_backup_read_error">Ezin izan da babeskopia-fitxategia irakurri.</string>
     <string name="settings_backup_import_error">Inportazioak huts egin du.</string>
     <string name="settings_backup_invalid_locale">Babeskopia honek onartzen ez den aplikazio-hizkuntza bat zeukan. Leheneratzeak arrakasta izan du, baina zure uneko hizkuntza mantendu da.</string>

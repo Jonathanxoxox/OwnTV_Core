@@ -866,6 +866,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> källor hoppades över eftersom deras spellistetyper inte stöds.</item>
     </plurals>
     <string name="settings_backup_export_error">Exporten misslyckades.</string>
+    <string name="settings_backup_no_file_app">Ingen app på den här telefonen kan spara filen. Använd Dela i stället.</string>
     <string name="settings_backup_read_error">Det gick inte att läsa säkerhetskopian.</string>
     <string name="settings_backup_import_error">Importen misslyckades.</string>
     <string name="settings_backup_invalid_locale">Den här säkerhetskopian innehöll ett appspråk som inte stöds. Återställningen lyckades, men ditt aktuella språk behölls.</string>

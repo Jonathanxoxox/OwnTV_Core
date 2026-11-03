@@ -866,6 +866,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> bronnen zijn overgeslagen omdat de typen afspeellijsten niet worden ondersteund.</item>
     </plurals>
     <string name="settings_backup_export_error">Exporteren mislukt.</string>
+    <string name="settings_backup_no_file_app">Geen app op deze telefoon kan het bestand opslaan. Gebruik in plaats daarvan Delen.</string>
     <string name="settings_backup_read_error">Kan het back-upbestand niet lezen.</string>
     <string name="settings_backup_import_error">Importeren mislukt.</string>
     <string name="settings_backup_invalid_locale">Deze back-up bevatte een niet-ondersteunde app-taal. Het herstellen is gelukt, maar uw huidige taal is behouden.</string>

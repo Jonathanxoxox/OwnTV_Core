@@ -878,6 +878,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> fonti sono state ignorate perché i relativi tipi di playlist non sono supportati.</item>
     </plurals>
     <string name="settings_backup_export_error">Esportazione non riuscita.</string>
+    <string name="settings_backup_no_file_app">Nessuna app su questo telefono può salvare il file. Usa Condividi.</string>
     <string name="settings_backup_read_error">Impossibile leggere il file di backup.</string>
     <string name="settings_backup_import_error">Importazione non riuscita.</string>
     <string name="settings_backup_invalid_locale">Questo backup conteneva una lingua dell\'app non supportata. Il ripristino è riuscito, ma è stata mantenuta la lingua attuale.</string>

@@ -67,6 +67,12 @@
     <string name="launcher_recent_live_description">Chaînes en direct vues récemment</string>
     <string name="launcher_movie_type">Film</string>
     <string name="launcher_episode_number">Épisode <xliff:g id="episode">%1$d</xliff:g></string>
+    <plurals name="home_library_loading">
+        <item quantity="one">Chargement de votre bibliothèque · <xliff:g id="count">%1$s</xliff:g> titre pour l’instant</item>
+        <item quantity="many">Chargement de votre bibliothèque · <xliff:g id="count">%1$s</xliff:g> de titres pour l’instant</item>
+        <item quantity="other">Chargement de votre bibliothèque · <xliff:g id="count">%1$s</xliff:g> titres pour l’instant</item>
+    </plurals>
+    <string name="home_library_loading_trending">Tendances actuelles apparaîtra à mesure que votre bibliothèque se remplit.</string>
     <string name="home_no_preview">Rien à prévisualiser pour le moment.</string>
     <string name="home_no_rows">Toutes les rangées de l’écran d’accueil sont masquées.</string>
     <string name="home_enable_rows">Réactivez les rangées dans Paramètres → Écran d’accueil.</string>

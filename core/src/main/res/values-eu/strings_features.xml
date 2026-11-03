@@ -65,6 +65,11 @@
     <string name="launcher_recent_live_description">Duela gutxi zuzenean ikusitako kanalak</string>
     <string name="launcher_movie_type">Filma</string>
     <string name="launcher_episode_number"><xliff:g id="episode">%1$d</xliff:g>. atala</string>
+    <plurals name="home_library_loading">
+        <item quantity="one">Liburutegia kargatzen · <xliff:g id="count">%1$s</xliff:g> titulu orain arte</item>
+        <item quantity="other">Liburutegia kargatzen · <xliff:g id="count">%1$s</xliff:g> titulu orain arte</item>
+    </plurals>
+    <string name="home_library_loading_trending">Orain joeran dagoena liburutegia bete ahala agertuko da.</string>
     <string name="home_no_preview">Oraindik ez dago aurreikusteko ezer.</string>
     <string name="home_no_rows">Hasierako errenkada guztiak ezkutatuta daude.</string>
     <string name="home_enable_rows">Aktibatu errenkadak berriro Ezarpenak → Hasierako pantaila atalean.</string>

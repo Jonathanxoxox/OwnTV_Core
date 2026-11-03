@@ -890,6 +890,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> zdrojů bylo přeskočeno, protože jejich typy playlistů nejsou podporovány.</item>
     </plurals>
     <string name="settings_backup_export_error">Export se nezdařil.</string>
+    <string name="settings_backup_no_file_app">Žádná aplikace v tomto telefonu nemůže soubor uložit. Použijte místo toho Sdílet.</string>
     <string name="settings_backup_read_error">Soubor zálohy se nepodařilo přečíst.</string>
     <string name="settings_backup_import_error">Import se nezdařil.</string>
     <string name="settings_backup_invalid_locale">Tato záloha obsahovala nepodporovaný jazyk aplikace. Obnovení proběhlo úspěšně, ale aktuální jazyk zůstal zachován.</string>

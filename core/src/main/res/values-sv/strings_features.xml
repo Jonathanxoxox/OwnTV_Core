@@ -65,6 +65,11 @@
     <string name="launcher_recent_live_description">Livekanaler du nyligen tittat på</string>
     <string name="launcher_movie_type">Film</string>
     <string name="launcher_episode_number">Avsnitt <xliff:g id="episode">%1$d</xliff:g></string>
+    <plurals name="home_library_loading">
+        <item quantity="one">Biblioteket läses in · <xliff:g id="count">%1$s</xliff:g> titel hittills</item>
+        <item quantity="other">Biblioteket läses in · <xliff:g id="count">%1$s</xliff:g> titlar hittills</item>
+    </plurals>
+    <string name="home_library_loading_trending">Trendigt just nu visas allteftersom biblioteket fylls på.</string>
     <string name="home_no_preview">Det finns inget att förhandsvisa än.</string>
     <string name="home_no_rows">Alla rader på startskärmen är dolda.</string>
     <string name="home_enable_rows">Aktivera raderna igen under Inställningar → Startskärm.</string>

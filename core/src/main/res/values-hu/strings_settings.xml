@@ -905,6 +905,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> forrás kimaradt, mert a lejátszásilista-típusuk nem támogatott.</item>
     </plurals>
     <string name="settings_backup_export_error">Az exportálás nem sikerült.</string>
+    <string name="settings_backup_no_file_app">Ezen a telefonon egyik alkalmazás sem tudja menteni a fájlt. Használd inkább a Megosztást.</string>
     <string name="settings_backup_read_error">A mentésfájl nem olvasható.</string>
     <string name="settings_backup_import_error">Az importálás nem sikerült.</string>
     <string name="settings_backup_invalid_locale">Ez a mentés nem támogatott alkalmazásnyelvet tartalmazott. A visszaállítás sikerült, de a jelenlegi nyelved megmaradt.</string>

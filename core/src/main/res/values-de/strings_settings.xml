@@ -866,6 +866,7 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> Quellen wurden übersprungen, weil ihre Wiedergabelistentypen nicht unterstützt werden.</item>
     </plurals>
     <string name="settings_backup_export_error">Export fehlgeschlagen.</string>
+    <string name="settings_backup_no_file_app">Keine App auf diesem Telefon kann die Datei speichern. Nutze stattdessen „Teilen“.</string>
     <string name="settings_backup_read_error">Die Sicherungsdatei konnte nicht gelesen werden.</string>
     <string name="settings_backup_import_error">Importieren fehlgeschlagen.</string>
     <string name="settings_backup_invalid_locale">Diese Sicherung enthielt eine nicht unterstützte App-Sprache. Die Wiederherstellung war erfolgreich, aber deine aktuelle Sprache wurde beibehalten.</string>
