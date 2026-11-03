@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">내 사진 사용</string>
     <string name="profiles_kids">어린이 프로필</string>
     <string name="profiles_kids_description">간소화된 안전 탐색 환경</string>
+    <string name="profiles_allow_downloads">다운로드 허용</string>
+    <string name="profiles_allow_downloads_description">끄면 이 프로필에서 모든 다운로드 버튼이 숨겨집니다</string>
     <string name="profiles_remove_pin">PIN 잠금 해제</string>
     <string name="profiles_no_pin">이 프로필은 PIN 없이 열립니다</string>
     <string name="profiles_change_pin">PIN 변경(비워 두면 유지)</string>

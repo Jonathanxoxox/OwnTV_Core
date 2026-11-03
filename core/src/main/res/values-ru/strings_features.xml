@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">Своё изображение</string>
     <string name="profiles_kids">Детский профиль</string>
     <string name="profiles_kids_description">Упрощённый и безопасный просмотр</string>
+    <string name="profiles_allow_downloads">Разрешить загрузки</string>
+    <string name="profiles_allow_downloads_description">Если выключено, в этом профиле скрыты все кнопки скачивания</string>
     <string name="profiles_remove_pin">Удалить блокировку с помощью PIN</string>
     <string name="profiles_no_pin">Этот профиль открывается без PIN</string>
     <string name="profiles_change_pin">Изменить PIN (пусто = сохранить текущий)</string>

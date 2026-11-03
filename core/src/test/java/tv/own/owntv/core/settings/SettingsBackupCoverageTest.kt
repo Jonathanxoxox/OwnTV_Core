@@ -99,7 +99,7 @@ class SettingsBackupCoverageTest {
     }
 
     @Test
-    fun `the Live TV category switches are backed up and restored (TV #322)`() {
+    fun `the Live TV category switches are backed up and restored`() {
         // Export and import both iterate BackupKeys.bools.
         listOf(Keys.LIVE_SHOW_ALL_RAIL to "live_show_all_rail", Keys.LIVE_SHOW_CATCHUP_RAIL to "live_show_catchup_rail").forEach { (key, name) ->
             assertTrue(key.name in BackupKeys.bools.map { it.name })

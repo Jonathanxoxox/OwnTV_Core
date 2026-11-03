@@ -197,8 +197,9 @@
     <string name="settings_ch_paging">Команды пульта</string>
     <string name="settings_ch_paging_description">Назначьте свободным кнопкам навигацию, воспроизведение и просмотр списков. Основные кнопки навигации останутся защищёнными.</string>
     <string name="settings_content_menus_title">Меню долгого нажатия</string>
-    <string name="settings_content_menus_description">Измените порядок действий в меню каналов, фильмов, сериалов и серий</string>
-    <string name="settings_content_menus_hint">Удерживайте OK на действии, чтобы взять его, затем перемещайте вверх и вниз. Повторное OK опускает его.</string>
+    <string name="settings_content_menus_description">Измените порядок действий в меню каналов, фильмов, сериалов и серий или скройте их</string>
+    <string name="settings_content_menus_hint">Нажмите OK на действии, чтобы показать или скрыть его. Удерживайте OK, чтобы взять его, перемещайте вверх и вниз, а повторное OK опускает его.</string>
+    <string name="settings_content_menus_note">Некоторые действия появляются только там, где они применимы.</string>
     <string name="settings_browsing_lists">Просмотр и списки</string>
     <string name="settings_browsing_description">Запоминание последней категории и последнего элемента в прямом эфире, фильмах и сериалах</string>
     <string name="settings_home_root">Главный экран</string>
@@ -615,6 +616,8 @@
     <string name="settings_browsing_last_category_description">Снова открывать раздел с той категорией, которую вы покинули, а не со «Все».</string>
     <string name="settings_browsing_last_item">Запоминать последний элемент</string>
     <string name="settings_browsing_last_item_description">В каждой категории сохраняется собственная позиция прокрутки, поэтому она не открывается с самого начала. В прямом эфире также восстанавливается последний канал в фокусе.</string>
+    <string name="settings_browsing_live_categories">Категории прямого эфира</string>
+    <string name="settings_browsing_live_categories_description">Показываются в прямом эфире, программе передач, плеере и мультиэкране. Если «Все каналы» выключены, прямой эфир открывается на первой категории, а если категорий нет — на «Избранном».</string>
     <string name="settings_catchup_player">Воспроизводить архив через</string>
     <string name="settings_customize_title">Настройка категорий и элементов</string>
     <string name="settings_customize_pin_locked">Этот экран заблокирован с помощью PIN.</string>
@@ -1455,7 +1458,7 @@
     <string name="settings_line_guide_width">Список каналов и шкала времени</string>
     <string name="settings_line_browsing">Запоминать последнюю категорию и элемент</string>
     <string name="settings_line_home">Выбор, порядок и фильтр строк</string>
-    <string name="settings_line_content_menus">Порядок действий в каждом меню</string>
+    <string name="settings_line_content_menus">Порядок и видимость действий в каждом меню</string>
     <string name="settings_line_remote_shortcuts">Назначить свободные кнопки пульта</string>
     <string name="settings_line_customize">Скрыть и показать, переименовать и упорядочить</string>
     <string name="settings_line_metadata">Постеры, сюжеты, актёры и рейтинги фильмов и сериалов</string>

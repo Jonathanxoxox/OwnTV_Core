@@ -75,6 +75,11 @@
     <string name="content_remove_from_category">Fjern fra denne kategorien</string>
     <string name="content_download">Last ned</string>
     <string name="content_download_all_episodes">Last ned alle episodene</string>
+    <plurals name="content_download_episodes_confirm">
+        <item quantity="one">Laste ned <xliff:g id="count">%1$d</xliff:g> episode?</item>
+        <item quantity="other">Laste ned <xliff:g id="count">%1$d</xliff:g> episoder?</item>
+    </plurals>
+    <string name="content_download_episodes_confirm_message">De lagres på denne enheten og tar opp lagringsplass.</string>
     <string name="content_play">Spill av</string>
     <string name="content_favorited">Lagt til som favoritt</string>
     <string name="content_favorite">Legg til som favoritt</string>
@@ -82,9 +87,7 @@
     <string name="content_episodes">Episoder</string>
     <string name="content_oldest_first">Eldste først</string>
     <string name="content_newest_first">Nyeste først</string>
-    <string name="content_play_external">Spill av med ekstern avspiller</string>
     <string name="content_delete_subtitles">Slett OpenSub-undertekster</string>
-    <string name="content_tmdb_details">TMDB-detaljer</string>
     <string name="content_play_trailer">Spill av trailer</string>
     <string name="content_refetch_tmdb">Hent TMDB-detaljer på nytt</string>
     <string name="content_set_tmdb_name">Angi TMDB-navn</string>

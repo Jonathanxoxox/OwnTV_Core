@@ -194,8 +194,9 @@
     <string name="settings_ch_paging">遙控器捷徑</string>
     <string name="settings_ch_paging_description">將遙控器的空閒按鍵指派給導覽、播放和瀏覽操作。必要的導覽按鍵會保持受保護。</string>
     <string name="settings_content_menus_title">長按選單</string>
-    <string name="settings_content_menus_description">重新排列頻道、電影、影集與分集選單中的動作</string>
-    <string name="settings_content_menus_hint">長按「確定」拿起某個動作，再用上下鍵移動，再次按「確定」放下。</string>
+    <string name="settings_content_menus_description">重新排列或隱藏頻道、電影、影集與分集選單中的動作</string>
+    <string name="settings_content_menus_hint">在某個動作上按「確定」可顯示或隱藏它。長按「確定」拿起它，用上下鍵移動，再次按「確定」放下。</string>
+    <string name="settings_content_menus_note">部分動作只會在適用的地方出現。</string>
     <string name="settings_browsing_lists">瀏覽與清單</string>
     <string name="settings_browsing_description">記住電視直播、電影和影集中的上一個分類及項目</string>
     <string name="settings_home_root">主畫面</string>
@@ -606,6 +607,8 @@
     <string name="settings_browsing_last_category_description">重新開啟區段時回到您離開時的分類，而非「全部」。</string>
     <string name="settings_browsing_last_item">記住上次的項目</string>
     <string name="settings_browsing_last_item_description">每個分類都會保留各自的捲動位置，而非從頂端開始。電視直播也會恢復上次取得焦點的頻道。</string>
+    <string name="settings_browsing_live_categories">電視直播分類</string>
+    <string name="settings_browsing_live_categories_description">顯示在電視直播、節目表、播放器和多畫面中。關閉「所有頻道」後，電視直播會開啟你的第一個分類；若沒有分類，則開啟我的最愛。</string>
     <string name="settings_catchup_player">回看播放方式</string>
     <string name="settings_customize_title">自訂分類與項目</string>
     <string name="settings_customize_pin_locked">此畫面已由 PIN 鎖定。</string>
@@ -1371,7 +1374,7 @@
     <string name="settings_line_guide_width">頻道清單和時間軸</string>
     <string name="settings_line_browsing">記住上次的分類和項目</string>
     <string name="settings_line_home">選擇、排序和篩選各列</string>
-    <string name="settings_line_content_menus">調整每個選單裡的動作</string>
+    <string name="settings_line_content_menus">調整或隱藏每個選單裡的動作</string>
     <string name="settings_line_remote_shortcuts">為遙控器閒置按鍵指定功能</string>
     <string name="settings_line_customize">隱藏與顯示、重新命名和排序</string>
     <string name="settings_line_metadata">電影和影集的海報、劇情、演員和評分</string>

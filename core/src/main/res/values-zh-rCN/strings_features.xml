@@ -9,6 +9,8 @@
     <string name="profiles_avatar_own_picture">使用自己的图片</string>
     <string name="profiles_kids">儿童用户档案</string>
     <string name="profiles_kids_description">简洁、安全的浏览体验</string>
+    <string name="profiles_allow_downloads">允许下载</string>
+    <string name="profiles_allow_downloads_description">关闭后，此个人资料将隐藏所有下载按钮</string>
     <string name="profiles_remove_pin">移除 PIN 锁</string>
     <string name="profiles_no_pin">此用户档案无需 PIN 即可打开</string>
     <string name="profiles_change_pin">更改 PIN（留空则保留原 PIN）</string>

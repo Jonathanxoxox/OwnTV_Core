@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">Fernbedienungs-Kurzbefehle</string>
     <string name="settings_ch_paging_description">Freie Fernbedienungstasten mit Navigation, Wiedergabe und Listenaktionen belegen. Wichtige Navigationstasten bleiben geschützt.</string>
     <string name="settings_content_menus_title">Menüs bei langem Druck</string>
-    <string name="settings_content_menus_description">Ordne die Aktionen in den Menüs für Sender, Filme, Serien und Folgen neu an</string>
-    <string name="settings_content_menus_hint">Halte OK auf einer Aktion gedrückt, um sie aufzunehmen, und verschiebe sie mit Auf und Ab. Erneut OK legt sie ab.</string>
+    <string name="settings_content_menus_description">Ordne die Aktionen in den Menüs für Sender, Filme, Serien und Folgen neu an oder blende sie aus</string>
+    <string name="settings_content_menus_hint">Drücke OK auf einer Aktion, um sie ein- oder auszublenden. Halte OK gedrückt, um sie aufzunehmen, verschiebe sie mit Auf und Ab und lege sie mit erneutem OK ab.</string>
+    <string name="settings_content_menus_note">Manche Aktionen erscheinen nur dort, wo sie passen.</string>
     <string name="settings_browsing_lists">Durchsuchen und Listen</string>
     <string name="settings_browsing_description">Letzte Kategorie und letztes Element in Live-TV, Filmen und Serien merken</string>
     <string name="settings_home_root">Startbildschirm</string>
@@ -609,6 +610,8 @@
     <string name="settings_browsing_last_category_description">Den Bereich wieder mit der zuletzt geöffneten Kategorie statt mit „Alle“ öffnen.</string>
     <string name="settings_browsing_last_item">Letztes Element merken</string>
     <string name="settings_browsing_last_item_description">Jede Kategorie behält ihre eigene Scrollposition, statt wieder ganz oben zu beginnen. Live-TV stellt außerdem den zuletzt fokussierten Sender wieder her.</string>
+    <string name="settings_browsing_live_categories">Live-TV-Kategorien</string>
+    <string name="settings_browsing_live_categories_description">Gilt für Live-TV, die Programmübersicht, den Player und Multiview. Ist „Alle Sender“ aus, öffnet Live-TV deine erste Kategorie oder die Favoriten, wenn du keine hast.</string>
     <string name="settings_catchup_player">Catch-up wiedergeben mit</string>
     <string name="settings_customize_title">Kategorien und Elemente anpassen</string>
     <string name="settings_customize_pin_locked">Dieser Bildschirm ist mit einer PIN gesperrt.</string>
@@ -1399,7 +1402,7 @@
     <string name="settings_line_guide_width">Senderliste und Zeitleiste</string>
     <string name="settings_line_browsing">Letzte Kategorie und letzten Eintrag merken</string>
     <string name="settings_line_home">Zeilen auswählen, sortieren und filtern</string>
-    <string name="settings_line_content_menus">Aktionen in jedem Menü neu anordnen</string>
+    <string name="settings_line_content_menus">Aktionen in jedem Menü neu anordnen oder ausblenden</string>
     <string name="settings_line_remote_shortcuts">Freie Fernbedienungstasten belegen</string>
     <string name="settings_line_customize">Aus- und einblenden, umbenennen und sortieren</string>
     <string name="settings_line_metadata">Poster, Handlung, Besetzung und Bewertungen für Filme und Serien</string>

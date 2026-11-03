@@ -246,8 +246,9 @@
     <string name="settings_ch_paging">Urrutiko aginteko lasterbideak</string>
     <string name="settings_ch_paging_description">Esleitu urrutiko aginteko botoi libreak nabigazio funtsezkoa babestuta mantenduz</string>
     <string name="settings_content_menus_title">Luze sakatzeko menuak</string>
-    <string name="settings_content_menus_description">Berrantolatu kanal-, film-, telesail- eta atal-menuetako ekintzak</string>
-    <string name="settings_content_menus_hint">Eutsi Ados ekintza bati hartzeko, gero Gora eta Behera mugitzeko. Sakatu Ados berriro uzteko.</string>
+    <string name="settings_content_menus_description">Berrantolatu edo ezkutatu kanal-, film-, telesail- eta atal-menuetako ekintzak</string>
+    <string name="settings_content_menus_hint">Sakatu Ados ekintza batean hura erakusteko edo ezkutatzeko. Eutsi Ados hartzeko, mugitu Gora eta Behera, eta sakatu Ados berriro uzteko.</string>
+    <string name="settings_content_menus_note">Ekintza batzuk dagozkien lekuetan bakarrik agertzen dira.</string>
     <string name="settings_browsing_lists">Arakatzea eta zerrendak</string>
     <string name="settings_browsing_description">Gogoratu azken kategoria eta azken elementua Zuzeneko telebistan, Filmetan eta Telesailetan</string>
     <string name="settings_home_root">Hasierako pantaila</string>
@@ -708,6 +709,8 @@
     <string name="settings_browsing_last_category_description">Berrireki atala utzi zenuen kategorian, ez Denak atalean.</string>
     <string name="settings_browsing_last_item">Gogoratu azken elementua</string>
     <string name="settings_browsing_last_item_description">Kategoria bakoitzak bere korritze-posizioa mantentzen du goian hasi beharrean. Zuzeneko telebistak fokuan egon zen azken kanala ere leheneratzen du.</string>
+    <string name="settings_browsing_live_categories">Zuzeneko telebistaren kategoriak</string>
+    <string name="settings_browsing_live_categories_description">Zuzeneko telebistan, gidan, erreproduzigailuan eta Multiview-n erakusten dira. Kanal guztiak desaktibatuta badago, zuzeneko telebista zure lehen kategorian irekitzen da, edo Gogokoetan kategoriarik ez baduzu.</string>
     <string name="settings_catchup_player">Erreproduzitu berrikustea hemen</string>
     <string name="settings_customize_title">Pertsonalizatu kategoriak eta elementuak</string>
     <string name="settings_customize_pin_locked">Pantaila hau PINez blokeatuta dago.</string>
@@ -1399,7 +1402,7 @@
     <string name="settings_line_guide_width">Kanal-zerrenda eta kronologia</string>
     <string name="settings_line_browsing">Gogoratu azken kategoria eta elementua</string>
     <string name="settings_line_home">Aukeratu, berrantolatu eta iragazi errenkadak</string>
-    <string name="settings_line_content_menus">Berrantolatu ekintzak menu bakoitzean</string>
+    <string name="settings_line_content_menus">Berrantolatu edo ezkutatu ekintzak menu bakoitzean</string>
     <string name="settings_line_remote_shortcuts">Esleitu urrutiko aginteko botoi libreak</string>
     <string name="settings_line_customize">Ezkutatu eta erakutsi, aldatu izena eta berrantolatu</string>
     <string name="settings_line_metadata">Posterrak, sinopsiak, aktoreak eta balorazioak Filmetarako eta Telesailetarako</string>

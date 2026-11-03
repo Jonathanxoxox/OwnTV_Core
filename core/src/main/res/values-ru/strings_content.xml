@@ -87,6 +87,13 @@
     <string name="content_remove_from_category">Удалить из этой категории</string>
     <string name="content_download">Скачать</string>
     <string name="content_download_all_episodes">Скачать все серии</string>
+    <plurals name="content_download_episodes_confirm">
+        <item quantity="one">Скачать <xliff:g id="count">%1$d</xliff:g> серию?</item>
+        <item quantity="few">Скачать <xliff:g id="count">%1$d</xliff:g> серии?</item>
+        <item quantity="many">Скачать <xliff:g id="count">%1$d</xliff:g> серий?</item>
+        <item quantity="other">Скачать <xliff:g id="count">%1$d</xliff:g> серий?</item>
+    </plurals>
+    <string name="content_download_episodes_confirm_message">Они сохранятся на этом устройстве и займут место в памяти.</string>
     <string name="content_play">Воспроизвести</string>
     <string name="content_favorited">В избранном</string>
     <string name="content_favorite">В избранное</string>
@@ -94,9 +101,7 @@
     <string name="content_episodes">Серии</string>
     <string name="content_oldest_first">Сначала старые</string>
     <string name="content_newest_first">Сначала новые</string>
-    <string name="content_play_external">Воспроизвести во внешнем плеере</string>
     <string name="content_delete_subtitles">Удалить субтитры OpenSub</string>
-    <string name="content_tmdb_details">Сведения TMDB</string>
     <string name="content_play_trailer">Воспроизвести трейлер</string>
     <string name="content_refetch_tmdb">Повторно загрузить сведения TMDB</string>
     <string name="content_set_tmdb_name">Задать название для TMDB</string>

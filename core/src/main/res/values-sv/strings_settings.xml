@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">Fjärrkontrollsgenvägar</string>
     <string name="settings_ch_paging_description">Tilldela lediga knappar till navigering, uppspelning och bläddring. Viktiga navigeringsknappar förblir skyddade.</string>
     <string name="settings_content_menus_title">Menyer vid långt tryck</string>
-    <string name="settings_content_menus_description">Ändra ordningen på åtgärderna i menyerna för kanaler, filmer, serier och avsnitt</string>
-    <string name="settings_content_menus_hint">Håll in OK på en åtgärd för att plocka upp den och flytta den sedan upp och ner. Tryck på OK igen för att släppa den.</string>
+    <string name="settings_content_menus_description">Ändra ordningen på eller dölj åtgärderna i menyerna för kanaler, filmer, serier och avsnitt</string>
+    <string name="settings_content_menus_hint">Tryck på OK på en åtgärd för att visa eller dölja den. Håll in OK för att plocka upp den, flytta den upp och ner och tryck på OK igen för att släppa den.</string>
+    <string name="settings_content_menus_note">Vissa åtgärder visas bara där de passar.</string>
     <string name="settings_browsing_lists">Bläddring och listor</string>
     <string name="settings_browsing_description">Kom ihåg den senaste kategorin och det senaste objektet i live-tv, filmer och serier</string>
     <string name="settings_home_root">Startskärm</string>
@@ -609,6 +610,8 @@
     <string name="settings_browsing_last_category_description">Öppna avsnittet igen i den kategori du lämnade i stället för Alla.</string>
     <string name="settings_browsing_last_item">Kom ihåg senaste objektet</string>
     <string name="settings_browsing_last_item_description">Varje kategori behåller sin egen rullningsposition i stället för att börja högst upp. Live-tv återställer även den senast fokuserade kanalen.</string>
+    <string name="settings_browsing_live_categories">Live-tv-kategorier</string>
+    <string name="settings_browsing_live_categories_description">Visas i Live-tv, programguiden, spelaren och Multivy. Med Alla kanaler avstängt öppnas Live-tv i din första kategori, eller i Favoriter om du inte har någon.</string>
     <string name="settings_catchup_player">Spela upp tv-arkiv i</string>
     <string name="settings_customize_title">Anpassa kategorier och objekt</string>
     <string name="settings_customize_pin_locked">Den här skärmen är låst med PIN.</string>
@@ -1399,7 +1402,7 @@
     <string name="settings_line_guide_width">Kanallista och tidslinje</string>
     <string name="settings_line_browsing">Kom ihåg senaste kategorin och objektet</string>
     <string name="settings_line_home">Välj, sortera och filtrera raderna</string>
-    <string name="settings_line_content_menus">Ordna om åtgärderna i varje meny</string>
+    <string name="settings_line_content_menus">Ordna om eller dölj åtgärderna i varje meny</string>
     <string name="settings_line_remote_shortcuts">Tilldela lediga knappar på fjärrkontrollen</string>
     <string name="settings_line_customize">Dölj och visa, byt namn och ordna</string>
     <string name="settings_line_metadata">Affischer, handling, rollista och betyg för filmer och serier</string>

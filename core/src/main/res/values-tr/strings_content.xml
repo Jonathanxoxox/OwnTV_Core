@@ -75,6 +75,11 @@
     <string name="content_remove_from_category">Bu kategoriden kaldır</string>
     <string name="content_download">İndir</string>
     <string name="content_download_all_episodes">Tüm bölümleri indir</string>
+    <plurals name="content_download_episodes_confirm">
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> bölüm indirilsin mi?</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> bölüm indirilsin mi?</item>
+    </plurals>
+    <string name="content_download_episodes_confirm_message">Bu cihaza kaydedilir ve depolama alanı kaplar.</string>
     <string name="content_play">Oynat</string>
     <string name="content_favorited">Favorilerde</string>
     <string name="content_favorite">Favoriye ekle</string>
@@ -82,9 +87,7 @@
     <string name="content_episodes">Bölümler</string>
     <string name="content_oldest_first">Önce en eskiler</string>
     <string name="content_newest_first">Önce en yeniler</string>
-    <string name="content_play_external">Harici oynatıcıyla oynat</string>
     <string name="content_delete_subtitles">OpenSubtitles altyazılarını sil</string>
-    <string name="content_tmdb_details">TMDB Ayrıntıları</string>
     <string name="content_play_trailer">Fragmanı oynat</string>
     <string name="content_refetch_tmdb">Ayrıntıları güncelle</string>
     <string name="content_set_tmdb_name">TMDB adını belirle</string>

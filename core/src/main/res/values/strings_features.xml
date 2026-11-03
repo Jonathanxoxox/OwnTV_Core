@@ -19,6 +19,10 @@
     <string name="profiles_kids">Kids profile</string>
     <!-- Translators: Description beneath the kids-mode toggle in the profile editor. -->
     <string name="profiles_kids_description">Simplified, safe browsing</string>
+    <!-- Translators: Switch in the profile editor: whether this profile may download films and episodes. -->
+    <string name="profiles_allow_downloads">Allow downloads</string>
+    <!-- Translators: Description under the Allow downloads switch in the profile editor. -->
+    <string name="profiles_allow_downloads_description">Off hides every Download button for this profile</string>
     <!-- Translators: Button in the profile editor to remove the PIN lock. -->
     <string name="profiles_remove_pin">Remove PIN lock</string>
     <!-- Translators: Status text indicating the profile has no PIN lock. -->

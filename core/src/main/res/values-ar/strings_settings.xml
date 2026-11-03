@@ -199,8 +199,9 @@
     <string name="settings_ch_paging">اختصارات جهاز التحكم</string>
     <string name="settings_ch_paging_description">عيّن أزرار جهاز التحكم الإضافية لإجراءات التنقل والتشغيل والتصفح. تظل أزرار التنقل الأساسية محمية.</string>
     <string name="settings_content_menus_title">قوائم الضغط المطوّل</string>
-    <string name="settings_content_menus_description">أعد ترتيب الإجراءات في قوائم القنوات والأفلام والمسلسلات والحلقات</string>
-    <string name="settings_content_menus_hint">اضغط مطوّلًا على «موافق» فوق إجراء لالتقاطه، ثم استخدم الأعلى والأسفل لتحريكه. اضغط «موافق» مرة أخرى لإفلاته.</string>
+    <string name="settings_content_menus_description">أعد ترتيب الإجراءات أو أخفها في قوائم القنوات والأفلام والمسلسلات والحلقات</string>
+    <string name="settings_content_menus_hint">اضغط «موافق» على إجراء لإظهاره أو إخفائه. اضغط مطوّلًا على «موافق» لالتقاطه، ثم استخدم الأعلى والأسفل لتحريكه، واضغط «موافق» مرة أخرى لإفلاته.</string>
+    <string name="settings_content_menus_note">تظهر بعض الإجراءات فقط حيث تنطبق.</string>
     <string name="settings_browsing_lists">التصفح والقوائم</string>
     <string name="settings_browsing_description">تذكّر آخر فئة وآخر عنصر في البث التلفزيوني المباشر والأفلام والمسلسلات</string>
     <string name="settings_home_root">الشاشة الرئيسية</string>
@@ -621,6 +622,8 @@
     <string name="settings_browsing_last_category_description">أعد فتح القسم على الفئة التي غادرتها، وليس على «الكل».</string>
     <string name="settings_browsing_last_item">تذكّر آخر عنصر</string>
     <string name="settings_browsing_last_item_description">تحتفظ كل فئة بموضع التمرير الخاص بها بدلًا من البدء من الأعلى. ويستعيد البث التلفزيوني المباشر أيضًا آخر قناة كانت قيد التركيز.</string>
+    <string name="settings_browsing_live_categories">فئات البث التلفزيوني المباشر</string>
+    <string name="settings_browsing_live_categories_description">تظهر في البث التلفزيوني المباشر ودليل البرامج والمشغّل والعرض المتعدد. عند إيقاف «كل القنوات» يفتح البث المباشر على فئتك الأولى، أو على المفضّلة إن لم تكن لديك فئات.</string>
     <string name="settings_catchup_player">تشغيل مشاهدة البث الفائت باستخدام</string>
     <string name="settings_customize_title">تخصيص الفئات والعناصر</string>
     <string name="settings_customize_pin_locked">هذه الشاشة مقفلة باستخدام PIN.</string>
@@ -1511,7 +1514,7 @@
     <string name="settings_line_guide_width">قائمة القنوات والخط الزمني</string>
     <string name="settings_line_browsing">تذكُّر آخر فئة وآخر عنصر</string>
     <string name="settings_line_home">اختيار الصفوف وترتيبها وتصفيتها</string>
-    <string name="settings_line_content_menus">إعادة ترتيب الإجراءات في كل قائمة</string>
+    <string name="settings_line_content_menus">أعد ترتيب الإجراءات أو أخفها في كل قائمة</string>
     <string name="settings_line_remote_shortcuts">تعيين أزرار الريموت غير المستخدمة</string>
     <string name="settings_line_customize">الإخفاء والإظهار وإعادة التسمية والترتيب</string>
     <string name="settings_line_metadata">الملصقات والقصص وطاقم التمثيل والتقييمات للأفلام والمسلسلات</string>

@@ -33,6 +33,7 @@ import tv.own.owntv.core.live.MIN_MULTIVIEW_TILES
 import tv.own.owntv.core.recording.RecordingSchedule
 import tv.own.owntv.core.model.HomeConfig
 import tv.own.owntv.core.player.SurroundMode
+import tv.own.owntv.core.menu.MenuLayout
 import tv.own.owntv.core.model.ContentMenu
 import tv.own.owntv.core.theme.AccentColor
 import tv.own.owntv.core.theme.AppFontFamily
@@ -621,7 +622,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         val REMEMBER_CAT_LIVE = booleanPreferencesKey("remember_cat_live")
         val REMEMBER_CAT_MOVIES = booleanPreferencesKey("remember_cat_movies")
         val REMEMBER_CAT_SERIES = booleanPreferencesKey("remember_cat_series")
-        // Live TV rail: show the built-in All channels / Catch-up entries (TV #322). Default ON = today's rail.
+        // Live TV categories: show the built-in All channels / Catch-up entries. Default ON = the full list.
         val LIVE_SHOW_ALL_RAIL = booleanPreferencesKey("live_show_all_rail")
         val LIVE_SHOW_CATCHUP_RAIL = booleanPreferencesKey("live_show_catchup_rail")
         val LAST_MOVIES_CATEGORY = stringPreferencesKey("last_movies_category")
@@ -739,6 +740,24 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { it[booleanPreferencesKey("hide_new_categories_$profileId")] = hidden }
     }
 
+    /**
+     * Whether this profile may download at all. Off takes every Download action away from the
+     * profile's menus and pages, and [tv.own.owntv.core.download.DownloadManager.enqueue] refuses
+     * it too, so no path is left that still fills the box.
+     */
+    fun downloadsAllowed(profileId: Long): Flow<Boolean> = prefsFlow { it[downloadsAllowedKey(profileId)] ?: true }
+
+    suspend fun setDownloadsAllowed(profileId: Long, allowed: Boolean) {
+        context.dataStore.edit { it[downloadsAllowedKey(profileId)] = allowed }
+    }
+
+    /** [downloadsAllowed] for the profile in use, following profile switches. */
+    val activeDownloadsAllowed: Flow<Boolean> = context.dataStore.data
+        .map { it[downloadsAllowedKey(it[Keys.ACTIVE_PROFILE] ?: -1L)] ?: true }
+        .distinctUntilChanged()
+
+    private fun downloadsAllowedKey(profileId: Long) = booleanPreferencesKey("$DOWNLOADS_ALLOWED_PREFIX$profileId")
+
     // --- Home: per-profile row order / visibility / hero filters. ---
     private fun homeConfigKey(profileId: Long) = stringPreferencesKey("home_config_$profileId")
 
@@ -808,12 +827,13 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { it[Keys.REMEMBER_CAT_SERIES] = enabled }
     }
 
-    // --- Built-in Live TV rail entries (default ON each — today's rail). ---
-    val liveShowAllRail: Flow<Boolean> = prefsFlow { it[Keys.LIVE_SHOW_ALL_RAIL] ?: true }
+    // --- Built-in Live TV categories (default ON each — the full list). ---
+    val liveBuiltIns: Flow<tv.own.owntv.core.live.LiveBuiltIns> = prefsFlow {
+        tv.own.owntv.core.live.LiveBuiltIns(showAll = it[Keys.LIVE_SHOW_ALL_RAIL] ?: true, showCatchup = it[Keys.LIVE_SHOW_CATCHUP_RAIL] ?: true)
+    }
     suspend fun setLiveShowAllRail(enabled: Boolean) {
         context.dataStore.edit { it[Keys.LIVE_SHOW_ALL_RAIL] = enabled }
     }
-    val liveShowCatchupRail: Flow<Boolean> = prefsFlow { it[Keys.LIVE_SHOW_CATCHUP_RAIL] ?: true }
     suspend fun setLiveShowCatchupRail(enabled: Boolean) {
         context.dataStore.edit { it[Keys.LIVE_SHOW_CATCHUP_RAIL] = enabled }
     }
@@ -2219,20 +2239,31 @@ class SettingsRepository(private val context: Context, private val localeStore: 
     }
 
     /**
-     * The order the user arranged one long-press content menu into, as a comma-joined list of action
-     * keys. Empty means "as shipped". Stored per menu — Live, Movies, Series and Episodes are four
-     * independent lists. Keys that no longer exist are ignored on read and actions the list has never
-     * heard of are appended, which is what lets a later release add an action without it vanishing.
+     * How the user arranged one long-press content menu: the order, as a comma-joined list of action
+     * keys (empty means "as shipped"), and the actions they hid, the same way. Stored per menu — Live,
+     * Movies, Series and Episodes are four independent lists. Keys that no longer exist are ignored on
+     * read and actions the order has never heard of are appended and shown, which is what lets a later
+     * release add an action without it vanishing. [MenuLayout.downloads] follows the profile in use.
      */
-    fun menuOrder(menu: String): Flow<List<String>> = parsedFlow(menuOrderKey(menu)) { raw ->
-        (raw ?: "").split(',').map { it.trim() }.filter { it.isNotEmpty() }
+    fun menuLayout(menu: ContentMenu): Flow<MenuLayout> = combine(
+        context.dataStore.data.map { it[menuOrderKey(menu)] to it[menuHiddenKey(menu)] }.distinctUntilChanged(),
+        activeDownloadsAllowed,
+    ) { (order, hidden), downloads ->
+        MenuLayout(splitKeys(order), splitKeys(hidden).toSet(), downloads)
     }
 
-    suspend fun setMenuOrder(menu: String, keys: List<String>) {
-        context.dataStore.edit { it[menuOrderKey(menu)] = keys.joinToString(",") }
+    /** Saves [layout]'s order and hidden actions; an empty layout is the shipped menu again. */
+    suspend fun setMenuLayout(menu: ContentMenu, layout: MenuLayout) {
+        context.dataStore.edit {
+            it[menuOrderKey(menu)] = layout.order.joinToString(",")
+            it[menuHiddenKey(menu)] = layout.hidden.joinToString(",")
+        }
     }
 
-    private fun menuOrderKey(menu: String) = stringPreferencesKey("settings_menu_order_$menu")
+    private fun splitKeys(raw: String?) = (raw ?: "").split(',').map { it.trim() }.filter { it.isNotEmpty() }
+
+    private fun menuOrderKey(menu: ContentMenu) = stringPreferencesKey("settings_menu_order_${menu.name.lowercase()}")
+    private fun menuHiddenKey(menu: ContentMenu) = stringPreferencesKey("settings_menu_hidden_${menu.name.lowercase()}")
 
     // --- Per-source auto-refresh (Off / Startup / staleness threshold) ---
     // Stored as a JSON map { "<sourceId>": "<EnumName>" } in the owntv_settings DataStore — migration-safe
@@ -3199,7 +3230,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         }
     }
 
-    private val backupStringKeys = BackupKeys.strings + ContentMenu.entries.map { menuOrderKey(it.name.lowercase()) }
+    private val backupStringKeys = BackupKeys.strings + ContentMenu.entries.flatMap { listOf(menuOrderKey(it), menuHiddenKey(it)) }
     private val backupStringSetKeys = BackupKeys.stringSets
     private val backupIntKeys = BackupKeys.ints
     private val backupBoolKeys = BackupKeys.bools
@@ -3454,6 +3485,27 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         }
     }
 
+    // --- Backup: per-profile "allow downloads" (dynamic "downloads_allowed_<id>" keys) ---
+
+    /** Exports every profile's download switch as { "<profileId>": true/false }. */
+    suspend fun exportDownloadsAllowed(): org.json.JSONObject {
+        val out = org.json.JSONObject()
+        context.dataStore.data.first().asMap().forEach { (k, v) ->
+            if (k.name.startsWith(DOWNLOADS_ALLOWED_PREFIX) && v is Boolean) out.put(k.name.removePrefix(DOWNLOADS_ALLOWED_PREFIX), v)
+        }
+        return out
+    }
+
+    /** Restores the switch only for profile ids in [existingProfileIds] (others are dropped safely). */
+    suspend fun importDownloadsAllowed(o: org.json.JSONObject, existingProfileIds: Set<Long>) {
+        context.dataStore.edit { prefs ->
+            o.keys().forEach { key ->
+                val pid = key.toLongOrNull()?.takeIf { it in existingProfileIds } ?: return@forEach
+                prefs[downloadsAllowedKey(pid)] = o.optBoolean(key, true)
+            }
+        }
+    }
+
     // --- Backup: per-profile sports settings (dynamic "sports_config_<id>" keys) ---
 
     /** Exports all per-profile sports blobs as { "<profileId>": { ... } }. */
@@ -3665,6 +3717,7 @@ class SettingsRepository(private val context: Context, private val localeStore: 
 
 /** Per-profile sports settings blob; the profile id follows. */
 internal const val SPORTS_CONFIG_PREFIX = "sports_config_"
+internal const val DOWNLOADS_ALLOWED_PREFIX = "downloads_allowed_"
 
 /** Per-profile preferred-language keys; the profile id follows. */
 internal const val PREF_AUDIO_LANG_PREFIX = "pref_audio_lang_"

@@ -421,9 +421,11 @@
     <!-- Translators: Settings navigation label for the long-press content menus. -->
     <string name="settings_content_menus_title">Long-press menus</string>
     <!-- Translators: Description of the long-press content menus settings. -->
-    <string name="settings_content_menus_description">Rearrange the actions in the channel, movie, series &amp; episode menus</string>
-    <!-- Translators: Hint shown above the list when arranging a long-press menu. -->
-    <string name="settings_content_menus_hint">Hold OK on an action to pick it up, then Up and Down to move it. Press OK again to drop it.</string>
+    <string name="settings_content_menus_description">Rearrange or hide the actions in the channel, movie, series &amp; episode menus</string>
+    <!-- Translators: Hint shown above the list when arranging a long-press menu with the remote: OK shows or hides an action, a held OK picks it up to move it. -->
+    <string name="settings_content_menus_hint">Press OK on an action to show or hide it. Hold OK to pick it up, then Up and Down to move it; press OK again to drop it.</string>
+    <!-- Translators: Note on the long-press menus settings: some actions in the list are only offered in some places (Catch-up only on catch-up channels, Remove from history only in History). -->
+    <string name="settings_content_menus_note">Some actions appear only where they apply.</string>
     <!-- Translators: Settings navigation label for Browsing & lists. -->
     <string name="settings_browsing_lists">Browsing &amp; lists</string>
     <!-- Translators: Description of the Browsing & lists settings. -->
@@ -1254,10 +1256,10 @@
     <string name="settings_browsing_last_item">Remember last item</string>
     <!-- Translators: Description of the remember-last-item setting. -->
     <string name="settings_browsing_last_item_description">Each category keeps its own scroll position instead of starting at the top. Live TV also restores the last focused channel.</string>
-    <!-- Translators: Section heading in Browsing & lists for showing or hiding the built-in Live TV categories. -->
+    <!-- Translators: Section heading in Browsing & lists for showing or hiding the built-in Live TV categories (Catch-up, All channels). -->
     <string name="settings_browsing_live_categories">Live TV categories</string>
-    <!-- Translators: Description of the Live TV categories switches (Catch-up, All channels). -->
-    <string name="settings_browsing_live_categories_description">Show this in the Live TV list and the guide\'s category list. With All channels off, Live TV opens on your first category, or Favorites if you have none.</string>
+    <!-- Translators: Help text under the Live TV categories switches (Catch-up, All channels). "All channels" and "Favorites" are the names of those two categories. -->
+    <string name="settings_browsing_live_categories_description">Shown in Live TV, the guide, the player and Multiview. With All channels off, Live TV opens on your first category, or Favorites if you have none.</string>
     <!-- Translators: Setting label for the catch-up player preference. -->
     <string name="settings_catchup_player">Play catch-up in</string>
 
@@ -2643,7 +2645,7 @@
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_home">Choose, reorder and filter the rows</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
-    <string name="settings_line_content_menus">Rearrange the actions in each menu</string>
+    <string name="settings_line_content_menus">Rearrange or hide the actions in each menu</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_remote_shortcuts">Assign spare remote buttons</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->

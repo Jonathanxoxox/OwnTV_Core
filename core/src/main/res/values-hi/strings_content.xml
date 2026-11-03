@@ -75,6 +75,11 @@
     <string name="content_remove_from_category">इस श्रेणी से हटाएँ</string>
     <string name="content_download">डाउनलोड करें</string>
     <string name="content_download_all_episodes">सभी episodes डाउनलोड करें</string>
+    <plurals name="content_download_episodes_confirm">
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> एपिसोड डाउनलोड करें?</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> एपिसोड डाउनलोड करें?</item>
+    </plurals>
+    <string name="content_download_episodes_confirm_message">ये इस डिवाइस पर सेव होते हैं और स्टोरेज की जगह लेते हैं।</string>
     <string name="content_play">चलाएँ</string>
     <string name="content_favorited">पसंदीदा</string>
     <string name="content_favorite">पसंदीदा बनाएँ</string>
@@ -82,9 +87,7 @@
     <string name="content_episodes">episodes</string>
     <string name="content_oldest_first">सबसे पुराने पहले</string>
     <string name="content_newest_first">सबसे नए पहले</string>
-    <string name="content_play_external">बाहरी प्लेयर से चलाएँ</string>
     <string name="content_delete_subtitles">OpenSub subtitles हटाएँ</string>
-    <string name="content_tmdb_details">TMDB विवरण</string>
     <string name="content_play_trailer">ट्रेलर चलाएँ</string>
     <string name="content_refetch_tmdb">TMDB विवरण फिर से प्राप्त करें</string>
     <string name="content_set_tmdb_name">TMDB नाम सेट करें</string>

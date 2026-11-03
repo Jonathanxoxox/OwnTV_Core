@@ -195,8 +195,9 @@
     <string name="settings_ch_paging">Afstandsbedieningssnelkoppelingen</string>
     <string name="settings_ch_paging_description">Wijs vrije knoppen toe aan navigatie, afspelen en bladeren. Essentiële navigatieknoppen blijven beveiligd.</string>
     <string name="settings_content_menus_title">Menu’s bij lang indrukken</string>
-    <string name="settings_content_menus_description">Wijzig de volgorde van de acties in de menu’s voor zenders, films, series en afleveringen</string>
-    <string name="settings_content_menus_hint">Houd OK op een actie ingedrukt om hem op te pakken en verplaats hem met Omhoog en Omlaag. Druk nogmaals op OK om hem neer te zetten.</string>
+    <string name="settings_content_menus_description">Wijzig de volgorde van de acties in de menu’s voor zenders, films, series en afleveringen, of verberg ze</string>
+    <string name="settings_content_menus_hint">Druk op OK op een actie om hem te tonen of te verbergen. Houd OK ingedrukt om hem op te pakken, verplaats hem met Omhoog en Omlaag en druk nogmaals op OK om hem neer te zetten.</string>
+    <string name="settings_content_menus_note">Sommige acties verschijnen alleen waar ze van toepassing zijn.</string>
     <string name="settings_browsing_lists">Bladeren en lijsten</string>
     <string name="settings_browsing_description">Onthoud de laatste categorie en het laatste item in live-tv, Films en Series</string>
     <string name="settings_home_root">Startscherm</string>
@@ -609,6 +610,8 @@
     <string name="settings_browsing_last_category_description">Open het onderdeel opnieuw in de categorie die u hebt verlaten, niet in Alles.</string>
     <string name="settings_browsing_last_item">Laatste item onthouden</string>
     <string name="settings_browsing_last_item_description">Elke categorie behoudt zijn eigen scrollpositie in plaats van bovenaan te beginnen. Live-tv herstelt ook de laatst gefocuste zender.</string>
+    <string name="settings_browsing_live_categories">Live-tv-categorieën</string>
+    <string name="settings_browsing_live_categories_description">Getoond in Live-tv, de tv-gids, de speler en Multiview. Met Alle zenders uit opent Live-tv op je eerste categorie, of op Favorieten als je er geen hebt.</string>
     <string name="settings_catchup_player">Terugkijken afspelen in</string>
     <string name="settings_customize_title">Categorieën en items aanpassen</string>
     <string name="settings_customize_pin_locked">Dit scherm is met een PIN vergrendeld.</string>
@@ -1399,7 +1402,7 @@
     <string name="settings_line_guide_width">Zenderlijst en tijdlijn</string>
     <string name="settings_line_browsing">De laatste categorie en het laatste item onthouden</string>
     <string name="settings_line_home">Rijen kiezen, ordenen en filteren</string>
-    <string name="settings_line_content_menus">De acties in elk menu herschikken</string>
+    <string name="settings_line_content_menus">De acties in elk menu herschikken of verbergen</string>
     <string name="settings_line_remote_shortcuts">Vrije knoppen op de afstandsbediening toewijzen</string>
     <string name="settings_line_customize">Verbergen en tonen, hernoemen en ordenen</string>
     <string name="settings_line_metadata">Posters, verhalen, cast en beoordelingen voor films en series</string>
