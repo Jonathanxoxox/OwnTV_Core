@@ -81,6 +81,15 @@ class PtsFrameRateTest {
     }
 
     @Test
+    fun `a stall while starting keeps what was measured`() {
+        // 2.5 s of 60p, a 1.5 s hiccup on the same clock, 2.5 s more: together past MIN_SPAN_US.
+        val r = PtsFrameRate()
+        r.feed(60.0, 150)
+        r.feed(60.0, 150, startUs = 1_000_000L + 4_000_000L)
+        assertEquals(60f, r.rate()!!, 0.0001f)
+    }
+
+    @Test
     fun `the previous channel's last frames do not bend the reading`() {
         val r = PtsFrameRate()
         r.feed(50.0, 4)

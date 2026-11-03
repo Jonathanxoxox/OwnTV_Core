@@ -27,6 +27,11 @@ class PtsFrameRate {
                 gaps[next] = gap
                 next = (next + 1) % WINDOW
                 if (count < WINDOW) count++
+            } else if (gap in 1..MAX_STALL_US) {
+                // A stall or a run of dropped frames on the same clock: the frames on either side are the same
+                // video, so what was measured stays. Emptying the window here meant a stream that hiccups while
+                // starting (common on IPTV) never collected MIN_SPAN_US in one go: a 60p channel read no exact
+                // rate for ~40 s, and the frame counter's guess went out in the meantime.
             } else {
                 // A jump: the clock restarted, or these are the next channel's frames (unrelated clock).
                 // Gaps from before it belong to other video.
@@ -69,6 +74,8 @@ class PtsFrameRate {
         const val MIN_SPAN_US = 4_000_000L
         /** Longer than any real frame interval (5 fps); a bigger gap is a jump, not a frame. */
         const val MAX_GAP_US = 200_000L
+        /** Up to this far ahead a jump is a stall on the same clock and is stepped over; beyond, or backwards, a new clock. */
+        const val MAX_STALL_US = 5_000_000L
         const val NONE = Long.MIN_VALUE
         /** 59.94 and 60 are 0.1 % apart; over [MIN_SPAN_US] a reading is within 0.025 % of the true rate. */
         const val SNAP_FRACTION = 0.0004f
