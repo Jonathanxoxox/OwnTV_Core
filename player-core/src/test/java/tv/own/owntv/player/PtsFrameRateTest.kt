@@ -98,6 +98,17 @@ class PtsFrameRateTest {
     }
 
     @Test
+    fun `heavy drops that move the median still read the source's rate`() {
+        // Two of every five 60p frames dropped: two gaps in three are 33 ms, so the median says 30.
+        val r = PtsFrameRate()
+        for (i in 0 until 600) {
+            if (i % 5 == 1 || i % 5 == 3) continue
+            r.add(1_000_000L + Math.round(i * 1500.0) * 1_000_000L / 90_000L)
+        }
+        assertEquals(60f, r.rate()!!, 0.0001f)
+    }
+
+    @Test
     fun `whole-millisecond stamps still wait for the full span`() {
         val r = PtsFrameRate()
         r.feed(60_000.0 / 1001, 120, wholeMs = true)

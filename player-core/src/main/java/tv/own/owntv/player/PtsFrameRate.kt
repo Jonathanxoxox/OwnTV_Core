@@ -51,19 +51,17 @@ class PtsFrameRate {
         // Within a quarter of the median: a dropped frame (twice the gap) stays out; the alternating
         // 1501/1502-tick gaps of 59.94 stay in.
         val steady = window.filter { it * 4 >= median * 3 && it * 4 <= median * 5 }
-        val span = steady.sum()
-        if (span < MIN_SPAN_US) {
-            // A fine clock (90 kHz, whole microseconds) needs no 4 s: its steady gaps sit within a few µs of
-            // each other (16666/16667 at 60, 16678/16689 at 59.94), and 1.5 s of them already tells 59.94 from
-            // 60. Waiting the full span mattered on a 50 Hz display showing 60p: every sixth frame is dropped,
-            // the renderer falls further behind, and the 4 s never came while the display stayed wrong.
-            // Only a standard rate is given early; anything else waits for the full span.
-            // Only the gaps right at the median count, so a provider's odd stamp elsewhere spoils nothing.
-            // Whole-millisecond stamps (16/17 ms) leave a single value there, which snaps to no rate.
-            val core = steady.filter { abs(it - median) <= QUICK_JITTER_US }
-            if (core.sum() < QUICK_SPAN_US) return null
-            return snap((1_000_000.0 / core.average()).toFloat())
-        }
+        // The source's own frame interval is the shortest gap that keeps recurring: a dropped frame only ever
+        // makes a gap longer. On a 50 Hz display showing 60p the renderer drops so many frames that the median
+        // moved to 23.3 ms (Sky Sport Top Event on a Nokia 8010, read as 42.86 fps), yet a tenth of the gaps
+        // stayed at 16.67 ms. Gaps within QUICK_JITTER_US of that interval are a fine clock's (90 kHz, whole
+        // µs: 16666/16667 at 60, 16678/16689 at 59.94), and 1.5 s of them already tells 59.94 from 60.
+        // Whole-millisecond stamps (16/17 ms) leave one value there that snaps to no rate: they wait for
+        // the full span below.
+        val interval = window[count / 20]
+        val fine = window.filter { abs(it - interval) <= QUICK_JITTER_US }
+        if (fine.sum() >= QUICK_SPAN_US) snap((1_000_000.0 / fine.average()).toFloat())?.let { return it }
+        if (steady.sum() < MIN_SPAN_US) return null
         val raw = (1_000_000.0 / steady.average()).toFloat()
         return snap(raw) ?: raw
     }
