@@ -60,10 +60,24 @@ class PtsFrameRate {
         // Within a quarter of the median: a dropped frame (twice the gap) stays out; the alternating
         // 1501/1502-tick gaps of 59.94 stay in.
         val steady = window.filter { it * 4 >= median * 3 && it * 4 <= median * 5 }
-        if (steady.sum() < MIN_SPAN_US) return null
+        val span = steady.sum()
+        if (span < MIN_SPAN_US) {
+            // A fine clock (90 kHz, whole microseconds) needs no 4 s: its steady gaps sit within a few µs of
+            // each other (16666/16667 at 60, 16678/16689 at 59.94), and 1.5 s of them already tells 59.94 from
+            // 60. Waiting the full span mattered on a 50 Hz display showing 60p: every sixth frame is dropped,
+            // the renderer falls further behind, and the 4 s never came while the display stayed wrong.
+            // Only a standard rate is given early; anything else waits for the full span.
+            if (span < QUICK_SPAN_US || steady.last() - steady.first() > QUICK_JITTER_US) return null
+            return snap((1_000_000.0 / steady.average()).toFloat())?.takeIf { it in STANDARD_RATES }
+        }
         val raw = (1_000_000.0 / steady.average()).toFloat()
-        val nearest = STANDARD_RATES.minByOrNull { abs(it - raw) } ?: return raw
-        return if (abs(nearest - raw) <= nearest * SNAP_FRACTION) nearest else raw
+        return snap(raw) ?: raw
+    }
+
+    /** [raw] as the standard rate it is within [SNAP_FRACTION] of, or null when it is near none. */
+    private fun snap(raw: Float): Float? {
+        val nearest = STANDARD_RATES.minByOrNull { abs(it - raw) } ?: return null
+        return nearest.takeIf { abs(it - raw) <= it * SNAP_FRACTION }
     }
 
     /** Diagnose (mayo-debug): window size, median and steady span, and what happened to the timestamps. */
@@ -93,6 +107,10 @@ class PtsFrameRate {
          * 0.025 %, a quarter of the 0.1 % between 59.94 and 60. One second could not tell them apart.
          */
         const val MIN_SPAN_US = 4_000_000L
+        /** The span a fine clock needs ([QUICK_JITTER_US]): 0.003 % over it, far inside the 0.1 % from 59.94 to 60. */
+        const val QUICK_SPAN_US = 1_500_000L
+        /** Steady gaps this close together are whole-µs stamps of a 90 kHz clock; ms-rounded stamps differ by ~1000. */
+        const val QUICK_JITTER_US = 20L
         /** Longer than any real frame interval (5 fps); a bigger gap is a jump, not a frame. */
         const val MAX_GAP_US = 200_000L
         /** Up to this far ahead a jump is a stall on the same clock and is stepped over; beyond, or backwards, a new clock. */

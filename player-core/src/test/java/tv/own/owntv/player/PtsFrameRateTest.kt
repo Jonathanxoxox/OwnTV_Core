@@ -81,6 +81,30 @@ class PtsFrameRateTest {
     }
 
     @Test
+    fun `a fine clock gives the rate after a second and a half`() {
+        for ((fps, want) in listOf(60.0 to 60f, 60_000.0 / 1001 to 59.94f, 50.0 to 50f, 25.0 to 25f, 24_000.0 / 1001 to 23.976f)) {
+            val r = PtsFrameRate()
+            r.feed(fps, (fps * 1.6).toInt() + 2)
+            assertEquals("fps $fps", want, r.rate()!!, 0.0001f)
+        }
+    }
+
+    @Test
+    fun `60p shown on a 50 Hz display reads 60 before the full span`() {
+        // The display drops every sixth frame; the steady 16.7 ms gaps still say 60.
+        val r = PtsFrameRate()
+        r.feed(60.0, 150, skipEvery = 6)
+        assertEquals(60f, r.rate()!!, 0.0001f)
+    }
+
+    @Test
+    fun `whole-millisecond stamps still wait for the full span`() {
+        val r = PtsFrameRate()
+        r.feed(60_000.0 / 1001, 120, wholeMs = true)
+        assertNull(r.rate())
+    }
+
+    @Test
     fun `a stall while starting keeps what was measured`() {
         // 2.5 s of 60p, a 1.5 s hiccup on the same clock, 2.5 s more: together past MIN_SPAN_US.
         val r = PtsFrameRate()
