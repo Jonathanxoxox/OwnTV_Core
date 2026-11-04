@@ -67,8 +67,11 @@ class PtsFrameRate {
             // 60. Waiting the full span mattered on a 50 Hz display showing 60p: every sixth frame is dropped,
             // the renderer falls further behind, and the 4 s never came while the display stayed wrong.
             // Only a standard rate is given early; anything else waits for the full span.
-            if (span < QUICK_SPAN_US || steady.last() - steady.first() > QUICK_JITTER_US) return null
-            return snap((1_000_000.0 / steady.average()).toFloat())
+            // Only the gaps right at the median count, so a provider's odd stamp elsewhere spoils nothing.
+            // Whole-millisecond stamps (16/17 ms) leave a single value there, which snaps to no rate.
+            val core = steady.filter { abs(it - median) <= QUICK_JITTER_US }
+            if (core.sum() < QUICK_SPAN_US) return null
+            return snap((1_000_000.0 / core.average()).toFloat())
         }
         val raw = (1_000_000.0 / steady.average()).toFloat()
         return snap(raw) ?: raw
