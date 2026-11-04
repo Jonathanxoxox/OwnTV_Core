@@ -59,7 +59,7 @@ class PtsFrameRate {
             // the renderer falls further behind, and the 4 s never came while the display stayed wrong.
             // Only a standard rate is given early; anything else waits for the full span.
             if (span < QUICK_SPAN_US || steady.last() - steady.first() > QUICK_JITTER_US) return null
-            return snap((1_000_000.0 / steady.average()).toFloat())?.takeIf { it in STANDARD_RATES }
+            return snap((1_000_000.0 / steady.average()).toFloat())
         }
         val raw = (1_000_000.0 / steady.average()).toFloat()
         return snap(raw) ?: raw
