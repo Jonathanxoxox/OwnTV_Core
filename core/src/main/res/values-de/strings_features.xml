@@ -207,7 +207,7 @@
     <string name="recording_pill_line"><xliff:g id="title">%1$s</xliff:g> wird aufgenommen</string>
     <string name="recording_clash_with">Überschneidet sich mit <xliff:g id="programme">%1$s</xliff:g></string>
     <string name="recording_settings_group">Aufnahme</string>
-    <string name="settings_recording_reserve">Eine Verbindung zum Zuschauen frei halten</string>
+    <string name="settings_recording_reserve">Eine Verbindung frei halten</string>
     <string name="settings_recording_reserve_description">Aufnahmen lassen eine Verbindung deines Anbieters frei, damit immer eine zum Zuschauen bleibt. Schalte dies aus, um auf allen Verbindungen aufzunehmen.</string>
     <string name="settings_recording_pre_roll">Früher beginnen</string>
     <string name="settings_recording_pre_roll_description">So lange vor der angegebenen Startzeit beginnen, damit auch ein etwas vorlaufender Guide den Anfang erwischt.</string>

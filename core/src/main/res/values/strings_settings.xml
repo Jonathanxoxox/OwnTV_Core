@@ -233,7 +233,7 @@
     <string name="settings_metadata_active_source">Active source</string>
     <string name="settings_metadata_shared_worker_description">OwnTV Worker · no setup</string>
     <string name="settings_metadata_connection">Connection</string>
-    <string name="settings_metadata_remote_advanced">Get advanced TMDB info</string>
+    <string name="settings_metadata_remote_advanced">TMDB access</string>
     <string name="settings_metadata_remote_advanced_description">Use your own TMDB API key or self-hosted Worker instead of the shared default.</string>
     <string name="settings_open_subtitles_advanced">Advanced options</string>
     <string name="settings_open_subtitles_advanced_description">Use your own application API key or self-hosted OpenSubtitles Worker.</string>
@@ -303,9 +303,9 @@
     <!-- Translators: Legal notice about TMDB API usage. 'TMDB' is a brand name. -->
     <string name="settings_tmdb_attribution">This product uses the TMDB API but is not endorsed or certified by TMDB.</string>
     <!-- Translators: Metadata source option: use only playlist-provided metadata. -->
-    <string name="settings_metadata_provider_only">Provider only</string>
+    <string name="settings_metadata_provider_only">Playlist only</string>
     <!-- Translators: Metadata source option: playlist metadata supplemented by TMDB. -->
-    <string name="settings_metadata_provider_plus_tmdb">Provider + TMDB</string>
+    <string name="settings_metadata_provider_plus_tmdb">Playlist + TMDB</string>
     <!-- Translators: Metadata source option: prefer TMDB for all metadata. -->
     <string name="settings_metadata_tmdb_only">TMDB only</string>
     <!-- Translators: TMDB tier option: the built-in shared API key. -->
@@ -377,7 +377,7 @@
     <!-- Translators: Description of the EPG Sources settings. 'XMLTV' is a technical format name. -->
     <string name="settings_epg_sources_nav_description">Add XMLTV guide feeds for the TV Guide</string>
     <!-- Translators: Settings navigation label for Customize Categories & Items. -->
-    <string name="settings_customize">Customize categories &amp; items</string>
+    <string name="settings_customize">Customize categories</string>
     <!-- Translators: Description of the Customize Categories & Items settings. -->
     <string name="settings_customize_nav_description">Hide &amp; unhide items, rename &amp; reorder categories</string>
     <!-- Translators: Settings navigation label for CH+ Key Paging. -->
@@ -489,7 +489,7 @@
     <!-- Translators: Description of the auto frame rate setting. Explains when to turn it off. -->
     <string name="settings_auto_frame_rate_description">Match the TV\'s refresh rate to the video (24/25/50/60 fps) in full screen, for Live TV and VOD, and restore it on exit. Turn off if your TV or receiver re-handshakes HDMI noisily on every channel change.</string>
     <!-- Translators: TV setting under Auto frame rate. How long a film pauses while the TV switches display mode. -->
-    <string name="settings_afr_pause">Pause during the display switch</string>
+    <string name="settings_afr_pause">Pause while switching</string>
     <!-- Translators: Description of settings_afr_pause. "Re-sync" = the HDMI handshake that blacks the screen for a moment. -->
     <string name="settings_afr_pause_description">Films only. When the TV has to re-sync to a new display mode, the film waits this long so its opening is not lost to the black screen. A seamless switch never pauses.</string>
     <!-- Translators: TV setting under Auto frame rate. Also switch the display to the resolution of the film. -->
@@ -596,7 +596,7 @@
     <!-- Translators: App startup option: open to the last watched channel. -->
     <string name="settings_startup_last_channel">Last channel</string>
     <!-- Translators: App startup option: open to Live TV favorites. -->
-    <string name="settings_startup_favorites">Live · Favorites</string>
+    <string name="settings_startup_favorites">Favourites in Live TV</string>
     <!-- Translators: App startup option that automatically plays one channel selected by the user. -->
     <string name="settings_startup_specific_channel">Specific channel</string>
     <!-- Translators: Brief message shown when the channel selected for automatic startup no longer exists or cannot be accessed. -->
@@ -904,11 +904,11 @@
     <!-- Translators: Setting label for external player configuration. -->
     <string name="settings_external_player">External player</string>
     <!-- Translators: Setting label for the default zoom/aspect ratio. -->
-    <string name="settings_default_zoom">Default zoom</string>
+    <string name="settings_default_zoom">Picture format</string>
     <!-- Translators: Description of the default zoom setting. -->
     <string name="settings_default_zoom_description">Aspect/zoom applied when playback starts.</string>
     <!-- Translators: Setting label for the volume level playback starts at. -->
-    <string name="settings_default_volume">Default volume</string>
+    <string name="settings_default_volume">Volume at start</string>
     <!-- Translators: Description of the default volume setting. -->
     <string name="settings_default_volume_description">Volume applied when playback starts. Above 100%% quiet streams are amplified.</string>
     <!-- Translators: Settings-row title for forgetting the zoom saved for individual items. -->
@@ -916,25 +916,25 @@
     <!-- Translators: Description of the reset-saved-zoom setting row. -->
     <string name="settings_reset_saved_zoom_description">Changing zoom in the player saves it for that channel, movie or episode. Reset makes everything follow the default zoom again.</string>
     <!-- Translators: Confirmation dialog title before forgetting the saved per-item zoom. -->
-    <string name="settings_reset_saved_zoom_confirm">Reset saved zoom?</string>
+    <string name="settings_reset_saved_zoom_confirm">Reset the remembered picture format?</string>
     <!-- Translators: Confirmation dialog body before forgetting the saved per-item zoom. -->
-    <string name="settings_reset_saved_zoom_confirm_description">Every channel, movie and episode goes back to the default zoom. Saved volumes are kept. You can always set an individual one again from the player.</string>
+    <string name="settings_reset_saved_zoom_confirm_description">Every channel, movie and episode goes back to the “Picture format” above. Remembered volumes are kept. You can always set an individual one again from the player.</string>
     <!-- Translators: Settings-row title for forgetting the volume saved for individual items. -->
     <string name="settings_reset_saved_volume">Reset saved volume</string>
     <!-- Translators: Description of the reset-saved-volume setting row. -->
     <string name="settings_reset_saved_volume_description">Changing volume in the player saves it for that channel, movie or episode. Reset makes everything follow the default volume again.</string>
     <!-- Translators: Confirmation dialog title before forgetting the saved per-item volume. -->
-    <string name="settings_reset_saved_volume_confirm">Reset saved volume?</string>
+    <string name="settings_reset_saved_volume_confirm">Reset the remembered volume?</string>
     <!-- Translators: Confirmation dialog body before forgetting the saved per-item volume. -->
-    <string name="settings_reset_saved_volume_confirm_description">Every channel, movie and episode goes back to the default volume. Saved zoom settings are kept. You can always set an individual one again from the player.</string>
+    <string name="settings_reset_saved_volume_confirm_description">Every channel, movie and episode goes back to the “Volume at start”. Remembered picture formats are kept. You can always set an individual one again from the player.</string>
     <!-- Translators: Settings row that forgets every per-item audio-sync offset. -->
     <string name="settings_reset_saved_audio_delay">Reset saved audio sync</string>
     <!-- Translators: Description of the reset-saved-audio-sync row. -->
     <string name="settings_reset_saved_audio_delay_description">Choosing \'Remember this delay\' in the player saves the audio sync for that channel, movie or episode. Reset makes everything follow the setting above again.</string>
     <!-- Translators: Title of the confirmation dialog for resetting saved audio sync. -->
-    <string name="settings_reset_saved_audio_delay_confirm">Reset saved audio sync?</string>
+    <string name="settings_reset_saved_audio_delay_confirm">Reset the remembered A/V sync?</string>
     <!-- Translators: Body of the confirmation dialog for resetting saved audio sync. -->
-    <string name="settings_reset_saved_audio_delay_confirm_description">Every channel, movie and episode goes back to the audio sync above. Saved zoom and volume settings are kept. You can always set an individual one again from the player.</string>
+    <string name="settings_reset_saved_audio_delay_confirm_description">Every channel, movie and episode goes back to the “A/V sync” above. Remembered picture format and volume are kept. You can always set an individual one again from the player.</string>
     <!-- Translators: Setting label for how far rewind/forward jumps in a movie or episode. -->
     <string name="settings_seek_step">Seek step</string>
     <!-- Translators: Description of the seek step setting. -->
@@ -952,7 +952,7 @@
     <!-- Translators: Description of settings_vod_reconnects. -->
     <string name="settings_vod_reconnects_description">How many times a film or episode that loses its connection is reopened where it stopped before an error is shown. A minute of steady playback earns the attempts back.</string>
     <!-- Translators: Choice label for the film buffer and network timeout: use what suits this device. -->
-    <string name="settings_vod_network_auto">Auto</string>
+    <string name="settings_vod_network_auto">Automatic</string>
     <!-- Translators: Setting label for how far rewind/forward jumps inside a live channel's archive. -->
     <string name="settings_live_rewind_step">Live rewind step</string>
     <!-- Translators: Description of the live rewind step setting. -->
@@ -970,7 +970,7 @@
     <!-- Translators: Description of the subtitle size setting. -->
     <string name="settings_subtitle_size_description">Scale subtitle text.</string>
     <!-- Translators: Setting label for preferred subtitle language. -->
-    <string name="settings_preferred_subtitle_language">Preferred subtitle language</string>
+    <string name="settings_preferred_subtitle_language">Subtitle language</string>
     <!-- Translators: Description of the preferred language setting. -->
     <string name="settings_preferred_language_description">Auto-select this subtitle track when available.</string>
     <!-- Translators: Description of the preferred AUDIO language setting. "Original language" is the picker choice settings_language_original; quote it as that string is translated. -->
@@ -982,15 +982,15 @@
     <!-- Translators: Description of the OpenSubtitles setting. 'opensubtitles.com' is a website. -->
     <string name="settings_open_subtitles_description">Sign in to search and download subtitles, and manage downloaded subtitles. Per profile; a free opensubtitles.com account is required.</string>
     <!-- Translators: Setting label for preferred audio language. -->
-    <string name="settings_preferred_audio_language">Preferred audio language</string>
+    <string name="settings_preferred_audio_language">Audio language</string>
     <!-- Translators: Setting label for audio/video synchronization. -->
-    <string name="settings_audio_sync">Audio sync</string>
+    <string name="settings_audio_sync">A/V sync</string>
     <!-- Translators: Description of the audio sync setting. -->
     <string name="settings_audio_sync_description">Shift audio earlier or later to match the video. Works with both players (mpv and ExoPlayer).</string>
     <!-- Translators: Setting row: an extra audio delay for the output the sound is going to right now (HDMI, Bluetooth, the built-in speakers...), remembered separately for each. -->
     <string name="settings_output_audio_delay">Delay for this output</string>
     <!-- Translators: Description of settings_output_audio_delay. The quoted name is the Audio sync setting (settings_audio_sync). -->
-    <string name="settings_output_audio_delay_description">Added on top of “Audio sync” and kept separately for each output — HDMI, a soundbar on HDMI ARC, Bluetooth, the built-in speakers, headphones. Set it while listening on the output it is for.</string>
+    <string name="settings_output_audio_delay_description">Added on top of “A/V sync” and kept separately for each output — HDMI, a soundbar on HDMI ARC, Bluetooth, the built-in speakers, headphones. Set it while listening on the output it is for.</string>
     <!-- Translators: Name of an audio output: the speakers built into the TV or phone. -->
     <string name="settings_audio_output_speaker">Built-in speakers</string>
     <!-- Translators: Name of an audio output: wired headphones, or a USB sound device. -->
@@ -1074,14 +1074,14 @@
     <!-- Translators: Description of the row that forgets per-movie/per-episode player choices. 'mpv' and 'ExoPlayer' are engine brand names. -->
     <string name="settings_reset_player_choices_description">Switching a single movie or episode between mpv and ExoPlayer in the player saves that choice for next time. Reset makes everything follow the setting above again. Saved choices for live channels are kept.</string>
     <!-- Translators: Chip on the reset row when no movie or episode has its own saved player. -->
-    <string name="settings_reset_player_choices_none">None saved</string>
+    <string name="settings_reset_player_choices_none">None remembered</string>
     <!-- Translators: Chip on the reset row showing how many movies/episodes have their own saved player. -->
     <plurals name="settings_reset_player_choices_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> saved</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> saved</item>
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> remembered</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> remembered</item>
     </plurals>
     <!-- Translators: Confirmation dialog title before forgetting the saved per-item player choices. -->
-    <string name="settings_reset_player_choices_confirm">Reset saved player choices?</string>
+    <string name="settings_reset_player_choices_confirm">Reset the remembered player choice per film/episode?</string>
     <!-- Translators: Confirmation dialog body before forgetting the saved per-item player choices. -->
     <string name="settings_reset_player_choices_confirm_description">Every movie and episode goes back to the “Movies &amp; Series player” setting. You can always switch an individual one again from the player.</string>
     <!-- Translators: Settings row (player engines section) that clears every live channel's saved engine choice (ExoPlayer or mpv). -->
@@ -1089,7 +1089,7 @@
     <!-- Translators: Description of the row above. "Live TV player" is the name of the setting just above it. -->
     <string name="settings_reset_live_player_choices_description">Switching a channel between ExoPlayer and mpv in the player saves that choice for the channel. Reset makes every channel follow the “Live TV player” setting again. Saved choices for movies and episodes are kept.</string>
     <!-- Translators: Title of the confirmation dialog for the row above. -->
-    <string name="settings_reset_live_player_choices_confirm">Reset saved live TV player choices?</string>
+    <string name="settings_reset_live_player_choices_confirm">Reset the remembered player choice per channel?</string>
     <!-- Translators: Body of the confirmation dialog for the row above. -->
     <string name="settings_reset_live_player_choices_confirm_description">Every channel goes back to the “Live TV player” setting. You can always switch an individual one again from the player.</string>
     <!-- Translators: Description of the external player row setting. -->
@@ -1351,9 +1351,9 @@
     <!-- Translators: Screen title for the Sources management screen. -->
     <string name="settings_sources_title">Sources</string>
     <!-- Translators: Empty-state message when no sources are configured. 'M3U' and 'Xtream' are protocol names. -->
-    <string name="settings_sources_empty">No sources yet. Add an M3U or Xtream source.</string>
+    <string name="settings_sources_empty">No playlists yet. Add one by link, Xtream login, Stalker portal or file.</string>
     <!-- Translators: Button to add a new source. -->
-    <string name="settings_sources_add">Add Source</string>
+    <string name="settings_sources_add">Add playlist</string>
     <!-- Translators: Error text when a source import fails. -->
     <string name="settings_sources_import_failed">Import failed</string>
     <!-- Translators: Loading status shown while importing a source catalog. -->
@@ -1367,7 +1367,7 @@
     <!-- Translators: Dialog title for source deletion confirmation. 'name' is the source name. -->
     <string name="settings_sources_delete_title">Delete “<xliff:g id="name">%1$s</xliff:g>”?</string>
     <!-- Translators: Description of what deleting a source does. -->
-    <string name="settings_sources_delete_message">This removes the source and all its channels, movies and series from every profile.</string>
+    <string name="settings_sources_delete_message">This removes the playlist and all of its channels, movies and series from every profile.</string>
     <!-- Translators: Source type display for M3U sources. 'url' is the playlist URL. -->
     <string name="settings_sources_type_m3u">M3U · <xliff:g id="url">%1$s</xliff:g></string>
     <!-- Translators: Source type display for Xtream sources. 'url' is the server URL. -->
@@ -1377,7 +1377,7 @@
     <!-- Translators: Expiry date display for a source. 'date' is the expiry date. -->
     <string name="settings_sources_expiry">Expires <xliff:g id="date">%1$s</xliff:g></string>
     <!-- Translators: Title of the popup that reports the result of testing a saved source. -->
-    <string name="settings_sources_test_title">Source test</string>
+    <string name="settings_sources_test_title">Playlist info</string>
     <!-- Translators: Success line in the source-test popup: the server answered and accepted the account. -->
     <string name="settings_sources_test_ok">Connection OK</string>
     <!-- Translators: Failure line in the source-test popup: the server answered but rejected the credentials. -->
@@ -1485,17 +1485,17 @@
     <!-- Translators: Button opening the playlist picker and the picker's dialog heading. -->
     <string name="settings_epg_sources_fill_playlist">Fill from playlist</string>
     <!-- Translators: Status text when no playlists provide an EPG URL. -->
-    <string name="settings_epg_sources_none_playlist">None of your playlists provide an EPG URL.</string>
+    <string name="settings_epg_sources_none_playlist">None of your playlists offers an EPG address.</string>
     <!-- Translators: Toggle label to use channel logos from this EPG feed. -->
     <string name="settings_epg_sources_use_logos">Use this guide\'s channel logos</string>
     <!-- Translators: Description of the EPG logos setting. 'XMLTV' is a format name. -->
-    <string name="settings_epg_sources_logos_description">Show logos from this XMLTV feed instead of your playlist\'s. Channels this feed has no logo for keep the playlist one.</string>
+    <string name="settings_epg_sources_logos_description">Show the logos from this EPG source instead of your playlist\'s. Channels it has no logo for keep the playlist\'s logo.</string>
     <!-- Translators: Text-field label for the EPG source name. -->
     <string name="settings_epg_sources_name">Name</string>
     <!-- Translators: Text-field label for the EPG XMLTV URL. -->
     <string name="settings_epg_sources_url">XMLTV URL</string>
     <!-- Translators: Shown instead of a feed address for the guide that comes from a Stalker portal itself, which has no URL. -->
-    <string name="settings_epg_sources_portal_guide">Guide from the portal</string>
+    <string name="settings_epg_sources_portal_guide">EPG from the portal</string>
     <!-- Translators: Text-field label for an optional custom User-Agent. -->
     <string name="settings_epg_sources_user_agent">User-Agent (optional)</string>
     <!-- Translators: Placeholder example in the EPG source name field. -->
@@ -1856,7 +1856,7 @@
     <!-- Translators: Description of the custom DNS toggle. OwnTV is a brand name. -->
     <string name="settings_dns_toggle_description">Resolve all OwnTV domain lookups through a custom DNS server.</string>
     <!-- Translators: Toggle label for custom DNS. -->
-    <string name="settings_dns_use_custom">Use custom DNS</string>
+    <string name="settings_dns_use_custom">Use your own DNS server</string>
     <!-- Translators: Warning shown when custom DNS is enabled without a server address. -->
     <string name="settings_dns_server_missing">Custom DNS is enabled but no server is configured. Enter a server address and select Save, or turn this off.</string>
     <!-- Translators: Text-field label for a custom DNS server. -->
@@ -2541,7 +2541,7 @@
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_fonts">One family for the main interface and popups</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
-    <string name="settings_line_popup_size">Scale dialogs and menus without changing their text</string>
+    <string name="settings_line_popup_size">Make popups and menus larger or smaller</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_animations">Off feels snappier on lower-end TV boxes</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
@@ -2557,7 +2557,7 @@
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_browsing">Remember the last category and item</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
-    <string name="settings_line_home">Choose, reorder and filter the rows</string>
+    <string name="settings_line_home">Pick the rows Home shows and their order</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_content_menus">Rearrange the actions in each menu</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
@@ -2615,7 +2615,7 @@
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_zoom">Aspect and zoom when playback starts</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
-    <string name="settings_line_saved_zoom">Zoom you changed in the player</string>
+    <string name="settings_line_saved_zoom">Picture format you changed in the player</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_films_only">Films only</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
@@ -2645,17 +2645,17 @@
     <!-- Translators: Name of a setting on a Settings page. -->
     <string name="settings_title_fonts">Fonts &amp; text size</string>
     <!-- Translators: Name of a setting on a Settings page. -->
-    <string name="settings_title_saved_live_choices">Saved live TV player choices</string>
+    <string name="settings_title_saved_live_choices">Player choice per channel</string>
     <!-- Translators: Name of a setting on a Settings page. -->
-    <string name="settings_title_saved_choices">Saved player choices</string>
+    <string name="settings_title_saved_choices">Player choice per film/episode</string>
     <!-- Translators: Name of a setting on a Settings page. -->
     <string name="settings_title_tunneled">Tunneled playback</string>
     <!-- Translators: Name of a setting on a Settings page. -->
-    <string name="settings_title_saved_zoom">Saved zoom</string>
+    <string name="settings_title_saved_zoom">Remembered picture format</string>
     <!-- Translators: Name of a setting on a Settings page. -->
-    <string name="settings_title_saved_volume">Saved volume</string>
+    <string name="settings_title_saved_volume">Remembered volume</string>
     <!-- Translators: Name of a setting on a Settings page. -->
-    <string name="settings_title_saved_audio_sync">Saved audio sync</string>
+    <string name="settings_title_saved_audio_sync">Remembered A/V sync</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_channel_numbers">The provider’s number beside the name</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
@@ -2687,7 +2687,7 @@
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_rec_reserve">Never record on every connection</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
-    <string name="settings_line_rec_watching">Not a second stream</string>
+    <string name="settings_line_rec_watching">Adds a record button to the player</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
     <string name="settings_line_rec_pre_roll">Before the program begins</string>
     <!-- Translators: One-line description under a setting's name on a Settings page; keep it short, it is cut to one line. -->
@@ -2852,7 +2852,7 @@
     <!-- Translators: Action: show this hidden row on Home again. -->
     <string name="settings_home_show_row">Show this row</string>
     <!-- Translators: Action: move this Home row. The arrows are the remote's keys; OK ends the move. -->
-    <string name="settings_home_move_row">Move (▲ ▼, then OK)</string>
+    <string name="settings_home_move_row">Move</string>
     <!-- Translators: Short line under Use remote shortcuts: turning it off keeps the button assignments. -->
     <string name="settings_line_remote_shortcuts_on">Off keeps your assignments</string>
     <!-- Translators: Panel text for System default in Language. %1$s is the TV's current language name. -->
@@ -2877,8 +2877,8 @@
     <string name="settings_subtitle_delete_help">Deleting frees the space; you can download it again from the player.</string>
     <!-- Translators: Count beside the Home screen page title: how many rows it lists. -->
     <plurals name="settings_home_row_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> row</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> rows</item>
+        <item quantity="one">%1$d row</item>
+        <item quantity="other">%1$d rows</item>
     </plurals>
     <!-- Translators: Value line of the Delete subtitles row: how many subtitle files are downloaded. -->
     <plurals name="settings_subtitles_downloaded_count">
@@ -2933,11 +2933,11 @@
     <!-- Translators: Line under Fill from playlist on the Add EPG form. -->
     <string name="settings_line_fill_from_playlist">Use the guide address your playlist gives</string>
     <!-- Translators: Line under Auto refresh on the Add EPG form. -->
-    <string name="settings_line_epg_auto_refresh">Keep the guide up to date</string>
+    <string name="settings_line_epg_auto_refresh">Keeps the EPG data up to date</string>
     <!-- Translators: Line under Use this guide's channel logos: the guide's logos instead of the playlist's. -->
     <string name="settings_line_epg_logos">Instead of the playlist’s</string>
     <!-- Translators: Panel text for the guide's Name field (followed by the field help). -->
-    <string name="settings_help_epg_name">Shown in the guide list and in Pick EPG manually.</string>
+    <string name="settings_help_epg_name">Shown in the list of EPG sources and under Pick EPG manually.</string>
     <!-- Translators: Title of the Glass & background page and its Appearance row. -->
     <string name="settings_glass_bg_title">Glass &amp; background</string>
     <!-- Translators: Line under Glass & background in Appearance. -->

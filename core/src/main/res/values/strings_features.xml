@@ -369,7 +369,7 @@
     <!-- Translators: Heading of the Recording group on the settings screen. -->
     <string name="recording_settings_group">Recording</string>
     <!-- Translators: Settings toggle. A TV provider allows a limited number of simultaneous streams; this keeps one of them unused so the user can always watch something. -->
-    <string name="settings_recording_reserve">Keep one stream free for watching</string>
+    <string name="settings_recording_reserve">Keep one connection free</string>
     <!-- Translators: Description under the "keep one stream free" toggle. -->
     <string name="settings_recording_reserve_description">Recordings leave one of your provider\'s connections free, so there is always one to watch on. Turn this off to record on every connection.</string>
     <!-- Translators: Settings row for how many minutes before a programme starts recording should begin. -->

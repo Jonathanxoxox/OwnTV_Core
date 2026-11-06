@@ -123,7 +123,7 @@
     <string name="settings_metadata_active_source">Aktive Quelle</string>
     <string name="settings_metadata_shared_worker_description">OwnTV Worker · keine Einrichtung</string>
     <string name="settings_metadata_connection">Verbindung</string>
-    <string name="settings_metadata_remote_advanced">Erweiterte TMDB-Daten abrufen</string>
+    <string name="settings_metadata_remote_advanced">TMDB-Zugang</string>
     <string name="settings_metadata_remote_advanced_description">Verwende deinen eigenen TMDB-API-Schlüssel oder einen selbst gehosteten Worker statt der gemeinsamen Standardeinstellung.</string>
     <string name="settings_metadata_key_label">Schlüssel</string>
     <string name="settings_metadata_server_label">Server</string>
@@ -148,8 +148,8 @@
     <string name="settings_test_lookup">Testsuche</string>
     <string name="settings_looking_up">Suche läuft…</string>
     <string name="settings_tmdb_attribution">Dieses Produkt verwendet die TMDB-API, wird jedoch nicht von TMDB unterstützt oder zertifiziert.</string>
-    <string name="settings_metadata_provider_only">Nur Anbieter</string>
-    <string name="settings_metadata_provider_plus_tmdb">Anbieter + TMDB</string>
+    <string name="settings_metadata_provider_only">Nur Playlist</string>
+    <string name="settings_metadata_provider_plus_tmdb">Playlist + TMDB</string>
     <string name="settings_metadata_tmdb_only">Nur TMDB</string>
     <string name="settings_tier_default">Standard (gemeinsam)</string>
     <string name="settings_tier_key">Ihr TMDB-Schlüssel</string>
@@ -169,11 +169,11 @@
     <string name="settings_search_keywords_language">Sprache Gebietsschema Übersetzung international i18n</string>
     <string name="settings_language_coverage"><xliff:g id="percent">%1$d</xliff:g>%%</string>
     <string name="settings_profile_group">Profil</string>
-    <string name="settings_playlists">Wiedergabelisten</string>
+    <string name="settings_playlists">Playlists</string>
     <string name="settings_playlists_description">M3U- / Xtream-Wiedergabelisten hinzufügen, erneut synchronisieren oder entfernen</string>
     <string name="settings_epg_sources">EPG-Quellen</string>
     <string name="settings_epg_sources_nav_description">XMLTV-Programmdaten für die Programmübersicht hinzufügen</string>
-    <string name="settings_customize">Kategorien und Elemente anpassen</string>
+    <string name="settings_customize">Kategorien anpassen</string>
     <string name="settings_customize_nav_description">Elemente aus- und wieder einblenden sowie Kategorien umbenennen und neu anordnen</string>
     <string name="settings_ch_paging">Fernbedienungs-Kurzbefehle</string>
     <string name="settings_ch_paging_description">Freie Fernbedienungstasten mit Navigation, Wiedergabe und Listenaktionen belegen. Wichtige Navigationstasten bleiben geschützt.</string>
@@ -216,7 +216,7 @@
     <string name="settings_prefer_sdr_description">Bietet ein Stream ein SDR- und ein HDR-Bild, wird das SDR-Bild abgespielt: für Fernseher, auf denen HDR blass oder zu dunkel aussieht. Ein Stream nur mit HDR bleibt HDR. Nur ExoPlayer.</string>
     <string name="settings_auto_frame_rate">Automatische Bildrate</string>
     <string name="settings_auto_frame_rate_description">Die Bildwiederholfrequenz des Fernsehers im Vollbild für Live-TV und VOD an das Video anpassen (24/25/50/60 Bilder/s) und beim Beenden wiederherstellen. Deaktivieren Sie dies, wenn Ihr Fernseher oder Receiver bei jedem Senderwechsel geräuschvoll einen neuen HDMI-Handshake durchführt.</string>
-    <string name="settings_afr_pause">Pause beim Umschalten der Anzeige</string>
+    <string name="settings_afr_pause">Pause beim Umschalten</string>
     <string name="settings_afr_pause_description">Nur Filme. Muss sich der Fernseher auf einen neuen Anzeigemodus neu synchronisieren, wartet der Film so lange, damit sein Anfang nicht im schwarzen Bild verloren geht. Ein nahtloser Wechsel pausiert nie.</string>
     <string name="settings_afr_resolution">Auflösung anpassen</string>
     <string name="settings_afr_resolution_description">Nur Filme. Wechselt für einen Film der Anzeigemodus, schaltet der Fernseher auch auf dessen Auflösung um – 1080p für einen HD-Film auf einem 4K-Fernseher –, nie über die Auflösung beim Start hinaus. Aus lässt die Auflösung unverändert und den Fernseher hochskalieren, meist das bessere Bild.</string>
@@ -239,7 +239,7 @@
     <string name="settings_tunneled_playback">Tunnel-Wiedergabe (experimentell)</string>
     <string name="settings_tunneled_playback_description">Live-TV mit ExoPlayer: Die Hardware des Fernsehers hält Bild und Ton selbst zusammen und entlastet den Prozessor. Funktioniert nur auf manchen Fernsehern und schaltet sich ab, wenn ein Sender damit ausfällt. Die A/V-Synchronisierung lässt sich währenddessen nicht anpassen.</string>
     <string name="settings_tunneled_playback_failed">Ausgeschaltet, nachdem ein Sender damit auf diesem Gerät ausgefallen ist.</string>
-    <string name="settings_autoplay_next">Nächste Folge automatisch wiedergeben</string>
+    <string name="settings_autoplay_next">Nächste Folge automatisch abspielen</string>
     <string name="settings_autoplay_next_description">Nach dem Ende einer Folge automatisch die nächste starten — und anschließend mit der nächsten Staffel fortfahren. Auch Catch-up läuft zur nächsten Sendung weiter.</string>
     <string name="settings_catchup">Catch-up</string>
     <plurals name="settings_catchup_supported">
@@ -264,7 +264,7 @@
     <string name="settings_breadcrumb"><xliff:g id="group">%1$s</xliff:g> › <xliff:g id="title">%2$s</xliff:g></string>
     <string name="settings_startup_home">Startseite</string>
     <string name="settings_startup_last_channel">Letzter Sender</string>
-    <string name="settings_startup_favorites">Live · Favoriten</string>
+    <string name="settings_startup_favorites">Favoriten im Live-TV</string>
     <string name="settings_startup_specific_channel">Bestimmter Sender</string>
     <string name="settings_startup_channel_unavailable">Der Startsender ist nicht verfügbar. Die Startseite wurde geöffnet.</string>
     <string name="settings_all_history">Gesamter Verlauf</string>
@@ -411,29 +411,29 @@
     <string name="settings_hardware_decoding_description">Den Hardwaredecoder des Fernsehers verwenden. Deaktivieren Sie diese Option, wenn einige Streams ruckeln oder Bildfehler zeigen.</string>
     <string name="settings_software_decode_above_1080p">Softwaredecodierung über 1080p</string>
     <string name="settings_software_decode_above_1080p_description">Spielt 4K und anderes Video über 1080p per Software ab, wenn der Hardwaredecoder des Fernsehers aus ist oder versagt. Braucht einen schnellen Prozessor: Auf den meisten Fernsehern ruckelt es.</string>
-    <string name="settings_movies_series_player">Player für Filme und Serien</string>
+    <string name="settings_movies_series_player">Player für Filme &amp; Serien</string>
     <string name="settings_live_tv_player">Player für Live-TV</string>
     <string name="settings_engine_order"><xliff:g id="first">%1$s</xliff:g>, dann <xliff:g id="second">%2$s</xliff:g></string>
     <string name="settings_engine_only">Nur <xliff:g id="engine">%1$s</xliff:g></string>
     <string name="settings_engine_default"><xliff:g id="option">%1$s</xliff:g> (Standard)</string>
     <string name="settings_reset_player_choices">Gespeicherte Player-Auswahl zurücksetzen</string>
     <string name="settings_external_player">Externer Player</string>
-    <string name="settings_default_zoom">Standardzoom</string>
+    <string name="settings_default_zoom">Bildformat</string>
     <string name="settings_default_zoom_description">Seitenverhältnis/Zoom, das bzw. der beim Start der Wiedergabe angewendet wird.</string>
-    <string name="settings_default_volume">Standardlautstärke</string>
+    <string name="settings_default_volume">Lautstärke beim Start</string>
     <string name="settings_default_volume_description">Lautstärke, die beim Start der Wiedergabe angewendet wird. Über 100 %% werden leise Streams verstärkt.</string>
     <string name="settings_reset_saved_zoom">Gespeicherten Zoom zurücksetzen</string>
     <string name="settings_reset_saved_zoom_description">Wenn du den Zoom im Player änderst, wird er für diesen Kanal, Film oder diese Folge gespeichert. Beim Zurücksetzen folgt wieder alles dem Standardzoom.</string>
-    <string name="settings_reset_saved_zoom_confirm">Gespeicherten Zoom zurücksetzen?</string>
-    <string name="settings_reset_saved_zoom_confirm_description">Jeder Kanal, jeder Film und jede Folge kehrt zum Standardzoom zurück. Gespeicherte Lautstärken bleiben erhalten. Du kannst einzelne Titel jederzeit erneut im Player einstellen.</string>
+    <string name="settings_reset_saved_zoom_confirm">Gemerktes Bildformat zurücksetzen?</string>
+    <string name="settings_reset_saved_zoom_confirm_description">Jeder Sender, jeder Film und jede Folge kehrt zum „Bildformat“ oben zurück. Gemerkte Lautstärken bleiben erhalten. Einzelne Titel kannst du jederzeit wieder im Player einstellen.</string>
     <string name="settings_reset_saved_volume">Gespeicherte Lautstärke zurücksetzen</string>
     <string name="settings_reset_saved_volume_description">Wenn du die Lautstärke im Player änderst, wird sie für diesen Kanal, Film oder diese Folge gespeichert. Beim Zurücksetzen folgt wieder alles der Standardlautstärke.</string>
-    <string name="settings_reset_saved_volume_confirm">Gespeicherte Lautstärke zurücksetzen?</string>
-    <string name="settings_reset_saved_volume_confirm_description">Jeder Kanal, jeder Film und jede Folge kehrt zur Standardlautstärke zurück. Gespeicherte Zoom-Einstellungen bleiben erhalten. Du kannst einzelne Titel jederzeit erneut im Player einstellen.</string>
+    <string name="settings_reset_saved_volume_confirm">Gemerkte Lautstärke zurücksetzen?</string>
+    <string name="settings_reset_saved_volume_confirm_description">Jeder Sender, jeder Film und jede Folge kehrt zur „Lautstärke beim Start“ zurück. Gemerkte Bildformate bleiben erhalten. Einzelne Titel kannst du jederzeit wieder im Player einstellen.</string>
     <string name="settings_reset_saved_audio_delay">Gespeicherte A/V-Synchronisierung zurücksetzen</string>
     <string name="settings_reset_saved_audio_delay_description">Mit „Diese Verzögerung merken“ im Player wird die Audiosynchronisierung für diesen Sender, Film oder diese Folge gespeichert. Zurücksetzen lässt wieder alles der Einstellung oben folgen.</string>
-    <string name="settings_reset_saved_audio_delay_confirm">Gespeicherte A/V-Synchronisierung zurücksetzen?</string>
-    <string name="settings_reset_saved_audio_delay_confirm_description">Jeder Sender, Film und jede Folge kehrt zur Audiosynchronisierung oben zurück. Gespeicherter Zoom und gespeicherte Lautstärke bleiben erhalten. Einzelne Werte lassen sich jederzeit wieder im Player setzen.</string>
+    <string name="settings_reset_saved_audio_delay_confirm">Gemerkte A/V-Synchronisierung zurücksetzen?</string>
+    <string name="settings_reset_saved_audio_delay_confirm_description">Jeder Sender, jeder Film und jede Folge kehrt zur „A/V-Synchronisierung“ oben zurück. Gemerktes Bildformat und gemerkte Lautstärke bleiben erhalten. Einzelne Werte kannst du jederzeit wieder im Player setzen.</string>
     <string name="settings_seek_step">Sprungweite</string>
     <string name="settings_seek_step_description">Wie weit Rück- und Vorlauf in einem Film oder einer Folge springen.</string>
     <string name="settings_vod_buffer">Film-Puffer</string>
@@ -442,7 +442,7 @@
     <string name="settings_vod_network_timeout_description">Wie lange Filme, Folgen und Catch-up auf einen stummen Server warten, bevor die Verbindung als verloren gilt. Auto behält die Wartezeit jedes Players bei: 60 Sekunden bei mpv, 20 bei ExoPlayer.</string>
     <string name="settings_vod_reconnects">Verbindungsversuche</string>
     <string name="settings_vod_reconnects_description">Wie oft ein Film oder eine Folge nach einem Verbindungsabbruch an der gleichen Stelle neu geöffnet wird, bevor ein Fehler erscheint. Eine Minute störungsfreie Wiedergabe gibt die Versuche zurück.</string>
-    <string name="settings_vod_network_auto">Auto</string>
+    <string name="settings_vod_network_auto">Automatisch</string>
     <string name="settings_live_rewind_step">Live-Rücklaufschritt</string>
     <string name="settings_live_rewind_step_description">Wie weit Zurück- und Vorspulen auf einem Live-Sender springen: in seinem Catch-up-Archiv oder in der von Live-TV anhalten und zurückspulen gespeicherten Kopie.</string>
     <string name="settings_resume_playback">Wiedergabe fortsetzen</string>
@@ -451,7 +451,7 @@
     <string name="settings_subtitle_appearance_description">Größe, Textfarbe, Bildschirmposition und Hintergrundtransparenz. Wenn diese Option ausgeschaltet ist, behalten Untertitel ihre ursprüngliche Darstellung – einschließlich der von Sendern in Live-TV-Untertitel eingebetteten Formatierung.</string>
     <string name="settings_subtitle_size">Untertitelgröße</string>
     <string name="settings_subtitle_size_description">Untertiteltext skalieren.</string>
-    <string name="settings_preferred_subtitle_language">Bevorzugte Untertitelsprache</string>
+    <string name="settings_preferred_subtitle_language">Untertitelsprache</string>
     <string name="settings_preferred_language_description">Diese Untertitelspur automatisch auswählen, wenn sie verfügbar ist.</string>
     <string name="settings_preferred_audio_language_description">Spielt diese Tonspur ab, wenn der Stream sie hat. „Originalsprache“ spielt Filme und Serien in der Sprache ab, in der sie gedreht wurden.</string>
     <string name="settings_open_subtitles">OpenSubtitles</string>
@@ -471,11 +471,11 @@
     <string name="settings_shared">Gemeinsam</string>
     <string name="settings_open_subtitles_access_priority">Lasse beide Felder leer, um den gemeinsamen Worker von OwnTV zu nutzen. Eine eigene Worker-URL hat Vorrang vor einem direkten API-Schlüssel. Kontositzungen bleiben profilspezifisch.</string>
     <string name="settings_remove_custom_access">Eigenen Zugang entfernen</string>
-    <string name="settings_preferred_audio_language">Bevorzugte Audiosprache</string>
-    <string name="settings_audio_sync">Audio-Synchronisierung</string>
+    <string name="settings_preferred_audio_language">Audiosprache</string>
+    <string name="settings_audio_sync">A/V-Synchronisierung</string>
     <string name="settings_audio_sync_description">Audio zeitlich vor- oder zurückversetzen, um es an das Video anzupassen. Funktioniert mit beiden Playern (mpv und ExoPlayer).</string>
     <string name="settings_output_audio_delay">Verzögerung für diesen Ausgang</string>
-    <string name="settings_output_audio_delay_description">Kommt zu „Audio-Synchronisierung“ hinzu und wird für jeden Ausgang getrennt gespeichert – HDMI, eine Soundbar über HDMI ARC, Bluetooth, die eingebauten Lautsprecher, Kopfhörer. Stelle sie ein, während du über diesen Ausgang hörst.</string>
+    <string name="settings_output_audio_delay_description">Kommt zur „A/V-Synchronisierung“ hinzu und wird für jeden Ausgang getrennt gemerkt – HDMI, eine Soundbar über HDMI ARC, Bluetooth, die eingebauten Lautsprecher, Kopfhörer. Stelle sie ein, während du über diesen Ausgang hörst.</string>
     <string name="settings_audio_output_speaker">Eingebaute Lautsprecher</string>
     <string name="settings_audio_output_other">Kopfhörer oder USB</string>
     <string name="settings_live_tv">Live-TV</string>
@@ -517,17 +517,17 @@
     <string name="settings_movies_player_description_mobile">mpv (empfohlen) bietet die umfassendste Formatunterstützung — DTS/TrueHD-Audio, ungewöhnliche Dateien. ExoPlayer gibt auf bestimmten Geräten einige Streams wieder, die mpv nicht schafft, kann jedoch kein DTS/TrueHD-Audio decodieren. Die kombinierten Optionen probieren automatisch den anderen Player, wenn der erste scheitert; die Optionen mit nur einem Player tun das nie, was ein paar Sekunden Schwarzbild spart, falls der zweite Player auf deinem Gerät ohnehin nicht funktioniert.</string>
     <string name="settings_live_player_description">ExoPlayer (empfohlen) öffnet Sender deutlich schneller und ist der einzige mit Untertiteln im Live-TV. mpv gibt Sender wieder, die ExoPlayer nicht schafft, darunter manche mit ungewöhnlichem Ton. Die kombinierten Optionen probieren automatisch den anderen Player, wenn der erste scheitert; die Optionen mit nur einem Player tun das nie, was ein paar Sekunden Schwarzbild spart, falls der zweite Player auf deinem Fernseher ohnehin nicht funktioniert. Bei einem Sender, den du im Player von Hand umschaltest, bleibt deine Auswahl in beiden Fällen erhalten.</string>
     <string name="settings_reset_player_choices_description">Wenn du einen einzelnen Film oder eine Folge im Player zwischen mpv und ExoPlayer umschaltest, wird diese Auswahl für das nächste Mal gespeichert. Beim Zurücksetzen folgt wieder alles der Einstellung oben. Gespeicherte Auswahlen für Live-Kanäle bleiben erhalten.</string>
-    <string name="settings_reset_player_choices_none">Nichts gespeichert</string>
+    <string name="settings_reset_player_choices_none">Nichts gemerkt</string>
     <plurals name="settings_reset_player_choices_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> gespeichert</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> gespeichert</item>
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> gemerkt</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> gemerkt</item>
     </plurals>
-    <string name="settings_reset_player_choices_confirm">Gespeicherte Player-Auswahl zurücksetzen?</string>
-    <string name="settings_reset_player_choices_confirm_description">Jeder Film und jede Folge folgt wieder der Einstellung „Player für Filme und Serien“. Du kannst einzelne Titel jederzeit erneut im Player umschalten.</string>
+    <string name="settings_reset_player_choices_confirm">Gemerkte Player-Wahl pro Film/Folge zurücksetzen?</string>
+    <string name="settings_reset_player_choices_confirm_description">Jeder Film und jede Folge folgt wieder der Einstellung „Player für Filme &amp; Serien“. Du kannst einzelne Titel jederzeit wieder im Player umschalten.</string>
     <string name="settings_reset_live_player_choices">Gespeicherte Player-Auswahl für Live-TV zurücksetzen</string>
     <string name="settings_reset_live_player_choices_description">Wenn du einen Sender im Player zwischen ExoPlayer und mpv umschaltest, wird diese Auswahl für den Sender gespeichert. Beim Zurücksetzen folgen alle Sender wieder der Einstellung „Player für Live-TV“. Gespeicherte Auswahlen für Filme und Folgen bleiben erhalten.</string>
-    <string name="settings_reset_live_player_choices_confirm">Gespeicherte Player-Auswahl für Live-TV zurücksetzen?</string>
-    <string name="settings_reset_live_player_choices_confirm_description">Jeder Sender folgt wieder der Einstellung „Player für Live-TV“. Du kannst einzelne Sender jederzeit erneut im Player umschalten.</string>
+    <string name="settings_reset_live_player_choices_confirm">Gemerkte Player-Wahl pro Sender zurücksetzen?</string>
+    <string name="settings_reset_live_player_choices_confirm_description">Jeder Sender folgt wieder der Einstellung „Player für Live-TV“. Du kannst einzelne Sender jederzeit wieder im Player umschalten.</string>
     <string name="settings_external_player_row_description">Streams in einer externen App (VLC, MX Player) statt im integrierten Player öffnen, separat für jeden Bereich auswählbar. Nützlich für Streams, die diese App nicht decodieren kann, oder wenn du einen anderen Player bevorzugst. Die Fortsetzungsposition und „Zurück/Weiter“ sind bei externer Wiedergabe nicht verfügbar; Streams, die einen benutzerdefinierten User-Agent oder Referer benötigen, werden möglicherweise nicht wiedergegeben.</string>
     <string name="settings_resume_always">Immer fortsetzen</string>
     <string name="settings_resume_ask">Vor dem Fortsetzen fragen</string>
@@ -658,20 +658,20 @@
     <string name="settings_span_ch_help">CH+ / CH− springen eine Seite. CH+ / CH− gedrückt halten springt zum letzten oder ersten Eintrag.</string>
     <string name="settings_customize_metadata_separator">"  ·  "</string>
     <string name="settings_sources_title">Quellen</string>
-    <string name="settings_sources_empty">Noch keine Quellen. Füge eine M3U- oder Xtream-Quelle hinzu.</string>
-    <string name="settings_sources_add">Quelle hinzufügen</string>
+    <string name="settings_sources_empty">Noch keine Playlists. Füg eine per Link, Xtream-Login, Stalker-Portal oder Datei hinzu.</string>
+    <string name="settings_sources_add">Playlist hinzufügen</string>
     <string name="settings_sources_import_failed">Importieren fehlgeschlagen</string>
     <string name="settings_sources_importing">Katalog wird importiert…</string>
     <string name="settings_sources_preparing">Katalog wird vorbereitet</string>
     <string name="settings_sources_deleting">WIRD GELÖSCHT…</string>
-    <string name="settings_sources_resync">Erneut synchronisieren</string>
+    <string name="settings_sources_resync">Neu synchronisieren</string>
     <string name="settings_sources_delete_title">„<xliff:g id="name">%1$s</xliff:g>“ löschen?</string>
-    <string name="settings_sources_delete_message">Dadurch werden die Quelle sowie alle zugehörigen Sender, Filme und Serien aus jedem Profil entfernt.</string>
+    <string name="settings_sources_delete_message">Dadurch werden die Playlist sowie alle zugehörigen Sender, Filme und Serien aus jedem Profil entfernt.</string>
     <string name="settings_sources_type_m3u">M3U · <xliff:g id="url">%1$s</xliff:g></string>
     <string name="settings_sources_type_xtream">Xtream · <xliff:g id="url">%1$s</xliff:g></string>
     <string name="settings_sources_type_stalker">Stalker · <xliff:g id="url">%1$s</xliff:g></string>
     <string name="settings_sources_expiry">Läuft am <xliff:g id="date">%1$s</xliff:g> ab</string>
-    <string name="settings_sources_test_title">Quellentest</string>
+    <string name="settings_sources_test_title">Playlist-Info</string>
     <string name="settings_sources_test_ok">Verbindung in Ordnung</string>
     <string name="settings_sources_test_auth">Der Anbieter hat diese Daten abgelehnt. Prüfe Benutzername, Passwort oder MAC-Adresse.</string>
     <string name="settings_sources_test_expired">Dieses Abonnement ist abgelaufen.</string>
@@ -721,18 +721,18 @@
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> Tage</item>
     </plurals>
     <string name="settings_epg_sources_title">EPG-Quellen</string>
-    <string name="settings_epg_sources_empty">Noch keine EPG-Quellen. Füge einen XMLTV-Link hinzu.</string>
+    <string name="settings_epg_sources_empty">Noch keine EPG-Quellen. Füg einen XMLTV-Link hinzu.</string>
     <string name="settings_epg_sources_add">EPG-Quelle hinzufügen</string>
     <string name="settings_epg_sources_edit">EPG-Quelle bearbeiten</string>
     <string name="settings_epg_sources_add_sync">Hinzufügen und synchronisieren</string>
     <string name="settings_epg_sources_save_sync">Speichern und synchronisieren</string>
-    <string name="settings_epg_sources_fill_playlist">Aus Wiedergabeliste übernehmen</string>
-    <string name="settings_epg_sources_none_playlist">Keine deiner Wiedergabelisten stellt eine EPG-URL bereit.</string>
+    <string name="settings_epg_sources_fill_playlist">Aus Playlist übernehmen</string>
+    <string name="settings_epg_sources_none_playlist">Keine deiner Playlists stellt eine EPG-Adresse bereit.</string>
     <string name="settings_epg_sources_use_logos">Senderlogos dieser Programmübersicht verwenden</string>
-    <string name="settings_epg_sources_logos_description">Logos aus diesem XMLTV-Feed statt aus deiner Wiedergabeliste anzeigen. Für Sender, für die dieser Feed kein Logo enthält, wird weiterhin das Logo der Wiedergabeliste verwendet.</string>
+    <string name="settings_epg_sources_logos_description">Zeigt die Logos aus dieser EPG-Quelle statt der deiner Playlist. Sender ohne Logo in der Quelle behalten das Logo der Playlist.</string>
     <string name="settings_epg_sources_name">Name</string>
     <string name="settings_epg_sources_url">XMLTV-URL</string>
-    <string name="settings_epg_sources_portal_guide">Programm vom Portal</string>
+    <string name="settings_epg_sources_portal_guide">EPG vom Portal</string>
     <string name="settings_epg_sources_user_agent">User-Agent (optional)</string>
     <string name="settings_epg_sources_name_hint">z. B. Programmübersicht UK</string>
     <string name="settings_epg_sources_url_hint">https://…/epg.xml(.gz)</string>
@@ -926,7 +926,7 @@
     <string name="settings_move_category_action">Verschieben</string>
     <string name="settings_dns_description">Einen benutzerdefinierten DNS-Server für Domainabfragen verwenden</string>
     <string name="settings_dns_toggle_description">Alle Domainabfragen von OwnTV über einen benutzerdefinierten DNS-Server auflösen.</string>
-    <string name="settings_dns_use_custom">Benutzerdefiniertes DNS verwenden</string>
+    <string name="settings_dns_use_custom">Eigenen DNS-Server verwenden</string>
     <string name="settings_dns_server_missing">Benutzerdefiniertes DNS ist aktiviert, aber es wurde kein Server konfiguriert. Geben Sie eine Serveradresse ein und wählen Sie „Speichern“ oder deaktivieren Sie diese Option.</string>
     <string name="settings_dns_server">DNS-Server</string>
     <string name="settings_dns_server_hint">8.8.8.8 oder https://dns.google/dns-query</string>
@@ -1350,7 +1350,7 @@
     <string name="settings_line_override_playlist">Für eine Playlist überschreiben</string>
     <string name="settings_line_accent">Färbt Schaltflächen, Fokus und Hervorhebungen überall</string>
     <string name="settings_line_fonts">Eine Schriftfamilie für Oberfläche und Pop-ups</string>
-    <string name="settings_line_popup_size">Dialoge und Menüs skalieren, ohne den Text zu ändern</string>
+    <string name="settings_line_popup_size">Mach Popups und Menüs größer oder kleiner</string>
     <string name="settings_line_animations">Aus wirkt auf schwächeren TV-Boxen flotter</string>
     <string name="settings_line_weather">Wetter oben rechts: Ort und °C / °F</string>
     <string name="settings_line_live_opens_in">Die Senderliste oder das Guide-Raster</string>
@@ -1358,7 +1358,7 @@
     <string name="settings_line_panel_width">Breite von Kategorien, Liste und Vorschau</string>
     <string name="settings_line_guide_width">Senderliste und Zeitleiste</string>
     <string name="settings_line_browsing">Letzte Kategorie und letzten Eintrag merken</string>
-    <string name="settings_line_home">Zeilen auswählen, sortieren und filtern</string>
+    <string name="settings_line_home">Wähle die Reihen der Startseite und ihre Reihenfolge</string>
     <string name="settings_line_content_menus">Aktionen in jedem Menü neu anordnen</string>
     <string name="settings_line_remote_shortcuts">Freie Fernbedienungstasten belegen</string>
     <string name="settings_line_customize">Aus- und einblenden, umbenennen und sortieren</string>
@@ -1387,7 +1387,7 @@
     <string name="settings_line_max_quality">Das beste Bild, wenn es mehrere gibt</string>
     <string name="settings_line_tunneled">Experimentell · Live-TV mit ExoPlayer</string>
     <string name="settings_line_zoom">Seitenverhältnis und Zoom beim Start</string>
-    <string name="settings_line_saved_zoom">Im Player geänderter Zoom</string>
+    <string name="settings_line_saved_zoom">Im Player geändertes Bildformat</string>
     <string name="settings_line_films_only">Nur Filme</string>
     <string name="settings_line_volume">Über 100 %% werden leise Streams verstärkt</string>
     <string name="settings_line_saved_volume">Im Player geänderte Lautstärke</string>
@@ -1402,12 +1402,12 @@
     <string name="settings_line_sub_lang">Untertitel in dieser Sprache einschalten</string>
     <string name="settings_line_sub_style">Größe, Farbe, Position, Hintergrund</string>
     <string name="settings_title_fonts">Schriften &amp; Textgröße</string>
-    <string name="settings_title_saved_live_choices">Gespeicherte Live-TV-Player-Auswahl</string>
-    <string name="settings_title_saved_choices">Gespeicherte Player-Auswahl</string>
+    <string name="settings_title_saved_live_choices">Player-Wahl pro Sender</string>
+    <string name="settings_title_saved_choices">Player-Wahl pro Film/Folge</string>
     <string name="settings_title_tunneled">Getunnelte Wiedergabe</string>
-    <string name="settings_title_saved_zoom">Gespeicherter Zoom</string>
-    <string name="settings_title_saved_volume">Gespeicherte Lautstärke</string>
-    <string name="settings_title_saved_audio_sync">Gespeicherte Audiosynchronisation</string>
+    <string name="settings_title_saved_zoom">Gemerktes Bildformat</string>
+    <string name="settings_title_saved_volume">Gemerkte Lautstärke</string>
+    <string name="settings_title_saved_audio_sync">Gemerkte A/V-Synchronisierung</string>
     <string name="settings_line_channel_numbers">Die Nummer des Anbieters neben dem Namen</string>
     <string name="settings_line_live_preview">Den fokussierten Sender abspielen</string>
     <string name="settings_line_timeshift">Sender ohne Catch-up, beim Ansehen gespeichert</string>
@@ -1423,7 +1423,7 @@
     <string name="settings_line_tiles">Jede Kachel ist ein weiterer Stream</string>
     <string name="settings_line_mini">Größe und Position</string>
     <string name="settings_line_rec_reserve">Nie auf allen Verbindungen aufnehmen</string>
-    <string name="settings_line_rec_watching">Kein zweiter Stream</string>
+    <string name="settings_line_rec_watching">Fügt dem Player eine Aufnahmetaste hinzu</string>
     <string name="settings_line_rec_pre_roll">Vor Beginn der Sendung</string>
     <string name="settings_line_rec_post_roll">Für Sendungen, die überziehen</string>
     <string name="settings_line_measured_stats">Live-FPS, Bitrate und verworfene Bilder</string>
@@ -1508,9 +1508,9 @@
     <string name="settings_key_pick_color">Farbe wählen</string>
     <string name="settings_line_trending_layout">Wie die Trend-Zeile aussieht</string>
     <string name="settings_home_shown">Angezeigt</string>
-    <string name="settings_home_hide_row">Diese Zeile ausblenden</string>
-    <string name="settings_home_show_row">Diese Zeile einblenden</string>
-    <string name="settings_home_move_row">Verschieben (▲ ▼, dann OK)</string>
+    <string name="settings_home_hide_row">Diese Reihe ausblenden</string>
+    <string name="settings_home_show_row">Diese Reihe einblenden</string>
+    <string name="settings_home_move_row">Verschieben</string>
     <string name="settings_line_remote_shortcuts_on">Aus behält Ihre Belegungen</string>
     <string name="settings_language_system_help">OwnTV folgt der Sprache des Fernsehers (derzeit <xliff:g id="language">%1$s</xliff:g>). Wählen Sie unten eine Sprache, um sie nur in OwnTV zu verwenden.</string>
     <string name="settings_language_pick_help"><xliff:g id="language">%1$s</xliff:g> in OwnTV verwenden, unabhängig von der Sprache des Fernsehers.</string>
@@ -1523,8 +1523,8 @@
     <string name="settings_line_os_search_language">In den Suchergebnissen angezeigt</string>
     <string name="settings_subtitle_delete_help">Löschen gibt den Speicher frei; im Player können Sie die Datei erneut herunterladen.</string>
     <plurals name="settings_home_row_count">
-        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> Zeile</item>
-        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> Zeilen</item>
+        <item quantity="one">%1$d Reihe</item>
+        <item quantity="other">%1$d Reihen</item>
     </plurals>
     <plurals name="settings_subtitles_downloaded_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> heruntergeladen</item>
@@ -1555,9 +1555,9 @@
     <string name="settings_form_field_help">OK öffnet die Tastatur; ▼ springt zum nächsten Feld.</string>
     <string name="settings_help_playlist_url">Die Adresse Ihrer .m3u- oder .m3u8-Liste.</string>
     <string name="settings_line_fill_from_playlist">Die Guide-Adresse Ihrer Playlist verwenden</string>
-    <string name="settings_line_epg_auto_refresh">Den Guide aktuell halten</string>
+    <string name="settings_line_epg_auto_refresh">Hält die EPG-Daten aktuell</string>
     <string name="settings_line_epg_logos">Statt der Logos der Playlist</string>
-    <string name="settings_help_epg_name">Erscheint in der Guide-Liste und unter EPG manuell wählen.</string>
+    <string name="settings_help_epg_name">Erscheint in der Liste der EPG-Quellen und unter „EPG manuell wählen“.</string>
     <string name="settings_glass_bg_title">Glas &amp; Hintergrund</string>
     <string name="settings_line_glass_bg">Hintergrund, Bildwirkung, Glas</string>
     <string name="settings_bg_background">Hintergrund</string>
