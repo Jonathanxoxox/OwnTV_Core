@@ -422,12 +422,13 @@ class LivePreviewEngine(
     private val zapStages = object : androidx.media3.exoplayer.analytics.AnalyticsListener {
         private var tuneAt = 0L
         private val seen = HashSet<String>()
-        private fun mark(stage: String) {
+        @Synchronized
+        fun mark(stage: String, detail: String = "") {
             val t = tune.playStartedMs
             if (t == 0L) return
             if (t != tuneAt) { tuneAt = t; seen.clear() }
             if (seen.add(stage)) {
-                android.util.Log.i("OwnTVPerf", "zap-stage $stage +${android.os.SystemClock.elapsedRealtime() - t}ms")
+                android.util.Log.i("OwnTVPerf", "zap-stage $stage +${android.os.SystemClock.elapsedRealtime() - t}ms$detail")
             }
         }
         override fun onIsLoadingChanged(eventTime: androidx.media3.exoplayer.analytics.AnalyticsListener.EventTime, isLoading: Boolean) {
@@ -3119,6 +3120,11 @@ class LivePreviewEngine(
                 val request = chain.request()
                 try {
                     val response = chain.proceed(request)
+                    // Benchmark: when the provider answered this tune, and through how many redirects.
+                    var hops = 0
+                    var prior = response.priorResponse
+                    while (prior != null) { hops++; prior = prior.priorResponse }
+                    zapStages.mark("http-response", " took=${android.os.SystemClock.elapsedRealtime() - startedAt}ms redirects=$hops")
                     val finalUrl = response.request.url.toString()
                     if (isHlsResponse(finalUrl, response.header("Content-Type"))) {
                         tune.responseWasHls = true
