@@ -55,5 +55,13 @@ class ZapTiming(private val claimWindowMs: Long = CLAIM_WINDOW_MS) {
         /** The suffix a first-frame line carries when a zap press is being measured, else "". */
         fun pressSuffix(sincePressMs: Long?): String =
             sincePressMs?.let { " (zap key press to first frame ${it}ms)" }.orEmpty()
+
+        /**
+         * One logcat line per tune under the app's start-timing tag, release builds included: what the box
+         * benchmark reads to time zapping. Numbers only, no channel or URL.
+         */
+        fun perf(engine: String, sinceOpenMs: Long, sincePressMs: Long?) {
+            android.util.Log.i("OwnTVPerf", "zap-first-frame engine=$engine open=${sinceOpenMs}ms press=${sincePressMs ?: -1}ms")
+        }
     }
 }

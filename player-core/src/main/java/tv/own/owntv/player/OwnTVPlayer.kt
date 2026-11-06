@@ -4800,6 +4800,7 @@ class OwnTVPlayer(
             "mpv live first position after ${now - l.loadStartTime}ms " +
                 "(file loaded ${since(l.fileLoadedAt)}, video ${since(l.firstVideoAt)})${ZapTiming.pressSuffix(sincePress)}",
         )
+        ZapTiming.perf("mpv", now - l.loadStartTime, sincePress)
     }
 
     private fun updateAspect() {
