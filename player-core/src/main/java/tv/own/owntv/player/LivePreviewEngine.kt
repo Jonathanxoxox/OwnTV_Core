@@ -3103,8 +3103,33 @@ class LivePreviewEngine(
      *  "max connections"). Successful bodies are never read. Credentials never appear: URLs go through
      *  [HttpClient.redactUrl], body text additionally has this request's own user/pass/token strings
      *  masked ([textPrefix]), and Authorization/Cookie are logged as presence flags, never values. */
+    /**
+     * Benchmark: each hop of a tune's request (the panel's redirect, then the stream server) with its DNS,
+     * connect and server time, as OwnTVPerf lines. Shows whether a zap waits on connection setup (which
+     * the app can shorten) or on the provider's server (which it cannot). Numbers only, no host or URL.
+     */
+    private class ZapHops(private val mark: (String, String) -> Unit) : okhttp3.EventListener() {
+        private var hop = 0
+        private var at = 0L
+        private var dnsMs = -1L
+        private var connectMs = -1L
+        private var requestSentAt = 0L
+        private fun now() = android.os.SystemClock.elapsedRealtime()
+        override fun dnsStart(call: okhttp3.Call, domainName: String) { at = now() }
+        override fun dnsEnd(call: okhttp3.Call, domainName: String, inetAddressList: List<java.net.InetAddress>) { dnsMs = now() - at }
+        override fun connectStart(call: okhttp3.Call, inetSocketAddress: java.net.InetSocketAddress, proxy: java.net.Proxy) { at = now() }
+        override fun connectEnd(call: okhttp3.Call, inetSocketAddress: java.net.InetSocketAddress, proxy: java.net.Proxy, protocol: okhttp3.Protocol?) { connectMs = now() - at }
+        override fun requestHeadersEnd(call: okhttp3.Call, request: okhttp3.Request) { requestSentAt = now() }
+        override fun responseHeadersEnd(call: okhttp3.Call, response: okhttp3.Response) {
+            hop++
+            mark("http-hop$hop", " code=${response.code} dns=${dnsMs}ms connect=${connectMs}ms server=${now() - requestSentAt}ms")
+            dnsMs = -1L; connectMs = -1L
+        }
+    }
+
     private val diagnosticHttpClient by lazy {
         streamingHttp.client.newBuilder()
+            .eventListenerFactory { ZapHops { stage, detail -> zapStages.mark(stage, detail) } }
             .connectTimeout(LIVE_CONNECT_TIMEOUT_MS, java.util.concurrent.TimeUnit.MILLISECONDS)
             .dns(liveDnsOver(streamingHttp.client.dns))
             .addNetworkInterceptor(

@@ -5565,6 +5565,7 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	buffered but never started playing ($detail)
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	buffering stalled
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	building tunneled player (N19)
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	code=${response.code} dns=${dnsMs}ms connect=${connectMs}ms server=${now() - requestSentAt}ms
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	connection pool evict failed: ${it.javaClass.simpleName}
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	critical memory pressure — next tune rebuilds with the low-RAM buffer
 1	protocol	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	dash
@@ -5597,6 +5598,7 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	hls_playlist ($reason) mediaSeq=${playlist.mediaSequence} segs=${playlist.segments.size}
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	hls_shape $it
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	hosts=${hosts.groupingBy { it }.eachCount()} newest=$tail
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	http-hop$hop
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	http-response
 1	url	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	http://
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	http_failure type=${t.javaClass.simpleName} message=${HttpClient.redactUrl(t.message.orEmpty())}
