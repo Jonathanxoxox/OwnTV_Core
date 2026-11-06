@@ -1699,10 +1699,12 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { it[Keys.TIMESHIFT_WINDOW_MINUTES] = TimeshiftRules.windowMinutesOf(minutes) }
     }
 
-    /** Timeshift on/off with its window, warm in memory: every live tune reads it before play(). */
-    private val timeshiftState: StateFlow<Pair<Boolean, Int>?> =
+    /** Timeshift on/off with its window, warm in memory: every live tune reads it before play(). Created by
+     *  the first tune, not at the app's start (reads there cost the first frame). */
+    private val timeshiftState: StateFlow<Pair<Boolean, Int>?> by lazy {
         combine(timeshiftEnabled, timeshiftWindowMinutes) { on, minutes -> on to minutes }
             .stateIn(repoScope, SharingStarted.Eagerly, null)
+    }
 
     /**
      * The timeshift window in minutes, or null when timeshift is off. Served from memory, so a zap does

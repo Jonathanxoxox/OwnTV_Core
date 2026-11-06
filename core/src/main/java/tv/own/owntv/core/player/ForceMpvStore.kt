@@ -62,10 +62,15 @@ class ForceMpvStore(
      * queries there came back to the main thread only after the frame the channel card was drawing (~100 ms
      * of a zap, box, 6 Nov 2026). Null until the first emission and right after this store writes, so a
      * read never sees a list from before its own write; Room's next emission fills it again.
+     *
+     * Started by the first [pinFor], not at construction: queries during the app's start cost the first
+     * frame more than they save (box, 6 Nov 2026: +90 ms when started eagerly).
      */
     @Volatile private var cachedPins: Pair<Set<String>, Set<String>>? = null
+    private val pinCacheStarted = java.util.concurrent.atomic.AtomicBoolean(false)
 
-    init {
+    private fun startPinCache() {
+        if (!pinCacheStarted.compareAndSet(false, true)) return
         kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.SupervisorJob() + kotlinx.coroutines.Dispatchers.IO).launch {
             kotlinx.coroutines.flow.combine(urls, exoUrls) { mpv, exo -> mpv to exo }.collect { cachedPins = it }
         }
@@ -110,6 +115,7 @@ class ForceMpvStore(
      * (older builds) is migrated to [stableKey] on the way.
      */
     suspend fun pinFor(stableKey: String?, legacyUrl: String): Boolean? {
+        startPinCache()
         val cached = cachedPins
         val lookup = pinOf(stableKey, legacyUrl, cached?.first ?: urls.first(), cached?.second ?: exoUrls.first()) ?: return null
         if (lookup.legacy && stableKey != null) migrateKey(legacyUrl, stableKey)
