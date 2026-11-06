@@ -5578,6 +5578,7 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	error ${error.errorCodeName}
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	error 0xfffffff4
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	every rung spent — retrying at the panel's direct_source address
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	exo
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	exo/live: $reason
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	ffmpeg
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	first frame after ${now - t.startedMs}ms${ZapTiming.pressSuffix(sincePress)}
@@ -6053,7 +6054,7 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	mpeg2
 1	technical	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	mpeg2video
 2	technical	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	mpeg4
-6	protocol	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	mpv
+7	technical	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	mpv
 1	log	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	mpv $line
 1	log	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	mpv $why — reopening with tolerant demuxing (discardcorrupt/genpts/ignore_err)
 1	log	player-core/src/main/java/tv/own/owntv/player/OwnTVPlayer.kt	mpv frames: est-vf-fps=${m.getPropertyString("estimated-vf-fps")}
@@ -6469,3 +6470,5 @@
 1	log	player-core/src/main/java/tv/own/owntv/player/VolumeBoost.kt	volume boost failed: ${it.javaClass.simpleName}
 1	log	player-core/src/main/java/tv/own/owntv/player/VolumeBoost.kt	volume boost unavailable: ${it.javaClass.simpleName}
 1	log	player-core/src/main/java/tv/own/owntv/player/ZapTiming.kt	(zap key press to first frame ${it}ms)
+1	technical	player-core/src/main/java/tv/own/owntv/player/ZapTiming.kt	OwnTVPerf
+1	technical	player-core/src/main/java/tv/own/owntv/player/ZapTiming.kt	zap-first-frame engine=$engine open=${sinceOpenMs}ms press=${sincePressMs ?: -1}ms
