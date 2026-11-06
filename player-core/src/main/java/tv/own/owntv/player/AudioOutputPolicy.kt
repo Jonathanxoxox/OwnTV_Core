@@ -163,6 +163,8 @@ class OwnTVRenderersFactory(
     ): AudioSink? {
         var sink = buildBaseAudioSink(context, enableFloatOutput, enableAudioOutputPlaybackParams) ?: return null
         if (!passthrough && !forceStereo) sink = DecodedOnlyAudioSink(sink)
+        // Passthrough on: stereo Dolby is still decoded here, multichannel goes out untouched (see the class).
+        if (passthrough && !forceStereo) sink = StereoDolbyDecodedSink(sink)
         return if (audioDelay != null) DelayedClockAudioSink(sink, audioDelay) else sink
     }
 
@@ -234,6 +236,37 @@ class DecodedOnlyAudioSink(sink: AudioSink) : ForwardingAudioSink(sink) {
         /** Encoded [mime] must be decoded in the app: something here can decode it. PCM never. */
         fun mustDecode(mime: String, deviceDecoder: (String) -> Boolean, ffmpeg: (String) -> Boolean): Boolean =
             mime != MimeTypes.AUDIO_RAW && (deviceDecoder(mime) || ffmpeg(mime))
+    }
+}
+
+/**
+ * Passthrough for what needs it, decoding for stereo Dolby: AC-3 / E-AC-3 with at most two channels is
+ * decoded on the device (by its own Dolby decoder) and sent as PCM, everything multichannel, Atmos (JOC)
+ * and DTS still goes out as a bitstream.
+ *
+ * Why (Mayo TV box, 6 Nov 2026): a bitstream restarts on every zap, and the soundbar then needs about a
+ * second to lock on again, so the sound came well after the picture. With PCM the HDMI audio link never
+ * changes format and the sound comes with the picture. Nothing is lost for stereo: the same two channels
+ * reach the soundbar, decoded by the box instead of by it. Multichannel stays a bitstream because this
+ * box's Dolby decoder hands over two channels only, and 5.1 must stay 5.1.
+ */
+@UnstableApi
+class StereoDolbyDecodedSink(sink: AudioSink) : ForwardingAudioSink(sink) {
+    override fun supportsFormat(format: Format): Boolean =
+        if (decodeHere(format)) false else super.supportsFormat(format)
+
+    override fun getFormatSupport(format: Format): Int =
+        if (decodeHere(format)) AudioSink.SINK_FORMAT_UNSUPPORTED else super.getFormatSupport(format)
+
+    private fun decodeHere(format: Format): Boolean =
+        decodeHere(format.sampleMimeType, format.channelCount, FfmpegAudio::deviceDecodes)
+
+    companion object {
+        /** Stereo (or mono) AC-3/E-AC-3 the device can decode. Unknown channel counts stay a bitstream. */
+        fun decodeHere(mime: String?, channels: Int, deviceDecoder: (String) -> Boolean): Boolean =
+            (mime == MimeTypes.AUDIO_AC3 || mime == MimeTypes.AUDIO_E_AC3) &&
+                channels in 1..2 &&
+                deviceDecoder(mime)
     }
 }
 

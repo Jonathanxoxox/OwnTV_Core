@@ -517,7 +517,7 @@
     <!-- Translators: Settings › Sound & subtitles. Toggle: send Dolby/DTS audio undecoded ("bitstream") to the TV or receiver. -->
     <string name="settings_audio_passthrough">Dolby and DTS passthrough</string>
     <!-- Translators: Description of settings_audio_passthrough. "Surround sound", "Night mode" and "Volume leveling" are the names of other settings rows. -->
-    <string name="settings_audio_passthrough_description">On: Dolby and DTS go undecoded to the TV, soundbar or receiver when it says it can play them (ExoPlayer). Off: the app decodes them, still as surround where Surround sound allows. mpv always decodes. Not used while Night mode or Volume leveling is on.</string>
+    <string name="settings_audio_passthrough_description">On: surround Dolby and DTS go undecoded to the TV, soundbar or receiver when it can play them (ExoPlayer); stereo Dolby is decoded here, so its sound starts with the picture. Off: the app decodes everything, as surround where Surround sound allows. mpv always decodes. Not used while Night mode or Volume leveling is on.</string>
     <!-- Translators: Settings › Sound & subtitles, switch title. FFmpeg is the name of an audio/video library and ExoPlayer the name of one of the two players; do not translate either. -->
     <string name="settings_ffmpeg_audio">FFmpeg audio for ExoPlayer</string>
     <!-- Translators: Description of settings_ffmpeg_audio. DTS, TrueHD and MP2 are sound formats; mpv is the other player. -->

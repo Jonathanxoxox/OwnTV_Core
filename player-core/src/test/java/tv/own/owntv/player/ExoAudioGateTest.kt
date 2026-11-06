@@ -23,6 +23,18 @@ class ExoAudioGateTest {
     ) = ExoAudioGate.verdict(codec, { it in device }, { it in ffmpeg }, { it in passthrough })
 
     @Test
+    fun `stereo Dolby is decoded on the device, multichannel, Atmos and DTS stay a bitstream`() {
+        val device = { mime: String -> mime == MimeTypes.AUDIO_AC3 || mime == MimeTypes.AUDIO_E_AC3 }
+        assertTrue(StereoDolbyDecodedSink.decodeHere(MimeTypes.AUDIO_E_AC3, 2, device))
+        assertTrue(StereoDolbyDecodedSink.decodeHere(MimeTypes.AUDIO_AC3, 1, device))
+        assertFalse(StereoDolbyDecodedSink.decodeHere(MimeTypes.AUDIO_AC3, 6, device))
+        assertFalse(StereoDolbyDecodedSink.decodeHere(MimeTypes.AUDIO_E_AC3_JOC, 2, device))
+        assertFalse(StereoDolbyDecodedSink.decodeHere(MimeTypes.AUDIO_DTS, 2, device))
+        assertFalse(StereoDolbyDecodedSink.decodeHere(MimeTypes.AUDIO_E_AC3, Format.NO_VALUE, device))
+        assertFalse(StereoDolbyDecodedSink.decodeHere(MimeTypes.AUDIO_E_AC3, 2) { false })
+    }
+
+    @Test
     fun `codecs every device decodes pass at once`() {
         for (codec in listOf("aac", "ac3", "eac3", "mp3float", "opus", "flac", "pcm_s16le")) {
             assertEquals(codec, Verdict.ALLOWLIST, verdict(codec))
