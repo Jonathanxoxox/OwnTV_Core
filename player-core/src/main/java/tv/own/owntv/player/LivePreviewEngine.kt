@@ -7,6 +7,7 @@ import androidx.media3.common.Format
 import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
+import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import androidx.media3.common.VideoSize
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.common.util.Util
@@ -3124,6 +3125,29 @@ class LivePreviewEngine(
             hop++
             mark("http-hop$hop", " code=${response.code} dns=${dnsMs}ms connect=${connectMs}ms server=${now() - requestSentAt}ms")
             dnsMs = -1L; connectMs = -1L
+            val location = response.header("Location")
+            if (response.isRedirect && location != null) {
+                // Could the redirect be reused? Logged as a shape only (host masked, long parts as their
+                // length) and whether it is the same as last time for this URL; the URLs stay in memory.
+                val key = response.request.url.toString()
+                val last = lastRedirect[key]
+                lastRedirect[key] = location to now()
+                val same = last?.first == location
+                val age = last?.let { "${(now() - it.second) / 1000}s" } ?: "-"
+                mark("http-redirect", " same=$same lastSeen=$age shape=${shape(response.request.url.resolve(location)?.toString() ?: location)}")
+            }
+        }
+
+        private companion object {
+            val lastRedirect = java.util.concurrent.ConcurrentHashMap<String, Pair<String, Long>>()
+            fun shape(url: String): String {
+                val u = url.toHttpUrlOrNull() ?: return "?"
+                val path = u.pathSegments.joinToString("/") { seg ->
+                    if (seg.length > 6) "<${seg.length}${if (seg.all { it.isDigit() }) "d" else "c"}>" else seg.replace(Regex("[0-9]"), "#")
+                }
+                val host = if (u.host.all { it.isDigit() || it == '.' }) "ip" else "name"
+                return "${u.scheme}://$host:${u.port}/$path?${u.queryParameterNames.sorted().joinToString("&")}"
+            }
         }
     }
 

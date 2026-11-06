@@ -5481,25 +5481,30 @@
 1	log	player-core/src/main/java/tv/own/owntv/player/LiveLadder.kt	mpv + HLS
 1	log	player-core/src/main/java/tv/own/owntv/player/LiveLadder.kt	mpv + TS
 13	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	\0
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	#
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	$idx@${LiveStreamQuirks.hostKey(abs)}${HttpClient.redactUrl(abs.substringAfter("://").substringAfter('/')).takeLast(28)}
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	$kind codec: ${e.message ?: e.javaClass.simpleName}
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	$kind codec: ${it.diagnosticInfo}
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	$name=${v.second}
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	${(now() - it.second) / 1000}s
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	${Math.round(it)} FPS
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	${buffered}ms buffered (needs ${startMs}ms) after ${waitedMs}ms, no frame,
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	${error.errorCodeName} again after playing — this stream's content is unplayable on ExoPlayer
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	${error.errorCodeName} while a reconnect waits — running it now
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	${f.width}x${f.height}
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	${tune.flapCount} re-buffers in ${now - tune.flapWindowStartMs}ms, position advanced ${advancedMs}ms
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	${u.scheme}://$host:${u.port}/$path?${u.queryParameterNames.sorted().joinToString("&")}
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	${videoSize.height}p
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	%.1f Mbps
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	%.2f:1
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	&
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	, $it
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	, init ${initializationDurationMs}ms)
-1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	-
+2	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	-
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	.
 2	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	.m3u8
 2	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	.mpd
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	/
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	16:10
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	16:9
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	21:9
@@ -5508,6 +5513,8 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	7.1
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	: $it
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	://
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	<${seg.length}${if (seg.all { it.isDigit() }) "d" else "c"}>
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	?
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	AV1
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	Age
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	Authorization
@@ -5525,6 +5532,7 @@
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	HTTP $HTTP_TOO_MANY_REQUESTS with Retry-After ${secs}s — waiting it out and retrying automatically
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	HTTP 458 while the previous engine's session was still open — waiting and retrying once
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	IDLE
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	Location
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	MONO
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	MPEG-2
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	MPEG-4
@@ -5546,6 +5554,7 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	VP9
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	X-Cache
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	[
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	[0-9]
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	]
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	age=${response.header("Age").orEmpty()} retryAfter=${response.header("Retry-After").orEmpty()}
 1	mime	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	application/dash+xml
@@ -5565,9 +5574,11 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	buffered but never started playing ($detail)
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	buffering stalled
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	building tunneled player (N19)
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	c
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	code=${response.code} dns=${dnsMs}ms connect=${connectMs}ms server=${now() - requestSentAt}ms
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	connection pool evict failed: ${it.javaClass.simpleName}
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	critical memory pressure — next tune rebuilds with the low-RAM buffer
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	d
 1	protocol	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	dash
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	dataType=${mediaLoadData.dataType} canceled=$wasCanceled
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	decoder exhausted — no MediaCodec instance available
@@ -5599,12 +5610,14 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	hls_shape $it
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	hosts=${hosts.groupingBy { it }.eachCount()} newest=$tail
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	http-hop$hop
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	http-redirect
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	http-response
 1	url	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	http://
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	http_failure type=${t.javaClass.simpleName} message=${HttpClient.redactUrl(t.message.orEmpty())}
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	http_response role=${HttpDiagnostics.requestRole(requested)} code=${response.code}
 1	url	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	https://
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	idle mid-live
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	ip
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	isLiveContent=$isLiveContent buffering=${_buffering.value} reconnect=${tune.retryCount}/$MAX_RECONNECTS
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	kind unknown
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	knownHlsHost=$knownHlsHost knownDashHost=$knownDashHost
@@ -5622,6 +5635,7 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	mp4v-es
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	mpeg2
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	muxedCaptions=${mv.muxedCaptionFormats?.size ?: 0}
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	name
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	network re-validated while reconnecting — retrying now
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	network restored
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	network restored — resuming the channel the ladder gave up on
@@ -5687,6 +5701,7 @@
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	retry fresh-url failed: ${it.message}
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	running
 1	log	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	same URL on the same engine (${tune.providerBackOffs}/$MAX_PROVIDER_BACKOFFS)
+1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	same=$same lastSeen=$age shape=${shape(response.request.url.resolve(location)?.toString() ?: location)}
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	segment HTTP $status
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	segment refused (HTTP $status) ${refusedSegments.size}/${LiveStreamQuirks.REFUSALS_BEFORE_HANDOFF}
 1	technical	player-core/src/main/java/tv/own/owntv/player/LivePreviewEngine.kt	server=${response.header("Server").orEmpty()} xcache=${response.header("X-Cache").orEmpty()}
