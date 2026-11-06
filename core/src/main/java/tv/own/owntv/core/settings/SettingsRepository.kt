@@ -1699,6 +1699,21 @@ class SettingsRepository(private val context: Context, private val localeStore: 
         context.dataStore.edit { it[Keys.TIMESHIFT_WINDOW_MINUTES] = TimeshiftRules.windowMinutesOf(minutes) }
     }
 
+    /** Timeshift on/off with its window, warm in memory: every live tune reads it before play(). */
+    private val timeshiftState: StateFlow<Pair<Boolean, Int>?> =
+        combine(timeshiftEnabled, timeshiftWindowMinutes) { on, minutes -> on to minutes }
+            .stateIn(repoScope, SharingStarted.Eagerly, null)
+
+    /**
+     * The timeshift window in minutes, or null when timeshift is off. Served from memory, so a zap does
+     * not wait on two settings reads (each of which came back to the main thread only after the frame the
+     * channel card was drawing); a direct read only before the first emission.
+     */
+    suspend fun timeshiftWindowNow(): Int? {
+        val (on, minutes) = timeshiftState.value ?: (timeshiftEnabled.first() to timeshiftWindowMinutes.first())
+        return if (on) minutes else null
+    }
+
     /** Which section a stream belongs to when deciding whether it goes to an external player. */
     enum class ExternalPlayerSection { LIVE_TV, MOVIES, SERIES }
 

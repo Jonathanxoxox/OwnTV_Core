@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 
 private val Context.forceMpvStore: DataStore<Preferences> by preferencesDataStore(name = "owntv_force_mpv")
 
@@ -56,6 +57,24 @@ class ForceMpvStore(
     val urls: Flow<Set<String>> = pinned(MPV)
     val exoUrls: Flow<Set<String>> = pinned(EXO)
 
+    /**
+     * Both pin lists, kept current by Room for [pinFor], which every live tune calls before play(): two
+     * queries there came back to the main thread only after the frame the channel card was drawing (~100 ms
+     * of a zap, box, 6 Nov 2026). Null until the first emission and right after this store writes, so a
+     * read never sees a list from before its own write; Room's next emission fills it again.
+     */
+    @Volatile private var cachedPins: Pair<Set<String>, Set<String>>? = null
+
+    init {
+        kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.SupervisorJob() + kotlinx.coroutines.Dispatchers.IO).launch {
+            kotlinx.coroutines.flow.combine(urls, exoUrls) { mpv, exo -> mpv to exo }.collect { cachedPins = it }
+        }
+    }
+
+    private fun dropCachedPins() {
+        cachedPins = null
+    }
+
     private fun pinned(pin: String): Flow<Set<String>> = flow {
         copy.ensure()
         emitAll(dao.observePinned(pin, live = true).map { it.toSet() })
@@ -66,12 +85,14 @@ class ForceMpvStore(
     suspend fun pin(url: String, onMpv: Boolean) {
         copy.ensure()
         dao.setEnginePin(url, sourceIdOfPinKey(url), LIVE, if (onMpv) MPV else EXO)
+        dropCachedPins()
     }
 
     /** Drop any pin for [url] in either direction, so the channel follows the global setting again. */
     suspend fun forget(url: String) {
         copy.ensure()
         dao.setEnginePin(url, sourceIdOfPinKey(url), LIVE, null)
+        dropCachedPins()
     }
 
     /** Forget every channel's pin, so all of them follow the Live TV player setting again. The
@@ -79,6 +100,7 @@ class ForceMpvStore(
     suspend fun clearAll() {
         copy.ensure()
         dao.clearLivePins()
+        dropCachedPins()
     }
 
     /**
@@ -88,7 +110,8 @@ class ForceMpvStore(
      * (older builds) is migrated to [stableKey] on the way.
      */
     suspend fun pinFor(stableKey: String?, legacyUrl: String): Boolean? {
-        val lookup = pinOf(stableKey, legacyUrl, urls.first(), exoUrls.first()) ?: return null
+        val cached = cachedPins
+        val lookup = pinOf(stableKey, legacyUrl, cached?.first ?: urls.first(), cached?.second ?: exoUrls.first()) ?: return null
         if (lookup.legacy && stableKey != null) migrateKey(legacyUrl, stableKey)
         return lookup.onMpv
     }
@@ -98,6 +121,7 @@ class ForceMpvStore(
     suspend fun migrateKey(legacyUrl: String, stableKey: String) {
         copy.ensure()
         dao.migrateKey(legacyUrl, stableKey, sourceIdOfPinKey(stableKey))
+        dropCachedPins()
     }
 
     // --- Backup / restore (optional section) ---
@@ -120,6 +144,7 @@ class ForceMpvStore(
         val (mpv, exo) = mergePins(this.urls.first(), this.exoUrls.first(), urls, exoUrls)
         mpv.forEach { dao.setEnginePin(it, sourceIdOfPinKey(it), LIVE, MPV) }
         exo.forEach { dao.setEnginePin(it, sourceIdOfPinKey(it), LIVE, EXO) }
+        dropCachedPins()
     }
 
     /** [pinFor]'s answer, and whether it came from a legacy URL key. */

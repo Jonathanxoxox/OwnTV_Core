@@ -1026,8 +1026,7 @@ class LiveTuneController(
             org.koin.core.context.GlobalContext.getOrNull()?.getOrNull<TimeshiftManager>()
         }
 
-        override suspend fun timeshiftWindowMinutes(): Int? =
-            if (settings.timeshiftEnabled.first()) settings.timeshiftWindowMinutes.first() else null
+        override suspend fun timeshiftWindowMinutes(): Int? = settings.timeshiftWindowNow()
 
         override suspend fun timeshiftResumeMode(): SettingsRepository.ResumeMode = settings.timeshiftResumeMode.first()
 
