@@ -414,6 +414,48 @@ class LivePreviewEngine(
             "$name=${v.second}"
         }
     }
+    /**
+     * Where a tune's time to picture goes, for the box benchmark: one OwnTVPerf line per stage and tune
+     * (loading begins, first video/audio format parsed = first stream bytes, video decoder up, READY =
+     * start buffer reached, first frame), in ms since play(). Numbers only.
+     */
+    private val zapStages = object : androidx.media3.exoplayer.analytics.AnalyticsListener {
+        private var tuneAt = 0L
+        private val seen = HashSet<String>()
+        private fun mark(stage: String) {
+            val t = tune.playStartedMs
+            if (t == 0L) return
+            if (t != tuneAt) { tuneAt = t; seen.clear() }
+            if (seen.add(stage)) {
+                android.util.Log.i("OwnTVPerf", "zap-stage $stage +${android.os.SystemClock.elapsedRealtime() - t}ms")
+            }
+        }
+        override fun onIsLoadingChanged(eventTime: androidx.media3.exoplayer.analytics.AnalyticsListener.EventTime, isLoading: Boolean) {
+            if (isLoading) mark("loading")
+        }
+        override fun onVideoInputFormatChanged(
+            eventTime: androidx.media3.exoplayer.analytics.AnalyticsListener.EventTime,
+            format: androidx.media3.common.Format,
+            decoderReuseEvaluation: androidx.media3.exoplayer.DecoderReuseEvaluation?,
+        ) = mark("video-format")
+        override fun onAudioInputFormatChanged(
+            eventTime: androidx.media3.exoplayer.analytics.AnalyticsListener.EventTime,
+            format: androidx.media3.common.Format,
+            decoderReuseEvaluation: androidx.media3.exoplayer.DecoderReuseEvaluation?,
+        ) = mark("audio-format")
+        override fun onVideoDecoderInitialized(
+            eventTime: androidx.media3.exoplayer.analytics.AnalyticsListener.EventTime,
+            decoderName: String,
+            initializedTimestampMs: Long,
+            initializationDurationMs: Long,
+        ) = mark("video-decoder")
+        override fun onPlaybackStateChanged(eventTime: androidx.media3.exoplayer.analytics.AnalyticsListener.EventTime, state: Int) {
+            if (state == Player.STATE_READY) mark("ready")
+        }
+        override fun onRenderedFirstFrame(eventTime: androidx.media3.exoplayer.analytics.AnalyticsListener.EventTime, output: Any, renderTimeMs: Long) {
+            mark("first-frame")
+        }
+    }
     private val analytics = object : androidx.media3.exoplayer.analytics.AnalyticsListener {
         override fun onVideoCodecError(eventTime: androidx.media3.exoplayer.analytics.AnalyticsListener.EventTime, videoCodecError: Exception) {
             tune.lastCodecError = codecDetail("video", videoCodecError)
@@ -3471,7 +3513,7 @@ class LivePreviewEngine(
                     if (autoFrameRateEnabled) C.VIDEO_CHANGE_FRAME_RATE_STRATEGY_ONLY_IF_SEAMLESS
                     else C.VIDEO_CHANGE_FRAME_RATE_STRATEGY_OFF,
                 )
-                addListener(listener); addAnalyticsListener(analytics); addAnalyticsListener(audioWatchdog)
+                addListener(listener); addAnalyticsListener(analytics); addAnalyticsListener(audioWatchdog); addAnalyticsListener(zapStages)
                 // Wire the per-frame tick to the video renderer so the health watchdog can tell a frozen
                 // PICTURE (clock still running — invisible to a position-only check) from real playback.
                 // Best-effort: if the renderer isn't found / doesn't accept the message, the position and
