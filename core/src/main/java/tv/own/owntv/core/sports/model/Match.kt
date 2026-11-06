@@ -16,6 +16,9 @@ data class Team(
     val logoUrl: String? = null,
     val isAthlete: Boolean = false,
     val country: String? = null,
+    /** The club's colours as ESPN gives them, six hex digits without "#" ("0a3f86"); null when unknown. */
+    val color: String? = null,
+    val alternateColor: String? = null,
 )
 
 /** One period's score: a quarter's points, a set's games (with the tie-break points when one was played). */

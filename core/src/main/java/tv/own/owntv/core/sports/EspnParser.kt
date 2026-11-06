@@ -373,7 +373,13 @@ internal object EspnParser {
         abbreviation = t.optString("abbreviation"),
         location = t.optString("location").takeIf { it.isNotEmpty() },
         logoUrl = logo(t.optString("logo").ifEmpty { t.optJSONArray("logos")?.optJSONObject(0)?.optString("href").orEmpty() }),
+        color = hexColor(t.optString("color")),
+        alternateColor = hexColor(t.optString("alternateColor")),
     )
+
+    /** "0A3F86" → "0a3f86"; anything that is not six hex digits → null. */
+    private fun hexColor(raw: String): String? =
+        raw.trim().removePrefix("#").lowercase().takeIf { it.length == 6 && it.all { c -> c in '0'..'9' || c in 'a'..'f' } }
 
     private fun athlete(a: JSONObject, fallbackId: String): Team {
         val name = a.optString("displayName")
