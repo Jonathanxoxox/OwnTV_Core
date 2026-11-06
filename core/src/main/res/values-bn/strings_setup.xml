@@ -199,7 +199,7 @@
     <string name="companion_image_too_large">ছবিটি খুব বড় (সর্বোচ্চ 25 MB)।</string>
     <string name="companion_download_page_title">OwnTV — ব্যাকআপ ডাউনলোড করুন</string>
     <string name="companion_download_heading">আপনার ব্যাকআপ ডাউনলোড করুন</string>
-    <string name="companion_download_description">আপনার টিভি একটি OwnTV ব্যাকআপ ফাইল প্রস্তুত করেছে। এই ডিভাইসে এটি সংরক্ষণ করতে বোতামটি ট্যাপ করুন (owntv-backup.own)। এটি নিরাপদ কোনো জায়গায় রাখুন — পরে এটি থেকে পুনরুদ্ধার করতে পারবেন।</string>
+    <string name="companion_download_description">আপনার টিভি একটি OwnTV ব্যাকআপ ফাইল প্রস্তুত করেছে। এই ডিভাইসে এটি সংরক্ষণ করতে বোতামটি ট্যাপ করুন (mayo-backup.own)। এটি নিরাপদ কোনো জায়গায় রাখুন — পরে এটি থেকে পুনরুদ্ধার করতে পারবেন।</string>
     <string name="companion_download_backup">ব্যাকআপ ডাউনলোড করুন</string>
     <string name="companion_error_bad_request">অনুরোধটি সঠিক নয়</string>
     <string name="companion_error_body_too_large">অনুরোধের মূল অংশটি খুব বড়।</string>

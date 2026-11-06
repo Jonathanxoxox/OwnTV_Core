@@ -211,7 +211,7 @@
     <string name="companion_image_too_large">هذه الصورة كبيرة جدًا (الحد الأقصى 25 MB).</string>
     <string name="companion_download_page_title">OwnTV — تنزيل نسخة احتياطية</string>
     <string name="companion_download_heading">تنزيل نسختك الاحتياطية</string>
-    <string name="companion_download_description">أعدّ تلفزيونك ملف نسخة احتياطية من OwnTV. اضغط على الزر لحفظه على هذا الجهاز (owntv-backup.own). احتفظ به في مكان آمن — يمكنك الاستعادة منه لاحقًا.</string>
+    <string name="companion_download_description">أعدّ تلفزيونك ملف نسخة احتياطية من OwnTV. اضغط على الزر لحفظه على هذا الجهاز (mayo-backup.own). احتفظ به في مكان آمن — يمكنك الاستعادة منه لاحقًا.</string>
     <string name="companion_download_backup">تنزيل النسخة الاحتياطية</string>
     <string name="companion_error_bad_request">طلب غير صالح</string>
     <string name="companion_error_body_too_large">محتوى الطلب كبير جدًا.</string>

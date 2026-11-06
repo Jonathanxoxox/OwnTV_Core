@@ -1,7 +1,7 @@
 name: Publish core
 
 # Publishes tv.own.owntv:core and tv.own.owntv:player-core to OwnTV's public Maven repository (this
-# repo's gh-pages branch, https://ahxn00.github.io/OwnTV_Core/maven — no login to download) when a
+# repo's gh-pages branch, https://raw.githubusercontent.com/Jonathanxoxox/OwnTV_Core/gh-pages/maven — no login to download) when a
 # core-* tag is pushed, then publishes the GitHub Release for that tag. Both modules always go out together on the
 # same version, taken from `coreVersion` in the root build file — the tag must match it, and the job
 # checks that before publishing anything.
@@ -141,7 +141,7 @@ jobs:
 
           if [ ! -s notes.md ]; then
             echo "::warning::No CHANGELOG.md section for $TAG — publishing the release without notes."
-            printf 'Published to https://ahxn00.github.io/OwnTV_Core/maven (no login) as `tv.own.owntv:core:%s` and `tv.own.owntv:player-core:%s`.\n' \
+            printf 'Published to https://raw.githubusercontent.com/Jonathanxoxox/OwnTV_Core/gh-pages/maven (no login) as `tv.own.owntv:core:%s` and `tv.own.owntv:player-core:%s`.\n' \
               "${TAG#core-}" "${TAG#core-}" > notes.md
           fi
 

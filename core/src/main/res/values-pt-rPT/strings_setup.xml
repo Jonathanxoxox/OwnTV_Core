@@ -202,7 +202,7 @@
     <string name="companion_image_too_large">Essa imagem é demasiado grande (máximo de 25 MB).</string>
     <string name="companion_download_page_title">OwnTV — Transferir cópia de segurança</string>
     <string name="companion_download_heading">Transferir a sua cópia de segurança</string>
-    <string name="companion_download_description">A sua TV preparou um ficheiro de cópia de segurança do OwnTV. Toque no botão para o guardar neste dispositivo (owntv-backup.own). Guarde-o num local seguro — poderá utilizá-lo para restaurar os dados mais tarde.</string>
+    <string name="companion_download_description">A sua TV preparou um ficheiro de cópia de segurança do OwnTV. Toque no botão para o guardar neste dispositivo (mayo-backup.own). Guarde-o num local seguro — poderá utilizá-lo para restaurar os dados mais tarde.</string>
     <string name="companion_download_backup">Transferir cópia de segurança</string>
     <string name="companion_error_bad_request">Pedido inválido</string>
     <string name="companion_error_body_too_large">O corpo do pedido é demasiado grande.</string>

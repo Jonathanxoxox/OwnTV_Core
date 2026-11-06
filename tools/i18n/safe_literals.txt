@@ -20,7 +20,7 @@
 # category technical: Reviewed non-user-facing technical literal.
 
 2	empty	core/src/main/java/tv/own/owntv/core/CoreBuildInfo.kt	\0
-1	technical	core/src/main/java/tv/own/owntv/core/CoreBuildInfo.kt	ahXN00/OwnTV
+1	technical	core/src/main/java/tv/own/owntv/core/CoreBuildInfo.kt	Jonathanxoxox/tvplayer
 1	log	core/src/main/java/tv/own/owntv/core/CorePerf.kt	OwnTVPerf
 3	technical	core/src/main/java/tv/own/owntv/core/backup/BackupContainer.kt	..
 2	technical	core/src/main/java/tv/own/owntv/core/backup/BackupContainer.kt	Corrupt backup header
@@ -131,6 +131,7 @@
 4	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	mac
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	maxConnections
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	maxConnectionsProbedAt
+1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	mayo-backup.own
 3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	member
 2	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	n
 6	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	name
@@ -141,7 +142,6 @@
 3	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	order
 1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	own
 1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	owntv-backup.json
-1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	owntv-backup.own
 13	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	p
 4	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	password
 4	json	core/src/main/java/tv/own/owntv/core/backup/BackupManager.kt	pinHash
@@ -313,7 +313,7 @@
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"> <h1>${c.pinHeading.h()}</h1> <p>${c.pinDescription.h()}</p> ${if (error != null) "<p class=\\"err\\">${error.h()}</p>" else ""} <form method="post" action="/"> <input class="pin" name="pin" inputmode="numeric" pattern="[0-9]*" maxlength="6" autofocus placeholder="${c.pinPlaceholder.h()}" aria-label="${c.pinAria.h()}" required> <button class="go" type="submit">${c.continueLabel.h()}</button> </form> </div>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"> <h1>${c.savedHeading.h()}</h1> <p>${body.h()}</p> <p><a href="/?pin=$pin">${c.savedSendAnother.h()}</a></p> </div>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"> <h1>${heading.h()}</h1> <p>${description.h()}</p> <form id="f" onsubmit="return false"> <label>${fileLabel.h()} <input id="file" type="file" accept="$accept" required></label> <button class="go" id="send" type="submit">${c.sendToTv.h()}</button> </form> <p id="status" class="hint"></p> </div> <script> var f=document.getElementById('file'), b=document.getElementById('send'), s=document.getElementById('status'); document.getElementById('f').addEventListener('submit',function(){ var file=f.files&&f.files[0]; if(!file){s.textContent=${choose.js()};return false;} ${if (!backup) "if(file.size>25*1024*1024){s.textContent=${c.imageTooLarge.js()};return false;}" else ""} b.disabled=true; s.textContent=${c.sending.js()}; var r=new FileReader(); r.onload=function(){ fetch('$endpoint?pin=$pin',{method:'POST',headers:{'Content-Type':'$contentType'},body:r.result}) .then(function(res){ if(res.ok){document.open();res.text().then(function(t){document.write(t);document.close();});} else{b.disabled=false;s.textContent=${c.uploadFailed.js()}.replace('__STATUS__',String(res.status));} }) .catch(function(){b.disabled=false;s.textContent=${c.couldNotReach.js()};}); }; r.onerror=function(){b.disabled=false;s.textContent=${c.couldNotRead.js()};}; r.readAsDataURL(file); return false; }); </script>
-1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"><h1>${c.downloadHeading.h()}</h1> <p>${c.downloadDescription.h()}</p> <a class="go" href="/backup.own?pin=$pin" download="owntv-backup.own" style="display:block;text-align:center;text-decoration:none">${c.downloadBackup.h()}</a> </div>
+1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"><h1>${c.downloadHeading.h()}</h1> <p>${c.downloadDescription.h()}</p> <a class="go" href="/backup.own?pin=$pin" download="mayo-backup.own" style="display:block;text-align:center;text-decoration:none">${c.downloadBackup.h()}</a> </div>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"><h1>${c.savedHeading.h()}</h1> <p>${c.savedBackupBody.h()}</p><p><a href="/?pin=$pin">${c.savedBackupLink.h()}</a></p> </div>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"><h1>${c.savedHeading.h()}</h1> <p>${c.savedImageBody.h()}</p><p><a href="/?pin=$pin">${c.savedImageLink.h()}</a></p> </div>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"><h1>${context.getString(R.string.local_sync_browser_title).h()}</h1> <p>${context.getString(R.string.local_sync_browser_body).h()}</p> </div>

@@ -487,7 +487,7 @@ internal object CompanionHtml {
         return page(context, c.downloadTitle, """
             <div class="card"><h1>${c.downloadHeading.h()}</h1>
               <p>${c.downloadDescription.h()}</p>
-              <a class="go" href="/backup.own?pin=$pin" download="owntv-backup.own" style="display:block;text-align:center;text-decoration:none">${c.downloadBackup.h()}</a>
+              <a class="go" href="/backup.own?pin=$pin" download="mayo-backup.own" style="display:block;text-align:center;text-decoration:none">${c.downloadBackup.h()}</a>
             </div>
         """.trimIndent())
     }

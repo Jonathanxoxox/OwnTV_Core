@@ -205,7 +205,7 @@
     <string name="companion_image_too_large">Ten obraz jest za duży (maks. 25 MB).</string>
     <string name="companion_download_page_title">OwnTV — pobierz kopię zapasową</string>
     <string name="companion_download_heading">Pobierz swoją kopię zapasową</string>
-    <string name="companion_download_description">Telewizor przygotował plik kopii zapasowej OwnTV. Dotknij przycisku, aby zapisać go na tym urządzeniu (owntv-backup.own). Przechowuj go w bezpiecznym miejscu — później możesz z niego przywrócić dane.</string>
+    <string name="companion_download_description">Telewizor przygotował plik kopii zapasowej OwnTV. Dotknij przycisku, aby zapisać go na tym urządzeniu (mayo-backup.own). Przechowuj go w bezpiecznym miejscu — później możesz z niego przywrócić dane.</string>
     <string name="companion_download_backup">Pobierz kopię zapasową</string>
     <string name="companion_error_bad_request">Nieprawidłowe żądanie</string>
     <string name="companion_error_body_too_large">Treść żądania jest za duża.</string>

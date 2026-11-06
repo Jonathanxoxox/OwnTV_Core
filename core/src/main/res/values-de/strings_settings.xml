@@ -1523,8 +1523,8 @@
     <string name="settings_line_os_search_language">In den Suchergebnissen angezeigt</string>
     <string name="settings_subtitle_delete_help">Löschen gibt den Speicher frei; im Player können Sie die Datei erneut herunterladen.</string>
     <plurals name="settings_home_row_count">
-        <item quantity="one">%1$d Reihe</item>
-        <item quantity="other">%1$d Reihen</item>
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> Reihe</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> Reihen</item>
     </plurals>
     <plurals name="settings_subtitles_downloaded_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> heruntergeladen</item>

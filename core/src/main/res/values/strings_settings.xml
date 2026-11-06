@@ -2877,8 +2877,8 @@
     <string name="settings_subtitle_delete_help">Deleting frees the space; you can download it again from the player.</string>
     <!-- Translators: Count beside the Home screen page title: how many rows it lists. -->
     <plurals name="settings_home_row_count">
-        <item quantity="one">%1$d row</item>
-        <item quantity="other">%1$d rows</item>
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> row</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> rows</item>
     </plurals>
     <!-- Translators: Value line of the Delete subtitles row: how many subtitle files are downloaded. -->
     <plurals name="settings_subtitles_downloaded_count">

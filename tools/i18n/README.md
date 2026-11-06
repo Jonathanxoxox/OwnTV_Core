@@ -15,7 +15,7 @@ Spanish is `es` (there is no `es_ES` definition), while Latin America is `es_419
 <!-- canonical-weblate:start -->
 **Canonical project overview:** <https://hosted.weblate.org/projects/owntv/>
 
-**New-language request form:** <https://github.com/ahXN00/OwnTV/issues/new?template=feature_request.yml&title=%5BLanguage%5D%20Add%20>
+**New-language request form:** <https://github.com/Jonathanxoxox/tvplayer/issues/new?template=feature_request.yml&title=%5BLanguage%5D%20Add%20>
 
 The app, README, and this guide use these values from `community.json`; update that single source when either route changes.
 <!-- canonical-weblate:end -->

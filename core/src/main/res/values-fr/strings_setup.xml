@@ -202,7 +202,7 @@
     <string name="companion_image_too_large">Cette image est trop volumineuse (25 Mo maximum).</string>
     <string name="companion_download_page_title">OwnTV — Télécharger la sauvegarde</string>
     <string name="companion_download_heading">Télécharger votre sauvegarde</string>
-    <string name="companion_download_description">Votre téléviseur a préparé un fichier de sauvegarde OwnTV. Appuyez sur le bouton pour l’enregistrer sur cet appareil (owntv-backup.own). Conservez-le en lieu sûr — vous pourrez effectuer une restauration à partir de ce fichier ultérieurement.</string>
+    <string name="companion_download_description">Votre téléviseur a préparé un fichier de sauvegarde OwnTV. Appuyez sur le bouton pour l’enregistrer sur cet appareil (mayo-backup.own). Conservez-le en lieu sûr — vous pourrez effectuer une restauration à partir de ce fichier ultérieurement.</string>
     <string name="companion_download_backup">Télécharger la sauvegarde</string>
     <string name="companion_error_bad_request">Requête incorrecte</string>
     <string name="companion_error_body_too_large">Le corps de la requête est trop volumineux.</string>

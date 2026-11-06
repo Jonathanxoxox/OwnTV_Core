@@ -199,7 +199,7 @@
     <string name="companion_image_too_large">Die afbeelding is te groot (max. 25 MB).</string>
     <string name="companion_download_page_title">OwnTV — Back-up downloaden</string>
     <string name="companion_download_heading">Je back-up downloaden</string>
-    <string name="companion_download_description">Je tv heeft een OwnTV-back-upbestand voorbereid. Tik op de knop om het op dit apparaat op te slaan (owntv-backup.own). Bewaar het op een veilige plek — je kunt je gegevens er later mee herstellen.</string>
+    <string name="companion_download_description">Je tv heeft een OwnTV-back-upbestand voorbereid. Tik op de knop om het op dit apparaat op te slaan (mayo-backup.own). Bewaar het op een veilige plek — je kunt je gegevens er later mee herstellen.</string>
     <string name="companion_download_backup">Back-up downloaden</string>
     <string name="companion_error_bad_request">Ongeldig verzoek</string>
     <string name="companion_error_body_too_large">De aanvraaginhoud is te groot.</string>

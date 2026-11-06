@@ -204,7 +204,7 @@
     <string name="companion_image_too_large">Ez a kép túl nagy (legfeljebb 25 MB).</string>
     <string name="companion_download_page_title">OwnTV — Mentés letöltése</string>
     <string name="companion_download_heading">Töltsd le a mentésedet</string>
-    <string name="companion_download_description">A TV-d elkészített egy OwnTV-mentésfájlt. Koppints a gombra, hogy elmentsd erre az eszközre (owntv-backup.own). Tartsd biztonságos helyen — később visszaállíthatod belőle az adataidat.</string>
+    <string name="companion_download_description">A TV-d elkészített egy OwnTV-mentésfájlt. Koppints a gombra, hogy elmentsd erre az eszközre (mayo-backup.own). Tartsd biztonságos helyen — később visszaállíthatod belőle az adataidat.</string>
     <string name="companion_download_backup">Mentés letöltése</string>
     <string name="companion_error_bad_request">Hibás kérés</string>
     <string name="companion_error_body_too_large">A kérés törzse túl nagy.</string>

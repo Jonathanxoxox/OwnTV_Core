@@ -196,7 +196,7 @@
     <string name="companion_image_too_large">该图片过大（最大 25 MB）。</string>
     <string name="companion_download_page_title">OwnTV — 下载备份</string>
     <string name="companion_download_heading">下载你的备份</string>
-    <string name="companion_download_description">您的电视已准备好 OwnTV 备份文件。点击按钮将其保存到此设备（owntv-backup.own）。请将其妥善保存在安全位置——您以后可以用它恢复。</string>
+    <string name="companion_download_description">您的电视已准备好 OwnTV 备份文件。点击按钮将其保存到此设备（mayo-backup.own）。请将其妥善保存在安全位置——您以后可以用它恢复。</string>
     <string name="companion_download_backup">下载备份</string>
     <string name="companion_error_bad_request">请求无效</string>
     <string name="companion_error_body_too_large">请求正文过大。</string>

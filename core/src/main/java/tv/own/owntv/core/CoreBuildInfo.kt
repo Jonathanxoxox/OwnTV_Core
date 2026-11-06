@@ -74,5 +74,5 @@ object CoreBuildInfo {
      * [tvHome]. **Asset matching needs nothing per app**: it selects on `.apk` plus the `x86_64`
      * marker, which both repositories' release names carry.
      */
-    var releaseRepo: String = "ahXN00/OwnTV"
+    var releaseRepo: String = "Jonathanxoxox/tvplayer"
 }

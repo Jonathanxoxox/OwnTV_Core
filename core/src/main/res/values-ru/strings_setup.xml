@@ -205,7 +205,7 @@
     <string name="companion_image_too_large">Это изображение слишком большое (не более 25 МБ).</string>
     <string name="companion_download_page_title">OwnTV — скачать резервную копию</string>
     <string name="companion_download_heading">Скачивание резервной копии</string>
-    <string name="companion_download_description">На вашем телевизоре подготовлен файл резервной копии OwnTV. Нажмите кнопку, чтобы сохранить его на этом устройстве (owntv-backup.own). Храните его в надёжном месте — позже с его помощью можно выполнить восстановление.</string>
+    <string name="companion_download_description">На вашем телевизоре подготовлен файл резервной копии OwnTV. Нажмите кнопку, чтобы сохранить его на этом устройстве (mayo-backup.own). Храните его в надёжном месте — позже с его помощью можно выполнить восстановление.</string>
     <string name="companion_download_backup">Скачать резервную копию</string>
     <string name="companion_error_bad_request">Некорректный запрос</string>
     <string name="companion_error_body_too_large">Тело запроса слишком большое.</string>

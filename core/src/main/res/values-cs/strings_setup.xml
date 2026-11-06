@@ -205,7 +205,7 @@
     <string name="companion_image_too_large">Tento obrázek je příliš velký (max. 25 MB).</string>
     <string name="companion_download_page_title">OwnTV — Stáhnout zálohu</string>
     <string name="companion_download_heading">Stáhnout zálohu</string>
-    <string name="companion_download_description">Televizor připravil soubor zálohy OwnTV. Klepnutím na tlačítko jej uložte do tohoto zařízení (owntv-backup.own). Uchovávejte jej na bezpečném místě — později z něj můžete provést obnovení.</string>
+    <string name="companion_download_description">Televizor připravil soubor zálohy OwnTV. Klepnutím na tlačítko jej uložte do tohoto zařízení (mayo-backup.own). Uchovávejte jej na bezpečném místě — později z něj můžete provést obnovení.</string>
     <string name="companion_download_backup">Stáhnout zálohu</string>
     <string name="companion_error_bad_request">Chybný požadavek</string>
     <string name="companion_error_body_too_large">Tělo požadavku je příliš velké.</string>

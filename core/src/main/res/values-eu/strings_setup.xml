@@ -204,7 +204,7 @@
     <string name="companion_image_too_large">Irudi hori handiegia da (gehienez 25 MB).</string>
     <string name="companion_download_page_title">OwnTV — Deskargatu babeskopia</string>
     <string name="companion_download_heading">Deskargatu zure babeskopia</string>
-    <string name="companion_download_description">Zure telebistak OwnTV babeskopia-fitxategi bat prestatu du. Sakatu botoia gailu honetan gordetzeko (owntv-backup.own). Gorde leku seguru batean — geroago leheneratu dezakezu.</string>
+    <string name="companion_download_description">Zure telebistak OwnTV babeskopia-fitxategi bat prestatu du. Sakatu botoia gailu honetan gordetzeko (mayo-backup.own). Gorde leku seguru batean — geroago leheneratu dezakezu.</string>
     <string name="companion_download_backup">Deskargatu babeskopia</string>
     <string name="companion_error_bad_request">Eskaera okerra</string>
     <string name="companion_error_body_too_large">Eskaeraren gorputza handiegia da.</string>

@@ -196,7 +196,7 @@
     <string name="companion_image_too_large">その画像は大きすぎます（最大25 MB）。</string>
     <string name="companion_download_page_title">OwnTV — バックアップをダウンロード</string>
     <string name="companion_download_heading">バックアップをダウンロード</string>
-    <string name="companion_download_description">テレビでOwnTVのバックアップファイルを準備しました。ボタンをタップして、このデバイスに保存してください（owntv-backup.own）。後で復元できるよう、安全な場所に保管してください。</string>
+    <string name="companion_download_description">テレビでOwnTVのバックアップファイルを準備しました。ボタンをタップして、このデバイスに保存してください（mayo-backup.own）。後で復元できるよう、安全な場所に保管してください。</string>
     <string name="companion_download_backup">バックアップをダウンロード</string>
     <string name="companion_error_bad_request">不正なリクエスト</string>
     <string name="companion_error_body_too_large">リクエスト本文が大きすぎます。</string>

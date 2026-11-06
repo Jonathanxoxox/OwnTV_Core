@@ -66,7 +66,7 @@ class BackupManager(
     }
 
     /**
-     * Writes the chosen [sections] into [folder] as `owntv-backup.own`; returns the file path.
+     * Writes the chosen [sections] into [folder] as `mayo-backup.own` (older `owntv-backup.own` files restore all the same: restore goes by extension); returns the file path.
      *
      * The output is a [BackupContainer]: the same backup JSON this class has always produced, plus
      * the background picture's actual bytes when one is set. Exporting bare `.json` is gone (the
@@ -1645,7 +1645,7 @@ class BackupManager(
             raw?.takeIf { it.isNotBlank() }?.let { name -> SourceType.entries.firstOrNull { it.name == name } }
 
         /** What export writes since v4.2 — a [BackupContainer], not a bare JSON file. */
-        const val BACKUP_FILENAME = "owntv-backup.own"
+        const val BACKUP_FILENAME = "mayo-backup.own"
 
         /** The pre-4.2 name. Export never produces it any more; restore still accepts such files. */
         const val LEGACY_BACKUP_FILENAME = "owntv-backup.json"

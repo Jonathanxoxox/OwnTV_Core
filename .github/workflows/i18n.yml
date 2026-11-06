@@ -1,6 +1,6 @@
 name: i18n
 
-# Every user-visible string in OwnTV lives in :core, so this is where the translation gate belongs.
+# Every user-visible string in Mayo TV lives in :core, so this is where the translation gate belongs.
 # Two jobs, both gating:
 #   baseline  — the hardcoded-literal ratchet against the pull-request merge base (not HEAD^, which
 #               is bypassable in a multi-commit PR).

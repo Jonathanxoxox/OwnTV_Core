@@ -199,7 +199,7 @@
     <string name="companion_image_too_large">Bildet er for stort (maks. 25 MB).</string>
     <string name="companion_download_page_title">OwnTV – last ned sikkerhetskopi</string>
     <string name="companion_download_heading">Last ned sikkerhetskopien din</string>
-    <string name="companion_download_description">TV-en har klargjort en OwnTV-sikkerhetskopifil. Trykk på knappen for å lagre den på denne enheten (owntv-backup.own). Oppbevar den på et trygt sted — du kan gjenopprette fra den senere.</string>
+    <string name="companion_download_description">TV-en har klargjort en OwnTV-sikkerhetskopifil. Trykk på knappen for å lagre den på denne enheten (mayo-backup.own). Oppbevar den på et trygt sted — du kan gjenopprette fra den senere.</string>
     <string name="companion_download_backup">Last ned sikkerhetskopi</string>
     <string name="companion_error_bad_request">Ugyldig forespørsel</string>
     <string name="companion_error_body_too_large">Forespørselsinnholdet er for stort.</string>

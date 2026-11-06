@@ -199,7 +199,7 @@
     <string name="companion_image_too_large">Bu görsel çok büyük (en fazla 25 MB).</string>
     <string name="companion_download_page_title">OwnTV — Yedeklemeyi indir</string>
     <string name="companion_download_heading">Yedeklemenizi indirin</string>
-    <string name="companion_download_description">TV\'niz bir OwnTV yedekleme dosyası hazırladı. Bu cihaza (owntv-backup.own) kaydetmek için düğmeye dokunun. Dosyayı güvenli bir yerde saklayın — daha sonra bu dosyadan geri yükleme yapabilirsiniz.</string>
+    <string name="companion_download_description">TV\'niz bir OwnTV yedekleme dosyası hazırladı. Bu cihaza (mayo-backup.own) kaydetmek için düğmeye dokunun. Dosyayı güvenli bir yerde saklayın — daha sonra bu dosyadan geri yükleme yapabilirsiniz.</string>
     <string name="companion_download_backup">Yedeklemeyi indir</string>
     <string name="companion_error_bad_request">Hatalı istek</string>
     <string name="companion_error_body_too_large">İstek gövdesi çok büyük.</string>

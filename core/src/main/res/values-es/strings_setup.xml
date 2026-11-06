@@ -202,7 +202,7 @@
     <string name="companion_image_too_large">La imagen es demasiado grande (máximo: 25 MB).</string>
     <string name="companion_download_page_title">OwnTV — Descargar copia de seguridad</string>
     <string name="companion_download_heading">Descarga tu copia de seguridad</string>
-    <string name="companion_download_description">Tu TV ha preparado un archivo de copia de seguridad de OwnTV. Pulsa el botón para guardarlo en este dispositivo (owntv-backup.own). Guárdalo en un lugar seguro; podrás restaurarlo más adelante.</string>
+    <string name="companion_download_description">Tu TV ha preparado un archivo de copia de seguridad de OwnTV. Pulsa el botón para guardarlo en este dispositivo (mayo-backup.own). Guárdalo en un lugar seguro; podrás restaurarlo más adelante.</string>
     <string name="companion_download_backup">Descargar copia de seguridad</string>
     <string name="companion_error_bad_request">Solicitud incorrecta</string>
     <string name="companion_error_body_too_large">El cuerpo de la solicitud es demasiado grande.</string>

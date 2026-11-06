@@ -398,7 +398,7 @@
     <!-- Translators: Heading on the companion backup download page. -->
     <string name="companion_download_heading">Download your backup</string>
     <!-- Translators: Description on the companion backup download page. -->
-    <string name="companion_download_description">Your TV has prepared an OwnTV backup file. Tap the button to save it to this device (owntv-backup.own). Keep it somewhere safe \u2014 you can restore from it later.</string>
+    <string name="companion_download_description">Your TV has prepared an OwnTV backup file. Tap the button to save it to this device (mayo-backup.own). Keep it somewhere safe \u2014 you can restore from it later.</string>
     <!-- Translators: Button label on the companion backup download page. -->
     <string name="companion_download_backup">Download backup</string>
     <!-- Translators: Generic HTTP 400 error text on the companion web page. -->

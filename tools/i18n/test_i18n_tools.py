@@ -597,7 +597,7 @@ class TestValidateStrings(unittest.TestCase):
         request_url = config["languageRequestUrl"]
         self.assertEqual("https://hosted.weblate.org/projects/owntv/", url)
         self.assertEqual(
-            "https://github.com/ahXN00/OwnTV/issues/new?template=feature_request.yml&title=%5BLanguage%5D%20Add%20",
+            "https://github.com/Jonathanxoxox/tvplayer/issues/new?template=feature_request.yml&title=%5BLanguage%5D%20Add%20",
             request_url,
         )
         self.assertIsInstance(config["translationReadinessThresholdPercent"], int)
