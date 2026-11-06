@@ -23,7 +23,7 @@ import java.util.concurrent.Executors
 object PlaybackErrorLog {
     private const val MAX = 25
     private const val FILE_NAME = "playback_errors.json"
-    private const val EXPORT_NAME = "owntv-playback-report.txt"
+    private const val EXPORT_NAME = "mayo-playback-report.txt"
 
     /** What an entry is. The log used to hold hard failures only, which is exactly why a "the picture
      *  judders / the sound drifts" report produced an empty log. */

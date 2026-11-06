@@ -6301,7 +6301,7 @@
 3	json	player-core/src/main/java/tv/own/owntv/player/PlaybackErrorLog.kt	live
 2	json	player-core/src/main/java/tv/own/owntv/player/PlaybackErrorLog.kt	model
 1	technical	player-core/src/main/java/tv/own/owntv/player/PlaybackErrorLog.kt	owntv-errorlog
-1	file-path	player-core/src/main/java/tv/own/owntv/player/PlaybackErrorLog.kt	owntv-playback-report.txt
+1	file-path	player-core/src/main/java/tv/own/owntv/player/PlaybackErrorLog.kt	mayo-playback-report.txt
 1	log	player-core/src/main/java/tv/own/owntv/player/PlaybackErrorLog.kt	playback error log unreadable — starting a new one
 1	technical	player-core/src/main/java/tv/own/owntv/player/PlaybackErrorLog.kt	playback_errors.json
 2	json	player-core/src/main/java/tv/own/owntv/player/PlaybackErrorLog.kt	raw
