@@ -19,18 +19,25 @@ object SportsHomeRow {
     private const val STALE_MS = 3 * 60 * 60_000L
 
     fun items(board: SportsBoard, config: SportsConfig, followedLeagues: Set<String>, now: Long): List<Match> {
+        val followed = followed(board, config, followedLeagues, now)
+        val showing = followed.any { it.state == MatchState.IN || it.startMs - now <= SOON_MS }
+        if (!showing) return emptyList()
+        return followed.take(MAX_CARDS)
+    }
+
+    /**
+     * The followed teams' and leagues' matches that are on or still to come, without the row's "only once one
+     * is near" gate: what Mayo TV's Spotlight ranks, where a match tonight is a highlight in the afternoon already.
+     * Live first, the user's teams ahead of their leagues, then by kick-off.
+     */
+    fun followed(board: SportsBoard, config: SportsConfig, followedLeagues: Set<String>, now: Long): List<Match> {
         val teamKeys = config.teams.map { it.key }.toSet()
         fun mine(m: Match) = m.competitors.any { FollowedTeam(m.sport, it.team.id, "").key in teamKeys }
         // A kick-off that has passed while ESPN still says "pre" counts as live, as in the refresh policy,
         // for [STALE_MS]; after that it is a match ESPN never updated, not one to show.
-        val followed = board.matches.filter { m ->
+        return board.matches.filter { m ->
             (m.state == MatchState.IN || (m.state == MatchState.PRE && m.startMs > now - STALE_MS)) &&
                 (mine(m) || m.feed in followedLeagues)
-        }
-        val showing = followed.any { it.state == MatchState.IN || it.startMs - now <= SOON_MS }
-        if (!showing) return emptyList()
-        return followed
-            .sortedWith(compareBy({ it.state != MatchState.IN }, { !mine(it) }, { it.startMs }))
-            .take(MAX_CARDS)
+        }.sortedWith(compareBy({ it.state != MatchState.IN }, { !mine(it) }, { it.startMs }))
     }
 }
