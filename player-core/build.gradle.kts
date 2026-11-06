@@ -74,7 +74,7 @@ publishing {
     }
     repositories {
         // A local staging repository; tools/publish_pages.py copies it into OwnTV's public Maven
-        // repository (this repo's gh-pages branch, https://ahxn00.github.io/OwnTV_Core/maven).
+        // repository (this fork's gh-pages branch, https://raw.githubusercontent.com/Jonathanxoxox/OwnTV_Core/gh-pages/maven).
         maven {
             name = "Staging"
             url = uri(rootProject.layout.buildDirectory.dir("staging-maven"))

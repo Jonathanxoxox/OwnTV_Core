@@ -3,10 +3,9 @@
 
     PAGES_TOKEN=... python3 tools/publish_pages.py <staging-dir> [--keep ARTIFACT=N ...]
 
-The repository is the `gh-pages` branch of ahXN00/OwnTV_Core, served by GitHub Pages at
-https://ahxn00.github.io/OwnTV_Core/maven — no login needed to download. Both OwnTV_Core and
-OwnTV_libmpv publish through this script; the two copies (tools/publish_pages.py in each repo) are
-identical and must stay so.
+The repository is the `gh-pages` branch of Jonathanxoxox/OwnTV_Core (Mayo TV's core fork), read straight
+from GitHub at https://raw.githubusercontent.com/Jonathanxoxox/OwnTV_Core/gh-pages/maven — no login and no
+Pages site needed to download. The libmpv versions there were copied in with the fork.
 
 <staging-dir> is a local Maven repository Gradle has just published into. Every version found there
 is copied in; publishing a version that already exists fails (published versions are immutable).
@@ -28,9 +27,9 @@ import tempfile
 import time
 import urllib.request
 
-REPO = "ahXN00/OwnTV_Core"
+REPO = "Jonathanxoxox/OwnTV_Core"
 BRANCH = "gh-pages"
-SITE = "https://ahxn00.github.io/OwnTV_Core/maven"
+SITE = "https://raw.githubusercontent.com/Jonathanxoxox/OwnTV_Core/gh-pages/maven"
 GROUP_PATH = "tv/own/owntv"
 GROUP = "tv.own.owntv"
 CHECKSUMS = ("md5", "sha1", "sha256", "sha512")

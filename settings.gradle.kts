@@ -29,11 +29,13 @@ dependencyResolutionManagement {
         }
         google()
         mavenCentral()
-        // OwnTV's own Maven repository (this repo's gh-pages branch) — public, no login. Here for
-        // tv.own.owntv:libmpv, the mpv engine built by ahXN00/OwnTV_libmpv.
+        // Mayo TV's own Maven repository: this fork's gh-pages branch, read straight from GitHub (public,
+        // no login, no Pages site needed). Here for tv.own.owntv:libmpv, the mpv engine (built by
+        // OwnTV_libmpv; the versions pinned below were copied in with the fork). Nothing is fetched from
+        // the original OwnTV repositories any more (6 Nov 2026).
         maven {
-            name = "OwnTV"
-            url = uri("https://ahxn00.github.io/OwnTV_Core/maven")
+            name = "MayoCore"
+            url = uri("https://raw.githubusercontent.com/Jonathanxoxox/OwnTV_Core/gh-pages/maven")
             content { includeGroup("tv.own.owntv") }
         }
     }
