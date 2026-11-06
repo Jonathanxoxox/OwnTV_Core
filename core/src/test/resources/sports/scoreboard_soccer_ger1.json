@@ -70,6 +70,8 @@
        "team": {
         "id": "122",
         "abbreviation": "KOE",
+        "color": "ED1C24",
+        "alternateColor": "#ffffff",
         "displayName": "FC Cologne",
         "shortDisplayName": "Cologne",
         "name": "FC Cologne",
