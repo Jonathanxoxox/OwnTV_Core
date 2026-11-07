@@ -216,7 +216,7 @@ class SportsRebuildTest {
 
         advanceTimeBy(2 * hour)
         source.today = { throw SportsHttpException(500) }
-        source.tomorrow = { listOf(match("sun", start = t0 + 40 * hour)) }
+        source.tomorrow = { listOf(match("sun", start = t0 + 32 * hour)) }
         val board = rebuilt(repo)
         assertEquals(setOf("fri", "sat"), board.today.getValue(bl).map { it.id }.toSet())
         assertEquals(setOf("sun"), board.tomorrow.getValue(bl).map { it.id }.toSet())
