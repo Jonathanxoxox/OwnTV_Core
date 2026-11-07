@@ -204,6 +204,26 @@ class SportsRebuildTest {
     }
 
     @Test
+    fun `after ESPN's day turned, a league whose today fails keeps yesterday's tomorrow`() = runTest {
+        // t0 is 23:00 in New York: ESPN's day turns an hour later.
+        advanceTimeBy(t0)
+        val source = Source().apply {
+            today = { listOf(match("fri", start = t0 - 2 * hour)) }
+            tomorrow = { listOf(match("sat", start = t0 + 16 * hour)) }
+        }
+        val repo = repo(source, MutableStateFlow(setOf(bl)), tmp.newFolder())
+        rebuilt(repo)
+
+        advanceTimeBy(2 * hour)
+        source.today = { throw SportsHttpException(500) }
+        source.tomorrow = { listOf(match("sun", start = t0 + 40 * hour)) }
+        val board = rebuilt(repo)
+        assertEquals(setOf("fri", "sat"), board.today.getValue(bl).map { it.id }.toSet())
+        assertEquals(setOf("sun"), board.tomorrow.getValue(bl).map { it.id }.toSet())
+        assertTrue(Feed.Scoreboard(bl) in board.failing)
+    }
+
+    @Test
     fun `progress counts every fetch, and nothing followed builds an empty board`() = runTest {
         advanceTimeBy(t0)
         val source = Source().apply { today = { listOf(match("m")) } }

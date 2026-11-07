@@ -229,8 +229,15 @@ class SportsRepository(
 
     private fun rebuildDue(mode: AutoRebuild, follow: Set<String>, now: Long): Boolean {
         val b = _board.value
-        return policy.rebuildDue(mode, follow, b.rebuiltAt, b.builtFor, rebuildTriedAt, rebuiltThisRun, now)
+        return policy.rebuildDue(
+            mode, follow, b.rebuiltAt, b.builtFor, rebuildTriedAt, rebuiltThisRun, now,
+            dayChanged = b.rebuiltAt?.let { espnDay(it) != espnDay(now) } == true,
+            incomplete = b.incomplete(),
+        )
     }
+
+    /** The last rebuild left a scoreboard it could not read: Wi-Fi still coming up after the box woke, say. */
+    private fun SportsBoard.incomplete() = failing.any { it is Feed.Scoreboard }
 
     /**
      * [match] fetched afresh now (its summary), for a page that must judge it on current data — Find
@@ -292,8 +299,13 @@ class SportsRepository(
             return
         }
         val old = _board.value
+        // A league that failed keeps the old board's matches of that day, from either of its lists: once
+        // ESPN's day has turned, yesterday's "tomorrow" is today (7 Nov 2026: after the box woke, today's
+        // matches were gone and only Sunday's showed).
         fun day(tomorrow: Boolean): Map<String, List<Match>> = boards.filter { it.second == tomorrow }.associate { (l, _, fresh) ->
-            l.key to (fresh ?: (if (tomorrow) old.tomorrow else old.today)[l.key].orEmpty()).filter { SportsWindow.keeps(it, now) }
+            val kept = fresh ?: (old.today[l.key].orEmpty() + old.tomorrow[l.key].orEmpty()).distinctBy { it.key }
+                .filter { (espnDay(it.startMs) >= nextDay) == tomorrow }
+            l.key to kept.filter { SportsWindow.keeps(it, now) }
         }
         val today = day(false).toMutableMap()
         val tomorrow = day(true)
@@ -367,7 +379,8 @@ class SportsRepository(
                     if (_board.value.paused != plan.paused) _board.update { it.copy(paused = plan.paused) }
                     plan.fetch.forEach { start(it, asked, now) }
                     val b = _board.value
-                    val next = (listOfNotNull(plan.nextWakeAt) + policy.rebuildWakes(mode, b.rebuiltAt, rebuildTriedAt).filter { it > now }).minOrNull()
+                    val wakes = policy.rebuildWakes(mode, b.rebuiltAt, rebuildTriedAt, b.rebuiltAt?.let(::nextEspnDay), b.incomplete())
+                    val next = (listOfNotNull(plan.nextWakeAt) + wakes.filter { it > now }).minOrNull()
                     val wait = next?.let { (it - now).coerceAtLeast(MIN_WAIT_MS) }
                     if (wait == null) wake.receive() else withTimeoutOrNull(wait) { wake.receive() }
                 }
@@ -443,7 +456,12 @@ class SportsRepository(
     }
 
     /** ESPN's "today" is the US Eastern day; tomorrow's board is the day after that one. */
-    private fun espnToday() = Instant.ofEpochMilli(clock()).atZone(ESPN_ZONE).toLocalDate()
+    private fun espnToday() = espnDay(clock())
+
+    private fun espnDay(ms: Long) = Instant.ofEpochMilli(ms).atZone(ESPN_ZONE).toLocalDate()
+
+    /** When ESPN's day after the one [ms] falls on begins. */
+    private fun nextEspnDay(ms: Long) = espnDay(ms).plusDays(1).atStartOfDay(ESPN_ZONE).toInstant().toEpochMilli()
 
     private fun loadCache() {
         if (cacheLoaded) return

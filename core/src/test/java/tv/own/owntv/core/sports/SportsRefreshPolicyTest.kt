@@ -211,7 +211,22 @@ class SportsRefreshPolicyTest {
         thisRun: Boolean = true,
         now: Long = t0 + 1,
         followed: Set<String> = setOf(bl),
-    ) = policy.rebuildDue(mode, followed, rebuiltAt, builtFor, triedAt, thisRun, now)
+        dayChanged: Boolean = false,
+        incomplete: Boolean = false,
+    ) = policy.rebuildDue(mode, followed, rebuiltAt, builtFor, triedAt, thisRun, now, dayChanged, incomplete)
+
+    @Test
+    fun `a new ESPN day and a rebuild that missed scoreboards are due by themselves, but not when manual`() {
+        assertTrue("app start, the launcher running for days", due(AutoRebuild.APP_START, dayChanged = true))
+        assertTrue(due(AutoRebuild.H8, dayChanged = true))
+        assertFalse(due(AutoRebuild.MANUAL, dayChanged = true, incomplete = true, now = t0 + hour))
+        assertFalse(due(AutoRebuild.H8, incomplete = true, now = t0 + SportsRefreshPolicy.INCOMPLETE_RETRY_MS - 1))
+        assertTrue(due(AutoRebuild.H8, incomplete = true, now = t0 + SportsRefreshPolicy.INCOMPLETE_RETRY_MS))
+        assertEquals(
+            listOf(t0 + 4 * hour, t0 + 20 * hour, t0 + SportsRefreshPolicy.INCOMPLETE_RETRY_MS),
+            policy.rebuildWakes(AutoRebuild.H4, t0, t0, nextDayAt = t0 + 20 * hour, incomplete = true),
+        )
+    }
 
     @Test
     fun `interval modes rebuild when the last rebuild is older than their hours`() {

@@ -102,7 +102,9 @@ class SportsRefreshPolicy {
      * Whether the board should be rebuilt by itself now. [rebuiltAt] and [builtFor] describe the
      * stored board; [triedAt] is when the last rebuild started, so one that failed (started after the
      * last success) waits [REBUILD_RETRY_MS]. A changed follow list counts in every mode but
-     * [AutoRebuild.MANUAL].
+     * [AutoRebuild.MANUAL], and so do [dayChanged] (the board was built on an earlier ESPN day: its
+     * "today" is yesterday) and [incomplete] (the last rebuild could not read every scoreboard; tried
+     * again after [INCOMPLETE_RETRY_MS]).
      */
     fun rebuildDue(
         mode: AutoRebuild,
@@ -112,10 +114,13 @@ class SportsRefreshPolicy {
         triedAt: Long?,
         startedThisRun: Boolean,
         now: Long,
+        dayChanged: Boolean = false,
+        incomplete: Boolean = false,
     ): Boolean {
         if (mode == AutoRebuild.MANUAL) return false
         if (failedAt(rebuiltAt, triedAt)?.let { now - it < REBUILD_RETRY_MS } == true) return false
-        if (rebuiltAt == null || builtFor != followed) return true
+        if (rebuiltAt == null || builtFor != followed || dayChanged) return true
+        if (incomplete && now - rebuiltAt >= INCOMPLETE_RETRY_MS) return true
         return when (mode) {
             AutoRebuild.APP_START -> !startedThisRun
             else -> now - rebuiltAt >= hoursOf(mode) * HOUR_MS
@@ -124,12 +129,14 @@ class SportsRefreshPolicy {
 
     /**
      * The times [rebuildDue] may turn true by itself: an interval mode's next rebuild, and the end of a
-     * failed one's wait. The caller keeps those still to come.
+     * failed one's wait, the start of ESPN's next day ([nextDayAt]) and an incomplete one's retry. The
+     * caller keeps those still to come.
      */
-    fun rebuildWakes(mode: AutoRebuild, rebuiltAt: Long?, triedAt: Long?): List<Long> {
+    fun rebuildWakes(mode: AutoRebuild, rebuiltAt: Long?, triedAt: Long?, nextDayAt: Long? = null, incomplete: Boolean = false): List<Long> {
         if (mode == AutoRebuild.MANUAL) return emptyList()
         val interval = hoursOf(mode).takeIf { it > 0 }?.let { h -> rebuiltAt?.plus(h * HOUR_MS) }
-        return listOfNotNull(interval, failedAt(rebuiltAt, triedAt)?.plus(REBUILD_RETRY_MS))
+        val retry = rebuiltAt?.takeIf { incomplete }?.plus(INCOMPLETE_RETRY_MS)
+        return listOfNotNull(interval, failedAt(rebuiltAt, triedAt)?.plus(REBUILD_RETRY_MS), nextDayAt, retry)
     }
 
     /** When the last rebuild started, if it has not succeeded since (null: the last one succeeded, or none ran). */
@@ -217,6 +224,9 @@ class SportsRefreshPolicy {
 
         /** A failed rebuild is not tried again by itself sooner than this. */
         const val REBUILD_RETRY_MS = 5 * 60_000L
+
+        /** A rebuild that missed some scoreboards is tried again this long after it. */
+        const val INCOMPLETE_RETRY_MS = 10 * 60_000L
         private const val HOUR_MS = 60 * 60_000L
 
         /** A kick-off this long ago with the match still listed as not started is treated as live: ESPN is late. */
