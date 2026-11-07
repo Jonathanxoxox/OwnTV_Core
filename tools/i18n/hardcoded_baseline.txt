@@ -154,7 +154,6 @@
 1	core/src/main/java/tv/own/owntv/core/metadata/MetadataBudget.kt	minute_start
 1	core/src/main/java/tv/own/owntv/core/metadata/MetadataBudget.kt	owntv_metadata_budget
 1	core/src/main/java/tv/own/owntv/core/metadata/MetadataCast.kt	n
-1	core/src/main/java/tv/own/owntv/core/metadata/MetadataCast.kt	null
 1	core/src/main/java/tv/own/owntv/core/metadata/MetadataCast.kt	p
 1	core/src/main/java/tv/own/owntv/core/metadata/MetadataImages.kt	${TmdbProvider.IMAGE_BASE}/$size${it.ensureLeadingSlash()}
 1	core/src/main/java/tv/own/owntv/core/metadata/MetadataImages.kt	w185
@@ -170,7 +169,6 @@
 1	core/src/main/java/tv/own/owntv/core/metadata/TmdbProvider.kt	Trending type=$type page=$page
 1	core/src/main/java/tv/own/owntv/core/metadata/TmdbProvider.kt	metadata allowance spent, skipping $label
 1	core/src/main/java/tv/own/owntv/core/metadata/TmdbProvider.kt	movie details id=$tmdbId
-1	core/src/main/java/tv/own/owntv/core/metadata/TmdbProvider.kt	profile_path
 1	core/src/main/java/tv/own/owntv/core/metadata/TmdbProvider.kt	search type=$type
 1	core/src/main/java/tv/own/owntv/core/metadata/TmdbProvider.kt	tv details id=$tmdbId
 3	core/src/main/java/tv/own/owntv/core/network/DnsConfig.kt	\0

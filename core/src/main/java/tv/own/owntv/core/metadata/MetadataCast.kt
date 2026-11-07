@@ -22,11 +22,19 @@ data class CastMember(val name: String, val profilePath: String? = null)
  * Capturing the photo path costs no extra network call: `credits` is already part of the
  * `append_to_response` on the details request, so the profile path is in a payload the app already
  * downloads — it was previously parsed and thrown away.
+ *
+ * Version 2 (Mayo TV, 7 Nov 2026) adds the director (a series' creators) in the same column, as entries
+ * with `"r":"d"`, after a leading `{"v":2}` marker — again no migration. Rows without the marker are
+ * re-fetched once ([isLegacyFormat]), so titles cached before learn their director too.
  */
 object MetadataCast {
 
     private const val KEY_NAME = "n"
     private const val KEY_PROFILE = "p"
+    private const val KEY_ROLE = "r"
+    private const val ROLE_DIRECTOR = "d"
+    private const val KEY_VERSION = "v"
+    private const val VERSION = 2
 
     fun parse(json: String?): List<CastMember> {
         if (json.isNullOrBlank()) return emptyList()
@@ -37,6 +45,8 @@ object MetadataCast {
                 // New format: an object. Old format: a bare name string.
                 val obj = arr.optJSONObject(i)
                 if (obj != null) {
+                    // The version marker and the directors are not cast.
+                    if (obj.has(KEY_VERSION) || obj.has(KEY_ROLE)) continue
                     val name = obj.optString(KEY_NAME).takeIf { it.isNotBlank() } ?: continue
                     val path = obj.optString(KEY_PROFILE).takeIf { it.isNotBlank() && it != "null" }
                     out += CastMember(name, path)
@@ -49,18 +59,34 @@ object MetadataCast {
         }.getOrDefault(emptyList())
     }
 
-    fun serialize(cast: List<CastMember>): String = JSONArray().apply {
-        cast.forEach { member ->
-            put(
-                JSONObject()
-                    .put(KEY_NAME, member.name)
-                    .apply { member.profilePath?.let { put(KEY_PROFILE, it) } },
-            )
-        }
+    fun serialize(cast: List<CastMember>, directors: List<CastMember> = emptyList()): String = JSONArray().apply {
+        put(JSONObject().put(KEY_VERSION, VERSION))
+        fun add(member: CastMember, role: String?) = put(
+            JSONObject()
+                .put(KEY_NAME, member.name)
+                .apply { member.profilePath?.let { put(KEY_PROFILE, it) } }
+                .apply { role?.let { put(KEY_ROLE, it) } },
+        )
+        cast.forEach { add(it, null) }
+        directors.forEach { add(it, ROLE_DIRECTOR) }
     }.toString()
 
+    /** The director(s), or a series' creators; empty in rows written before version 2. */
+    fun directors(json: String?): List<CastMember> {
+        if (json.isNullOrBlank()) return emptyList()
+        return runCatching {
+            val arr = JSONArray(json)
+            (0 until arr.length()).mapNotNull { i ->
+                val obj = arr.optJSONObject(i)?.takeIf { it.optString(KEY_ROLE) == ROLE_DIRECTOR } ?: return@mapNotNull null
+                val name = obj.optString(KEY_NAME).takeIf { it.isNotBlank() } ?: return@mapNotNull null
+                CastMember(name, obj.optString(KEY_PROFILE).takeIf { it.isNotBlank() && it != "null" })
+            }
+        }.getOrDefault(emptyList())
+    }
+
     /**
-     * True when [json] is a cast list written by the OLD name-only format.
+     * True when [json] is a cast list written by an older format: the name-only one, or one without
+     * the version-2 marker (no directors).
      *
      * Those rows can never show photos, and with the long positive TTL they would sit in the cache for
      * months, so the repository treats them as stale and re-fetches that title the next time it is
@@ -75,8 +101,9 @@ object MetadataCast {
         return runCatching {
             val arr = JSONArray(json)
             if (arr.length() == 0) return false
-            // New format is an array of objects; old format an array of bare strings.
-            arr.optJSONObject(0) == null
+            // Current format leads with the version marker; the oldest is an array of bare strings.
+            val first = arr.optJSONObject(0) ?: return true
+            first.optInt(KEY_VERSION, 0) < VERSION
         }.getOrDefault(false)
     }
 

@@ -244,6 +244,7 @@ class TmdbProvider(
             tmdbId = id,
             imdbId = imdb,
             title = o.optString("name").ifBlank { "?" },
+            directors = parseCreators(o),
             year = o.optString("first_air_date").take(4).toIntOrNull(),
             overview = o.optString("overview").takeIf { it.isNotBlank() },
             posterPath = o.optString("poster_path").takeIf { it.isNotBlank() && it != "null" },
@@ -271,6 +272,7 @@ class TmdbProvider(
             tmdbId = id,
             imdbId = imdb,
             title = o.optString("title").ifBlank { "?" },
+            directors = parseDirectors(o),
             year = o.optString("release_date").take(4).toIntOrNull(),
             overview = o.optString("overview").takeIf { it.isNotBlank() },
             posterPath = o.optString("poster_path").takeIf { it.isNotBlank() && it != "null" },
@@ -322,6 +324,26 @@ class TmdbProvider(
             out += CastMember(name, path)
         }
         return out
+    }
+
+    /** A film's director(s): `credits.crew` with the job Director, in the payload already. */
+    private fun parseDirectors(details: JSONObject): List<CastMember> {
+        val arr = details.optJSONObject("credits")?.optJSONArray("crew") ?: return emptyList()
+        return (0 until arr.length()).mapNotNull { i ->
+            val c = arr.optJSONObject(i)?.takeIf { it.optString("job") == JOB_DIRECTOR } ?: return@mapNotNull null
+            val name = c.optString("name").takeIf { it.isNotBlank() } ?: return@mapNotNull null
+            CastMember(name, c.optString("profile_path").takeIf { it.isNotBlank() && it != "null" })
+        }.distinctBy { it.name }.take(DIRECTOR_LIMIT)
+    }
+
+    /** A series' creators (`created_by`): what a director is to a film. */
+    private fun parseCreators(details: JSONObject): List<CastMember> {
+        val arr = details.optJSONArray("created_by") ?: return emptyList()
+        return (0 until arr.length()).mapNotNull { i ->
+            val c = arr.optJSONObject(i) ?: return@mapNotNull null
+            val name = c.optString("name").takeIf { it.isNotBlank() } ?: return@mapNotNull null
+            CastMember(name, c.optString("profile_path").takeIf { it.isNotBlank() && it != "null" })
+        }.distinctBy { it.name }.take(DIRECTOR_LIMIT)
     }
 
     private data class LogoCandidate(val path: String, val languageRank: Int, val width: Int)
@@ -385,6 +407,8 @@ class TmdbProvider(
         /** Own tag so a spend trace can be filtered on its own: `adb logcat -s OwnTVSpend`. */
         private const val SPEND_TAG = "OwnTVSpend"
         private const val CAST_LIMIT = 15
+        private const val DIRECTOR_LIMIT = 3
+        private const val JOB_DIRECTOR = "Director"
 
         /**
          * Seasons bundled into one `append_to_response`. TMDB's hard ceiling is 20 appended parts in

@@ -183,6 +183,8 @@ data class MovieDetails(
     val logoPath: String?,
     /** TMDB `original_language` (ISO 639-1, e.g. "ko"): what "Original language" audio plays. */
     val originalLanguage: String? = null,
+    /** A film's director(s) from `credits.crew`; a series' creators (`created_by`). */
+    val directors: List<CastMember> = emptyList(),
 )
 
 /** Per-episode TMDB details (`/tv/{id}/season/{n}/episode/{m}`). Its own still, plot, air date, rating. */
