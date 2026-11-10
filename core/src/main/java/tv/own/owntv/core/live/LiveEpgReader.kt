@@ -106,7 +106,7 @@ class LiveEpgReader(
             cache[ch.id]?.takeIf { now - it.at < CACHE_TTL_MS }?.let { return@withContext it.data }
 
             // 1) Bulk guide via the effective EPG id (manual match overrides the channel's own id).
-            val epgKey = (cust.epgMatchResolver.epgIdFor(ch) ?: ch.epgChannelId)?.trim()?.lowercase()?.takeIf { it.isNotEmpty() }
+            val epgKey = GuideKeys.keyOf(ch, cust)
             // Guide shift (global or per-channel): the stored rows keep the feed's own clock, so we look
             // up the SHIFTED "now" and move what comes back — display and catch-up then agree.
             val shift = EpgShift.minutesFor(cust, ch, globalShiftMinutes)
@@ -218,8 +218,7 @@ class LiveEpgReader(
         globalShiftMinutes: Int,
     ): List<EpgProgrammeEntity> = withContext(Dispatchers.IO) {
         val shift = EpgShift.minutesFor(cust, channel, globalShiftMinutes)
-        val key = (cust.epgMatchResolver.epgIdFor(channel) ?: channel.epgChannelId)
-            ?.trim()?.lowercase()?.takeIf { it.isNotEmpty() } ?: channel.streamUrl
+        val key = GuideKeys.keyOf(channel, cust) ?: channel.streamUrl
         return@withContext providerEntries(channel, shift).orEmpty().map {
             EpgProgrammeEntity(
                 id = -it.startMs,
@@ -284,8 +283,7 @@ class LiveEpgReader(
         // Shifted channels look up a different instant, so the batch is grouped by shift — with no
         // offsets configured (the normal case) that's still exactly one query group.
         val channelKeys = channels.mapNotNull { ch ->
-            val key = (cust.epgMatchResolver.epgIdFor(ch) ?: ch.epgChannelId)
-                ?.trim()?.lowercase()?.takeIf { it.isNotEmpty() }
+            val key = GuideKeys.keyOf(ch, cust)
             if (key != null) Triple(ch.id, key, EpgShift.minutesFor(cust, ch, globalShiftMinutes)) else null
         }
         if (channelKeys.isEmpty()) return@withContext emptyMap()
@@ -368,8 +366,7 @@ class LiveEpgReader(
         cust: SectionCustomizations,
         globalShiftMinutes: Int,
     ): EpgNowNext? = withContext(Dispatchers.IO) {
-        val epgKey = (cust.epgMatchResolver.epgIdFor(ch) ?: ch.epgChannelId)
-            ?.trim()?.lowercase()?.takeIf { it.isNotEmpty() } ?: return@withContext null
+        val epgKey = GuideKeys.keyOf(ch, cust) ?: return@withContext null
         // Same shift dance as [nowNext]: stored rows keep the feed's own clock, so look up the shifted
         // instant and move what comes back, or the card would disagree with the archive it describes.
         val shift = EpgShift.minutesFor(cust, ch, globalShiftMinutes)
@@ -391,8 +388,7 @@ class LiveEpgReader(
         liveSourceIds: List<Long>,
     ): List<EpgProgrammeEntity> = withContext(Dispatchers.IO) {
         if (!ch.catchup) return@withContext emptyList()
-        val epgKey = (cust.epgMatchResolver.epgIdFor(ch) ?: ch.epgChannelId)
-            ?.trim()?.lowercase()?.takeIf { it.isNotEmpty() } ?: return@withContext emptyList()
+        val epgKey = GuideKeys.keyOf(ch, cust) ?: return@withContext emptyList()
         val now = System.currentTimeMillis()
         val days = ch.catchupDays.takeIf { it > 0 } ?: DEFAULT_CATCHUP_DAYS
         val windowMs = (days * 24L * 60 * 60 * 1000).coerceAtMost(CATCHUP_LOOKBACK_CAP_MS)
@@ -424,8 +420,7 @@ class LiveEpgReader(
         globalShiftMinutes: Int,
         liveSourceIds: List<Long>,
     ): EpgProgrammeEntity? = withContext(Dispatchers.IO) {
-        val epgKey = (cust.epgMatchResolver.epgIdFor(ch) ?: ch.epgChannelId)
-            ?.trim()?.lowercase()?.takeIf { it.isNotEmpty() } ?: return@withContext null
+        val epgKey = GuideKeys.keyOf(ch, cust) ?: return@withContext null
         val shift = EpgShift.minutesFor(cust, ch, globalShiftMinutes)
         val from = EpgShift.toStored(afterStopMs, shift)
         val ids = liveSourceIds + epgSourceStore.getAll().map { it.id }
