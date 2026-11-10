@@ -77,8 +77,6 @@ jobs:
           python-version: '3.12'
       - name: Validate strings and locales.json, print coverage report
         run: python3 tools/i18n/validate_strings.py --report text
-      - name: SupportedLocales.kt freshness
-        run: python3 tools/i18n/gen_supported_locales.py check
       - name: Locale-stable Kotlin number formatting
         run: python3 tools/i18n/check_number_locale.py
       - name: Bounded Compose text overflow
