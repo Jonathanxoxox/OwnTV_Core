@@ -40,8 +40,9 @@ private const val NEXT_PROGRAMME_GAP_CAP_MS = 3L * 60 * 60 * 1000
 private const val LOG_TAG = "OwnTVHome"
 
 /**
- * How long a resolved now/next stays usable. Long enough that scrolling back to a channel costs
- * nothing, short enough that a programme changing over is noticed.
+ * How long a now/next resolved from the stored guide stays usable. Long enough that scrolling back to
+ * a channel costs nothing, short enough that a programme changing over is noticed. The provider's
+ * answers are kept by [ProviderGuideCache] under its own policy.
  */
 private const val CACHE_TTL_MS = 5 * 60_000L
 
@@ -77,23 +78,28 @@ class LiveEpgReader(
      *  undefined, up to a corrupt table or an infinite loop inside `get`. */
     private val cache = java.util.concurrent.ConcurrentHashMap<Long, CachedEpg>()
 
-    private data class CachedRows(val at: Long, val rows: List<EpgProgrammeEntity>)
-
-    /** Provider-fetched guide rows per channel, so the grid and the preview share one request. */
-    private val providerRows = java.util.concurrent.ConcurrentHashMap<Long, CachedRows>()
+    /**
+     * The provider's short guide per channel, shared by the preview pane and the grid: one request,
+     * kept while it still answers, never caching a failure. Entries are held unshifted, so the shift
+     * is applied on every read and a shift change costs no request.
+     */
+    private val providerGuide = ProviderGuideCache(fetch = ::fetchProviderEntries)
 
     /** Drop every cached now/next — the global guide offset moved, so all of them are stale. */
     fun clearCache() {
         cache.clear()
+        providerGuide.clear()
     }
 
     /** Drop one channel's cached now/next (its EPG match or per-channel shift changed). */
     fun invalidate(channelId: Long) {
         cache.remove(channelId)
+        providerGuide.invalidate(channelId)
     }
 
-    /** Now/next for [ch], cached ~5 min. Prefers a manual EPG match / stored bulk guide, then falls
-     *  back to Xtream's short EPG API. */
+    /** Now/next for [ch]. Prefers a manual EPG match / stored bulk guide (cached ~5 min), then falls
+     *  back to the provider's short EPG, which [providerGuide] keeps while it still covers now. Null
+     *  when the provider has no answer — including when the request failed, which is never cached. */
     suspend fun nowNext(ch: ChannelEntity, cust: SectionCustomizations, globalShiftMinutes: Int): EpgNowNext? =
         withContext(Dispatchers.IO) {
             val now = System.currentTimeMillis()
@@ -134,9 +140,9 @@ class LiveEpgReader(
             val future = entries.filter { it.startMs > (current?.startMs ?: now) }.sortedBy { it.startMs }
             // Short-EPG responses sometimes include the just-finished programme — surface it as "Before".
             val previous = entries.filter { it.stopMs <= (current?.startMs ?: now) }.maxByOrNull { it.stopMs }
-            val result = EpgNowNext(current, future.firstOrNull(), future.drop(1).take(4), previous = previous)
-            cache[ch.id] = CachedEpg(now, result)
-            result
+            // Not stored in [cache]: [providerGuide] already holds the entries, and deriving this from
+            // them is cheap, so a programme changing over is noticed without a new request.
+            EpgNowNext(current, future.firstOrNull(), future.drop(1).take(4), previous = previous)
         }
 
     /**
@@ -155,20 +161,35 @@ class LiveEpgReader(
      * and the rest of the evening, never a whole scrollable day.
      */
     private suspend fun providerEntries(ch: ChannelEntity, shift: Int): List<XtEpgEntry>? {
+        channelsById[ch.id] = ch
+        return providerGuide.entries(ch.id, shift)?.shifted(shift)
+    }
+
+    /** The channel behind each id [providerGuide] is asked about — its fetch is keyed by id alone, but
+     *  the request needs the stream id and source. Set just before every ask, so a retry or a request
+     *  shared by two callers still sees the channel. Bounded by the channels ever looked at. */
+    private val channelsById = java.util.concurrent.ConcurrentHashMap<Long, ChannelEntity>()
+
+    /** The provider's own guide needs the same shift as the stored one — same channel, same clock. */
+    private fun List<XtEpgEntry>.shifted(shift: Int): List<XtEpgEntry> = if (shift == 0) this else map {
+        it.copy(startMs = it.startMs + shift * 60_000L, stopMs = it.stopMs + shift * 60_000L)
+    }
+
+    /**
+     * One request to the provider for the channel with [channelId], on the provider's own clock. It **throws** on failure
+     * instead of answering empty: an empty list means "the provider says nothing is on", and a network
+     * error reported that way blanked the channel for as long as the answer was cached. [providerGuide]
+     * retries and backs off; it never stores a failure.
+     */
+    private suspend fun fetchProviderEntries(channelId: Long): List<XtEpgEntry>? {
+        val ch = channelsById[channelId] ?: return null
         val streamId = ch.remoteId ?: return null
         val source = sourceDao.getById(ch.sourceId) ?: return null
-        val raw = when (source.type) {
-            SourceType.XTREAM -> runCatching { xtreamClient.getShortEpg(source, streamId, limit = SHORT_EPG_LIMIT) }
-                .getOrNull().orEmpty()
-            SourceType.STALKER -> runCatching {
-                streamUrlResolver.shortEpg(source, streamId)
-                    .map { XtEpgEntry(title = it.title, description = it.description, startMs = it.startMs, stopMs = it.stopMs) }
-            }.getOrNull().orEmpty()
-            else -> return null
-        }
-        // The provider's own guide needs the same shift as the stored one — same channel, same clock.
-        return if (shift == 0) raw else raw.map {
-            it.copy(startMs = it.startMs + shift * 60_000L, stopMs = it.stopMs + shift * 60_000L)
+        return when (source.type) {
+            SourceType.XTREAM -> xtreamClient.getShortEpg(source, streamId, limit = SHORT_EPG_LIMIT)
+            SourceType.STALKER -> streamUrlResolver.shortEpg(source, streamId)
+                .map { XtEpgEntry(title = it.title, description = it.description, startMs = it.startMs, stopMs = it.stopMs) }
+            else -> null
         }
     }
 
@@ -185,20 +206,21 @@ class LiveEpgReader(
      * ids into a set — the grid marks its catch-up cells that way — cannot have one synthetic row
      * stand for all of them.
      *
-     * Cached per channel for [CACHE_TTL_MS], so a row scrolling in and out of view, and the list's
-     * own periodic refresh, cost one request rather than one per look.
+     * Read through [providerGuide], which keeps the answer while it still covers now, so a row
+     * scrolling in and out of view, and the list's own periodic refresh, cost one request rather than
+     * one per look — and the preview pane's request is the same one. A failed request yields an empty
+     * list here and is **not** remembered, so the next look asks again (after the cache's short
+     * backoff) instead of showing a blank row for minutes.
      */
     suspend fun providerProgrammes(
         channel: ChannelEntity,
         cust: SectionCustomizations,
         globalShiftMinutes: Int,
     ): List<EpgProgrammeEntity> = withContext(Dispatchers.IO) {
-        val now = System.currentTimeMillis()
-        providerRows[channel.id]?.takeIf { now - it.at < CACHE_TTL_MS }?.let { return@withContext it.rows }
         val shift = EpgShift.minutesFor(cust, channel, globalShiftMinutes)
         val key = (cust.epgMatchResolver.epgIdFor(channel) ?: channel.epgChannelId)
             ?.trim()?.lowercase()?.takeIf { it.isNotEmpty() } ?: channel.streamUrl
-        val rows = providerEntries(channel, shift).orEmpty().map {
+        return@withContext providerEntries(channel, shift).orEmpty().map {
             EpgProgrammeEntity(
                 id = -it.startMs,
                 sourceId = channel.sourceId,
@@ -209,8 +231,6 @@ class LiveEpgReader(
                 description = it.description,
             )
         }.sortedBy { it.startMs }
-        providerRows[channel.id] = CachedRows(now, rows)
-        rows
     }
 
     /**
@@ -305,7 +325,7 @@ class LiveEpgReader(
         val fromStored = result.size
         for (ch in channels) {
             if (ch.id in result) continue
-            cachedNow(ch.id, now)?.let { result[ch.id] = it }
+            cachedNow(ch.id, now, EpgShift.minutesFor(cust, ch, globalShiftMinutes))?.let { result[ch.id] = it }
         }
         CorePerf.log {
             "live_nowplaying channels=${channels.size} keyed=${channelKeys.size} " +
@@ -317,17 +337,17 @@ class LiveEpgReader(
     }
 
     /**
-     * The current programme already resolved for [channelId], if it is still fresh — from either
-     * cache, because the preview pane and the guide grid fill different ones.
+     * The current programme already resolved for [channelId], if it is still fresh — from the stored
+     * guide's cache or from what [providerGuide] holds, because the preview pane and the guide grid
+     * fill different ones. [shift] moves the provider's unshifted entries onto the user's clock.
      *
      * Deliberately never fetches. See the note in [nowPlayingFor] for what happened when it did.
      */
-    private fun cachedNow(channelId: Long, now: Long): XtEpgEntry? {
+    private fun cachedNow(channelId: Long, now: Long, shift: Int): XtEpgEntry? {
         cache[channelId]?.takeIf { now - it.at < CACHE_TTL_MS }?.data?.now
             ?.takeIf { it.title.isNotBlank() }?.let { return it.copy(description = null) }
-        return providerRows[channelId]
-            ?.takeIf { now - it.at < CACHE_TTL_MS }
-            ?.rows?.firstOrNull { it.startMs <= now && it.stopMs > now }
+        return providerGuide.peek(channelId)?.shifted(shift)
+            ?.firstOrNull { it.startMs <= now && it.stopMs > now }
             ?.takeIf { it.title.isNotBlank() }
             ?.let { XtEpgEntry(it.title, null, it.startMs, it.stopMs) }
     }
