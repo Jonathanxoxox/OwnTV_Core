@@ -98,7 +98,10 @@ internal class ProviderGuideCache(
         val now = clock()
         val providerNow = now - shiftMinutes * 60_000L
         val old = answers[channelId]
-        if (old != null && isFresh(old, now, providerNow)) return old.entries
+        if (old != null && isFresh(old, now, providerNow)) {
+            GuideStats.served(GuideStats.SOURCE_PROVIDER)
+            return old.entries
+        }
 
         val failed = failedAt[channelId]
         if (failed != null && now - failed < PROVIDER_GUIDE_BACKOFF_MS) return stillUseful(old, providerNow)
@@ -152,16 +155,40 @@ internal class ProviderGuideCache(
         return mine
     }
 
+    /**
+     * [fetch] once, counted in [GuideStats]: non-empty = OK, empty = EMPTY, exception = FAILED. A null
+     * ("nobody to ask") is not counted, since it may well have made no request at all.
+     */
+    private suspend fun timedFetch(channelId: Long): List<XtEpgEntry>? {
+        val start = System.nanoTime()
+        fun took() = (System.nanoTime() - start) / 1_000_000
+        val result = try {
+            fetch(channelId)
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            GuideStats.record(GuideStats.SOURCE_PROVIDER, took(), GuideStats.Outcome.FAILED)
+            throw e
+        }
+        if (result != null) {
+            GuideStats.record(
+                GuideStats.SOURCE_PROVIDER, took(),
+                if (result.isEmpty()) GuideStats.Outcome.EMPTY else GuideStats.Outcome.OK,
+            )
+        }
+        return result
+    }
+
     /** One shared attempt: fetch, retry once on I/O, store a success, record a failure. Null = failed. */
     private suspend fun load(channelId: Long): Answer? {
         try {
             val result = try {
-                fetch(channelId)
+                timedFetch(channelId)
             } catch (e: CancellationException) {
                 throw e
             } catch (e: IOException) {
                 delay(retryDelayMs)
-                fetch(channelId)
+                timedFetch(channelId)
             }
             val answer = Answer(clock(), result)
             answers[channelId] = answer
