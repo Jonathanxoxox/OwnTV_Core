@@ -213,10 +213,9 @@ class GuideReader(
 
 }
 
-/** The guide id this channel really reads from: a manual match wins over the channel's own. */
+/** The guide id this channel really reads from; one rule for every reader, see [GuideKeys.keyOf]. */
 internal fun epgKeyOf(channel: ChannelEntity, cust: SectionCustomizations): String? =
-    (cust.epgMatchResolver.epgIdFor(channel) ?: channel.epgChannelId)
-        ?.trim()?.lowercase()?.takeIf { it.isNotEmpty() }
+    GuideKeys.keyOf(channel, cust)
 
 /** What is on at [atMs] in one channel's programmes (sorted by start), and what follows; null when neither. */
 internal fun guideSlotAt(list: List<EpgProgrammeEntity>, atMs: Long): GuideSlot? {

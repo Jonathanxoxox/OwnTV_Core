@@ -1982,6 +1982,9 @@
 1	log	core/src/main/java/tv/own/owntv/core/live/GuideReader.kt	rows=${stored.size} collapsed=${collapsed.size}
 1	log	core/src/main/java/tv/own/owntv/core/live/GuideReader.kt	shiftGroups=${keyed.groupBy { it.third }.size} chunks=$chunks rows=$rowsRead
 2	log	core/src/main/java/tv/own/owntv/core/live/GuideReader.kt	totalMs=${SystemClock.elapsedRealtime() - startedAt}
+1	technical	core/src/main/java/tv/own/owntv/core/live/GuideStats.kt	GuideStats
+1	technical	core/src/main/java/tv/own/owntv/core/live/GuideStats.kt	magenta
+1	technical	core/src/main/java/tv/own/owntv/core/live/GuideStats.kt	provider
 1	log	core/src/main/java/tv/own/owntv/core/live/LiveEpgReader.kt	OwnTVHome
 1	log	core/src/main/java/tv/own/owntv/core/live/LiveEpgReader.kt	Stalker catch-up resolve failed channelId=${ch.id}
 1	log	core/src/main/java/tv/own/owntv/core/live/LiveEpgReader.kt	Stalker rewind resolve failed channelId=${ch.id}
