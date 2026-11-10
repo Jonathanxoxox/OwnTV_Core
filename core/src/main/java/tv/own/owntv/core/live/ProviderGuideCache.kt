@@ -31,6 +31,13 @@ internal const val PROVIDER_GUIDE_EMPTY_TTL_MS = 30 * 60_000L
  */
 internal const val PROVIDER_GUIDE_BACKOFF_MS = 30_000L
 
+/**
+ * Any non-empty answer is used for at least this long without another request, whatever it covers. A
+ * provider whose list ends with the programme on now, or has a gap at this hour, would otherwise be
+ * asked again on every single look — the answer can never become "fresh" by the rule above.
+ */
+internal const val PROVIDER_GUIDE_MIN_HOLD_MS = 5 * 60_000L
+
 /** Pause before the single retry of a request that failed on I/O — a dropped connection usually
  *  works the second time, but not if we hammer it in the same instant. */
 internal const val PROVIDER_GUIDE_RETRY_DELAY_MS = 400L
@@ -47,7 +54,8 @@ internal const val PROVIDER_GUIDE_RETRY_DELAY_MS = 400L
  *
  * **Policy**
  *  - A stored answer is used with no request while one of its entries covers "now" *and* another
- *    starts after it (so Next is known), up to [PROVIDER_GUIDE_MAX_AGE_MS]. Otherwise a refresh is due.
+ *    starts after it (so Next is known), up to [PROVIDER_GUIDE_MAX_AGE_MS]; and in any case for its
+ *    first [PROVIDER_GUIDE_MIN_HOLD_MS]. Otherwise a refresh is due.
  *  - A failure is never stored as an answer. It is retried once after [PROVIDER_GUIDE_RETRY_DELAY_MS]
  *    when it is an [IOException]; if it still fails the channel is left alone for
  *    [PROVIDER_GUIDE_BACKOFF_MS], and callers get the old answer if it still reaches "now" or later, else
@@ -120,6 +128,7 @@ internal class ProviderGuideCache(
         val age = now - a.at
         val list = a.entries ?: return age < PROVIDER_GUIDE_MAX_AGE_MS
         if (list.isEmpty()) return age < PROVIDER_GUIDE_EMPTY_TTL_MS
+        if (age < PROVIDER_GUIDE_MIN_HOLD_MS) return true
         return age < PROVIDER_GUIDE_MAX_AGE_MS &&
             list.any { it.startMs <= providerNow && it.stopMs > providerNow } &&
             list.any { it.startMs > providerNow }

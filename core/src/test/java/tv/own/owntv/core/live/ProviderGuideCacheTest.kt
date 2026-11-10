@@ -61,6 +61,10 @@ class ProviderGuideCacheTest {
     fun answerWithNothingAfterNowIsRefetched() = runTest {
         val h = Harness(this) { listOf(e(0, 60)) }
         h.cache.entries(1)
+        // Held for its first minutes whatever it covers, so one look after another costs one request.
+        h.cache.entries(1)
+        assertEquals(1, h.calls)
+        h.now += PROVIDER_GUIDE_MIN_HOLD_MS
         h.cache.entries(1)
         assertEquals(2, h.calls)
     }
@@ -82,7 +86,8 @@ class ProviderGuideCacheTest {
     fun shiftMovesNowOntoTheProvidersClock() = runTest {
         val h = Harness(this) { covering }
         h.cache.entries(1)
-        // Shifted by +60 min, "now" is minute -50 on the provider's clock: nothing covers it.
+        h.now += PROVIDER_GUIDE_MIN_HOLD_MS
+        // Shifted by +60 min, "now" is minute -45 on the provider's clock: nothing covers it.
         h.cache.entries(1, shiftMinutes = 60)
         assertEquals(2, h.calls)
     }
