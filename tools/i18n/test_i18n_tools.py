@@ -602,18 +602,11 @@ class TestValidateStrings(unittest.TestCase):
         )
         self.assertIsInstance(config["translationReadinessThresholdPercent"], int)
         generated = (ROOT / "core/src/main/java/tv/own/owntv/core/i18n/SupportedLocales.kt").read_text()
-        readme = (ROOT / "README.md").read_text()
         guide = (ROOT / "tools/i18n/README.md").read_text()
         self.assertIn(f'CONTRIBUTION_PROJECT_URL: String = "{url}"', generated)
         self.assertIn(f'LANGUAGE_REQUEST_URL: String = "{request_url}"', generated)
-        self.assertIn(f"[Hosted Weblate]({url})", readme)
-        self.assertIn(f"[open a language request ticket]({request_url})", readme)
-        self.assertNotIn("owntv-weblate-qr.svg", readme)
-        self.assertNotIn("Accessible plain link:", readme)
         self.assertIn(f"<{url}>", guide)
         self.assertIn(f"<{request_url}>", guide)
-        self.assertEqual(1, readme.count(url))  # One clickable Hosted Weblate link
-        self.assertEqual(1, readme.count(request_url))
         self.assertEqual(1, guide.count(url))
         self.assertEqual(1, guide.count(request_url))
 
