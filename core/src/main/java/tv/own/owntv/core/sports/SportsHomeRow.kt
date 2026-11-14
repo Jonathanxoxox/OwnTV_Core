@@ -30,6 +30,19 @@ object SportsHomeRow {
      * is near" gate: what Mayo TV's Spotlight ranks, where a match tonight is a highlight in the afternoon already.
      * Live first, the user's teams ahead of their leagues, then by kick-off.
      */
+    /** A live match counts as live only this long after a fetch last answered for it. */
+    const val CONFIRMED_MS = 5 * 60_000L
+
+    /**
+     * [matches] without the live ones no fetch has answered for in the last [CONFIRMED_MS] ([SportsBoard.confirmedAt]):
+     * the Spotlight shows a match as live only while that is known, not because a copy from last night says so (14 Nov
+     * 2026: the TV came on to Albania – Finland "live" at 45'+2' the morning after). Matches still to come pass: their
+     * kick-off time is known without asking.
+     */
+    fun confirmed(board: SportsBoard, matches: List<Match>, now: Long): List<Match> = matches.filter { m ->
+        m.state != MatchState.IN || board.confirmedAt[m.key]?.let { now - it < CONFIRMED_MS } == true
+    }
+
     fun followed(board: SportsBoard, config: SportsConfig, followedLeagues: Set<String>, now: Long): List<Match> {
         val teamKeys = config.teams.map { it.key }.toSet()
         fun mine(m: Match) = m.competitors.any { FollowedTeam(m.sport, it.team.id, "").key in teamKeys }

@@ -59,7 +59,20 @@ data class SportsBoard(
     val builtFor: Set<String>? = null,
     /** When this device first saw each match (by key) finish, having seen it under way: the real end, extra time included. */
     val endedAt: Map<String, Long> = emptyMap(),
+    /**
+     * When a fetch in this process last answered for each match (by key): its scoreboard listed it, or its details
+     * came. Not stored with the board: what the file says is the state the box last knew, not a confirmation. A
+     * screen that shows a match as live asks this ([SportsHomeRow.confirmed]): after a night in standby a match left
+     * at half time is not live, however the stored copy reads (14 Nov 2026).
+     */
+    val confirmedAt: Map<String, Long> = emptyMap(),
+    /** When a scoreboard last answered in this process (null: none yet). */
+    val checkedAt: Long? = null,
 ) {
+    /** [fresh] confirmed at [now]. */
+    fun confirming(fresh: List<Match>, now: Long): SportsBoard =
+        if (fresh.isEmpty()) this else copy(confirmedAt = confirmedAt + fresh.associate { it.key to now })
+
     /** [fresh] copies replace older ones: a match seen under way and now finished gets its end time [now]. */
     fun withEnds(fresh: List<Match>, now: Long): SportsBoard {
         val ends = fresh.filter { m ->
@@ -127,6 +140,14 @@ object SportsWindow {
 
     /** ESPN gives no end time, so a match is taken to end this long after its kick-off. */
     const val LENGTH_MS = 3 * 60 * 60_000L
+
+    /**
+     * A copy of a live match that no fresh list confirms, from longer ago than a match lasts: the box last saw it under
+     * way and has heard nothing since (the ESPN day turned and the new scoreboard no longer lists it, or the board was
+     * read from the file after a night). It is not shown as live; it is dropped. A match ESPN itself still lists as
+     * live is kept however long it runs ([keeps]).
+     */
+    fun staleLive(m: Match, now: Long): Boolean = m.state == MatchState.IN && now >= m.startMs + LENGTH_MS
 
     fun keeps(m: Match, now: Long): Boolean = when (m.state) {
         MatchState.IN -> true
@@ -245,7 +266,10 @@ class SportsRepository(
      */
     suspend fun refetch(match: Match): Match? = try {
         val summary = gate.permits.withPermit { source.summary(match) }
-        _board.update { it.withEnds(listOf(summary.match), clock()).copy(summaries = it.summaries + (match.key to summary)) }
+        _board.update {
+            it.withEnds(listOf(summary.match), clock()).confirming(listOf(summary.match), clock())
+                .copy(summaries = it.summaries + (match.key to summary))
+        }
         summary.match
     } catch (e: CancellationException) {
         throw e
@@ -305,7 +329,7 @@ class SportsRepository(
         fun day(tomorrow: Boolean): Map<String, List<Match>> = boards.filter { it.second == tomorrow }.associate { (l, _, fresh) ->
             val kept = fresh ?: (old.today[l.key].orEmpty() + old.tomorrow[l.key].orEmpty()).distinctBy { it.key }
                 .filter { (espnDay(it.startMs) >= nextDay) == tomorrow }
-            l.key to kept.filter { SportsWindow.keeps(it, now) }
+            l.key to kept.filter { SportsWindow.keeps(it, now) && (fresh != null || !SportsWindow.staleLive(it, now)) }
         }
         val today = day(false).toMutableMap()
         val tomorrow = day(true)
@@ -339,6 +363,14 @@ class SportsRepository(
                 rebuiltAt = now,
                 builtFor = follow,
                 endedAt = it.withEnds(today.values.flatten() + tomorrow.values.flatten(), now).endedAt,
+                // What answered now: the scoreboards that came (a failed league's copies are not confirmed); earlier
+                // confirmations of matches still on the board stay.
+                confirmedAt = run {
+                    val answered = boards.flatMap { b -> b.third.orEmpty() }
+                    val onBoard = (today.values.flatten() + tomorrow.values.flatten()).mapTo(HashSet()) { m -> m.key }
+                    (it.confirmedAt + answered.associate { m -> m.key to now }).filterKeys { k -> k in onBoard }
+                },
+                checkedAt = if (boards.any { b -> b.third != null }) now else it.checkedAt,
             )
         }
         seed(_board.value, now, replace = true)
@@ -415,7 +447,10 @@ class SportsRepository(
                     val match = asked.firstNotNullOfOrNull { (it as? Demand.MatchPage)?.match?.takeIf { m -> m.key == feed.matchKey } }
                         ?: _board.value.match(feed.matchKey) ?: return
                     val summary = source.summary(match)
-                    _board.update { it.withEnds(listOf(summary.match), clock()).copy(summaries = it.summaries + (feed.matchKey to summary), failing = it.failing - feed) }
+                    _board.update {
+                        it.withEnds(listOf(summary.match), clock()).confirming(listOf(summary.match), clock())
+                            .copy(summaries = it.summaries + (feed.matchKey to summary), failing = it.failing - feed)
+                    }
                     listOf(summary.match)
                 }
                 is Feed.Standings -> {
@@ -445,12 +480,17 @@ class SportsRepository(
         }
     }
 
-    /** A refreshed scoreboard updates the board's copies of its matches; what it no longer lists stays while the window keeps it. */
+    /**
+     * A refreshed scoreboard updates the board's copies of its matches; what it no longer lists stays while the window
+     * keeps it, except a live copy older than a match lasts ([SportsWindow.staleLive]): once ESPN's day has turned, the
+     * new scoreboard no longer lists last night's match, and its copy said "45'+2'" for ever (14 Nov 2026).
+     */
     private fun SportsBoard.withScoreboard(feed: Feed.Scoreboard, fresh: List<Match>, now: Long): SportsBoard {
         val had = (if (feed.tomorrow) tomorrow else today)[feed.leagueKey].orEmpty()
         val keys = fresh.mapTo(HashSet()) { it.key }
-        val merged = (fresh + had.filter { it.key !in keys }).filter { SportsWindow.keeps(it, now) }
-        val b = withEnds(fresh, now)
+        val unlisted = had.filter { it.key !in keys && !SportsWindow.staleLive(it, now) }
+        val merged = (fresh + unlisted).filter { SportsWindow.keeps(it, now) }
+        val b = withEnds(fresh, now).confirming(fresh, now).copy(checkedAt = now)
         return if (feed.tomorrow) b.copy(tomorrow = tomorrow + (feed.leagueKey to merged), failing = failing - feed)
         else b.copy(today = today + (feed.leagueKey to merged), failing = failing - feed)
     }
@@ -467,7 +507,14 @@ class SportsRepository(
         if (cacheLoaded) return
         cacheLoaded = true
         val text = runCatching { cacheFile.takeIf { it.isFile }?.readText() }.getOrNull() ?: return
-        val stored = SportsCacheJson.read(text)?.let { SportsWindow.prune(it, clock()) } ?: return
+        val stored = SportsCacheJson.read(text)?.let { SportsWindow.prune(it, clock()) }?.let { b ->
+            // The file is what the box last knew, not a confirmation: a live copy older than a match lasts is not read.
+            val now = clock()
+            b.copy(
+                today = b.today.mapValues { (_, l) -> l.filterNot { SportsWindow.staleLive(it, now) } },
+                tomorrow = b.tomorrow.mapValues { (_, l) -> l.filterNot { SportsWindow.staleLive(it, now) } },
+            )
+        } ?: return
         // Only fills what is still empty: a fetch that finished first is newer than the file.
         _board.update { b ->
             b.copy(
