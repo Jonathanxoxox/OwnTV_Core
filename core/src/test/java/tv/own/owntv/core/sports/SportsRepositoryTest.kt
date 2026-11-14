@@ -129,6 +129,53 @@ class SportsRepositoryTest {
     }
 
     @Test
+    fun `a live copy the new scoreboard no longer lists is dropped once a match is over by any measure`() = runTest {
+        advanceTimeBy(hour)
+        val ht = match("ht", start = 0L) // kicked off an hour ago, live
+        val source = FakeSource().apply { boards = { _, _ -> listOf(ht) } }
+        val repo = repo(source, dir = stored(mapOf(bl to listOf(ht))))
+        open(repo, Demand.HomeRow)
+        runCurrent()
+        val board = repo.board.value
+        assertEquals("the fetch confirmed it", testScheduler.currentTime, board.confirmedAt[ht.key])
+        assertEquals(testScheduler.currentTime, board.checkedAt)
+
+        // ESPN's day turned: the new scoreboard lists other matches. Past three hours the old copy goes.
+        advanceTimeBy(2 * hour - 10_000)
+        source.boards = { _, _ -> listOf(match("next", state = MatchState.PRE, start = 30 * hour)) }
+        advanceTimeBy(60_000)
+        runCurrent()
+        assertEquals(listOf("next"), repo.board.value.today[bl]!!.map { it.id })
+    }
+
+    @Test
+    fun `an unlisted live copy younger than a match lasts stays, unconfirmed`() = runTest {
+        advanceTimeBy(hour)
+        val live = match("live", start = 0L)
+        val source = FakeSource().apply { boards = { _, _ -> listOf(live) } }
+        val repo = repo(source, dir = stored(mapOf(bl to listOf(live))))
+        open(repo, Demand.HomeRow)
+        runCurrent()
+        val confirmed = repo.board.value.confirmedAt[live.key]
+        source.boards = { _, _ -> emptyList() }
+        advanceTimeBy(60_000)
+        runCurrent()
+        assertEquals(listOf("live"), repo.board.value.today[bl]!!.map { it.id })
+        assertEquals("not confirmed again", confirmed, repo.board.value.confirmedAt[live.key])
+    }
+
+    @Test
+    fun `a stored live copy older than a match lasts is not read back`() = runTest {
+        advanceTimeBy(4 * hour)
+        val source = FakeSource().apply { gate = CompletableDeferred() }
+        val repo = repo(source, dir = stored(mapOf(bl to listOf(match("night", start = 0L), match("soon", state = MatchState.PRE, start = 5 * hour)))))
+        open(repo)
+        runCurrent()
+        assertEquals(listOf("soon"), repo.board.value.today[bl]!!.map { it.id })
+        assertTrue("nothing is confirmed by the file", repo.board.value.confirmedAt.isEmpty())
+    }
+
+    @Test
     fun `two screens asking for one live league make one request`() = runTest {
         advanceTimeBy(hour) // the stored board is an hour old
         val source = FakeSource().apply { gate = CompletableDeferred() }

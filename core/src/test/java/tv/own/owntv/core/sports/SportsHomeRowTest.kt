@@ -49,4 +49,15 @@ class SportsHomeRowTest {
         val abandoned = m("2", "soccer/ger.1", MatchState.PRE, now - 4 * hour)
         assertTrue(SportsHomeRow.items(board(abandoned), config, followed, now).isEmpty())
     }
+
+    @Test fun `a live match counts only while a fetch has answered for it in the last minutes`() {
+        val live = m("1", "soccer/ger.1", MatchState.IN, now - hour)
+        val later = m("2", "soccer/ger.1", MatchState.PRE, now + hour)
+        val unconfirmed = board(live, later)
+        assertEquals(listOf("2"), SportsHomeRow.confirmed(unconfirmed, listOf(live, later), now).map { it.id })
+        val fresh = unconfirmed.copy(confirmedAt = mapOf(live.key to now - 60_000))
+        assertEquals(listOf("1", "2"), SportsHomeRow.confirmed(fresh, listOf(live, later), now).map { it.id })
+        val old = unconfirmed.copy(confirmedAt = mapOf(live.key to now - SportsHomeRow.CONFIRMED_MS))
+        assertEquals(listOf("2"), SportsHomeRow.confirmed(old, listOf(live, later), now).map { it.id })
+    }
 }
