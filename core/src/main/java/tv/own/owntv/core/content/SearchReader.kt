@@ -18,6 +18,7 @@ import tv.own.owntv.core.database.entity.MovieEntity
 import tv.own.owntv.core.database.entity.SeriesEntity
 import tv.own.owntv.core.epg.EpgDedupe
 import tv.own.owntv.core.epg.EpgShift
+import tv.own.owntv.core.live.GuideKeys
 import tv.own.owntv.core.live.epgKeyOf
 import tv.own.owntv.core.model.MediaType
 import tv.own.owntv.core.repository.ActiveProfileSources
@@ -178,8 +179,15 @@ class SearchReader(
         val matchedTails = cust.epgMatches
             .filterValues { it.trim().lowercase() in byKey }
             .keys.map { CustomizeKeys.tailOf(it) }.filter { it.isNotEmpty() }.distinct()
-        val candidates = keys.chunked(KEY_CHUNK).flatMap { channelDao.byEpgKeys(liveSourceIds, it) } +
+        val direct = keys.chunked(KEY_CHUNK).flatMap { channelDao.byEpgKeys(liveSourceIds, it) } +
             matchedTails.chunked(KEY_CHUNK).flatMap { channelDao.byRemoteIdsOrNames(liveSourceIds, it) }
+        // Rows stored under a key the app's [GuideKeys.override] hands out (MagentaTV's guide) belong to no
+        // channel's own epg id: those channels are found by asking each channel for its guide key. Only when
+        // such rows matched, and from a list kept for a few minutes, so typing does not reread every channel.
+        val unresolved = keys.toSet() - direct.mapNotNull { epgKeyOf(it, cust) }.toSet()
+        val viaOverride = if (unresolved.isEmpty() || GuideKeys.override == null) emptyList()
+            else allChannels(liveSourceIds).filter { epgKeyOf(it, cust) in unresolved }
+        val candidates = direct + viaOverride
         val globalShift = settings.epgOffsetMinutes.first()
         return candidates
             .distinctBy { it.id }
@@ -200,6 +208,15 @@ class SearchReader(
     }
 
     /** One of the curated lists shown before anything is typed. Bounded, and already source-filtered. */
+    @Volatile private var channelList: Triple<List<Long>, Long, List<ChannelEntity>>? = null
+
+    /** Every live channel of [sourceIds], kept for [CHANNEL_LIST_TTL_MS]. */
+    private suspend fun allChannels(sourceIds: List<Long>): List<ChannelEntity> {
+        val now = System.currentTimeMillis()
+        channelList?.let { (ids, at, list) -> if (ids == sourceIds && now - at < CHANNEL_LIST_TTL_MS) return list }
+        return channelDao.allForSources(sourceIds, ALL_CHANNELS_LIMIT).also { channelList = Triple(sourceIds, now, it) }
+    }
+
     suspend fun curated(
         profileId: Long,
         sources: ActiveProfileSources,
@@ -266,10 +283,12 @@ class SearchReader(
         private const val PROGRAMME_SHIFT_SLACK_MS = 2 * 60 * 60_000L
 
         /** Raw rows read before mapping to channels; one programme can be on many guide channels. */
-        private const val PROGRAMME_ROWS = 300
+        private const val PROGRAMME_ROWS = 1000
 
         /** Keys per IN (…) lookup, inside SQLite's variable limit. */
         private const val KEY_CHUNK = 400
+        private const val CHANNEL_LIST_TTL_MS = 5 * 60_000L
+        private const val ALL_CHANNELS_LIMIT = 100_000
 
         /**
          * A sanitized FTS4 MATCH expression: the text is split at every character that is not a letter
