@@ -62,6 +62,10 @@ data class ProgrammeSearchResult(
     val channel: ChannelEntity,
 )
 
+/** A live channel as stored ([channel], its playlist name) and as Search shows it ([shown], renamed). */
+@Immutable
+data class VisibleChannel(val channel: ChannelEntity, val shown: ChannelEntity)
+
 /** The curated lists offered when nothing has been typed yet. */
 enum class SearchIntent {
     CONTINUE,
@@ -208,6 +212,21 @@ class SearchReader(
     }
 
     /** One of the curated lists shown before anything is typed. Bounded, and already source-filtered. */
+    /**
+     * The profile's live channels Search may show, in playlist order: hidden ones and those of hidden
+     * categories left out, each with the name it is shown under. For the app's own programme searches
+     * (MagentaTV's guide), which find a channel by its name rather than by a stored guide key.
+     */
+    suspend fun visibleLiveChannels(profileId: Long, sources: ActiveProfileSources): List<VisibleChannel> {
+        if (profileId < 0 || sources.liveSourceIds.isEmpty()) return emptyList()
+        val cust = customize.observe(profileId, MediaType.LIVE).first()
+        val isKids = profileDao.getById(profileId)?.isKids == true
+        val hiddenCats = hiddenCategoryIds(sources.liveSourceIds, MediaType.LIVE, cust, isKids)
+        return allChannels(sources.liveSourceIds)
+            .filter { CustomizeKeys.channel(it) !in cust.hiddenItems && (it.categoryId == null || it.categoryId !in hiddenCats) }
+            .map { ch -> VisibleChannel(ch, cust.itemNames[CustomizeKeys.channel(ch)]?.let { ch.copy(name = it) } ?: ch) }
+    }
+
     @Volatile private var channelList: Triple<List<Long>, Long, List<ChannelEntity>>? = null
 
     /** Every live channel of [sourceIds], kept for [CHANNEL_LIST_TTL_MS]. */
